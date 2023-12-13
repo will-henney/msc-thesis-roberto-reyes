@@ -1,0 +1,96 @@
+\documentclass{book}
+\usepackage{graphicx} % Required for inserting images
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Algoritmus}
+
+\title{Avances de tesis}
+\author{r.reyes }
+\date{December 2023}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\chapter{Introducción}
+
+En el medio interestelar hay muchas cosas maravillosas que nos permiten entender mucho acerca de la física en las diferentes regiones que observamos.
+
+Las estrellas se forman a partir del colapso gravitacional en nubes moleculares frías, teniendo sus diferentes fases durante este proceso, algunas regiones en las que se pueden formar son en lo que llamamos \textit{glóbulos de Bok}, que son nubes oscuras, relativamente pequeñas si las comparamos con otras regiones de formación estelar, que tienen una gran cantidad de gas y polvo. Estas nubes fueron observadas por primera vez por el astrónomo Bart Bok en 1940. 
+
+Estos glóbulos contienen principalmente hidrógeno molecular en su interior, así como también puede tener otras moléculas, metales e incluso algunos silicatos. Si bien pueden tener formación estelar en su interior, no podemos ver la radiación UV ya que esta es absorbida por el hidrógeno molecular y el polvo, es por eso que se ven oscuras. Sin embargo, estos pueden ser radiados externamente, en regiones de formación estelar, por estrellas jóvenes que se están formando cerca, y si la radiación es lo suficientemente fuerte, en algunos casos podemos ver el frente de ionización.
+
+En realidad existen muchos tipos de glóbulos con diferentes tamaños, pero en todos los casos los veremos como grumos debido a su gran concentración de moléculas que hay en su interior. Algunos de estos ejemplo son...
+
+\section{Flujos de foto evaporación ionizada}
+
+Como ya mencionamos hay muchos tipos de glóbulos de diferentes tamaños, en diferentes regiones. Algunos más pequeños que otros. 
+
+En nuestro caso nos concentraremos en lo que llamaremos \textit{nudos}, los cuales se encuentran principalmente en nebulosas planetarias, estos son glóbulos de un tamaño relativamente pequeño y tiene una gran concentración molecular neutra. Debido a la radiación UV de la estrella central esta comienza a ser ionizada en la superficie más cercana a la estrella. ...
+%Lyman continuo, proceso intermedio
+Después de cierto tiempo, podemos llegar a un equilibrio de ionización, donde esta superficie cercana a la estrella es ionizada por el continuo de Lyman, mientras que también tenemos procesos de recombinación. Estas recombinaciones de en la superficie de los nudos pueden emitir intensamente ...
+
+\section{Estrellas Wolf-Rayet y sus vientos}
+
+\section{Nebulosa M1-67}
+
+Gracias a las nuevas imágenes de JWST podemos saber mejor como es la nebulosa M1-67 que rodea la estrella WR-124. En setas imágenes vemos como la nebulosa es muy simétrica en algunos filtros, mientas que en algunos otros la emisión de los diferentes mecanismo se ven más intensos de un lado que del otro.
+
+Algo muy notorio a simple vista es que tiene una simetría que...
+
+%Poner imagen de M1-67
+
+Podemos ver como muchos detalles en cada uno de los filtros, en especial de como podemos ver en color rosa lo que parece ser choques de una gran acumulación de gas neutro que está interactuando con el viento de la estrella, y al rededor de ellos vemos una morfología similar a la de los proplyds que hay en otras nubes moleculares. También podemos ver como estos tienen una estela en la parte más lejana de la interacción, pero para nuestro estudio solo nos concentraremos solo en la parte más central.
+
+\chapter{Modelos analíticos de flujos foto evaporativos interactuando con una presión externa}
+
+\section{Estimación de la densidad ionizada a partir del brillo superficial de $H_\alpha$}
+
+Para estimar la densidad ionizada, usamos primero la definición de medida de emisión (EM por sus siglas en inglés)
+\[EM=\int_z n_in_edz\] donde en este caso estaremos integrando sobre nuestra línea de visión. Esta EM depende tanto de la densidad de lectrones como de iones, pero en nuestro caso vamos a considerar un equilibrio de ionización entre el flujo foto evaporativo y el viento estelar.
+
+Si suponemos una simetría esférica entre esta interacción del flujo fotoevaporativo y el viento estelar, podemos tomar, por geometría, que
+\[EM=2\sqrt{rh}n^2.\]
+
+%Insertar imagen de los radios
+
+Esto ya que de la fig(?) tenemos que por geometría $r^2+\frac{1}{2}l^2=(r+h)^2=r^2+2rh+h^2\approx r^2+2rh\Rightarrow l=2\sqrt{rh}$, por lo que podemos estimar la densidad ionizada a través de la EM como \[n=\sqrt{\frac{EM}{l}}\]
+
+\section{Modelo hidrodinámico estacionario}
+
+Para el caso de nuestro modelo analítico consideraremos un modelo analítico hidrodinámico estacionario, esto ya que consideramos que la interacción entre el flujo foto evaporativo y el viento estelar ha llegado al equilibrio de ionización.
+
+%inseratr imagen de las regiones durante la interaccion
+
+Nuestro modelo analítico lo haremos con simetría esférica, esto ya que en las observaciones se ve como en la parte que nos interesa tiene esta forma. 
+
+La parte neutra de nuestro glóbulo molecular tendrá un radio $r_0$, de su superficie de este saldrá el flujo foto evaporativo con un cierto número de Mach $M_0$. Este flujo foto evaporativo interactuará con el viento estelar de la estrella, provocando un choque, por lo que habrá una cáscara chocada. Durante este choque en realidad se producen dos frentes de choque y entre estos dos está una zona de  discontinuidad. Aunque tenemos estas dos regiones chocadas, solo la tomaremos como una, la cáscara chocada, ya que no tenemos la suficiente resolución en las observaciones como para poder identificar estas dos regiones.
+
+Para nuestro modelo analítico tenemos las regiones:
+* región neutra: En esta parte consideraremos que está constituida principalmente por el hidrógeno molecular, el cual tendrá parámetros : $r_0,\rho_0,P_0$. Aquí veremos principalmente la emisión por recombinación de los electrones y los iones.
+* Región interna: Es la región que esta seguida de la región neutra, en la cual el flujo foto evaporativo que sale de la superficie de la región neutra tiene un número de Mach $M_0$. Esta región tiene como parámetros $r_1,\rho_1,P_1$.
+* Cáscara chocada: Es la parte donde vemos el choque que hay entre el flujo foto evaporativo y el viento estelar, en realidad este también tendrá un radio $r_2$, pero que será muy parecido a $r_1$ en tamaño. Esta región es más brillante que la región interna, pero no tanto como la región neutra. En esta región es donde podremos usar la EM para saber algunas propiedades de los glóbulos. 
+* Parte externa: Es donde está viajando el viento estelar con dirección al glóbulo molecular.
+
+Para estimar las diferentes propiedades en las diferentes regiones, vamos a considerar principalmente las ecuaciones de conservación y la ecuación de Bernoulli.
+
+\chapter{Aplicación a M1-67}
+
+\section{Observaciones con HST}
+
+\section{Observaciones con JWST}
+
+\section{Ajustando el modelo a los perfiles de brillo radial}
+
+\section{Estimando la presión RAM del viento estelar}
+
+\section{Estimando la tasa de foto ionización}
+
+\chapter{Conclusiones}
+\end{document}
