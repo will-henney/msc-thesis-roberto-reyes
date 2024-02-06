@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{listings}
+\usepackage{appendix}
 \renewcommand{\lstlistingname}{Algoritmus}
 
 \title{Avances de tesis}
@@ -52,10 +53,37 @@ Podemos ver como muchos detalles en cada uno de los filtros, en especial de como
 
 \chapter{Modelos analíticos de flujos foto evaporativos interactuando con una presión externa}
 
+Para nuestro modelo estamos considerando que los glóbulos contienen principalmente hidrógeno neutro y tienen una forma esférica. Estos glóbulos deben estar lo suficientemente cerca de una estrella masiva como para que su radiación UV pueda ionizar el hidrógeno que hay en la superficie de estos glóbulos. Esta interacción con la radiación UV de la estrella hace que tengamos un flujo foto evaporativo súper sonico que sale de la superficie del glóbulo. Este flujo foto evaporativo estará interactuando con el viento estelar que proviene de la misma estrella de la cual esta recibiendo la radiación UV. En esta interacción tenemos un choque interno y uno externo, así como una discontinuidad de contacto como se ve en la siguiente figura.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Chp2_zones.jpg}
+    \caption{En \textbf{A} vemos como la radiación UV por parte dela estrella incide en el glóbulo. En \textbf{B} vemos como después de esta interacción comienza a salir el flujo foto evaporativo de la superficie del glóbulo. En \textbf{C} vemos la interacción entre el flujo fotoevaorativo y el viento estelar por parte de la estrella. Finalmente en \textbf{D} vemos las diferentes regiones que se forman en la interacción en \textbf{C}, la  región 1 es donde el flujo foto evaporativo sale de la superficie del glóbulo inicialmente con un úmero de Mach de 1 y se va haciendo super sónico, en la región 2 es la parte del flujo foto evaporativo chocado, la cual esperamos ver en las observaciones. La región 3 es el viento estelar chocado, esta región suele ser muy delgada en comparación con la región 1 y como es mucho menos denso que la región 2, podría no verse observacionalmente. Entre las regiones 2 y 3 tenemos una discontinuidad de contacto. La región 4 es la parte del viento estelar, la cual tiene una densidad baja comparada con la del flujo fotoevaporativo}
+    \label{fig:zones}
+\end{figure}
+
+La interacción entre el flujo fotoevaporativo y el viento estelar puede ser diferente morfológicamente, dependiendo si el flujo fotoevaporativo es isotópico o anisótropo. Por lo que en un principio vamos a tratar este problema de manera radial con una simetría cilíndrica en la cual consideraremos un ángulo preferencial, de esta manera lo trataremos como un problema unidimensional.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Chp2_iso&ans.jpg}
+    \caption{\textbf{A} es la interacción de interacción de un fujo fotoevaporativo isotópico con un viento externo y \textbf{B} es la interacción de un flujo fotoevaporativo anisótropo con un viento externo. Vemos que en el caso isotópico se nos es más fácil tratar las diferentes regiones de manera radial debido a la geometría.}
+    \label{fig:isotyaniso}
+\end{figure}
+
+Dado que el flujo fotoevaporativo es más denso que el viento estelar, esperamos ver solo el flujo fotoevaporativo chocada y no el viento estelar chocado.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Chp2_cilinders.jpg}
+    \caption{Si consideramos una simetría cilíndrica con un radio muy pequeño, podemos tratar este problema de manera radial y de tal manera que la radiación y el viento estelar inciden de manera perpendicular al glóbulo.}
+    \label{fig:cilinders}
+\end{figure}
+
 \section{Estimación de la densidad ionizada a partir del brillo superficial de $H_\alpha$}
 
 Para estimar la densidad ionizada, usamos primero la definición de medida de emisión (EM por sus siglas en inglés)
-\[EM=\int_z n_in_edz\] donde en este caso estaremos integrando sobre nuestra línea de visión. Esta EM depende tanto de la densidad de lectrones como de iones, pero en nuestro caso vamos a considerar un equilibrio de ionización entre el flujo foto evaporativo y el viento estelar.
+\[EM=\int_z n_in_edz\] donde en este caso estaremos integrando sobre nuestra línea de visión. Esta EM depende tanto de la densidad de electrones como de iones, pero en nuestro caso vamos a considerar un equilibrio de ionización entre el flujo foto evaporativo y el viento estelar, por lo que $n_e=n_i$.
 
 Si suponemos una simetría esférica entre esta interacción del flujo fotoevaporativo y el viento estelar, podemos tomar, por geometría, que
 \[EM=2\sqrt{rh}n^2.\]
@@ -69,15 +97,7 @@ Esto ya que de la fig(?) tenemos que por geometría $r^2+\frac{1}{2}l^2=(r+h)^2=
 Para el caso de nuestro modelo analítico consideraremos un modelo analítico hidrodinámico estacionario, esto ya que consideramos que la interacción entre el flujo foto evaporativo y el viento estelar ha llegado al equilibrio de ionización.
 
 %inseratr imagen de las regiones durante la interaccion
-
-Para nuestro modelo analítico tenemos las regiones:
-* región neutra: En esta parte consideraremos que está constituida principalmente por el hidrógeno atómico, el cual tendrá parámetros : $r_0,\rho_0,P_0$. Es la parte más central de nuestro glóbulo.
-
-* Región interna: Es la región que esta seguida de la región neutra, en la cual el flujo foto evaporativo que sale de la superficie de la región neutra tiene un número de Mach $M_0$. Esta región tiene como parámetros $r_1,\rho_1,P_1$.
-
-* Cáscara chocada: Es la parte donde vemos el choque que hay entre el flujo foto evaporativo y el viento estelar, en realidad este también tendrá un radio $r_2$, pero que será muy parecido a $r_1$ en tamaño.  
-
-* Parte externa: Es donde está viajando el viento estelar con dirección al glóbulo molecular.
+.
 
 Para este modelo consideramos glóbulos relativamente pequeños, de unos mili arco segundos comparado con su entorno que puede ser unas pocas decenas de arco segundos, además a unos 10-30 arco segundos de la estrella masiva como para que su radiación UV llegue desde un pequeño ángulo e interactúe con el glóbulo, de esta manera podemos decir que la radiación incide perpendicularmente a la superficie del glóbulo.
 
@@ -88,6 +108,30 @@ En general en el medio interestelar hay muchas fuerzas que afectan el cambio en 
 Para el flujo fotoevaporativo por parte del glóbulo vamos a considerar las ecuaciones de hidrodinámica, la ecuación de conservación de masa ya que como dijimos antes, el tiempo en el que un bulto sale de esta interacción le toma bastante tiempo. Usaremos también la ecuación de Bernuoulli para un gas isotermo, donde la velocidad del sonido en este gas dependerá de la temperatura.
 
 % Balance between ionizations and recombinations
+
+\section{Ecuación de estado y equilibrio de ionización}
+
+Para nuestro flujo tomaremos dos presiones, la hidrodinámica y la térmica, por lo que tenemos una presión total dada por
+\[P_{tot}=P_{ter}+P_{hid}=n\bar{m}c_s^2+n\bar{m}u^2=\rho c_s^2(1+M^2)\]
+
+En nuestro modelo consideramos que nuestro flujo que sale de la base del glóbulo tiene como condiciones iniciales
+\[M=1\]
+\[r=r_0\]
+\[\rho=\rho_0\]
+\[P_{tot}=P_0\]
+y en nuestro modelo queremos ver cuando la presión del flujo llega a un equilibrio con la presión RAM del viento estelar, por lo que queremos conocer a que distancia se da, $r_1$, y que densidad y número de Mach tendría, para esto vamos a tomar que la presión disminuyó una fracción de la presión inicial. Por lo que la presión cambia como 
+\[\frac{P}{P_0}=\frac{\rho c_s^2(1+M^2)}{\rho_0 c_s^2(1+1)}=\frac{\rho}{\rho_0}\frac{1+M^2}{2}\]
+Considerando la ecuación para la conservación de masa tenemos que
+\[\rho r^2M	=\rho_0 r_0^2\]
+y finalmente si consideramos la ecuación de Bernoulli isotérmica 
+\[\dots\]
+de la cual tenemos 
+\[\frac{r}{r_0}=M^{-1/2}e^{\frac{M^2-1}{4}}\]
+Ahora que tenemos tres ecuaciones y tres incógnitas podemos resolver, en nuestro caso lo hicimos de manera numérica. Al resolver estas ecuaciones para diferentes $f$ tenemos que tanto la presión como la densidad decaen con el radio, mientras que el número de Mach aumenta.
+
+%Imagen temporal de como depende la densida, presio y M como funcion del radio 
+
+
 
 % Assumption of isothermal equation of state
 
@@ -107,4 +151,7 @@ Para el flujo fotoevaporativo por parte del glóbulo vamos a considerar las ecua
 \section{Estimando la tasa de foto ionización}
 
 \chapter{Conclusiones}
+
+\appendix
+\chapter{Estimación de fuerzas en el modelo}
 \end{document}
