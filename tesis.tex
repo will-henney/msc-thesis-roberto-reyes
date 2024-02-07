@@ -53,12 +53,14 @@ Podemos ver como muchos detalles en cada uno de los filtros, en especial de como
 
 \chapter{Modelos analíticos de flujos foto evaporativos interactuando con una presión externa}
 
+En este capitulo vamos  describir nuestro modelo, esto con el fin de explicar la interacción que hay entre el flujo foto evaporativo de unos glóbulos, que es provocado por la radiación de una estrella, y el viento estelar, que proviene de la misma estrella. Tomaremos estos glóbulos separados unos de otros, por lo que comenzaremos por describir la interacción del flujo foto evaporativo de un solo glóbulo y el viento estelar.
+
 Para nuestro modelo estamos considerando que los glóbulos contienen principalmente hidrógeno neutro y tienen una forma esférica. Estos glóbulos deben estar lo suficientemente cerca de una estrella masiva como para que su radiación UV pueda ionizar el hidrógeno que hay en la superficie de estos glóbulos. Esta interacción con la radiación UV de la estrella hace que tengamos un flujo foto evaporativo súper sonico que sale de la superficie del glóbulo. Este flujo foto evaporativo estará interactuando con el viento estelar que proviene de la misma estrella de la cual esta recibiendo la radiación UV. En esta interacción tenemos un choque interno y uno externo, así como una discontinuidad de contacto como se ve en la siguiente figura.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{Chp2_zones.jpg}
-    \caption{En \textbf{A} vemos como la radiación UV por parte dela estrella incide en el glóbulo. En \textbf{B} vemos como después de esta interacción comienza a salir el flujo foto evaporativo de la superficie del glóbulo. En \textbf{C} vemos la interacción entre el flujo fotoevaorativo y el viento estelar por parte de la estrella. Finalmente en \textbf{D} vemos las diferentes regiones que se forman en la interacción en \textbf{C}, la  región 1 es donde el flujo foto evaporativo sale de la superficie del glóbulo inicialmente con un úmero de Mach de 1 y se va haciendo super sónico, en la región 2 es la parte del flujo foto evaporativo chocado, la cual esperamos ver en las observaciones. La región 3 es el viento estelar chocado, esta región suele ser muy delgada en comparación con la región 1 y como es mucho menos denso que la región 2, podría no verse observacionalmente. Entre las regiones 2 y 3 tenemos una discontinuidad de contacto. La región 4 es la parte del viento estelar, la cual tiene una densidad baja comparada con la del flujo fotoevaporativo}
+    \caption{En \textbf{A} vemos como la radiación UV por parte dela estrella incide en el glóbulo. En \textbf{B} vemos como después de esta interacción comienza a salir el flujo foto evaporativo de la superficie del glóbulo. En \textbf{C} vemos la interacción entre el flujo fotoevaorativo y el viento estelar por parte de la estrella. Finalmente en \textbf{D} vemos las diferentes regiones que se forman en la interacción en \textbf{C}, la  región 1 es donde el flujo foto evaporativo sale de la superficie del glóbulo inicialmente con un número de Mach de 1 y se va haciendo super sónico, en la región 2 es la parte del flujo foto evaporativo chocado, la cual esperamos ver en las observaciones. La región 3 es el viento estelar chocado, esta región suele ser muy delgada en comparación con la región 1 y como es mucho menos denso que la región 2, podría no verse observacionalmente. Entre las regiones 2 y 3 tenemos una discontinuidad de contacto. La región 4 es la parte del viento estelar, la cual tiene una densidad baja comparada con la del flujo fotoevaporativo}
     \label{fig:zones}
 \end{figure}
 
@@ -67,7 +69,7 @@ La interacción entre el flujo fotoevaporativo y el viento estelar puede ser dif
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{Chp2_iso&ans.jpg}
-    \caption{\textbf{A} es la interacción de interacción de un fujo fotoevaporativo isotópico con un viento externo y \textbf{B} es la interacción de un flujo fotoevaporativo anisótropo con un viento externo. Vemos que en el caso isotópico se nos es más fácil tratar las diferentes regiones de manera radial debido a la geometría.}
+    \caption{\textbf{A} es la interacción de un fujo fotoevaporativo isotópico con un viento externo y \textbf{B} es la interacción de un flujo fotoevaporativo anisótropo con un viento externo. Vemos que en el caso isotópico se nos es más fácil tratar las diferentes regiones de manera radial debido a la geometría.}
     \label{fig:isotyaniso}
 \end{figure}
 
@@ -99,13 +101,13 @@ Para el caso de nuestro modelo analítico consideraremos un modelo analítico hi
 %inseratr imagen de las regiones durante la interaccion
 .
 
-Para este modelo consideramos glóbulos relativamente pequeños, de unos mili arco segundos comparado con su entorno que puede ser unas pocas decenas de arco segundos, además a unos 10-30 arco segundos de la estrella masiva como para que su radiación UV llegue desde un pequeño ángulo e interactúe con el glóbulo, de esta manera podemos decir que la radiación incide perpendicularmente a la superficie del glóbulo.
+Para este modelo consideramos glóbulos relativamente pequeños, de unos 200-300 mili arco segundos de diámetro comparado con su entorno que puede ser unas pocas decenas de arco segundos, además a unos 10-30 arco segundos de la estrella masiva como para que su radiación UV llegue desde un pequeño ángulo e interactúe con el glóbulo, de esta manera podemos decir que la radiación incide perpendicularmente a la superficie del glóbulo.
 
 En nuestro caso tomamos una simetría cilíndrica en la cual podamos tomar un radio perpendicular de un tamaño muy pequeño como para tomar este problema solo de manera radial, pero notemos que debido a la forma de estos glóbulos, en realidad tendremos una familia de cilindros a cada ángulo, por lo que tomando el radio perpendicular a la radiación muy pequeño, entonces podemos considerar este problema solo de manera radial, un problema unidimensional, en la dirección en la que incide la radiación de la estrella.
 
-En general en el medio interestelar hay muchas fuerzas que afectan el cambio en la materia, pero en este caso vamos a despreciar la fuerza de gravedad, tanto del mismo glóbulo como la gravedad impuesta por la estrella, tampoco vamos a considerar fuerza por campos magnéticos por simplicidad. Por lo que solo vamos a considerar las fuerzas dada por el gradiente de presión por parte del flujo fotoevaporativo, donde tomaremos el viento solar como condición de frontera.
+En general en el medio interestelar hay muchas fuerzas que afectan el cambio en la materia, pero en este caso vamos a despreciar la fuerza de gravedad, tanto del mismo glóbulo como la gravedad impuesta por la estrella, tampoco vamos a considerar fuerza por campos magnéticos por simplicidad. Por lo que solo vamos a considerar las fuerzas dada por el gradiente de presión por parte del flujo fotoevaporativo, donde tomaremos el viento estelar como condición de frontera.
 
-Para el flujo fotoevaporativo por parte del glóbulo vamos a considerar las ecuaciones de hidrodinámica, la ecuación de conservación de masa ya que como dijimos antes, el tiempo en el que un bulto sale de esta interacción le toma bastante tiempo. Usaremos también la ecuación de Bernuoulli para un gas isotermo, donde la velocidad del sonido en este gas dependerá de la temperatura.
+Para el flujo fotoevaporativo por parte del glóbulo vamos a considerar las ecuaciones de hidrodinámica, la ecuación de conservación de masa ya que como dijimos antes, el tiempo en el que un bulto sale de esta interacción le toma bastante tiempo. Usaremos también la ecuación de Bernoulli para un gas isotermo, donde la velocidad del sonido en este gas dependerá de la temperatura.
 
 % Balance between ionizations and recombinations
 
