@@ -5,6 +5,9 @@
 \usepackage[T1]{fontenc}
 \usepackage{listings}
 \usepackage{appendix}
+\usepackage{siunitx}
+\usepackage{multirow}
+\usepackage{mhchem}
 \renewcommand{\lstlistingname}{Algoritmus}
 
 \title{Avances de tesis}
@@ -21,22 +24,40 @@
 
 \chapter{Introducción}
 
-En el medio interestelar hay muchas cosas maravillosas que nos permiten entender mucho acerca de la física en las diferentes regiones que observamos. Algunos objetos interesantes de estudio son los \textit{glóbulos}, que son concentraciones de gas neutro y polvo,y su interacción con la radiación UV de estrellas cercanas. Estos glóbulos se cree que se forman por inhomogeneidades en el medio según (...). Esta interacción de las estrellas y los glóbulos se puede dar principalmente en regiones de formación estelar donde se están formando estrellas masivas y en nebulosas alrededor de alguna estrella.
+En el medio interestelar hay muchas grandes regiones de nubes moleculares frías en las cuales se pueden formar estrellas a partir del colapso gravitacional y estas estrellas interactúan con el medio que la rodea. Cuando hay grandes concentraciones de gas y polvo en el medio se forman los \textit{glóbulos}, inhomogeneidades en el medio, que se cree que se pueden formar por colapso gravitacional, inestabilidades termales o por turbulencia (Dibai 1953, Raiport 1983 ?). 
 
-Las estrellas se forman a partir del colapso gravitacional en nubes moleculares frías, teniendo sus diferentes fases durante este proceso, algunas regiones en las que se pueden formar son en lo que llamamos \textit{glóbulos de Bok}, que son nubes oscuras, relativamente pequeñas si las comparamos con otras regiones de formación estelar, que tienen una gran cantidad de gas y polvo. Estas nubes fueron observadas por primera vez por el astrónomo Bart Bok en 1940. 
+Estos glóbulos interactúan con la radiación UV de estrellas jóvenes masivas, como estrellas tipo O, en regiones de formación estelar masivas o en nebulosas alrededor de estrellas. Durante esta interacción se forma un frente de ionización, el cuál podemos ver en la mayoría de los casos. Dependiendo de que tan intenso sea el flujo radiativo por parte de la o las estrellas, en algunas ocasiones podemos ver un flujo fotoevaporativo por parte del glóbulo que es causado por la radiación incidente.
+
+Los primeros glóbulos fueron observados por Bart Bok en 1940, estos glóbulos son nubes oscuras, relativamente pequeños comparados con otras regiones de formación estelar, que tienen gran cantidad de gas y polvo. Estos glóbulos contienen principalmente hidrógeno molecular en su interior, así como también pueden tener otras moléculas, metales e incluso algunos silicatos. Si bien puede tener formación estelar en su interior no podemos ver la radiación de las estrellas ya que es absorbida por el hidrógeno atómico y el polvo, por eso que se ven oscuras. Sin embargo, estos pueden ser radiados externamente, en regiones de formación estelar, por estrellas jóvenes masivas que se están formando cerca, y en algunos casos podemos ver el frente de ionización.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\textwidth]{Chp1_finger.jpg}
-    \caption{Dedos de Dios, tiene un tamaño aproximado de un año luz y se encuentra en la nebulosa de Carina}
+    \includegraphics[width=0.75\textwidth]{images Chapter 1/C1_Bok_globule.jpg}
+    \caption{Imagen de Banard 68, un ejemplo de un glóbulo de Bok, visto con Very Large Telescope FORS1 en 440 nm, 557 nm y 768 nm. Se puede apreciar una zona oscura y lo que pareciera ser enrojecimiento de las estrellas por polvo en la superficie del glóbulo. En esta imagen podemos ver que no hay evidencia de alguna fotoevaporación externa por parte de estrellas}
     \label{fig:zones}
 \end{figure}
 
-Estos glóbulos contienen principalmente hidrógeno molecular en su interior, así como también puede tener otras moléculas, metales e incluso algunos silicatos. Si bien pueden tener formación estelar en su interior, no podemos ver la radiación UV ya que esta es absorbida por el hidrógeno atómico y el polvo, es por eso que se ven oscuras. Sin embargo, estos pueden ser radiados externamente, en regiones de formación estelar, por estrellas jóvenes masivas que se están formando cerca, y si la radiación es lo suficientemente fuerte, en algunos casos podemos ver el frente de ionización.
+Esta interacción entre estrellas y glóbulos se puede dar a diferentes escalas, lo que nos da una gran variedad de estructuras. Entre las de mayor tamaño se encuentran lo que parecen ser columnas, pilares o trompas de elefantes, como se les conoce en la literatura, que llegan a tener un tamaño de $\sim$\SI{0.6}{pc} y una densidad del orden de \SI{e3}{cm^{-3}}. En algunas ocasiones tienden a llamar glóbulo en la literatura a los que, al igual que lo anterior a mencionado, tienen una gran estructura también, pero son más densos, $\sim$ \SI{e4}{cm^{-3}}. Esta interacciones también se puede dar dentro de regiones HII, en algunos casos como outflows bipolares.
 
-La interacción entre la radiación UV de las estrellas jóvenes masivas y la gran concentración de gas neutro en las diferentes regiones de formación estelar nos puede dar como resultados la formación de diferentes estructura en diferentes tamaños. Los de mayor tamaño, $\sim0.6 pc$, se pueden ver como columnas, pilares o trompas de elefantes, como se les conoce en la literatura y pueden llegar a tener una densidad del orden de $10^3cm^{-3}$. Lo que en la literatura se le conoce  como \textit{Glóbulo} también pueden tener una gran estructura como los anteriores ejemplos, pero son más densos, $\sim 10^4cm^{-3}$. Estas interacciones también se pueden dar dentro de regiones HII, en algunos casos como outflows bipolares.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1 \textwidth]{images Chapter 1/C1_Pillars.jpg}
+    \caption{En \textbf{A} vemos dos ejemplos de pilares, donde la imagen derecha de cada ejemplo es vista a 2.12$\mu$m (\SI{}{H_2}), y la imagen izquierda es \SI{}{H_2-Br_{\gamma}} (Hartigan et al. 2015). \textbf{B}, ejemplo de una trompa de elefante, es una imagen de M16 tomada con WFPC2 con e filtro F656N, los \SI{30}{\arcsecond} corresponden \SI{9e17}{cm} (\SI{0.29}{pc}) (J. Jeff Hester et al. 1996 ). \textbf{C} es el outflow de Tadpole globule, el cual consta del sistema HH900 jet+outflow, la imagen de abajo es vista en \SI{}{H_\alpha} con el continuo 
+    (Megan Reiter et al. 2019). }
+    \label{fig:zones}
+\end{figure}
 
-En escalas más pequeñas están lo que se conoce como EGGS (Evaporating Gaseous Globule) y los proplyds que son en escalas más pequeñas, $\sim0.1 pc$. También hay observaciones de a una escala más pequeña dentro de nebulosas planetarias, como lo son los llamados \textit{nudos}, los cuáles son los que estudiaremos más en este trabajo.
+En escalas más pequeñas están lo que se conoce como EGGs (Evaporating Gaseous Globule) y los proplyds, en escalas de $\sim$\SI{0.1}{pc}. 
+
+No solo se da en regiones de formación estelar, como ya hemos dicho, también hay dentro de nebulosas alrededor de estrellas evolucionadas donde se les conoce más comúnmente como \textit{nudos}, los cuales estudiaremos más a fondo en este trabajo.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1 \textwidth]{images Chapter 1/C1_Globulettes.jpg}
+    \caption{En \textbf{A} vemos proplyds con su bowchock en Orion tomado con HST planetary camera, la barra negra indica una medida de \SI{1}{\arcsecond} que corresponde a 430 AU (\SI{2e-3}{pc}) (García-Arredondo et al. 2001). \textbf{B} son ejemplos de EGGs en Carina, tomado con WFC3, ACS, WFPC2 (Mesa-Delgado et al. 2016). \textbf{C} es el globulette denso RN88 visto en \SI{}{H_\alpha} con un diametro de \SI{6}{\arcsecond} en la nebulosa de Rosette (G.F. Gahm et al. 2013). \textbf{D} son ejemplos de nudos en la nebulosa de la Hélice, los mosaicos tienen una medida de \SI{47.5}{\arcsecond}$\times$\SI{44.8}{\arcsecond} (O'Dell et al. 2007). }
+    \label{fig:zones}
+\end{figure}
+
 
 \section{Flujos de foto evaporación ionizada}
 
@@ -47,6 +68,33 @@ En nuestro caso nos concentraremos en lo que llamaremos \textit{nudos}, los cual
 Después de cierto tiempo, podemos llegar a un equilibrio de ionización, donde esta superficie cercana a la estrella es ionizada por el continuo de Lyman, mientras que también tenemos procesos de recombinación. Estas recombinaciones de en la superficie de los nudos pueden emitir intensamente ...
 
 \section{Estrellas Wolf-Rayet y sus vientos}
+
+Las estrellas Wolf-Rayet (WR) son estrellas evolucionadas de estrellas masivas, como estrellas tipo O, y fueron nombradas así después de que Charles Wolf y Georges Rayet identificaran 3 estrellas en Cygnus con sus  anchas líneas de emisión que las caracterizan muy bien. 
+
+Estas estrellas se caracterizan principalmente por sus fuertes vientos que pueden llegar a ser de $\sim$\SI{1000}{km/s}, los cuales provocan ciertas líneas de emisión anchas. Así como también tienen una alta pérdida de masa $\sim$2--\SI{10e-5}{M_\odot/yr}. Típicamente son estrellas de 10--25\SI{.}{M_\odot} que son descendientes de estrellas tipo O y se caracterizan por tener intensas líneas de emisión de libre-libre desde el $\mu$m hasta el cm.
+
+Se clasifican principalmente en 3 categorías dependiendo de sus líneas de emisión y estas a su vez tienen sus subtipos.
+
+\begin{table}[t]
+    \begin{center}
+        \begin{tabular}{|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{Clasificación de estrellas WR} \\ \hline
+        Clasificación    & Líneas de emisión que presentan\\ \hline
+        WN     & He y N\\
+        WC & He y C\\
+        WO & He y O \\ \hline
+        \end{tabular}
+    \caption{Principal clasificación de estrellas WR  según sus líneas de emisión}
+    \label{tab:WR}
+    \end{center}
+\end{table}
+
+Dentro de estas clasificaciones también  se encuentran sus subclasificaciones que dependen de la razón entre sus líneas de emisión más intensas. Para las WN se usan las líneas \ce{N_{III-V}} y \ce{He_{I-III}}, los subtipos WN2--WN5 se usan para las WN tipo temprano (WNE\footnote{Early WN}) y WN7--WN9 para las WN tipo tardío (WNL\footnote{Late WN}), las estrellas WN6 pueden ser de tipo temprano o tardío. Para las WC se usa la razón de las líneas \ce{C_{III}} y \ce{C_{IV}} con la línea \ce{O_{III-V}}, los subtipos WC4--WC6 son para las estrellas WCE y los subtipos WC7--WC9 son para las estrellas WCL. Para las estrellas WO tenemos que son mas bien una extensión de las estrellas WCE que presentan un gran intensidad en la línea de \ce{O_{VI}}. 
+
+En el caso de que la estrella WR sea muy ricas en hidrógeno se coloca también una ``h$"$ y si vemos este tanto en absorción como en emisión se pone un ``ha$"$.
+
+Es de esta manera como se clasifican sus diferentes tipos espectrales. En las estrellas WN se presenta una densidad típica de \SI{e2}--\SI{e3}{cm^{-3}}. Cada estrella WR se puede presentar de dos maneras, una de ellas es por su tipo espectral como ya vimos y la otra es colocando un número después de WR, según...
 
 \section{Nebulosa M1-67}
 
