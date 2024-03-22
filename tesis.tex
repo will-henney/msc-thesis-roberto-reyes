@@ -8,6 +8,8 @@
 \usepackage{siunitx}
 \usepackage{multirow}
 \usepackage{mhchem}
+\usepackage{natbib}
+\bibliographystyle{aasjournal}
 \renewcommand{\lstlistingname}{Algoritmus}
 
 \title{Avances de tesis}
@@ -30,11 +32,11 @@ Estos glóbulos interactúan con la radiación UV de estrellas jóvenes masivas,
 
 Los primeros glóbulos fueron observados por Bart Bok en 1940, estos glóbulos son nubes oscuras, relativamente pequeños comparados con otras regiones de formación estelar, que tienen gran cantidad de gas y polvo. Estos glóbulos contienen principalmente hidrógeno molecular en su interior, así como también pueden tener otras moléculas, metales e incluso algunos silicatos. Si bien puede tener formación estelar en su interior no podemos ver la radiación de las estrellas ya que es absorbida por el hidrógeno atómico y el polvo, por eso que se ven oscuras. Sin embargo, estos pueden ser radiados externamente, en regiones de formación estelar, por estrellas jóvenes masivas que se están formando cerca, y en algunos casos podemos ver el frente de ionización.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.75\textwidth]{images Chapter 1/C1_Bok_globule.jpg}
-    \caption{Imagen de Banard 68, un ejemplo de un glóbulo de Bok, visto con Very Large Telescope FORS1 en 440 nm, 557 nm y 768 nm. Se puede apreciar una zona oscura y lo que pareciera ser enrojecimiento de las estrellas por polvo en la superficie del glóbulo. En esta imagen podemos ver que no hay evidencia de alguna fotoevaporación externa por parte de estrellas}
-    \label{fig:zones}
+    \caption{Imagen de Banard 68, un ejemplo de un glóbulo de Bok, visto con Very Large Telescope FORS1 en 440 nm, 557 nm y 768 nm. Se puede apreciar una zona oscura y lo que pareciera ser enrojecimiento de las estrellas por polvo en la superficie del glóbulo. En esta imagen podemos ver que no hay evidencia de alguna fotoevaporación externa por parte de estrellas. \citep{Alves:2001}.}
+    \label{fig:Banard}
 \end{figure}
 
 Esta interacción entre estrellas y glóbulos se puede dar a diferentes escalas, lo que nos da una gran variedad de estructuras. Entre las de mayor tamaño se encuentran lo que parecen ser columnas, pilares o trompas de elefantes, como se les conoce en la literatura, que llegan a tener un tamaño de $\sim$\SI{0.6}{pc} y una densidad del orden de \SI{e3}{cm^{-3}}. En algunas ocasiones tienden a llamar glóbulo en la literatura a los que, al igual que lo anterior a mencionado, tienen una gran estructura también, pero son más densos, $\sim$ \SI{e4}{cm^{-3}}. Esta interacciones también se puede dar dentro de regiones HII, en algunos casos como outflows bipolares.
@@ -42,25 +44,37 @@ Esta interacción entre estrellas y glóbulos se puede dar a diferentes escalas,
 \begin{figure}[h]
     \centering
     \includegraphics[width=1 \textwidth]{images Chapter 1/C1_Pillars.jpg}
-    \caption{En \textbf{A} vemos dos ejemplos de pilares, donde la imagen derecha de cada ejemplo es vista a 2.12$\mu$m (\SI{}{H_2}), y la imagen izquierda es \SI{}{H_2-Br_{\gamma}} (Hartigan et al. 2015). \textbf{B}, ejemplo de una trompa de elefante, es una imagen de M16 tomada con WFPC2 con e filtro F656N, los \SI{30}{\arcsecond} corresponden \SI{9e17}{cm} (\SI{0.29}{pc}) (J. Jeff Hester et al. 1996 ). \textbf{C} es el outflow de Tadpole globule, el cual consta del sistema HH900 jet+outflow, la imagen de abajo es vista en \SI{}{H_\alpha} con el continuo 
-    (Megan Reiter et al. 2019). }
-    \label{fig:zones}
+    \caption{En \textbf{A} vemos dos ejemplos de pilares, donde la imagen derecha de cada ejemplo es vista a 2.12$\mu$m (\SI{}{H_2}), y la imagen izquierda es \SI{}{H_2-Br_{\gamma}} \citep{Hartigan:2015}. \textbf{B}, ejemplo de una trompa de elefante, es una imagen de M16 tomada con WFPC2 con e filtro F656N, los \SI{30}{\arcsecond} corresponden \SI{9e17}{cm} (\SI{0.29}{pc}) \citep{JJHester:1996}. \textbf{C} es el outflow de Tadpole globule, el cual consta del sistema HH900 jet+outflow, la imagen de abajo es vista en \SI{}{H_\alpha} con el continuo 
+    \citep{MeganReiter:2019}. }
+    \label{fig:Pillars}
 \end{figure}
 
 En escalas más pequeñas están lo que se conoce como EGGs (Evaporating Gaseous Globule) y los proplyds, en escalas de $\sim$\SI{0.1}{pc}. 
 
-No solo se da en regiones de formación estelar, como ya hemos dicho, también hay dentro de nebulosas alrededor de estrellas evolucionadas donde se les conoce más comúnmente como \textit{nudos}, los cuales estudiaremos más a fondo en este trabajo.
+No solo se da en regiones de formación estelar, como ya hemos dicho, también hay dentro de nebulosas alrededor de estrellas evolucionadas donde se les conoce más comúnmente como \textit{nudos}, un ejemplo de esto es la imagen \textbf{D} de la figura \ref{fig:nudos}. Estos nudos son los que estudiaremos más fondo en este trabajo.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=1 \textwidth]{images Chapter 1/C1_Globulettes.jpg}
-    \caption{En \textbf{A} vemos proplyds con su bowchock en Orion tomado con HST planetary camera, la barra negra indica una medida de \SI{1}{\arcsecond} que corresponde a 430 AU (\SI{2e-3}{pc}) (García-Arredondo et al. 2001). \textbf{B} son ejemplos de EGGs en Carina, tomado con WFC3, ACS, WFPC2 (Mesa-Delgado et al. 2016). \textbf{C} es el globulette denso RN88 visto en \SI{}{H_\alpha} con un diametro de \SI{6}{\arcsecond} en la nebulosa de Rosette (G.F. Gahm et al. 2013). \textbf{D} son ejemplos de nudos en la nebulosa de la Hélice, los mosaicos tienen una medida de \SI{47.5}{\arcsecond}$\times$\SI{44.8}{\arcsecond} (O'Dell et al. 2007). }
-    \label{fig:zones}
+    \caption{En \textbf{A} vemos proplyds con su bowshock en Orion tomado con HST planetary camera, la barra negra indica una medida de \SI{1}{\arcsecond} que corresponde a 430 AU (\SI{2e-3}{pc}) \citep{Garcia-Arredondo:2001}. \textbf{B} son ejemplos de EGGs en Carina, tomado con WFC3, ACS, WFPC2 \citep{Mesa-Delgado:2016}. \textbf{C} es el globulette denso RN88 visto en \SI{}{H_\alpha} con un diámetro de \SI{6}{\arcsecond} (\SI{4e-2}{pc}) en la nebulosa de Rosette \citep{GFGahm:2013}. \textbf{D} son ejemplos de nudos en la nebulosa de la Hélice, los mosaicos tienen una medida de \SI{47.5}{\arcsecond}$\times$\SI{44.8}{\arcsecond} (\SI{4.76e-2}{pc}$\times$\SI{4.49e-2}{pc}) \citep{O'Dell:2007}. }
+    \label{fig:nudos}
 \end{figure}
+
 
 
 \section{Flujos de foto evaporación ionizada}
 
+Todos los ejemplos  que hemos visto en figura \ref{fig:Banard}, \ref{fig:Pillars} y \ref{fig:nudos} se encuentran ya sea en regiones de formación estelar o en nebulosas alrededor de estrellas evolucionadas. 
+
+Lo interesante en todos estos ejemplos es la forma que toman al interaccionar con las estrellas más masivas que se encuentran cerca, esto para los glóbulos que se encuentran en regiones de formación estelar.  Mientras que los que se encuentran en nebulosas planetarias, interactúan con la estrella evolucionada. Durante estas interacciones en algunos casos podemos ver lo que se conoce como flujos fotoevaporativos, los cuales explicaremos mejor a continuación.
+
+Para explicar el como se pueden dar estos flujos fotoevaporativos podemos basarnos en la física que usa \citet{OortySpitzer_1955} al explicar la interacción entre una estrella masiva, tipo O por ejemplo, y una nube interestelar de gas neutro. Es importante que la estrella sea masiva, como tipo O o B, para poder ionizar la nube interestelar que contiene principalmente hidrógeno neutro. Esto ya que en el caso de los glóbulos que se encuentran en regiones de formación estelar, muchas de las estrellas nuevas emiten principalmente en radio e infrarrojo, por lo que no son capaces de ionizar la nube de gas neutro. Mientras que para el caso de los nudos que se encuentran en nebulosas planetarias, la estrella evolucionada debe emitir la suficiente radiación UV como para poder ionizar el hidrógeno neutro.
+
+Durante esta interacción inicialmente consideran una densidad de \SI{10}{átomos de H/cm^{3}} y una temperatura de \SI{100}{K} para la nube de gas neutro, mientras que para la parte que se encuentra entre la estrella y la nube de gas consideran una densidad de \SI{0.1}{átomos de H/cm^{3}} y una temperatura de \SI{e4}{K}. Cuando la radiación UV comienza a calentar el gas de la nube interestelar, este gas ionizado pasa de una temperatura de \SI{100}{K} a \SI{e4}{K} lo cual hace que comience a expandirse ya que absorbe la fuerza de momento de los fotones y se convierte en energía cinética. Este gas ionizado se expandirá en dirección a la estrella ya que la densidad de la nube es mucho mayor que la densidad que hay entre la estrella y la nube, en la cual puede expandirse libremente. A este efecto que hace que la nube se aleje de la estrella ionizante se le conoce como \textit{efecto Rocket}.
+
+Mientras que el gas calentado comienza a expandirse en dirección a la nube, hay un choque interno que viaja a través de la nube a la parte trasera. En un inicio esta radiación ioniza el gas a una tasa muy rápida causando una ``tormenta de partículas ionizantes$"$ que viene de la nube, conforme esto evoluciona se crea una cáscara aislante alrededor de la nube . Esto sucede hasta que la radiación es capaz de sostener la cáscara aislante. Para que esto ocurra \citet{Kahn:1954} da ciertos criterios en los que se cumple. Con estos criterios llega a la conclusión de que si la radiación es muy fuerte entonces la nube puede experimentar efectos no mecánicos, mientras que si la radiación es muy débil entonces el gas ionizado se expandirá libremente en dirección a la estrella, por lo que para poder tener esta cáscara aislante y que la onda de choque viaje a través de la nube necesitamos estar entre estos dos casos, es decir, que la radiación no debe ser muy débil o muy intensa. 
+
+%Reparando el escrito!!!
 Como ya mencionamos hay muchos tipos de glóbulos de diferentes tamaños, en diferentes regiones. Algunos más pequeños que otros. 
 
 En nuestro caso nos concentraremos en lo que llamaremos \textit{nudos}, los cuales se encuentran principalmente en nebulosas planetarias, estos son glóbulos de un tamaño relativamente pequeño y tiene una gran concentración molecular neutra. Debido a la radiación UV de la estrella central esta comienza a ser ionizada en la superficie más cercana a la estrella. ...
@@ -71,11 +85,11 @@ Después de cierto tiempo, podemos llegar a un equilibrio de ionización, donde 
 
 Las estrellas Wolf-Rayet (WR) son estrellas evolucionadas de estrellas masivas, como estrellas tipo O, y fueron nombradas así después de que Charles Wolf y Georges Rayet identificaran 3 estrellas en Cygnus con sus  anchas líneas de emisión que las caracterizan muy bien. 
 
-Estas estrellas se caracterizan principalmente por sus fuertes vientos que pueden llegar a ser de $\sim$\SI{1000}{km/s}, los cuales provocan ciertas líneas de emisión anchas. Así como también tienen una alta pérdida de masa $\sim$2--\SI{10e-5}{M_\odot/yr}. Típicamente son estrellas de 10--25\SI{.}{M_\odot} que son descendientes de estrellas tipo O y se caracterizan por tener intensas líneas de emisión de libre-libre desde el $\mu$m hasta el cm.
+Ahora vamos a clasificar estas estrellas WR como \textit{cita}, estas estrellas se caracterizan principalmente por sus fuertes vientos que pueden llegar a ser de $\sim$\SI{1000}{km/s}, los cuales provocan ciertas líneas de emisión anchas. Así como también tienen una alta pérdida de masa $\sim$2--\SI{10e-5}{M_\odot/yr}. Típicamente son estrellas de 10--25\SI{.}{M_\odot} que son descendientes de estrellas tipo O y se caracterizan por tener intensas líneas de emisión de libre-libre desde el $\mu$m hasta el cm.
 
-Se clasifican principalmente en 3 categorías dependiendo de sus líneas de emisión y estas a su vez tienen sus subtipos.
+Se clasifican principalmente en 3 categorías dependiendo de sus líneas de emisión, como vemos en la tabla \ref{tab:WR-clasificacion}, y estas a su vez tienen sus subtipos.
 
-\begin{table}[t]
+\begin{table}[h]
     \begin{center}
         \begin{tabular}{|c|c|}
         \hline
@@ -86,7 +100,7 @@ Se clasifican principalmente en 3 categorías dependiendo de sus líneas de emis
         WO & He y O \\ \hline
         \end{tabular}
     \caption{Principal clasificación de estrellas WR  según sus líneas de emisión}
-    \label{tab:WR}
+    \label{tab:WR-clasificacion}
     \end{center}
 \end{table}
 
@@ -99,6 +113,21 @@ Es de esta manera como se clasifican sus diferentes tipos espectrales. En las es
 \section{Nebulosa M1-67}
 
 Gracias a las nuevas imágenes de JWST podemos saber mejor como es la nebulosa M1-67 que rodea la estrella WR-124. En estas imágenes vemos como la nebulosa es muy simétrica en algunos filtros, mientas que en algunos otros la emisión de los diferentes mecanismo se ven más intensos de un lado que del otro.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{Parámetros de la estrella WR 124} \\ \hline
+         D & \SI{5.429}{kpc} \\
+         $v_\infty$ & \SI{710}{km/s} \\
+         $\dot{M}$ & \SI{2e-5}{M_\odot/yr} \\
+         L & \SI{1.25e49}{s^{-1}} \\
+         $F_{H_\alpha}$ & \SI{3e-14}{erg cm^{-2} s^{-1}} \\ \hline
+    \end{tabular}
+    \caption{Parámetros de WR 124}
+    \label{tab:parametros WR-124}
+\end{table}
 
 \begin{figure}[h]
     \centering
@@ -215,4 +244,7 @@ Ahora que tenemos tres ecuaciones y tres incógnitas podemos resolver, en nuestr
 
 \appendix
 \chapter{Estimación de fuerzas en el modelo}
+
+\bibliography{references}
+
 \end{document}
