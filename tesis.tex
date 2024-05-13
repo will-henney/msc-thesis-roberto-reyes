@@ -143,7 +143,7 @@ Podemos ver como muchos detalles en cada uno de los filtros, en especial de como
 \chapter{Modelos analíticos de flujos fotoevaporativos interactuando con una presión externa}
 \chaptermark{Modelo analítico}
 
-En este capitulo vamos a describir el modelo que se propone para explicar la interacción que hay entre el flujo fotoevaporativo por parte de los nudos que hay en la nebulosa M1-67 y el viento estelar por parte de la estrella WR-124. Para esto hemos considerado que ya han pasado todas las fases mencionadas en la sección \ref{Sec:fluijos fotoevaporativos} y ahora estamos en un equilibrio de ionización, por lo que el nudo no se comprimirá o expandirá en escalas significativas, es decir, que podemos considerar que el tamaño del nudo será constante. Podemos apreciar mejor la presencia de estos nudos en la figura \ref{fig:nudos}.
+En este capitulo vamos a describir el modelo que se propone para explicar la interacción que hay entre el flujo fotoevaporativo por parte de los nudos que hay en la nebulosa M1-67 y el viento estelar por parte de la estrella WR-124. Para esto hemos considerado que ya han pasado todas las fases mencionadas en la sección \ref{Sec:fluijos fotoevaporativos} y ahora estamos en un equilibrio de ionización, los nudos no se comprimirán o expandirán en escalas significativas, es decir, que podemos considerar que el tamaño del nudo será constante. Podemos apreciar mejor la presencia de estos nudos en la figura \ref{fig:nudos}.
 
 En esta interacción entre el flujo fotoevaporativo, el cual es supersónico, y el viento estelar se producen dos zonas chocadas y entre ellas una discontinuidad de contacto como se describe en la figura \ref{fig:zones}. De estas zonas esperamos ver solo el flujo fotoevaporativo chocado y no el viento estelar chocado ya que este último es menos denso además de que es no radiativo y la longitud de enfriamiento es más grande que la región de interacción
 
@@ -153,8 +153,13 @@ En esta interacción entre el flujo fotoevaporativo, el cual es supersónico, y 
     \label{fig:zones}
 \end{figure}
 
-En este modelo tenemos la ventaja que podemos considerar un eje de simetría como vemos en la figura \ref{fig:zones} y alrededor de este podemos considerar una simetría cilíndrica como se ve en la figura \ref{fig:cilinders}, de esta manera podemos ignorar los movimientos transversales y tratarlo más como un problema radial.
+A pesar de que la interacción entre el flujo fotoevaporativo y el viento estelar se da como en la figura \ref{fig:cilindross}, podemos simplificar este problema si solo nos fijamos en el eje de simetría que se puede apreciar en la misma imagen. La ventaja de usar este eje de simetría es que alrededor de este podemos considerar un cilindro de radio pequeño y considerar una simetría cilíndrica. Dentro de este cilindro podemos ignorar los movimientos transversales y así tratarlo mejor como un problema radial sobre este eje de simetría. En este eje de simetría tenemos la ventaja de que el viento estelar viene perpendicularmente a la superficie del nudo y el flujo fotoevaporativo viaja en dirección contraria al viento estelar. 
 
+\begin{figure}[h]
+    \centering    \includegraphics[width=0.75\textwidth]{images Chapter 2/C2_angles.jpg}
+    \caption{La radiación y el viento estelar viajan hacia el glóbulo como lo indican las flechas azules y vemos que inciden de manera perpendicular a la superficie del glóbulo en la línea punteada rosa, que es el eje de simetría que vamos a considerar. Esta línea punteada rosa une al glóbulo con la estrella. Mientras que el flujo fotoevaporativo por parte del glóbulo viaja como lo indican las flechas rojas, y por lo tanto en la interacción entre este flujo fotoevaporativo y el viento estelar debemos considera cierto ángulo si no estamos en el eje de simetría.}
+    \label{fig:cilindross}
+\end{figure}
 
 \begin{figure}[h]
     \centering    \includegraphics[width=0.75\textwidth]{images Chapter 2/Chp2_cilinders.jpg}
@@ -162,40 +167,15 @@ En este modelo tenemos la ventaja que podemos considerar un eje de simetría com
     \label{fig:cilinders}
 \end{figure}
 
-\section{Estimación de la densidad ionizada a partir del brillo superficial de $H_\alpha$}
-
-Para estimar la densidad ionizada, usamos primero la definición de medida de emisión (EM por sus siglas en inglés)
-\[EM=\int_z n_i n_edz\] donde en este caso estaremos integrando sobre nuestra línea de visión. Esta EM depende tanto de la densidad de electrones como de iones, pero en nuestro caso vamos a considerar un equilibrio de ionización entre el flujo fotoevaporativo y el viento estelar, por lo que $n_e=n_i$.
-
-\begin{figure}
-    \centering    \includegraphics[width=0.75\textwidth]{images Chapter 2/C2_EM.jpg}
-    \caption{Como la medida de emisión se mide a lo largo de la línea de visión, vamos a tener un máximo en la línea punteada $l$ y si consideramos una simetría esférica vamos a tener esta configuración donde $h$ será el ancho de la cáscara chocada, $r$ el radio del centro del glóbulo hasta donde inicia el flujo fotoevaporativo chocado y $h<r$.}
-    \label{fig:EM}
-\end{figure}
-
-Si suponemos una simetría esférica entre esta interacción del flujo fotoevaporativo y el viento estelar, podemos tomar, por geometría, que
-\[EM=2\sqrt{2rh}n^2.\]
-
-
-Esto ya que de la figura \ref{fig:EM} tenemos que por geometría $r^2+\Big(\frac{l}{2}\Big)^2=(r+h)^2=r^2+2rh+h^2\approx r^2+2rh\Rightarrow l=2\sqrt{2rh}$. De esta manera, usando la EM tenemos que \[n=\sqrt{\frac{EM}{l}}=\sqrt{\frac{EM}{2\sqrt{2rh}}}\] 
-
 \section{Modelo hidrodinámico estacionario}
 
 Para este modelo es importante mencionar que no estamos considerando ninguna fuerza de gravedad por parte de la estrella o del mismo glóbulo, ver apéndice \ref{App:fuerzas}, así como tampoco vamos a considerar campos magnéticos por simplicidad.
 
-Vamos a considerar equilibrio de ionización ya que ya que como vimos en la sección \ref{Sec:fluijos fotoevaporativos} el tiempo en que se forma la capa aislante formada por la radiación UV es muy corto mientas que el tiempo en que tenemos esta interacción entre el flujo fotoevaporativo y el viento estelar es lo suficientemente grande como para considerar este modelo como estacionario.
+Vamos a considerar equilibrio de ionización ya que como vimos en la sección \ref{Sec:fluijos fotoevaporativos} el tiempo en que se forma la capa aislante formada por la radiación UV es muy corto mientras que el tiempo en que tenemos esta interacción entre el flujo fotoevaporativo y el viento estelar es lo suficientemente grande como para considerar este modelo como estacionario.
 
 Como ya se mencionó antes, podemos tener una simetría cilíndrica alrededor del eje de simetría que une al glóbulo con la estrella. De esta manera podemos ignorar los movimientos transversales ya que los gradientes en estas direcciones son muy pequeñas si los comparamos con los gradientes en la dirección axial.
 
-\begin{figure}[h]
-    \centering    \includegraphics[width=0.75\textwidth]{images Chapter 2/C2_cilindersfamily.jpg}
-    \caption{Descripción de la familia de cilindros que vamos a tener a cada ángulo y de los cuales solo va considerar el cilindro de color azul intenso el cual está en el eje de simetría para tomar el problema de manera radial.}
-    \label{fig:cilindross}
-\end{figure}
-
-En realidad vamos a tener una familia de cilindros a cada ángulo como vemos en la figura \ref{fig:cilindross}, pero con lo anterior mencionado vamos a tener que el flujo que pasa a través de un cilindro es independiente de los demás, por lo que nos podemos enfocar solo en aquel que está en el eje de simetría donde tanto la radiación como el viento estelar vana a incidir de manera radial en la superficie del glóbulo y entonces podemos pasarlo solo a un problema radial.
-
-Para el flujo fotoevaporativo por parte del glóbulo vamos a considerar las ecuaciones de hidrodinámica, la ecuación de conservación de masa ya que como dijimos antes, el tiempo en el que un bulto sale de esta interacción le toma bastante tiempo. Usaremos también la ecuación de Bernoulli para un gas isotermo, donde la velocidad del sonido en este gas dependerá de la temperatura.
+Como vemos en la figura \ref{fig:cilindross} en el eje de simetría el viento estelar incide en sentido contrario al flujo fotoevaorativo y de manera perpendicular a la superficie del nudo, por lo que aquí el problema se vuelve unidimensional y es más fácil de resolver. Fuera del eje de simetría el flujo fotoevaporativo sigue viajando de manera radial pero con cierto ángulo con respecto al eje de simetría como vemos en la figura \ref{fig:cilindross}, además tanto la radiación fotoionizante como el viento estelar ya no inciden de manera perpendicular a la superficie del nudo, por lo que deberiamos tomar en cuenta el ángulo en que se encuentra. Es por esta razón que en principio vamos a resolver este problema de manera unidimensional en el eje de simetría.
 
 % Balance between ionizations and recombinations
 
@@ -203,7 +183,7 @@ Para el flujo fotoevaporativo por parte del glóbulo vamos a considerar las ecua
 
 En este modelo tenemos ciertas condiciones iniciales para el flujo fotoevaorativo, como ya dijimos este flujo es supersónico por lo que inicialmente sale de la superficie del glóbulo con un número de Mach igual a 1 y este va aumentando conforme atraviesa toda la zona 1 de la figura \ref{fig:zones}. En principio podríamos tomar que tanto el radio del glóbulo como la densidad en su superficie son parámetros libres, pero con las observaciones podemos medir el radio y la densidad la podemos calcular ya que esta debe ser consistente por haber considerado equilibrio de ionización.
 
-Con este modelo se pretende ver hasta donde llegamos a un equilibrio de presión entre la presión por parte del flujo fotoevaporativo y a presión RAM del viento estelar. Para el caso de la presión del flujo fotoevaorativo vamos a considerar tanto la presión térmica como la hidrodinámica por lo que la presión total está dada por
+Con este modelo se pretende ver hasta donde llegamos a un equilibrio de presión entre la presión por parte del flujo fotoevaporativo y la presión RAM del viento estelar. Para el caso de la presión del flujo fotoevaorativo vamos a considerar tanto la presión térmica como la hidrodinámica por lo que la presión total está dada por
 \[P_{tot}=P_{ter}+P_{hid}=n\bar{m}c_s^2+n\bar{m}u^2=\rho c_s^2(1+M^2)\]
 En este caso no estamos considerando presión magnética ni de radiación.
 
@@ -236,15 +216,21 @@ Ahora que tenemos tres ecuaciones y tres incógnitas podemos resolver, en nuestr
 
 \chapter{Aplicación a M1-67}
 
-Ahora vamos a aplicar este modelo a los nudos que hay en la nebulosa M1-67 y que interactúan con el viento estelar de la estrella WR-124.
+Ahora vamos a aplicar este modelo a los nudos que hay en la nebulosa M1-67 y que interactúan con el viento estelar de la estrella WR-124. De las observaciones vemos que estos nudos tienen tamaños típicos de 200--300 mili arco segundos de diámetro que son relativamente pequeños si los comparamos con la nebulosa planetaria que es de unas decenas de arco segundos. 
 
-De las observaciones vemos que estos nudos tienen tamaños típicos de 200--300 mili arco segundos de diámetro que son relativamente pequeños si los comparamos con la nebulosa planetaria que es de unas decenas de arco segundos. Estos nudos se encuentran típicamente a unos 10--30 arco segundos de la estrella.
+\begin{figure}[h!]
+    \centering    \includegraphics[width=0.75\textwidth]{images Chapter 2/C2_nudos_distribucion.png}
+    \caption{Distribución de los nudos en la nebulosa M1-67}
+    \label{fig:dis_nudos}
+\end{figure}
+
+Estos nudos fueron posibles de encontrar gracias a las imágenes del JWST y se encontraron más de 100 nudos. Algunos de estos nudos están muy cercanos a otros por lo que nos hace pensar que están en grupo y algunos otros aparentemente están muy cercanos a la estrella central, pero debemos tomar en cuenta que lo que en realidad vemos es una proyección en el plano del cielo por lo que algunos nudos podrían estar más lejos de lo que se ve en las imágenes o no estar en ciertos grupos cerca de otros nudos. Podemos ver también una cierta simetría en la distribución de estos nudos en toda la nebulosa como vemos en la figura \ref{fig:dis_nudos}, donde la separación es la distancia del nudo a la estrella y la posición angular es tomada en sentido contrario a las manecillas del reloj con respecto al polo norte de la imagen de M1-67.
 
 \section{Observaciones con HST}
 
 Para las observaciones del HST usamos los datos del proyecto HLA, utilizando el instrumento WFPC2 que observó en el filtro F656N, el cual se encuentra en el óptico, con un tiempo de exposición de \SI{4200}{sec}. Estos archivos son tipo imagen en formato FITS con un nivel de calibración 3.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{m1-67-comp-full-hst.jpg}
     \caption{Imagen de M1-67 con el filtro H$\alpha$ \citep{Grosdidier:1998}.}
@@ -253,15 +239,32 @@ Para las observaciones del HST usamos los datos del proyecto HLA, utilizando el 
 
 \section{Observaciones con JWST}
 
-tiene unidades de brillo superficial MJr/sr.
+tiene unidades de brillo superficial MJy/sr.
 
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{M1-67-JWST.jpg}
     \caption{Imagen de M1-67 con JWST}
     \label{fig:M1-67JWST}
 \end{figure}
+
+\section{Estimación de la densidad ionizada a partir del brillo superficial de $H_\alpha$}
+
+Para estimar la densidad ionizada, usamos primero la definición de medida de emisión (EM por sus siglas en inglés)
+\[EM=\int_z n_i n_edz\] donde en este caso estaremos integrando sobre nuestra línea de visión. Esta EM depende tanto de la densidad de electrones como de iones, pero en nuestro caso vamos a considerar un equilibrio de ionización entre el flujo fotoevaporativo y el viento estelar, por lo que $n_e=n_i$.
+
+\begin{figure}[h]
+    \centering    \includegraphics[width=0.75\textwidth]{images Chapter 2/C2_EM.jpg}
+    \caption{Como la medida de emisión se mide a lo largo de la línea de visión, vamos a tener un máximo en la línea punteada $l$ y si consideramos una simetría esférica vamos a tener esta configuración donde $h$ será el ancho de la cáscara chocada, $r$ el radio del centro del glóbulo hasta donde inicia el flujo fotoevaporativo chocado y $h<r$.}
+    \label{fig:EM}
+\end{figure}
+
+Si suponemos una simetría esférica entre esta interacción del flujo fotoevaporativo y el viento estelar, podemos tomar, por geometría, que
+\[EM=2\sqrt{2rh}n^2.\]
+
+
+Esto ya que de la figura \ref{fig:EM} tenemos que por geometría $r^2+\Big(\frac{l}{2}\Big)^2=(r+h)^2=r^2+2rh+h^2\approx r^2+2rh\Rightarrow l=2\sqrt{2rh}$. De esta manera, usando la EM tenemos que \[n=\sqrt{\frac{EM}{l}}=\sqrt{\frac{EM}{2\sqrt{2rh}}}\] 
 
 \section{Ajustando el modelo a los perfiles de brillo radial}
 
@@ -274,6 +277,10 @@ A estos puntos les ajustamos dos gaussianas y una constante. La primer gaussiana
 Para este ajuste le dimos menos peso a los píxeles que están mas lejanos del centro del glóbulo y que tienen un gran ángulo con respecto al eje de simetría.
 
 \section{Estimando la presión RAM del viento estelar}
+
+Como presión externa en este ajuste vamos a considerar solamente la presión RAM del viento estelar por parte de la estrella evolucionada. No vamos a considerar la presión de radiación, magnética ni ninguna otra. 
+
+Para el caso de la presión RAM la vamos a tomar como \[P_{RAM}= \frac{\dot{M}v_\infty}{4\pi R^2}\] donde $\dot{M}$ es la tasa de pérdida de masa por parte de la estrella, $v_\infty$ la velocidad final del viento y $R$ la distancia del nudo a la estrella. Los dos primeros datos están dados en la tabla \ref{tab:parametros WR-124}. Para el caso de la distancia lo que en realidad vemos es una distancia proyectada en el plano del cielo por lo que en un principio requeriría de un ajuste al ángulo en el que se encuentra pero eso lo haremos más adelante.
 
 \section{Estimando la tasa de foto ionización}
 
