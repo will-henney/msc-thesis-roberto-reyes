@@ -149,15 +149,15 @@ En esta interacción entre el flujo fotoevaporativo, el cual es supersónico, y 
 
 \begin{figure}[h]
     \centering    \includegraphics[width=0.75\textwidth]{images Chapter 2/Chp2_Zone.jpg}
-    \caption{La interacción entre el flujo fotoevaporativo y el viento estelar de una estrella forma 4 zonas. La línea punteada une al glóbulo con la estrella y es el eje de simetría que vamos a considerar. La zona 1 es donde el flujo fotoevaporativo sale de la superficie del glóbulo con un número de Mach 1 y va aumentando, la zona 2 es el flujo fotoevaporativo chocado, la cual esperamos ver en las observaciones como una cáscara, la zona 3 es el viento chocado y la zona 4 es donde viaja el viento estelar supersónico, el cual es menos denso que el flujo fotoevaporativo.}
+    \caption{La interacción entre el flujo fotoevaporativo y el viento estelar de una estrella forma 4 zonas. La línea punteada une al glóbulo con la estrella y es el eje de simetría que vamos a considerar, vemos como en esta línea tanto el viento estelar como la radicación inciden de forma perpendicular a la base del glóbulo y en dirección contraria viaja el flujo fotoevaporativo. La zona 1 es donde el flujo fotoevaporativo sale de la superficie del glóbulo con un número de Mach 1 y va aumentando, la zona 2 es el flujo fotoevaporativo chocado, la cual esperamos ver en las observaciones como una cáscara, la zona 3 es el viento chocado y la zona 4 es donde viaja el viento estelar supersónico, el cual es menos denso que el flujo fotoevaporativo. La discontinuidad de contacto se da entre las zonas 2 y 3}
     \label{fig:zones}
 \end{figure}
 
-A pesar de que la interacción entre el flujo fotoevaporativo y el viento estelar se da como en la figura \ref{fig:cilindross}, podemos simplificar este problema si solo nos fijamos en el eje de simetría que se puede apreciar en la misma imagen. La ventaja de usar este eje de simetría es que alrededor de este podemos considerar un cilindro de radio pequeño y considerar una simetría cilíndrica. Dentro de este cilindro podemos ignorar los movimientos transversales y así tratarlo mejor como un problema radial sobre este eje de simetría. En este eje de simetría tenemos la ventaja de que el viento estelar viene perpendicularmente a la superficie del nudo y el flujo fotoevaporativo viaja en dirección contraria al viento estelar. 
+A pesar de que la interacción entre el flujo fotoevaporativo y el viento estelar se da como en la figura \ref{fig:cilindross}, podemos simplificar este problema si solo nos fijamos en el eje de simetría que se puede apreciar en la misma imagen. La ventaja de usar este eje de simetría es que alrededor de este podemos considerar un cilindro de radio pequeño y considerar una simetría cilíndrica. Dentro de este cilindro podemos ignorar los movimientos transversales y así tratarlo mejor como un problema radial sobre este eje de simetría. En este eje de simetría tenemos la ventaja de que el viento estelar viaja de manera perpendicularmente a la superficie del nudo y el flujo fotoevaporativo viaja en dirección contraria al viento estelar. 
 
 \begin{figure}[h]
     \centering    \includegraphics[width=0.75\textwidth]{images Chapter 2/C2_angles.jpg}
-    \caption{La radiación y el viento estelar viajan hacia el glóbulo como lo indican las flechas azules y vemos que inciden de manera perpendicular a la superficie del glóbulo en la línea punteada rosa, que es el eje de simetría que vamos a considerar. Esta línea punteada rosa une al glóbulo con la estrella. Mientras que el flujo fotoevaporativo por parte del glóbulo viaja como lo indican las flechas rojas, y por lo tanto en la interacción entre este flujo fotoevaporativo y el viento estelar debemos considera cierto ángulo si no estamos en el eje de simetría.}
+    \caption{La radiación y el viento estelar viajan hacia el glóbulo como lo indican las flechas azules y vemos que inciden de manera perpendicular a la superficie del glóbulo en el eje de simetría. Mientras que el flujo fotoevaporativo por parte del glóbulo viaja como lo indican las flechas rojas, y por lo tanto en la interacción entre este flujo fotoevaporativo y el viento estelar debemos considera cierto ángulo si no estamos en el eje de simetría.}
     \label{fig:cilindross}
 \end{figure}
 
@@ -189,7 +189,7 @@ En este caso no estamos considerando presión magnética ni de radiación.
 
 \begin{figure}[h]
     \centering \includegraphics[width=0.75\textwidth]{images Chapter 2/C2_parameters.jpg}
-    \caption{$r_0$ es el radio del glóbulo, mientras que $\rho_0,M_0$ y $P_0$ son los valores que tenemos en la superficie del glóbulo y conforme estos avanzan con dirección a la estrella sus valores van cambiando hasta tener valores $r_1$, que el radio del centro del glóbulo hasta la base del flujo fotoevaporativo chocado, $\rho_1,M_1$ y $P_1$ que son los valores que tendrán en la base del flujo fotoevaporativo chocado.}
+    \caption{$r_0$ es el radio del glóbulo, la parte neutra, mientras que $\rho_0,M_0$ y $P_0$ son los valores que tenemos en la superficie del glóbulo y conforme estos avanzan con dirección a la estrella sus valores van cambiando hasta tener diferentes valores en $r_1$, que el radio del centro del glóbulo hasta la base del flujo fotoevaporativo chocado, $\rho_1,M_1$ y $P_1$ son los valores que tendrán en la base del flujo fotoevaporativo chocado.}
     \label{fig:parameters}
 \end{figure}
 
@@ -228,12 +228,12 @@ Estos nudos fueron posibles de encontrar gracias a las imágenes del JWST y se e
 
 \section{Observaciones con HST}
 
-Para las observaciones del HST usamos los datos del proyecto HLA, utilizando el instrumento WFPC2 que observó en el filtro F656N, el cual se encuentra en el óptico, con un tiempo de exposición de \SI{4200}{sec}. Estos archivos son tipo imagen en formato FITS con un nivel de calibración 3.
+Para las observaciones con HST utilizamos los datos del proyecto HLA, los cuales son tipo imagen en formato FITS con un nivel de calibración 3.  Se observó en el filtro F656N utilizando la cámara WFPC2 para ver la emisión en $\SI{}{H_\alpha}$. Este archivo tiene un tiempo de exposición de \SI{4200}{sec}.  
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{m1-67-comp-full-hst.jpg}
-    \caption{Imagen de M1-67 con el filtro H$\alpha$ \citep{Grosdidier:1998}.}
+    \caption{Imagen de M1-67 con el filtro H$\alpha$ .}
     \label{fig:M1-67HST}
 \end{figure}
 
@@ -266,6 +266,15 @@ Si suponemos una simetría esférica entre esta interacción del flujo fotoevapo
 
 Esto ya que de la figura \ref{fig:EM} tenemos que por geometría $r^2+\Big(\frac{l}{2}\Big)^2=(r+h)^2=r^2+2rh+h^2\approx r^2+2rh\Rightarrow l=2\sqrt{2rh}$. De esta manera, usando la EM tenemos que \[n=\sqrt{\frac{EM}{l}}=\sqrt{\frac{EM}{2\sqrt{2rh}}}\] 
 
+\subsection{Uso de la EM a partir de las observaciones}
+
+Para medir la EM a partir de las observaciones en H$\alpha$ usamos lo siguiente. Primero para la intensidad $I$ en unidades cgs \SI{}{fotones.s^{-1}.cm^{-2}.sr^{-1}} tenemos que
+\[\frac{I}{cgs}=\int \frac{f_{H\alpha}\alpha_\beta n_e n_p}{4\pi}dz\] donde $f_{H\alpha}$ es la fracción de fotones que pasan para poder ionizar el gas neutro, $\alpha_\beta$ el coeficiente de recombinación, $n_e$ la densidad eléctrica, $n_p$ la densidad de iones y todo esto se integra a lo largo de la línea de visión. Si consideramos como constantes tanto a la fracción de fotones como al coeficiente de recombinación a lo largo de la línea de visión entonces tenemos que
+\[\frac{I}{cgs}=\frac{f_{H\alpha}\alpha_\beta}{4\pi}\int n_en_pdz=\frac{f_{H\alpha}\alpha_\beta}{4\pi} EM \approx \frac{\SI{1.17e-13}{}}{4\pi}EM.\]
+Por otro lado para el brillo $B$ en las observaciones tenemos la siguiente conversión a unidades en cgs
+\[\frac{B}{cgs}=(h\nu)_{H\alpha}0.0137\] por lo que podemos conocer la EM a partir de las observaciones como 
+\[\frac{\frac{B}{cgs}}{\frac{I}{cgs}}=\frac{(h\nu)_{H\alpha}0.0137}{\frac{\SI{1.17e-13}{}}{4\pi}EM}\Rightarrow EM = \Big(\frac{I}{B}\Big)\frac{4\pi 0.0137}{\SI{1.17e-13}{}}\] como todo está en unidades cgs, entonces nuetra EM tendrá unidades de \SI{}{cm^{-5}}.
+
 \section{Ajustando el modelo a los perfiles de brillo radial}
 
 Gracias a la gran resolución del JWST podemos saber donde se encuentran esto nudos exactamente. Con esto podemos identificar el eje de simetría que une al nudo con la estrella y con ello identificar mejor cual es la parte neutra del nudo y cual es la cascara chocada.
@@ -276,11 +285,25 @@ A estos puntos les ajustamos dos gaussianas y una constante. La primer gaussiana
 
 Para este ajuste le dimos menos peso a los píxeles que están mas lejanos del centro del glóbulo y que tienen un gran ángulo con respecto al eje de simetría.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images Chapter 3/C_3_Ajuste.jpg}
+    \caption{Ejemplo del ajuste de dos gaussianas a los perfiles de brillo donde se consideró hasta \SI{1.5}{\arcsecond} de distancia. vemos como se pueden apreciar los dos picos de intensidad tanto en el centro como en la cáscara chocada}
+    \label{ejemplo ajuste}
+\end{figure}
+
 \section{Estimando la presión RAM del viento estelar}
 
 Como presión externa en este ajuste vamos a considerar solamente la presión RAM del viento estelar por parte de la estrella evolucionada. No vamos a considerar la presión de radiación, magnética ni ninguna otra. 
 
 Para el caso de la presión RAM la vamos a tomar como \[P_{RAM}= \frac{\dot{M}v_\infty}{4\pi R^2}\] donde $\dot{M}$ es la tasa de pérdida de masa por parte de la estrella, $v_\infty$ la velocidad final del viento y $R$ la distancia del nudo a la estrella. Los dos primeros datos están dados en la tabla \ref{tab:parametros WR-124}. Para el caso de la distancia lo que en realidad vemos es una distancia proyectada en el plano del cielo por lo que en un principio requeriría de un ajuste al ángulo en el que se encuentra pero eso lo haremos más adelante.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images Chapter 3/C_3_presion_RAM.png}
+    \caption{Presión RAM del viento estelar como función de la distancia en arcosegundos}
+    \label{P_RAM}
+\end{figure}
 
 \section{Estimando la tasa de foto ionización}
 
@@ -288,6 +311,23 @@ Para el caso de la presión RAM la vamos a tomar como \[P_{RAM}= \frac{\dot{M}v_
 
 \appendix
 \chapter{Estimación de fuerzas en el modelo} \label{App:fuerzas}
+
+En estas estimaciones de las diferentes fuerzas solo haremos aproximaciones y para el caso de los valores de los glóbulos usaremos solo los más típicos, la justificación de usar estos valores típicos, la media de los valores, es que para los mejores ajustes tenemos valores similares en general.
+
+\section{Fuerzas de gravedad} \label{F gravedad}
+
+En \cite{Jimenez_H:2020} estiman una masa inicial de $\sim\SI{40}{\msun}$ para la estrella central en secuencia principal, por lo que un  límite superior para esta fuerza de gravedad por parte de la estrella nos da una aceleración de 
+\[\frac{GM_*}{r^2}\approx \SI{2.79e-14}{km/s^2}\] con $r$ una distancia típica entre la estrella y el glóbulo de \SI{16.98}{\arcsecond}
+
+Por parte del glóbulo tenemos una densidad ionizada típica de \SI{1250.46}{cm^{-3}}, un radio $r_0$ típico de \SI{.13}{\arcsecond}, un radio $r_1$ típico de \SI{.54}{\arcsecond} y para la densidad neutra podemos suponer que en la parte neutra domina el campo magnético, por lo que usando una velocidad de Alfven tenemos que $\rho_0 = \Big(\frac{c_s}{v_A}\Big)^2\rho_1$, donde $c_s$ es la velocidad del sonido en la parte ionizada y $v_A$ es la velocidad de Alfven que típicamente es de \SI{1}-\SI{3}{km/s}. Para la masa en la parte neutra tenemos que \[M_n = \rho_0 V_0\]
+donde $\rho_0$ es la densidad en la parte neutra y $V_0$ es el volumen de la esfera con radio $r_0$, mientras que para la parte ionizada tenemos \[M_i = \rho_1 V_1\] donde $\rho_1$ es a densidad ionizada típica  y $V_1$ es el volumen de la mitad de la cáscara que hay entre $r_0$ y $r_1$, por lo que \[V_1 = \frac{\frac{4}{3}\pi r_1^3-\frac{4}{3}\pi r_0^3}{2}=\frac{2\pi}{3}(r_1^3-r_0^3).\] De esta manera tenemos que la masa total del glóbulo que vamos a considerar en la estimación de esta fuerza es $M_g = M_i + M_n \approx \SI{6.87e-4}{\msun}$ y la aceleración por parte de la fuerza de gravedad del mismo glóbulo es de
+\[\frac{G M_g}{r_1^2}\approx \SI{4.6e-16}{km/s^2}.\]
+
+Es por esto que podemos despreciar las aceleraciones por parte de las fuerzas de gravedad tanto de la estrella como del mismo glóbulo.
+
+\section{Presión de radiación}
+
+Para la presión de radiación tenemos que $L = \SI{1.25e49}{s^{-1}}$ según la tabla \ref{tab:parametros WR-124}, por lo que tendríamos una intensidad de $\frac{L h\nu}{4\pi r^2} = \frac{\SI{3.78e30}{W}}{4\pi r^2} \approx \SI{1.58e-3}{W.m^{-2}}$ para la frecuencia de $H_\alpha$ a una distancia típica de los glóbulos. Por lo que tendríamos una presión de radiación de \[\frac{I}{c}\approx\SI{5.25e-12}{Pa}\] la cual es una presión menor a la presión RAM del viento estelar o a la presión de los glóbulos.
 
 \bibliography{references}
 
