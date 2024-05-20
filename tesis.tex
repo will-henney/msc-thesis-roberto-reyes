@@ -175,11 +175,24 @@ Vamos a considerar equilibrio de ionización ya que como vimos en la sección \r
 
 Como ya se mencionó antes, podemos tener una simetría cilíndrica alrededor del eje de simetría que une al glóbulo con la estrella. De esta manera podemos ignorar los movimientos transversales ya que los gradientes en estas direcciones son muy pequeñas si los comparamos con los gradientes en la dirección axial.
 
-Como vemos en la figura \ref{fig:cilindross} en el eje de simetría el viento estelar incide en sentido contrario al flujo fotoevaorativo y de manera perpendicular a la superficie del nudo, por lo que aquí el problema se vuelve unidimensional y es más fácil de resolver. Fuera del eje de simetría el flujo fotoevaporativo sigue viajando de manera radial pero con cierto ángulo con respecto al eje de simetría como vemos en la figura \ref{fig:cilindross}, además tanto la radiación fotoionizante como el viento estelar ya no inciden de manera perpendicular a la superficie del nudo, por lo que deberiamos tomar en cuenta el ángulo en que se encuentra. Es por esta razón que en principio vamos a resolver este problema de manera unidimensional en el eje de simetría.
+Como vemos en la figura \ref{fig:cilindross} en el eje de simetría el viento estelar incide en sentido contrario al flujo fotoevaorativo y de manera perpendicular a la superficie del nudo, por lo que aquí el problema se vuelve unidimensional y es más fácil de resolver. Fuera del eje de simetría el flujo fotoevaporativo sigue viajando de manera radial pero con cierto ángulo con respecto al eje de simetría como vemos en la figura \ref{fig:cilindross}, además tanto la radiación fotoionizante como el viento estelar ya no inciden de manera perpendicular a la superficie del nudo, por lo que deberíamos tomar en cuenta el ángulo en que se encuentra. Es por esta razón que en principio vamos a resolver este problema de manera unidimensional en el eje de simetría.
 
 % Balance between ionizations and recombinations
 
 \section{Ecuación de estado y equilibrio de ionización}
+
+Para este caso vamos a considerar que el gas que esta interaccionando con la radicación de la estrella es un gas ideal, por lo que nuestra ecuación de estado será
+\[PV = Nk_BT\] donde $P$ tiene unidades de presión, $V$ unidades de volumen, $N$ es el número de partículas, $k_B$ la constante de Boltzman con unidades de \SI{}{erg.K^{-1}} y $T$ es la temperatura con unidades de \SI{}{K}. De aquí tenemos que \[P = nk_BT = \frac{\rho k_B T}{\bar{m}}\] donde $n$ es la densidad numérica, $\rho$ la densidad de masa y $\bar{m}$ es la masa promedio. En este caso estamos considerando que el gas contiene principalmente hidrógeno y una pequeña fracción de helio, por lo que vamos a considerar una masa promedio de \SI{0.6}{m_{p}} en el gas ionizado.
+
+En este gas ideal vamos a tomar la velocidad del sonido por su definición a una entropía constante
+\[c_s = \sqrt{\Big(\frac{\partial P}{\partial\rho}\Big)_S} = \sqrt{\frac{k_B T}{\bar{m}}}\] de esta manera vemos que la velocidad del sonido en el gas ionizado solo depende de su temperatura. En este tipo de gases la velocidad del sonido es típicamente del orden de \SI{e6}{cm.s^{-1}}
+
+
+En este modelo vamos a considerar que  ya ha sucedido la tormenta de partículas ionizantes, la fase de implosión y se ha formado la capa aislante como se mencionó en la sección \ref{Sec:fluijos fotoevaporativos}, por lo que vamos a considerar que el flujo de fotones ionizantes por unidad de tiempo por parte de la estrella ionizante 
+\[S_* = \int_{\nu_0}^\infty \frac{L_\nu}{h\nu}d\nu\] donde $L_\nu$ es la luminosidad de la estrella por unidad de frecuencia y $\nu_0$ es la frecuencia a la que los fotones tienen energía de \SI{13.6}{eV}, esta en equilibrio con la tasa total de recombinaciones que esta dada por 
+\[\dot{n}_{rec}=n_e n_i \alpha_\mathrm{B}\] donde $\alpha_\mathrm{B}$ es el coeficiente de recombinación para el caso B. Este coeficiente de recombinación para el caso B toma en cuenta las recombinaciones a todos los niveles, excepto al nivel fundamental, esto ya que el fotón liberado en esta recombinación al nivel fundamental puede volver a ionizar algún otro átomo.
+
+\section{Estructura del modelo}\label{Estructura}
 
 En este modelo tenemos ciertas condiciones iniciales para el flujo fotoevaorativo, como ya dijimos este flujo es supersónico por lo que inicialmente sale de la superficie del glóbulo con un número de Mach igual a 1 y este va aumentando conforme atraviesa toda la zona 1 de la figura \ref{fig:zones}. En principio podríamos tomar que tanto el radio del glóbulo como la densidad en su superficie son parámetros libres, pero con las observaciones podemos medir el radio y la densidad la podemos calcular ya que esta debe ser consistente por haber considerado equilibrio de ionización.
 
@@ -200,7 +213,7 @@ Considerando la ecuación para la conservación de masa tenemos que
 y finalmente si consideramos la ecuación de Bernoulli isotérmica 
 \[\frac{v^2}{2}+c_s^2\ln\rho=constante\]
 tenemos que 
-\[\frac{r}{r_0}=M^{-1/2}e^{\frac{M^2-1}{4}}\]
+\[\frac{r}{r_0}=M^{-1/2}e^{\frac{M^2-1}{4}}\] \cite{Dyson:1968}.
 Ahora que tenemos tres ecuaciones y tres incógnitas podemos resolver, en nuestro caso lo hicimos de manera numérica. Al resolver estas ecuaciones para diferentes $f$ tenemos que tanto la presión como la densidad decaen con el radio, mientras que el número de Mach aumenta como vemos en la figura \ref{fig:grafica_C2}.
 
 \begin{figure}[h]
@@ -268,12 +281,12 @@ Esto ya que de la figura \ref{fig:EM} tenemos que por geometría $r^2+\Big(\frac
 
 \subsection{Uso de la EM a partir de las observaciones}
 
-Para medir la EM a partir de las observaciones en H$\alpha$ usamos lo siguiente. Primero para la intensidad $I$ en unidades cgs \SI{}{fotones.s^{-1}.cm^{-2}.sr^{-1}} tenemos que
-\[\frac{I}{cgs}=\int \frac{f_{H\alpha}\alpha_\beta n_e n_p}{4\pi}dz\] donde $f_{H\alpha}$ es la fracción de fotones que pasan para poder ionizar el gas neutro, $\alpha_\beta$ el coeficiente de recombinación, $n_e$ la densidad eléctrica, $n_p$ la densidad de iones y todo esto se integra a lo largo de la línea de visión. Si consideramos como constantes tanto a la fracción de fotones como al coeficiente de recombinación a lo largo de la línea de visión entonces tenemos que
-\[\frac{I}{cgs}=\frac{f_{H\alpha}\alpha_\beta}{4\pi}\int n_en_pdz=\frac{f_{H\alpha}\alpha_\beta}{4\pi} EM \approx \frac{\SI{1.17e-13}{}}{4\pi}EM.\]
-Por otro lado para el brillo $B$ en las observaciones tenemos la siguiente conversión a unidades en cgs
-\[\frac{B}{cgs}=(h\nu)_{H\alpha}0.0137\] por lo que podemos conocer la EM a partir de las observaciones como 
-\[\frac{\frac{B}{cgs}}{\frac{I}{cgs}}=\frac{(h\nu)_{H\alpha}0.0137}{\frac{\SI{1.17e-13}{}}{4\pi}EM}\Rightarrow EM = \Big(\frac{I}{B}\Big)\frac{4\pi 0.0137}{\SI{1.17e-13}{}}\] como todo está en unidades cgs, entonces nuetra EM tendrá unidades de \SI{}{cm^{-5}}.
+Para medir la EM a partir de las observaciones en H$\alpha$ usamos lo siguiente. Primero para la intensidad $I$ en unidades cgs (\SI{}{fotones.s^{-1}.cm^{-2}.sr^{-1}}) tenemos que
+\[\frac{I}{cgs}=\int \frac{f_{H\alpha}\alpha_\beta n_e n_p}{4\pi}dz\] donde $f_{H\alpha}$ es la fracción de todas las recombinaciones a los niveles $n\le 2$, $\alpha_\mathrm{B}$ el coeficiente de recombinación para el caso B, $n_e$ la densidad eléctrica, $n_p$ la densidad de iones y todo esto se integra a lo largo de la línea de visión. Si consideramos como constantes tanto a la fracción de fotones como al coeficiente de recombinación a lo largo de la línea de visión entonces tenemos que
+\[\frac{I}{cgs}=\frac{f_{H\alpha}\alpha_\mathrm{B}}{4\pi}\int n_en_pdz=\frac{f_{H\alpha}\alpha_\mathrm{B}}{4\pi} EM \approx \frac{\SI{1.17e-13}{}}{4\pi}EM.\]
+Por otro lado para el brillo $B$ en las observaciones, para tener unidades en cgs tenemos que multiplicar por 0.0137, lo que nos da en unidades de \SI{}{erg.s^{-1}.cm^{-2}.sr^{-1}}, por lo que para comparar con $I$ tenemos que dividir entre la energía de $H_\alpha$
+\[\frac{B}{cgs}=\frac{0.0137}{(h\nu)_{H_\alpha}}\] por lo que podemos conocer la EM a partir de las observaciones como 
+\[\frac{\frac{B}{cgs}}{\frac{I}{cgs}}=\frac{\frac{0.0137}{(h\nu)_{H_\alpha}}}{\frac{\SI{1.17e-13}{}}{4\pi}EM}\Rightarrow EM = \Big(\frac{I}{B}\Big)\frac{4\pi 0.0137}{\SI{1.17e-13}{}(h\nu)_{H_\alpha}}\] como todo está en unidades cgs, entonces nuetra EM tendrá unidades de \SI{}{cm^{-5}}.
 
 \section{Ajustando el modelo a los perfiles de brillo radial}
 
@@ -314,20 +327,28 @@ Para el caso de la presión RAM la vamos a tomar como \[P_{RAM}= \frac{\dot{M}v_
 
 En estas estimaciones de las diferentes fuerzas solo haremos aproximaciones y para el caso de los valores de los glóbulos usaremos solo los más típicos, la justificación de usar estos valores típicos, la media de los valores, es que para los mejores ajustes tenemos valores similares en general.
 
+En este modelo consideramos que la principal fuerza que se ejerce es por la diferencia de presiones en el gas ionizado. Por lo que la aceleración provocada por esta fuerza esta dada como \[a = \frac{\partial P}{\partial m/V h_0}\] donde $P$ es la presión, $m$ la masa, $V$ el volumen, por lo que $m/V$ es la densidad y $h_0$ un ancho efectivo definido como \[n_0h_0=\int n(r) dr\] y este lo calculamos de la siguiente manera. Usando las ecuaciones de la sección \ref{Estructura} tenemos que
+\[\frac{\rho}{\rho_0}=e^{\frac{1-M^2}{2}}\] y \[\frac{r}{r_0}=M^{-1/2}e^{\frac{M^2-1}{4}}\]
+por lo que si derivamos esta segunda ecuación con respecto al número de Mach tenemos que
+\[\frac{dr}{dM}=r_0\Big( e^{\frac{M^2-1}{4}}\Big(-\frac{M^{-3/2}}{2}+\frac{M}{2 M^{1/2}}\Big)\Big)=\frac{r_0}{2}e^{\frac{M^2-1}{4}}\Big(M^{\frac{1}{2}}-M^{-\frac{3}{2}}\Big)\]
+por lo que ahora podemos calcular $h_0$ como
+\[h_0=\int_0^\infty \Big(\frac{n(r)}{n_0}\Big)^2 dr=\int_1^\infty \frac{r_0}{2} (exp(1-M^2))^{1-\frac{1}{4}}\Big(M^{\frac{1}{2}}-M^{-\frac{3}{2}}\Big) dM\]
+el cual si integramos de manera numérica nos da un resultado $\sim 0.12r_0$. Entonces tenemos que la aceleración debido al gradiente de presión es \[a=\frac{\partial P}{\partial\rho \;h_0}=\frac{c_s^2}{h_0}=\frac{c_s^2}{0.12 r_0}\] la cual a un radio $r_0$ típico, $\sim\SI{0.13}{\arcsecond}$ tenemos una aceleración de $\SI{4.41e-5}{cm/s^{2}}$
+
 \section{Fuerzas de gravedad} \label{F gravedad}
 
-En \cite{Jimenez_H:2020} estiman una masa inicial de $\sim\SI{40}{\msun}$ para la estrella central en secuencia principal, por lo que un  límite superior para esta fuerza de gravedad por parte de la estrella nos da una aceleración de 
-\[\frac{GM_*}{r^2}\approx \SI{2.79e-14}{km/s^2}\] con $r$ una distancia típica entre la estrella y el glóbulo de \SI{16.98}{\arcsecond}
+\cite{Hamann:2019} estima una masa  de 20-$\SI{22}{\msun}$ para la estrella central, por lo que la fuerza de gravedad por parte de la estrella nos da un aceleración de 
+\[\frac{GM_*}{r^2}\approx \SI{1.59e-9}{cm/s^2}\] con $r$ una distancia típica entre la estrella y el glóbulo de \SI{16.98}{\arcsecond}
 
 Por parte del glóbulo tenemos una densidad ionizada típica de \SI{1250.46}{cm^{-3}}, un radio $r_0$ típico de \SI{.13}{\arcsecond}, un radio $r_1$ típico de \SI{.54}{\arcsecond} y para la densidad neutra podemos suponer que en la parte neutra domina el campo magnético, por lo que usando una velocidad de Alfven tenemos que $\rho_0 = \Big(\frac{c_s}{v_A}\Big)^2\rho_1$, donde $c_s$ es la velocidad del sonido en la parte ionizada y $v_A$ es la velocidad de Alfven que típicamente es de \SI{1}-\SI{3}{km/s}. Para la masa en la parte neutra tenemos que \[M_n = \rho_0 V_0\]
 donde $\rho_0$ es la densidad en la parte neutra y $V_0$ es el volumen de la esfera con radio $r_0$, mientras que para la parte ionizada tenemos \[M_i = \rho_1 V_1\] donde $\rho_1$ es a densidad ionizada típica  y $V_1$ es el volumen de la mitad de la cáscara que hay entre $r_0$ y $r_1$, por lo que \[V_1 = \frac{\frac{4}{3}\pi r_1^3-\frac{4}{3}\pi r_0^3}{2}=\frac{2\pi}{3}(r_1^3-r_0^3).\] De esta manera tenemos que la masa total del glóbulo que vamos a considerar en la estimación de esta fuerza es $M_g = M_i + M_n \approx \SI{6.87e-4}{\msun}$ y la aceleración por parte de la fuerza de gravedad del mismo glóbulo es de
-\[\frac{G M_g}{r_1^2}\approx \SI{4.6e-16}{km/s^2}.\]
+\[\frac{G M_g}{r_1^2}\approx \SI{4.6e-11}{cm/s^2}.\] No consideramos la parte la parte de la estela que se puede apreciar en algunos glóbulos porque la masa que realmente domina es la de la parte neutra, de igual manera podemos despreciar la fuerza de gravedad por parte de los otros glóbulos. 
 
-Es por esto que podemos despreciar las aceleraciones por parte de las fuerzas de gravedad tanto de la estrella como del mismo glóbulo.
+Estas dos aceleraciones son claramente más pequeñas que la aceleración debido a la diferencia de presiones, por lo que podemos descartar estas fuerzas de gravedad en el modelo.
 
 \section{Presión de radiación}
 
-Para la presión de radiación tenemos que $L = \SI{1.25e49}{s^{-1}}$ según la tabla \ref{tab:parametros WR-124}, por lo que tendríamos una intensidad de $\frac{L h\nu}{4\pi r^2} = \frac{\SI{3.78e30}{W}}{4\pi r^2} \approx \SI{1.58e-3}{W.m^{-2}}$ para la frecuencia de $H_\alpha$ a una distancia típica de los glóbulos. Por lo que tendríamos una presión de radiación de \[\frac{I}{c}\approx\SI{5.25e-12}{Pa}\] la cual es una presión menor a la presión RAM del viento estelar o a la presión de los glóbulos.
+Para la presión de radiación tenemos que $Q = \SI{1.25e49}{s^{-1}}$ según la tabla \ref{tab:parametros WR-124}, por lo que tendríamos una intensidad de $\frac{Q h\nu}{4\pi r^2} = \frac{\SI{2.74e38}{erg.s^{-1}}}{4\pi r^2} \approx \SI{11.48}{erg.s^{-1}.cm^{-s}}$ para la frecuencia de $\SI{1}{Ry}$, el cual es un límite inferior para los fotones que son capaces de ionizar el gas neutro, esto a una distancia típica de los glóbulos. Por lo que tendríamos una presión de radiación de $\approx \SI{3.83e-11}{Pa}$ la cual es una presión menor a la presión RAM del viento estelar o a la presión de los glóbulos.
 
 \bibliography{references}
 
