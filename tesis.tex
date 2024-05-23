@@ -292,11 +292,18 @@ Por otro lado para el brillo $B$ en las observaciones, para tener unidades en cg
 
 Gracias a la gran resolución del JWST podemos saber donde se encuentran esto nudos exactamente. Con esto podemos identificar el eje de simetría que une al nudo con la estrella y con ello identificar mejor cual es la parte neutra del nudo y cual es la cascara chocada.
 
-Para saber estos tamaños graficamos la intensidad de cada píxel como función de la distancia al centro del nudo. Para esto consideramos solo los píxeles que están a una distancia máxima de \SI{1.5}{arcsec} y a un ángulo máximo de 60 grados con respecto al eje de simetría.
+Para saber estos tamaños graficamos la intensidad de cada píxel como función de la distancia al centro del nudo. Para esto consideramos solo los píxeles que están a una distancia máxima de \SI{1.5}{\arcsecond} y a un ángulo máximo de 60 grados con respecto al eje de simetría.
 
 A estos puntos les ajustamos dos gaussianas y una constante. La primer gaussiana será centrada en cero, que es el centro del nudo. Está primer gaussiana nos dirá el tamaño de la parte neutra del nudo. La segunda gaussiana se ajusta a la cáscara chocada donde tenemos otro pico de emisión debido a las recombinaciones que hay en esa región.
 
 Para este ajuste le dimos menos peso a los píxeles que están mas lejanos del centro del glóbulo y que tienen un gran ángulo con respecto al eje de simetría.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images Chapter 3/C3_mask.jpg}
+    \caption{En la imagen derecha la línea roja representa el eje de simetría que estamos considerando. También vemos la región que solo vamos a considerar en el ajuste, el cual va desde \ang{-60}  (color azul en la imagen derecha) hasta \ang{60} con respecto al eje de simetría (color verde en la imagen derecha) y solo cosideramos una distancia de  \SI{1.5}{\arcsecond} del glóbulo. La parte más oscura en la imagen izquierda representa una mayor intensidad en la emisión de H$\alpha$. En la imagen izquierda la distribución de emisión de H$\alpha$ considerando la distancia al glóbulo y el ángulo con respecto al eje de simetría.}
+    \label{ejemplo mascara}
+\end{figure}
 
 \begin{figure}[h]
     \centering
@@ -319,6 +326,56 @@ Para el caso de la presión RAM la vamos a tomar como \[P_{RAM}= \frac{\dot{M}v_
 \end{figure}
 
 \section{Estimando la tasa de foto ionización}
+
+\chapter{Resultados}
+
+En la nebulosa M1-67 encontramos 168 glóbulos los cuales están distribuidos a una distancia de la estrella central de entre 3--\SI{35}{\arcsecond}, esta distancia puede ser en realidad una distancia proyectada para algunos glóbulos. Algunos de estos glóbulos se encuentran solos y otros en grupos como se puede ver en la figura \ref{fig:dis_nudos}.
+
+En el caso del ajuste de las dos gaussianas a los perfiles de brillo, se realizó para las observaciones de HST  y en el caso de las observaciones con JWST se utilizó el filtro F090N. Este filtro podemos ver la emisión de gas neutro, polvo y algunos PAHs.
+
+Gracias a que tenemos las observaciones de dos telescopios podemos comparar los ajustes para saber si estos ajustes son buenos. Debido a que tienen diferente resolución y varios filtros podemos comparar los tamaños en los diferentes filtros para descartar también aquellos que aparentan ser buenos ajustes cuando en realidad no lo son. En el caso de las observaciones de JWST podemos ver mejor como es su morfología con los diferentes trazadores.
+
+\section{Glóbulos descartados}\label{Bad globules}
+
+A pesar de tener una buena cantidad de glóbulos para aplicar este modelo no se usaron todos por diferentes razones. 
+
+Algunos de ellos tenían un mal ajuste debido a la gran estructura de la nebulosa, había estrellas de fondo o se veían afectados por la difracción del telescopio.  Debido a esto en algunos casos no se alcanzaba a detectar bien la parte neutra o la cáscara chocada y en algunos casos la detección de estas regiones estaban mal en cuanto a sus tamaños.  Para esto ocupamos las observaciones en los dos telescopios ya que para el caso de las observaciones con el HST, que tiene menor resolución, se fijaba más en las grandes estructuras por lo que en algunos ajustes se veían afectados por la gran estructura de la nebulosa o estrellas de fondo.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images Chapter 3/C3_badG.jpg}
+    \caption{Ejemplo de glóbulos descartados. Del lado izquierdo es la imagen con el HST y del lado derecho con el JWST. El primer glóbulo es descartado por que se ve afectado por la difracción del telescopio y por la gran estructura de la nebulosa, esto se puede deber a lo cerca que está de la estrella central. En los otros ejemplos vemos como la presencia de fuentes cercanas afecta nuestras estimaciones de posibles cáscaras chocadas en las observaciones.}
+    \label{Bad Globules}
+\end{figure}
+
+\section{Buenos ajustes}\label{Good results}
+
+A pesar de haber descartado varios glóbulos por diferentes razones como vimos en la sección anterior, para otros glóbulos se pudo encontrar tanto la parte neutra como la cáscara chocada y se pudo verificar gracias a las dos observaciones que tenemos. A partir de estos ajustes se pudo obtener información acerca de los glóbulos como sus diferentes radios, la densidad a partir de la EM y la presión RAM del viento que actúa sobre ellos como vimos en el capítulo anterior. Algunos de estos valores los podemos ver el a tabla \ref{tab:mean}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images Chapter 3/C3_goodG.jpg}
+    \caption{Ejemplo de buenos ajustes. Las imágenes del lado izquierdo son con el HST y las de l lado derecho con el JWST. Vemos como el ancho de la cáscara chocada son algo similar en ambas observaciones, mientras que el radio en la parte neutra es más pequeña en las imágenes del JWST.}
+    \label{Goog G}
+\end{figure}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c c c}
+        \toprule
+        \multicolumn{3}{c}{Resultados de los buenos ajustes} \\ \midrule
+          & Media & Desviación estándar.\\
+         Separación & \SI{15.55}{\arcsecond}  & \SI{7.04}{\arcsecond}\\
+         Radio del glóbulo & \SI{0.14}{\arcsecond} & \SI{0.04}{\arcsecond}\\
+         Radio de la cáscara & \SI{0.53}{\arcsecond} & \SI{.17}{\arcsecond} \\
+         $n_{cascara}$ & \SI{1372.15}{cm^{-3}} & \SI{397.5}{cm^{-3}} \\
+         $P_{cascara}$ & \SI{1.13e-9}{cgs} & \SI{3.24e-10}{cgs} \\
+         X & 3.87 & 0.83\\
+         $X_P$ & 0.29 & 0.22 \\\bottomrule
+    \end{tabular}
+    \caption{Valores típicos de los resultados obtenidos y su desviación estándar. X es la fracción de radios $r_1/r_0$  y $X_P$ es la fracción de presiones $P_{RAM}/P_{shell}$. Estos valores son con los resultado obtenidos a partir de las imágenes del HST.}
+    \label{tab:mean}
+\end{table}
 
 \chapter{Conclusiones}
 
