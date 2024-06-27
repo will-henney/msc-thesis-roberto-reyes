@@ -124,7 +124,7 @@ M1-67 es la nebulosa alrededor de la estrella WR-124, que tiene índice espectra
          D & \SI{5.429}{kpc} & J. Arthur, priv.~comm.\\
          $v_\infty$ & \SI{710}{km/s}  & \cite{Hamman:2006}\\
          $\dot{M}$ & \SI{2e-5}{M_\odot/yr} & ?\\
-         L & \SI{1.25e49}{s^{-1}} & \cite{crowther:2007} \\
+         $S_*$ & \SI{1.25e49}{s^{-1}} & \cite{crowther:2007} \\
          $F_{H_\alpha}$ & \SI{3e-14}{erg.cm^{-2}.s^{-1}} & \cite{Grosdidier:1998}\\ \bottomrule
     \end{tabular}
     \caption{Parámetros de WR 124}
@@ -190,11 +190,11 @@ En este gas ideal vamos a tomar la velocidad del sonido isotérmica, la cual est
 
 En este modelo vamos a considerar que  ya ha sucedido la tormenta de partículas ionizantes, la fase de implosión y se ha formado la capa aislante como se mencionó en la sección \ref{Sec:fluijos fotoevaporativos}, por lo que vamos a considerar que el flujo de fotones ionizantes por unidad de tiempo por parte de la estrella ionizante 
 \[S_* = \int_{\nu_0}^\infty \frac{L_\nu}{h\nu}d\nu\] donde $L_\nu$ es la luminosidad de la estrella por unidad de frecuencia y $\nu_0$ es la frecuencia a la que los fotones tienen energía de \SI{13.6}{eV}, esta en equilibrio con la tasa total de recombinaciones que esta dada por 
-\[\dot{n}_{rec}=n_e n_i \alpha_\mathrm{B}+4\pi r^2n_0u_0\] donde $\alpha_\mathrm{B}$ es el coeficiente de recombinación para el caso B. Este coeficiente de recombinación para el caso B toma en cuenta las recombinaciones a todos los niveles, excepto al nivel base, esto ya que el fotón liberado en esta recombinación al nivel base puede volver a ionizar algún otro átomo que se encuentre muy cerca. El segundo término se refiere a las partículas que cruzan el frente de ionización ya que, como ya habíamos mencionado antes, el frente de ionización avanza en dirección al glóbulo por lo que debemos considerar las nuevas partículas que deben ionizarse. 
+\[\dot{n}_{rec}=n_e n_i h \alpha_\mathrm{B}+n_0u_0\] donde $\alpha_\mathrm{B}$ es el coeficiente de recombinación para el caso B. Este coeficiente de recombinación para el caso B toma en cuenta las recombinaciones a todos los niveles, excepto al nivel base, esto ya que el fotón liberado en esta recombinación al nivel base puede volver a ionizar algún otro átomo que se encuentre muy cerca. El segundo término se refiere a las partículas que cruzan el frente de ionización ya que, como ya habíamos mencionado antes, el frente de ionización avanza en dirección al glóbulo por lo que debemos considerar las nuevas partículas que deben ionizarse. 
 
 \section{Estructura del modelo}\label{Estructura}
 
-En este modelo tenemos ciertas condiciones iniciales para el flujo fotoevaorativo, como ya dijimos este flujo es supersónico por lo que inicialmente sale de la superficie del glóbulo con un número de Mach igual a 1 y este va aumentando conforme atraviesa toda la zona 1 de la figura \ref{fig:zones}. En principio podríamos tomar que tanto el radio del glóbulo como la densidad en su superficie son parámetros libres, pero con las observaciones podemos medir el radio y la densidad la podemos calcular ya que esta debe ser consistente por haber considerado equilibrio de ionización.
+En este modelo  estamos considerando un frente D-crítico para el frente de ionización, esto es, que en la parte neutra tenemos una expansión subsónica y hay un punto sónico cerca de $r_0$ a partir del cual tendremos una expansión supersónica en la zona ionizada. En este caso por simplicidad consideraremos que el punto sónico lo tenemos en $r_0$, por lo que aquí tenemos un número de Mach igual a 1 y este va aumentando conforme atraviesa toda la zona 1 de la figura \ref{fig:zones} ya que se va expandiendo libremente. En principio podríamos tomar que tanto el radio del glóbulo como la densidad en su superficie son parámetros libres, pero con las observaciones podemos medir el radio y la densidad la podemos calcular ya que esta debe ser consistente por haber considerado equilibrio de ionización.
 
 Con este modelo se pretende ver hasta donde llegamos a un equilibrio de presión entre la presión por parte del flujo fotoevaporativo y la presión RAM del viento estelar. Para el caso de la presión del flujo fotoevaorativo vamos a considerar tanto la presión térmica como la hidrodinámica por lo que la presión total está dada por
 \[P_{tot}=P_{ter}+P_{hid}=n\bar{m}c_s^2+n\bar{m}u^2=\rho c_s^2(1+M^2)\]
@@ -228,7 +228,7 @@ Ahora que tenemos tres ecuaciones y tres incógnitas podemos resolver, en nuestr
 Ahora vamos a describir acerca de la interacción entre el viento estelar chocado y el flujo fotoevaporativo chocado. 
 
 De la figura \ref{} vemos que en la línea naranja tendremos la presión RAM del viento estelar y este viento tiene una desaceleración por la diferencia de presiones hasta llegar a la discontinuidad de contacto donde tendremos una presión $P_{DC}$ que si la comparamos con la presión RAM del viento tendríamos que
-\[P_{RAM}=P_{DC}\Big(1+\frac{\alpha}{M^2}\Big)\] donde $\alpha$ es del orden de 1 y como recordamos el viento estelar es supersónico, en estrellas WR puede ser de hasta de \SI{1e8}{cm.s^{-1}} por lo que podriamos tener un número de Mach del orden de 100. Por lo que podríamos considerar que la presión en la discontinuidad de contacto está dada por la presión RAM del viento estelar.
+\[P_{RAM}=P_{DC}\Big(1+\frac{\alpha}{M^2}\Big)\] donde $\alpha$ es del orden de 1 y como recordamos el viento estelar es supersónico, en estrellas WR puede ser de hasta de \SI{1e8}{cm.s^{-1}} por lo que podríamos tener un número de Mach del orden de 100. Por lo que podríamos considerar que la presión en la discontinuidad de contacto está dada por la presión RAM del viento estelar.
 % General solution for the internal structure of model
 
 
@@ -418,8 +418,9 @@ En estas estimaciones de las diferentes fuerzas solo haremos aproximaciones y pa
 
 Para comparar las distintas fuerzas es más conveniente comparar las presiones o aceleraciones ya que estas son fuerza por unidad de área o fuerza por unidad de masa, respectivamente. 
 
-Primero vamos a considerar la aceleración provocada por el gradiente de presión la cual está dada como \[a = \frac{\partial P}{\partial\rho h}\] donde $h$ está definida como \[h^{-1}=\frac{1}{\rho_0}\frac{\partial\rho}{\partial r}=\frac{d \ln \rho}{dr}\]
-usando las ecuaciones de la sección \ref{Estructura} tenemos que \[\frac{\rho}{\rho_0}=e^{\frac{1-M^2}{2}}\Rightarrow\ln\frac{\rho}{\rho_0}=\frac{1-M^2}{2}\]\[\Rightarrow\frac{d\ln\frac{\rho}{\rho_0}}{dM}=-M\] por otro lado usando que \[\frac{r}{r_0}=M^{-1/2}e^{\frac{M^2-1}{2}}\] tenemos que \[d\frac{r}{r_0}=e^{\frac{M^2-1}{4}}\Big(-\frac{M^{-3/2}}{2}+\frac{M}{2M^{1/2}}\Big)dM = \frac{e^{\frac{M^2-1}{4}}}{2}\Big(M^{1/2}-M^{-3/2}\Big)dM\] por lo que \[h^{-1}=\Big|\frac{2M}{e^{\frac{M^2-1}{4}}\Big(M^{1/2}-M^{-3/2}\Big)}\Big|\] que como podemos ver en la fig \ref{fig:h} cerca de $r_0$ tenemos un valor del orden de 0.1, por lo que el gradiente de presión nos da una aceleración de \[a \approx \frac{c_s^2}{0.1 r_0} = \SI{7.44e-4}{cm.s^{-2}}\] a un radio típico $r_0\sim \SI{0.13}{\arcsecond}$.
+
+Primero vamos a considerar la aceleración provocada por el gradiente de presión, para esto tomamos la fuerza por unidad de masa dad por \[\rho a = \frac{dP}{dr}\Rightarrow a= \frac{1}{\rho}\frac{dP}{dr}=\frac{1}{\rho}\frac{\partial \rho}{\partial r}\frac{\partial P}{\partial\rho}\] como estamos considerando un gas isotermo, vemos que el último término es la velocidad del sonido mientras que a los otros términos son la escala de altura $h$, la cual está definida por  \[h^{-1}=\Big|\frac{1}{\rho_0}\frac{\partial\rho}{\partial r}\Big|=\Big|\frac{d \ln \rho}{dr}\Big|\]
+usando las ecuaciones de la sección \ref{Estructura} tenemos que \[\frac{\rho}{\rho_0}=e^{\frac{1-M^2}{2}}\Rightarrow\ln\frac{\rho}{\rho_0}=\frac{1-M^2}{2}\]\[\Rightarrow\frac{d\ln\frac{\rho}{\rho_0}}{dM}=-M\] por otro lado usando que \[\frac{r}{r_0}=M^{-1/2}e^{\frac{M^2-1}{2}}\] tenemos que \[d\frac{r}{r_0}=e^{\frac{M^2-1}{4}}\Big(-\frac{M^{-3/2}}{2}+\frac{M}{2M^{1/2}}\Big)dM = \frac{e^{\frac{M^2-1}{4}}}{2}\Big(M^{1/2}-M^{-3/2}\Big)dM\] por lo que \[h^{-1}=\Big|\frac{2M}{e^{\frac{M^2-1}{4}}\Big(M^{1/2}-M^{-3/2}\Big)}\Big|\] que como podemos ver en la fig \ref{fig:h} cerca de $r_0$ tenemos un valor del orden de 0.1, por lo que el gradiente de presión nos da una aceleración de \[a \approx \frac{c_s^2}{0.1 r_0} = \SI{7.44e-4}{cm.s^{-2}}\] a un radio típico $r_0\sim \SI{0.13}{\arcsecond}$. Como el modelo se resolvió en el eje de simetría, tenemos que aquí los gradientes transversales son cero, mientras que si consideramos el modelo a cierto ángulo debemos considerar que el gradiente de densidad transversal es más pequeño, por un factor de 1o aproximadamente. 
 
 \begin{figure}
     \centering
@@ -433,21 +434,23 @@ usando las ecuaciones de la sección \ref{Estructura} tenemos que \[\frac{\rho}{
 \cite{Hamann:2019} estima una masa  de 20-$\SI{22}{\msun}$ para la estrella central, por lo que la fuerza de gravedad por parte de la estrella nos da un aceleración de 
 \[\frac{GM_*}{r^2}\approx \SI{1.59e-9}{cm/s^2}\] con $r$ una distancia típica entre la estrella y el glóbulo de \SI{16.98}{\arcsecond}
 
-Por parte del glóbulo tenemos una densidad ionizada típica de \SI{1250.46}{cm^{-3}}, un radio $r_0$ típico de \SI{.13}{\arcsecond}, un radio $r_1$ típico de \SI{.54}{\arcsecond} y para la densidad neutra podemos suponer que en la parte neutra domina el campo magnético, por lo que usando una velocidad de Alfven tenemos que $\rho_0 = \Big(\frac{c_s}{v_A}\Big)^2\rho_1$, donde $c_s$ es la velocidad del sonido en la parte ionizada y $v_A$ es la velocidad de Alfven que típicamente es de \SI{1}-\SI{3}{km/s}. Para la masa en la parte neutra tenemos que \[M_n = \rho_0 V_0\]
+Por parte del glóbulo tenemos una densidad ionizada típica de \SI{1250.46}{cm^{-3}}, un radio $r_0$ típico de \SI{.13}{\arcsecond}, un radio $r_1$ típico de \SI{.54}{\arcsecond} y para la densidad neutra podemos suponer que en la parte neutra domina el campo magnético considerando un balance de presiones. Si aún estuviéramos en la fase de implosión, entonces la densidad sería aún menor. Por lo que usando una velocidad de Alfven tenemos que $\rho_0 = \Big(\frac{c_s}{v_A}\Big)^2\rho_1$, donde $c_s$ es la velocidad del sonido en la parte ionizada y $v_A$ es la velocidad de Alfven que típicamente es de \SI{1}-\SI{3}{km/s}. Para la masa en la parte neutra tenemos que \[M_n = \rho_0 V_0\]
 donde $\rho_0$ es la densidad en la parte neutra y $V_0$ es el volumen de la esfera con radio $r_0$, mientras que para la parte ionizada tenemos \[M_i = \rho_1 V_1\] donde $\rho_1$ es a densidad ionizada típica  y $V_1$ es el volumen de la mitad de la cáscara que hay entre $r_0$ y $r_1$, por lo que \[V_1 = \frac{\frac{4}{3}\pi r_1^3-\frac{4}{3}\pi r_0^3}{2}=\frac{2\pi}{3}(r_1^3-r_0^3).\] De esta manera tenemos que la masa total del glóbulo que vamos a considerar en la estimación de esta fuerza es $M_g = M_i + M_n \approx \SI{6.87e-4}{\msun}$ y la aceleración por parte de la fuerza de gravedad del mismo glóbulo es de
-\[\frac{G M_g}{r_1^2}\approx \SI{4.6e-11}{cm/s^2}.\] No consideramos la parte la parte de la estela que se puede apreciar en algunos glóbulos porque la masa que realmente domina es la de la parte neutra, de igual manera podemos despreciar la fuerza de gravedad por parte de los otros glóbulos. 
+\[\frac{G M_g}{r_1^2}\approx \SI{4.6e-11}{cm/s^2}.\] De igual manera podemos despreciar la fuerza de gravedad por parte de los otros glóbulos. 
 
 Estas dos aceleraciones son claramente más pequeñas que la aceleración debido a la diferencia de presiones, por lo que podemos descartar estas fuerzas de gravedad en el modelo.
 
 \section{Presión de radiación}
 
-Para la presión de radiación tenemos que $Q = \SI{1.25e49}{s^{-1}}$ según la tabla \ref{tab:parametros WR-124}, por lo que tendríamos una intensidad de \[\frac{Q h\nu}{4\pi r^2} = \frac{\SI{2.74e38}{erg.s^{-1}}}{4\pi r^2} \approx \SI{11.48}{erg.s^{-1}.cm^{-s}}\] para la frecuencia de $\SI{1}{Ry}$, el cual es un límite inferior para los fotones que son capaces de ionizar el gas neutro, esto a una distancia típica de los glóbulos. Por lo que tendríamos una presión de radiación de $\approx \SI{3.83e-11}{Pa}$ la cual es una presión menor a la presión RAM del viento estelar o a la presión de los glóbulos.
+Estamos considerando que esta presión ya que podemos suponer que todo el momento de los fotones ionizantes se va al flujo fotoevaporativo, por lo que si consideramos que todo la radiación ionizante es absorbida en el flujo fotoevaportivo entonces tememos que para la radiación ionizante $Q = \SI{1.25e49}{s^{-1}}$, según la tabla \ref{tab:parametros WR-124}, tendríamos una intensidad de \[\frac{Q h\nu}{4\pi r^2} = \frac{\SI{2.74e38}{erg.s^{-1}}}{4\pi r^2} \approx \SI{11.48}{erg.s^{-1}.cm^{-s}}\] para la frecuencia de $\SI{1}{Ry}$, el cual es un límite inferior para los fotones que son capaces de ionizar el gas neutro, esto a una distancia típica de los glóbulos. Por lo que tendríamos una presión de radiación de $\approx \SI{3.83e-11}{Pa}$ la cual es una presión menor a la presión RAM del viento estelar o a la presión de los glóbulos.
 
 \chapter{Tiempos de escala}
 
 \section{Tiempo dinámico}
 
-Usando los valores de la tabla \ref{tab:mean} tenemos un tiempo dinámico \[t_d = \frac{R_{shell}}{v} \approx \SI{4.73e10}{s}\]
+Usando los valores de la tabla \ref{tab:mean}, para el flujo fotoevaporativo tenemos un tiempo dinámico \[t_{DF} = \frac{R_{shell}}{v} \approx \SI{4.73e10}{s}  = \SI{1.49e3}{yr}.\]
+
+Para la nebulosa tenemos un tiempo dinámico de \[t_{DN}= \frac{R_{nebula}}{v_{exp}}\approx\frac{\SI{1.5}{pc}}{\SI{46}{km.s^{-1}}}= \SI{1e12}{s}=\SI{3.17e4}{yr}\]
 
 \section{Tiempo de recombinación}
 
