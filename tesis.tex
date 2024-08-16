@@ -372,14 +372,18 @@ Si suponemos una simetría esférica entre esta interacción del flujo fotoevapo
 
 Esto ya que de la figura \ref{fig:EM} tenemos que por geometría $r^2+\Big(\frac{l}{2}\Big)^2=(r+h)^2=r^2+2rh+h^2\approx r^2+2rh\Rightarrow l=2\sqrt{2rh}$. De esta manera, usando la EM tenemos que \[n=\sqrt{\frac{EM}{l}}=\sqrt{\frac{EM}{2\sqrt{2rh}}}\] 
 
-\subsection{Uso de la EM a partir de las observaciones}
+\subsection{Uso de la EM a partir de las observaciones} \label{Subsec : EM}
 
 Para medir la EM a partir de las observaciones en \unit{H\alpha} usamos lo siguiente. Primero para la intensidad $I$ en unidades cgs (\SI{}{fotones.s^{-1}.cm^{-2}.sr^{-1}}) tenemos que
 \[\frac{I}{cgs}=\int \frac{f_{H\alpha}\alpha_\beta n_e n_p}{4\pi}dz\] donde $f_{H\alpha}$ es la fracción de todas las recombinaciones a los niveles $n\le 2$, $\alpha_\mathrm{B}$ el coeficiente de recombinación para el caso B, $n_e$ la densidad electrónica, $n_p$ la densidad de iones y todo esto se integra a lo largo de la línea de visión. Si consideramos como constantes tanto a la fracción de fotones como al coeficiente de recombinación a lo largo de la línea de visión entonces tenemos que
 \[\frac{I}{cgs}=\frac{f_{H\alpha}\alpha_\mathrm{B}}{4\pi}\int n_en_pdz=\frac{f_{H\alpha}\alpha_\mathrm{B}}{4\pi} EM \approx \frac{\SI{1.17e-13}{}}{4\pi}EM.\]
 Por otro lado para el brillo $B$ en las observaciones con  HST tenemos que multiplicar por 0.0137 para tener el brillo en unidades  \SI{}{erg.s^{-1}.cm^{-2}.sr^{-1}}, por lo que para comparar con $I$ tenemos que dividir entre la energía de $H_\alpha$
 \[\frac{B}{cgs}=\frac{0.0137}{(h\nu)_{\unit{H\alpha}}}\] por lo que podemos conocer la EM a partir de las observaciones como 
-\[\frac{\frac{B}{cgs}}{\frac{I}{cgs}}=\frac{\frac{0.0137}{(h\nu)_{\unit{H\alpha}}}}{\frac{\SI{1.17e-13}{}}{4\pi}EM}\Rightarrow EM = \Big(\frac{I}{B}\Big)\frac{4\pi 0.0137}{\SI{1.17e-13}{}(h\nu)_{\unit{H\alpha}}}\] como todo está en unidades cgs, entonces nuetra EM tendrá unidades de \SI{}{cm^{-5}}.
+\[\frac{\frac{B}{cgs}}{\frac{I}{cgs}}=\frac{\frac{0.0137}{(h\nu)_{\unit{H\alpha}}}}{\frac{\SI{1.17e-13}{}}{4\pi}EM}\Rightarrow EM = \Big(\frac{I}{B}\Big)\frac{4\pi 0.0137}{\SI{1.17e-13}{}(h\nu)_{\unit{H\alpha}}}\] como todo está en unidades cgs, entonces nuestra EM tendrá unidades de \SI{}{cm^{-5}}.
+
+Es importante mencionar que en este caso estamos considerando que $l$ es perpendicular a el eje de simetría considerado en el modelo. 
+
+Si consideramos que el eje de simetría del glóbulo tienen un ángulo $i$ con respecto a una línea perpendicular a nuestra línea de visión como se ve en la figura \ref{} y si además  suponemos que tenemos una densidad máxima $n_0$ en el eje de simetría, el cual decae en promedio con el ángulo como $\cos^{1/2} i$, entonces tendríamos  una densidad \[n_i = n_0\cos^{1/2} i\]
 
 \section{Ajustando el modelo a los perfiles de brillo radial}
 
@@ -430,7 +434,7 @@ y de ellos lo vcmaoa a considerar en equilibrio de ionización
 
 Se encontraron 168 nudos glóbulos en la nebulosa M1-67 los cuales están distribuidos a una distancia de la estrella central de entre 3--\SI{35}{\arcsecond}, esta distancia puede ser en realidad una distancia proyectada para algunos glóbulos.  Estos glóbulos se pueden observar ya sea en grupos o solos como se puede ver en la figura \ref{fig:dis_nudos}. 
 
-El ajuste de las dos gaussianas a los perfiles de brillo se realizó para las observaciones de HST en H$\alpha$  y para las observaciones con JWST se utilizó el filtro F090N. Este filtro podemos ver la emisión de gas neutro, polvo y algunos PAHs. 
+El ajuste de las dos gaussianas a los perfiles de brillo se realizó para las observaciones de HST en H$\alpha$  y para el caso de las observaciones con el JWST usamos varios filtros, en el filtro F090N vemos principalmente la emisión de gas ionizado y  PAHs por lo que podemos dar un mejor criterio si es que en realidad hay una cáscara chocada. También se uso una combinación de los filtros F150W, F210m y F335M para ver la emisión de gas neutro quitando la emisión de las estrellas.
 
 Gracias a que tenemos las observaciones de dos telescopios podemos comparar los ajustes para saber si estos ajustes son buenos. Debido a que usamos diferentes filtros con diferentes resoluciones podemos comparar mejor si los ajustes son buenos o no, esto ya que con los diferentes filtros podemos ver diferentes morfologías y tener un mejor criterio si los radios calculados están sobrestimados o no, también si las observaciones están muy contaminadas por fuentes cercanas o la estructura de la gran nebulosa, también debemos considerar que la emisión puede ser contaminada por otros glóbulos como lo es en el caso de los glóbulos que se encuentran en grupo. 
 
@@ -502,7 +506,7 @@ Debido a que estamos considerando un equilibrio de presión entre la presión RA
     \label{graf_presion}
 \end{figure}
 
-Si suponemos que el glóbulo está proyectado por un ángulo $i$ como vemos en la figura \ref{Ang proyeccion}, entonces tenemos que \[R\cos i=R_p\] donde $R$ es la separación real del glóbulo a la estrella, $i$ en ángulo de inclinación y $R_p$ la distancia proyecta, que es la que observamos. En esta proyección la presión RAM también se verá disminuida por un factor. Podemos considerar un factor promedio de $\cos{i}^{1/2}$.  Por lo que \[P_{RAM}=\frac{\dot{M}v_\infty}{4\pi R_p^2}\cos{i}^{5/2}\]
+Si suponemos que el glóbulo está proyectado por un ángulo $i$ como vemos en la figura \ref{Ang proyeccion}, entonces tenemos que \[R\cos i=R_p\] donde $R$ es la separación real del glóbulo a la estrella, $i$ en ángulo de inclinación y $R_p$ la distancia proyecta, que es la que observamos. Como ya habíamos mencionado en la sección \ref{Subsec : EM}, en esta proyección la densidad también se ve afectada por un factor de $\cos^{1/2}i$.  Por lo que \[P_{RAM}=\frac{\dot{M}v_\infty}{4\pi R_p^2}\cos{i}^{5/2}\]
 
 \begin{figure}[h]
     \centering
