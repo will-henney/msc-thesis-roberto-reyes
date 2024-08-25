@@ -385,7 +385,7 @@ Es importante mencionar que en este caso estamos considerando que $l$ es perpend
 
 Si consideramos que el eje de simetría del glóbulo tienen un ángulo $i$ con respecto a una línea perpendicular a nuestra línea de visión como se ve en la figura \ref{} y si además  suponemos que tenemos una densidad máxima $n_0$ en el eje de simetría, el cual decae en promedio con el ángulo como $\cos^{1/2} i$, entonces tendríamos  una densidad \[n_i = n_0\cos^{1/2} i\]
 
-\section{Ajustando el modelo a los perfiles de brillo radial}
+\section{Ajustando el modelo a los perfiles de brillo radial}\label{Sec: Ajuste de modelo}
 
 Gracias a la gran resolución del JWST podemos saber donde se encuentran estos nudos exactamente. Con esto podemos identificar el eje de simetría que une al nudo con la estrella y con ello identificar mejor cual es la parte neutra del nudo y cual es la cascara chocada.
 
@@ -432,7 +432,7 @@ y de ellos lo vcmaoa a considerar en equilibrio de ionización
 
 \chapter{Resultados}
 
-Se encontraron 168 nudos glóbulos en la nebulosa M1-67 los cuales están distribuidos a una distancia de la estrella central de entre 3--\SI{35}{\arcsecond}, esta distancia puede ser en realidad una distancia proyectada para algunos glóbulos.  Estos glóbulos se pueden observar ya sea en grupos o solos como se puede ver en la figura \ref{fig:dis_nudos}. 
+Se encontraron 168 nudos glóbulos en la nebulosa M1-67 los cuales están distribuidos a una distancia de la estrella central de entre 3--\SI{35}{\arcsecond}, aunque esta distancia puede ser en realidad una distancia proyectada para algunos glóbulos.  Estos glóbulos se pueden observar ya sea en grupos o solos como se puede ver en la figura \ref{fig:dis_nudos}. 
 
 El ajuste de las dos gaussianas a los perfiles de brillo se realizó para las observaciones de HST en H$\alpha$  y para el caso de las observaciones con el JWST usamos varios filtros, en el filtro F090N vemos principalmente la emisión de gas ionizado y  PAHs por lo que podemos dar un mejor criterio si es que en realidad hay una cáscara chocada. También se uso una combinación de los filtros F150W, F210m y F335M para ver la emisión de gas neutro quitando la emisión de las estrellas.
 
@@ -487,15 +487,15 @@ Si bien no todos los ajustes fueron buenos, algunos se pudieron recuperar viendo
     \label{tab:mean}
 \end{table}
 
-\section{Estimación de la presión en la zona neutra}
+%\section{Estimación de la presión en la zona neutra}
 
-Usando el modelo hidrodinámico que proponemos podemos calcular cuál es la presión del flujo fotoevaporativo en la base del glóbulo si conocemos el radio del glóbulo y de la cáscara chocada.  
+%Usando el modelo hidrodinámico que proponemos podemos calcular cuál es la presión del flujo fotoevaporativo en la base del glóbulo si conocemos el radio del glóbulo y de la cáscara chocada.  
 
-Para calcularlo tenemos que
-\[\frac{P_{shell}}{P_0}=\frac{P_{shell}}{P_{RAM}}\frac{P_{RAM}}{P_0} \Rightarrow P_0=\frac{P_{shell}}{P_{RAM}}\frac{P_0}{P_{shell}}P_{RAM}\]
-donde $P_{shell}$ es la presión de la cáscara chocada, $P_0$ es la presión del flujo fotoevaporativo en la base del glóbulo y $P_{RAM}$ es la presión del viento estelar. En la ecuación de la derecha, el primer término $\frac{P_{shell}}{P_{RAM}}$ lo podemos calcular usando las observaciones como ya se había mencionado antes, el segundo término $\frac{P_0}{P_{shell}}$ lo podemos obtener del modelo conociendo la razón entre los radios que encontramos y finalmente la $P_{RAM}$ puede ser calculada de las observaciones conociendo la distancia del glóbulo a la estrella.
+%Para calcularlo tenemos que
+%\[\frac{P_{shell}}{P_0}=\frac{P_{shell}}{P_{RAM}}\frac{P_{RAM}}{P_0} \Rightarrow P_0=\frac{P_{shell}}{P_{RAM}}\frac{P_0}{P_{shell}}P_{RAM}\]
+%donde $P_{shell}$ es la presión de la cáscara chocada, $P_0$ es la presión del flujo fotoevaporativo en la base del glóbulo y $P_{RAM}$ es la presión del viento estelar. En la ecuación de la derecha, el primer término $\frac{P_{shell}}{P_{RAM}}$ lo podemos calcular usando las observaciones como ya se había mencionado antes, el segundo término $\frac{P_0}{P_{shell}}$ lo podemos obtener del modelo conociendo la razón entre los radios que encontramos y finalmente la $P_{RAM}$ puede ser calculada de las observaciones conociendo la distancia del glóbulo a la estrella.
 
-\section{Corrección por proyección}
+\section{Corrección por proyección}\label{Sec:proyeccion}
 
 Debido a que estamos considerando un equilibrio de presión entre la presión RAM del viento estelar y la presión de la cáscara estos deberían ser iguales, pero como vemos en la gráfica \ref{graf_presion} la presión de la cáscara de los glóbulos es menor que la presión RAM. Esto puede ser debido a que no estamos viendo la distancia real que hay entre los glóbulos y la estrella, por lo que ahora vamos a considerar un ángulo de proyección con el cual las dos presiones ahora estarán en equilibrio.
 
@@ -506,7 +506,7 @@ Debido a que estamos considerando un equilibrio de presión entre la presión RA
     \label{graf_presion}
 \end{figure}
 
-Si suponemos que el glóbulo está proyectado por un ángulo $i$ como vemos en la figura \ref{Ang proyeccion}, entonces tenemos que \[R\cos i=R_p\] donde $R$ es la separación real del glóbulo a la estrella, $i$ en ángulo de inclinación y $R_p$ la distancia proyecta, que es la que observamos. Como ya habíamos mencionado en la sección \ref{Subsec : EM}, en esta proyección la densidad también se ve afectada por un factor de $\cos^{1/2}i$.  Por lo que \[P_{RAM}=\frac{\dot{M}v_\infty}{4\pi R_p^2}\cos{i}^{5/2}\]
+Si suponemos que el glóbulo está proyectado por un ángulo $i$ como vemos en la figura \ref{Ang proyeccion}, entonces tenemos que \[R\cos i=R_p\] donde $R$ es la separación real del glóbulo a la estrella, $i$ en ángulo de inclinación y $R_p$ la distancia proyecta, que es la que observamos. Como ya habíamos mencionado en la sección \ref{Subsec : EM}, en esta proyección estamos tomando que la densidad también se ve afectada por un factor de $\cos^{1/2}i$.  Por lo que \[P_{g}(i)=\frac{\dot{M}v_\infty}{4\pi R_p^2}\cos{i}^{5/2}\]
 
 \begin{figure}[h]
     \centering
@@ -524,21 +524,58 @@ De esta manera podríamos conocer el ángulo de inclinación de los glóbulos co
     \label{graf_presion_ang}
 \end{figure}
 
+Considerando este ángulo de inclinación encontramos que están a un ángulo de inclinación $i$ típico de \SI{40}{^\circ} y que podrían estar alrededor de un radio de \SI{17.54}{\arcsecond} como vemos en la tabla \ref{tab:mean_i} 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c c c}
+        \toprule
+        \multicolumn{3}{c}{Resultados con ángulo de inclinación} \\ \midrule
+          & Media & Desviación estándar.\\
+         cos(i) & 0.78 & 0.29\\
+         R & \SI{17.54}{\arcsecond}  & \SI{3.16}{\arcsecond}\\
+         $n_{cascara}$ & \SI{1372.15}{cm^{-3}}? & \SI{397.5}{cm^{-3}}? \\
+         $P_{g}(i)$ & \SI{3.19e-9}{cgs} & \SI{8.47e-10}{cgs} \\
+         \bottomrule
+    \end{tabular}
+    \caption{Valores típicos de los resultados obtenidos y su desviación estándar considerando el ángulo de inclinación $i$.}
+    \label{tab:mean_i}
+\end{table}
+
+\section{Estimación del radio de la parte neutra}
+
+Si bien se realizó el ajuste de dos gaussianas a los perfiles de brillo con las observaciones de HST, con este solo podemos asegurar el tamaño de la cáscara chocada ya que solo vemos el gas ionizado. Por lo que para estar seguros en la medición de la parte neutro utilizamos una combinación de filtros.  En el filtro f335m encontramos emisión de gas neutro (PAHs) por lo que usamos este filtro y le quitamos la emisión de estrellas y del gas ionizado, para eso se uso una combinación lineal de los filtros f150w y f210m.
+
+En esta estimación como solo veremos a emisión de gas neutro y difusa, solo vamos ajustar una gaussiana y una constante. Lo que se espera es que esta medición sea menor que la medición con el HST. 
+
+A diferencia del método utilizado en la sección \ref{Sec: Ajuste de modelo} aquí vamos a trazar una línea perpendicular al eje de simetría y en esta línea perpendicular vamos a considerar un ángulo pequeño alrededor de el, mientras que para la parte central vamos a considerar un pequeño círculo para encontrar el centro de la parte neutra.
+
 \chapter{Discusión}
 
-La corrección por ángulo en principio se puede aplicar solo a los glóbulos cuya presión de la cáscara  es menor que la presión RAM. En esta corrección no esperaos ver glóbulos con un ángulo de inclinación de $\pm 90^\circ$ ya que estos estarían totalmente de espaldas o de frente, en cualquier caso estos no los podríamos ver porque se verían afectados por la estrella WR ya que en proyección estarían muy cerca de la estrella. Esto último es algo que se pudo notar al momento de hacer los ajustes, por lo que aún si se les pudiera ver o detectar una cáscara chocada, la estimación de sus presiones y densidades estarían mal ya que pueden verse muy afectadas por la estrella.
+Para este caso, \cite{Zavala:2022} estima que la nebulosa planetaria se formó hace unos \SI{11.8}{kyr} por lo que podríamos suponer que las fases mencionadas en la sección \ref{Sec:fluijos fotoevaporativos} ya han pasado y esto es importante porque si estuviéramos en otra fase como en la de implosión, los radios cambiarían además que las presiones que consideramos podrían aún no estar en equilibrio. En el caso de no estar aún en el equilibrio de presiones indicaría que esta interacción entre el flujo fotoevaporativo y el viento estelar se formó recientemente.\\
 
-Por otro lado se pueden apreciar glóbulo cuyas presiones de la cáscara chocada es mayor que la presión RAM. Esto se puede deber a que el viento estelar haya interactuado antes con glóbulos que están más cerca de la estrella. En la figura \ref{graf_presion_ang} vemos como esto se da en los glóbulos que están más alejado.
+Como ya habíamos mencionado, hay algunos glóbulos que s encuentran en grupo tal como se ve en la figura \ref{globule_group}. En estos casos la detección de la cáscara chocada es un poco difícil por las siguientes razones. En la imagen de arriba de la figura \ref{globule_group} vemos un claro ejemplo de que cuando dos glóbulos estén muy cercanos se pueden confundir con que sea un solo glóbulo, como es el caso de los que están marcados con círculos azules. De esta manera nos podríamos confundir en el tamaño de la parte neutra del glóbulo y sobrestimarla. Detrás de estos glóbulos se encuentran otros dos glóbulos cercanos (marcados con círculos negros), debido a la proyección en el cielo estos parecen estar en la estela de los glóbulos marcados con círculos azules, por lo que en principio no podríamos detectar bien una cáscara chocada. Por otro lado tenemos el glóbulo marcado con un círculo rojo, este glóbulo es más pequeño que los otros que están en el grupo y aparentemente su cáscara chocada está muy cerca del glóbulo pero en realidad esta cáscara parece ser del par de glóbulos marcados con círculos azules. Algo similar pasa con el glóbulo marcado con el círculo verde, el cual aparentemente no tiene una cáscara pero pareciera estar en la cáscara chocada de algún otro glóbulo.
 
-En algunos casos también vemos que algunos glóbulos están en ciertos grupos por lo que podría ser que el pico de emisión que usamos para saber el radio de la parte neutra se vea contaminado ya sea por las partes neutras o la cáscara de otros glóbulos como se ve en la imagen \ref{}. Otra consideración a tomar en los glóbulos que parecieran estar en grupo es que las presiones podrían ser diferentes como se ve en la imagen \ref{}.
+En la imagen inferior de la figura \ref{globule_group} de igual manera vemos un grupo de glóbulos, pero en esta ocasión están lo suficientemente lejos como para no confundir sus respectivas cáscaras. El problema aquí es que ahora las cáscaras están cerca la una de la otra, por lo que la emisión de una afecta a otras. En este ejemplo en particular, vemos que las cáscaras más grandes contaminan a las más pequeñas en cuanto a su emisión.\\
 
-El modelo propuesto en un principio está puesto para un escenario sencillo, un glóbulo que es radiado por una fuente, pero esto podría ampliarse un poco más si tenemos varias fuentes que radian al glóbulo y una de ellas es la que domina en cuanto al flujo de fotones ionizantes.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{discusion/groups_globules.pdf}
+    \caption{Estos son algunos ejemplos de los grupos de glóbulos que se encontraron en la nebulosa. En la imagen de arriba tenemos varios problemas, entre ellos identificar si es uno o más glóbulos para el caso de los que están muy cerca y saber de qué glóbulo viene cada cáscara chocada, en caso de detectarla. En la imagen de abajo vemos como la cercanía entre glóbulos hace que la emisión de una cáscara chocada se vea afectada por otra cercana.}
+    \label{globule_group}
+\end{figure}
 
-Para este caso, \cite{} estima que la nebulosa planetaria se formó hace unos ?? por lo que podríamos suponer que las fases mencionadas en la sección \ref{Sec:fluijos fotoevaporativos} ya han pasado y esto es importante porque si estuviéramos en otra fase como en la de implosión, los radios cambiarían además que las presiones que consideramos podrían aún no estar en equilibrio. 
+%Masas y tasa de pérdida de masas 
 
-Consideramos una gran distribución en la separación observada debido a que los más cercanos podrían estar en una fase diferente a los que están más lejos, esto si consideramos que también la velocidad de expansión de la nebulosa y que los glóbulos más cercanos estén en la fase de implosión aún pero al parecer no presentan una diferencia notable en sus tamaños o presiones. Además no se pudo estudiar muy bien a los más cercanos porque estos estaban muy contaminados ya sea por la estrella o por la nebulosa en general, pero como se dio anteriormente estos parecen estar a una separación real más grande.
+La corrección por ángulo en principio se puede aplicar solo a los glóbulos cuya presión de la cáscara  es menor que la presión RAM. Si la presión de la cáscara fuera mayor que la presión RAM del viento entonces la cáscara se tendría que expandir hasta encontrar un equilibrio con la presión RAM. Esto en caso de tener un solo glóbulo, pero también podríamos tener un escenario como se muestra en la figura II. En esta figura se ve como la presión RAM primero actúa sobre el glóbulo más cercano a la estrella, en cambio para el otro glóbulo esta presión externa se ve afectada por la interacción anterior. Por lo que la presión RAM no actúa directamente sobre el glóbulo más lejano. Este caso se podría aplicar en algunas estructuras que tenían algunos glóbulos como vemos en la figura III. Estos glóbulos fueron descartados debido a que en la cáscara podría haber material del otro glóbulo y que tendríamos que calcular la presión que actúa sobre ellos ya que la presión RAM se vio afectada por una primer interacción.\\
 
-Algo que llamó mucho la atención en algunos glóbulos es su estela. Para el caso de alguno glóbulos se ve que sus estelas van en sentidos contrario. En algunos casos parece que las zonas neutras de otros glóbulos en realidad están en la estela de otros glóbulos.
+En esta corrección por ángulo no esperamos ver glóbulos con un ángulo de inclinación de $\pm 90^\circ$ ya que estos estarían totalmente de espaldas o de frente, en cualquier caso estos no los podríamos ver porque se verían afectados por la emisión de la estrella WR ya que en proyección estarían muy cerca de la estrella.
+
+En estas correcciones por proyección se tomó en cuenta que la densidad cae con el ángulo y que en promedio esto decae como $\cos^{1/2}{i}$ (Sección \ref{Sec:proyeccion}). Pero si consideramos que la densidad no decae con el ángulo entonces tendríamos que 
+\[P_g(i)= \frac{\dot{M}v_\infty}{4\pi R_p^2}\cos^2 i,\] esto a ángulos pequeños no vemos un gran diferencia pero a grandes ángulos sí, y como vemos en la figura II esto afecta más a los glóbulos que están más cerca de la estrella. 
+
+El modelo propuesto en un principio está puesto para un escenario sencillo, un glóbulo que es radiado por una fuente, pero esto podría ampliarse un poco más si tenemos varias fuentes que radian al glóbulo y una de ellas es la que domina en cuanto al flujo de fotones ionizantes
+
 
 \chapter{Conclusiones}
 
