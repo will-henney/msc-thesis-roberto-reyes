@@ -432,15 +432,19 @@ y de ellos lo vcmaoa a considerar en equilibrio de ionización
 
 \chapter{Resultados}
 
-Se encontraron 168 nudos glóbulos en la nebulosa M1-67 los cuales están distribuidos a una distancia de la estrella central de entre 3--\SI{35}{\arcsecond}, aunque esta distancia puede ser en realidad una distancia proyectada para algunos glóbulos.  Estos glóbulos se pueden observar ya sea en grupos o solos como se puede ver en la figura \ref{fig:dis_nudos}. 
+Se encontraron alrededor de 168 nudos glóbulos en la nebulosa M1-67 los cuales están distribuidos a una distancia de la estrella central de entre 3--\SI{35}{\arcsecond}, aunque esta distancia puede ser en realidad una distancia proyectada para algunos glóbulos.  Estos glóbulos se pueden observar ya sea en grupos o solos como se puede ver en la figura \ref{fig:dis_nudos}. 
 
-El ajuste de las dos gaussianas a los perfiles de brillo se realizó para las observaciones de HST en H$\alpha$  y para el caso de las observaciones con el JWST usamos varios filtros, en el filtro F090N vemos principalmente la emisión de gas ionizado y  PAHs por lo que podemos dar un mejor criterio si es que en realidad hay una cáscara chocada. También se uso una combinación de los filtros F150W, F210m y F335M para ver la emisión de gas neutro quitando la emisión de las estrellas.
+El ajuste de las dos gaussianas a los perfiles de brillo se realizó para las observaciones de HST en H$\alpha$  como ya habíamos mencionado antes. Esto se pudo hacer gracias a que sabíamos donde se encontraban los glóbulos, pero debido a que tenemos una menor resolución que en el JWST no fue posible detectar muy bien tanto la parte neutra como la cáscara en todos los casos y en algunos casos quedaba duda si lo que se detectaba era realmente una cáscara, por lo que también se hizo usando una combinación de los filtros f210m, f150w, f335m y f444w del JWST para ver solo la emisión del gas ionizado y comprobar si lo que se había detectado como una cáscara con las observaciones del HST realmente lo era o no.
 
-Gracias a que tenemos las observaciones de dos telescopios podemos comparar los ajustes para saber si estos ajustes son buenos. Debido a que usamos diferentes filtros con diferentes resoluciones podemos comparar mejor si los ajustes son buenos o no, esto ya que con los diferentes filtros podemos ver diferentes morfologías y tener un mejor criterio si los radios calculados están sobrestimados o no, también si las observaciones están muy contaminadas por fuentes cercanas o la estructura de la gran nebulosa, también debemos considerar que la emisión puede ser contaminada por otros glóbulos como lo es en el caso de los glóbulos que se encuentran en grupo. 
+\section{Medición del radio en la parte neutra}
+
+Por otra parte, como en estos dos casos anteriores tenemos solo la emisión de gas ionizado la medición para los radios de la parte neutra también estaría mal. Por lo que para la medición de la parte neutra se utilizó la combinación de los filtros f150w, f210m y f335m para ver la emisión neutra. 
+
+En este caso ajustamos solo una gaussiana y una constante al perfil de brillo ya que aquí no podríamos ver la cáscara chocada. El ajuste se realizó de la siguiente manera: Dado que el radio del glóbulo en el anterior ajustes tenía un valor medio de \SI{0.14}{\arcsecond} con una variación de $\pm\SI{0.04}{\arcsecond}$ decidimos poner una máscara de \SI{0.2}{\arcsecond} alrededor del pico de emisión y unos conos con un pequeño ángulo de apertura, estos conos son perpendiculares al eje de simetría considerado en el modelo y tienen una longitud de \SI{1.5}{\arcsecond}. Con esta máscara considerada esperamos tener toda la emisión neutra en el círculo pequeño que consideramos, los conos nos servirán para calcular mejor la constante ajustada.  
 
 \section{Glóbulos descartados}\label{Bad globules}
 
-A pesar de tener una buena cantidad de glóbulos para aplicar este modelo no se usaron todos por diferentes razones. 
+A pesar de tener una buena cantidad de glóbulos para aplicar a este modelo no se usaron todos por diferentes razones. 
 
 Algunos de ellos tenían un mal ajuste debido a la gran estructura de la nebulosa, había estrellas de fondo o se veían afectados por la difracción del telescopio.  Debido a esto en algunos casos no se alcanzaba a detectar bien la parte neutra o la cáscara chocada y en algunos casos la detección de estas regiones estaban mal en cuanto a sus tamaños.  Para esto ocupamos las observaciones en los dos telescopios ya que para el caso de las observaciones con el HST, que tiene menor resolución, se fijaba más en las grandes estructuras por lo que en algunos ajustes se veían afectados por la gran estructura de la nebulosa o estrellas de fondo. Sin embargo, debido a que las observaciones con JWST se ven muy afectadas por la difracción del telescopio, algunos glóbulos no fueron tomados en cuenta a pesar de que se pudiera observar una posible cáscara.
 
@@ -451,22 +455,14 @@ Algunos de ellos tenían un mal ajuste debido a la gran estructura de la nebulos
     \label{Bad Globules}
 \end{figure}
 
-\section{Buenos ajustes}\label{Good results}
-
-Se pudo obtener mucha información para el caso de los glóbulos en los que se pudieron detectar tanto la parte neutra como la cáscara chocada. 
-
-Con estos buenos ajustes se pudieron conocer los diferentes radios del glóbulo, la densidad en la cáscara chocada usando la EM, la presión de la cáscara y la presión RAM del viento que actúa sobre ellos.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=1.2\textwidth]{imagenes Chapter 4/ImgFi011-7.pdf}
-    \caption{Ejemplo de buenos ajustes. Las imágenes del lado izquierdo son con el HST y las de l lado derecho con el JWST. Vemos como el ancho de la cáscara chocada son algo similar en ambas observaciones, mientras que el radio en la parte neutra es más pequeña en las imágenes del JWST.}
-    \label{Goog G}
-\end{figure}
 
 \section{Ajustes recuperados}
 
-Si bien no todos los ajustes fueron buenos, algunos se pudieron recuperar viendo en los diferentes filtros donde se podían apreciar las diferentes regiones. Algunos de estos ejemplos se pueden ver en la imagen \ref{}.
+Primero se aplicó el ajuste a los perfiles de brillo con los datos del HST y ya vimos que algunos casos quedaron descartados por distintas razones, pero en otros casos se podía ver una cáscara y no la detectábamos, aplicando el ajuste a los datos del JWST  nos dimos cuenta de esto por lo que se pudieron rescatar algunos glóbulos en los que en un inicio no se había detectado la cáscara. Por otro lado, como ya se mencionó antes, nos ayudó también a detectar los ajustes que aparentemente tenían una cáscara pero no era así.
+
+Para agregar estos glóbulos nos fijamos en las mediciones de los radios de las cáscaras y sus anchos. Como vimos que ambos seguían una buena tendencia de que sus mediciones eran más o menos similares, decidimos agregar estos glóbulos con las mediciones del JWST ya que tienen una mejor resolución.
+
+Con esto tenemos una gran variedad de glóbulos en cuanto a sus diferentes tamaños y distancia a la estrella. 
 % poner imagen donde se compara el modelo con los resultados obtenidos
 
 \begin{table}[h]
@@ -494,6 +490,19 @@ Si bien no todos los ajustes fueron buenos, algunos se pudieron recuperar viendo
 %Para calcularlo tenemos que
 %\[\frac{P_{shell}}{P_0}=\frac{P_{shell}}{P_{RAM}}\frac{P_{RAM}}{P_0} \Rightarrow P_0=\frac{P_{shell}}{P_{RAM}}\frac{P_0}{P_{shell}}P_{RAM}\]
 %donde $P_{shell}$ es la presión de la cáscara chocada, $P_0$ es la presión del flujo fotoevaporativo en la base del glóbulo y $P_{RAM}$ es la presión del viento estelar. En la ecuación de la derecha, el primer término $\frac{P_{shell}}{P_{RAM}}$ lo podemos calcular usando las observaciones como ya se había mencionado antes, el segundo término $\frac{P_0}{P_{shell}}$ lo podemos obtener del modelo conociendo la razón entre los radios que encontramos y finalmente la $P_{RAM}$ puede ser calculada de las observaciones conociendo la distancia del glóbulo a la estrella.
+
+\section{Buenos ajustes}\label{Good results}
+
+Se pudo obtener mucha información para el caso de los glóbulos en los que se pudieron detectar tanto la parte neutra como la cáscara chocada. 
+
+Con estos buenos ajustes se pudieron conocer los diferentes radios del glóbulo, la densidad en la cáscara chocada usando la EM, la presión de la cáscara y la presión RAM del viento que actúa sobre ellos.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1.2\textwidth]{imagenes Chapter 4/ImgFi011-7.pdf}
+    \caption{Ejemplo de buenos ajustes. Las imágenes del lado izquierdo son con el HST y las de l lado derecho con el JWST. Vemos como el ancho de la cáscara chocada son algo similar en ambas observaciones, mientras que el radio en la parte neutra es más pequeña en las imágenes del JWST.}
+    \label{Goog G}
+\end{figure}
 
 \section{Corrección por proyección}\label{Sec:proyeccion}
 
@@ -542,13 +551,15 @@ Considerando este ángulo de inclinación encontramos que están a un ángulo de
     \label{tab:mean_i}
 \end{table}
 
-\section{Estimación del radio de la parte neutra}
+\section{Comparación con el modelo}
 
-Si bien se realizó el ajuste de dos gaussianas a los perfiles de brillo con las observaciones de HST, con este solo podemos asegurar el tamaño de la cáscara chocada ya que solo vemos el gas ionizado. Por lo que para estar seguros en la medición de la parte neutro utilizamos una combinación de filtros.  En el filtro f335m encontramos emisión de gas neutro (PAHs) por lo que usamos este filtro y le quitamos la emisión de estrellas y del gas ionizado, para eso se uso una combinación lineal de los filtros f150w y f210m.
+Dadas las observaciones hemos estimado algunos parámetros como sus distintos radio y propiedades sobre todo de la cáscara chocada, pero en nuestro modelos incluye mucho acerca de la parte neutra y la cáscara chocada. 
 
-En esta estimación como solo veremos a emisión de gas neutro y difusa, solo vamos ajustar una gaussiana y una constante. Lo que se espera es que esta medición sea menor que la medición con el HST. 
+Ya hemos hecho una medición de los distintos radios, así que ahora vamos a tratar de comparar las presiones entre la parte neutra y la cáscara. 
 
-A diferencia del método utilizado en la sección \ref{Sec: Ajuste de modelo} aquí vamos a trazar una línea perpendicular al eje de simetría y en esta línea perpendicular vamos a considerar un ángulo pequeño alrededor de el, mientras que para la parte central vamos a considerar un pequeño círculo para encontrar el centro de la parte neutra.
+...
+
+
 
 \chapter{Discusión}
 
