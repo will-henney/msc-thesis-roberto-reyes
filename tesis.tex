@@ -356,7 +356,7 @@ Para las observaciones con JWST usamos las observaciones propuestas por Klaus M.
     \label{fig:M1-67JWST}
 \end{figure}
 
-\section{Estimación de la densidad ionizada a partir del brillo superficial de \unit{H\alpha}}
+\section{Estimación de la densidad ionizada a partir del brillo superficial de H$\alpha$}\label{Sec : estimacion de densidad}
 
 Para estimar la densidad ionizada, usamos primero la definición de medida de emisión (EM por sus siglas en inglés)
 \[EM=\int_z n_i n_edz\] donde en este caso estaremos integrando sobre nuestra línea de visión. Esta EM depende tanto de la densidad de electrones como de iones, pero en nuestro caso vamos a considerar un equilibrio de ionización entre el flujo fotoevaporativo y el viento estelar, por lo que $n_e=n_i$.
@@ -386,7 +386,7 @@ Es importante mencionar que en este caso estamos considerando que $l$ es perpend
 
 Si consideramos que el eje de simetría del glóbulo tienen un ángulo $i$ con respecto a una línea perpendicular a nuestra línea de visión como se ve en la figura \ref{} y si además  suponemos que tenemos una densidad máxima $n_0$ en el eje de simetría, el cual decae en promedio con el ángulo como $\cos^{1/2} i$, entonces tendríamos  una densidad \[n_i = n_0\cos^{1/2} i\]
 
-\section{Ajustando el modelo a los perfiles de brillo radial}\label{Sec: Ajuste de modelo}
+\section{Ajustando el modelo a los perfiles de brillo radial} \label{Sec : Ajuste de modelo}
 
 Gracias a la gran resolución del JWST podemos saber donde se encuentran estos nudos exactamente. Con esto podemos identificar el eje de simetría que une al nudo con la estrella y con ello identificar mejor cual es la parte neutra del nudo y cual es la cascara chocada.
 
@@ -425,11 +425,11 @@ Para el caso de la presión RAM la vamos a tomar como \[P_{RAM}= \frac{\dot{M}v_
 
 \section{Estimando la tasa de foto ionización}
 
-En este caso vamos a considerar las reacciones que están dadas por la siguiente forma 
-\[H^0+ h\nu \longleftrightarrow H^+ + e\]
-y de ellos lo vcmaoa a considerar en equilibrio de ionización
+En el modelo estamos considerando equilibrio de ionización, por lo que en un principio deberíamos tener que 
+\[F_0=\int n_0^2\alpha_\mathrm{B} dr,\] es decir, que la tasa de fotones ionizantes, $F_0$, debe ser consistente con las recombinaciones en el frente de ionización. De esta manera, tenemos una estimación para la densidad a través de las observaciones
+\[n_0 = \sqrt{\frac{F_0}{h_1\alpha_\mathrm{B}}}\] donde $h_1$ es la anchura efectiva (Apéndice \ref{App : tasa de fotoionizacion}). 
 
-\[n(H^0)\sigma F = n(H^+)n_e\alpha_\mathrm{B}\] donde $n(H^0)$ es la densidad del gas eutro, $\sigma$ la sección recta, $F$ el flujo de fotones ionizantes, $n(H^+)$ la densidad de gas ionizado, $n_e$ la densidad de electrones y $\alpha_\mathrm{B}$ el coeficiente de recombinación, es decir vamos a considerar que el número de recombinaciones es igual al  número de recombinaciones 
+Está estimación en principio debe concordar con las demás estimaciones a la tasa de fotones ionizantes o la densidad.
 
 \chapter{Resultados}
 
@@ -449,7 +449,7 @@ A pesar de tener una buena cantidad de glóbulos para aplicar a este modelo no s
 
 Algunos de ellos tenían un mal ajuste debido a la gran estructura de la nebulosa, había estrellas de fondo o se veían afectados por la difracción del telescopio.  Debido a esto en algunos casos no se alcanzaba a detectar bien la parte neutra o la cáscara chocada y en algunos casos la detección de estas regiones estaban mal en cuanto a sus tamaños.  Para esto ocupamos las observaciones en los dos telescopios ya que para el caso de las observaciones con el HST, que tiene menor resolución, se fijaba más en las grandes estructuras por lo que en algunos ajustes se veían afectados por la gran estructura de la nebulosa o estrellas de fondo. Sin embargo, debido a que las observaciones con JWST se ven muy afectadas por la difracción del telescopio, algunos glóbulos no fueron tomados en cuenta a pesar de que se pudiera observar una posible cáscara.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images Chapter 3/C3_badG.jpg}
     \caption{Ejemplo de glóbulos descartados. Del lado izquierdo es la imagen con el HST y del lado derecho con el JWST. El primer glóbulo es descartado por que se ve afectado por la difracción del telescopio y por la gran estructura de la nebulosa, esto se puede deber a lo cerca que está de la estrella central. En los otros ejemplos vemos como la presencia de fuentes cercanas afecta nuestras estimaciones de posibles cáscaras chocadas en las observaciones.}
@@ -558,9 +558,12 @@ Dadas las observaciones hemos estimado algunos parámetros como sus distintos ra
 
 Ya hemos hecho una medición de los distintos radios, así que ahora vamos a tratar de comparar las presiones entre la parte neutra y la cáscara. 
 
-...
+Primero de la sección \ref{Subsec : EM} tenemos que $\mathrm{B}\propto \mathrm{EM}=n^2l$ por lo que
+\[\frac{\mathrm{B_s}}{\mathrm{B_0}}=\frac{n_s^2l_s}{n_0^2l_0}\]
+donde $\mathrm{B_s}, \; n_s$ y $l_s$ son el brillo, la densidad y la longitud donde tenemos el máximo de la EM en la cáscara (sección \ref{Sec : estimacion de densidad}) y  $\mathrm{B_0}, \; n_0$ y $l_0$ son el brillo, la densidad y la longitud donde tenemos el máximo de la EM en la parte neutra. Por otra parte tenemos del modelo que $f = \frac{P}{P_0}=\frac{\rho}{2\rho_0} \Rightarrow \frac{\rho}{\rho_0}=2f$ por lo que
+\[\frac{\mathrm{B_s}}{\mathrm{B_0}}=4f^2\frac{l_s}{l_0}\Rightarrow f= \frac{1}{2}\Big(\frac{\mathrm{B_s}/\mathrm{B_0}}{l_s/l_0}\Big)^{1/2}\]  como podemos conocer los brillos y longitudes $l$ de las observaciones, entonces lo podemos comparar con el modelo directamente.
 
-
+Debido a que los radios en la parte neutra son muy pequeños, vamos a considerar que $r_0\approx l_0$. Así la comparación con el modelo saldrá directamente de las observaciones. 
 
 \chapter{Discusión}
 
@@ -638,6 +641,17 @@ Para la nebulosa tenemos un tiempo dinámico de \[t_{DN}= \frac{R_{nebula}}{v_{e
 
 Usando la densidad promedio de la tabla \ref{tab:mean} tenemos un tiempo de recombinación 
 \[t_r = \frac{1}{\alpha_B n} \approx \SI{3.16e9}{s}\]
+
+\chapter{Estimación de la densidad en el frente de ionización }\label{App : tasa de fotoionizacion}
+
+En el frente de ionización tenemos que el flujo ionizante debe compararse con dos cosas, una son las recombinaciones en el frente de ionización y la otra es con las nuevas partículas que atraviesan el frente de ionización, el término de advección, por lo que tenemos que 
+\[F_0 = n_0 u_0 +\int n^2\alpha_\mathrm{B}dr = n_0u_0+n_0^2h_1\alpha_\mathrm{B}\] donde $F_0$ es la tasa de fotones ionizantes, $n_0$ la densidad, $u_0$ la velocidad del gas ionizado y $h_1$ es la anchura efectiva que se define como
+\[n_0^2h_1=\int n^2dr\] y se puede estimar usando las ecuaciones de la sección \ref{Estructura}, por lo que tendríamos que 
+\[h_1=\int_0^\infty \Big(\frac{n(r)}{n_0}\Big)^2dr=r_0\int_1^\infty\frac{exp(\frac{3}{4}(1-M^2))}{2}(M^{1/2}-M^{3/})dM\approx0.12r_0\]
+por lo que 
+\[F_0 = n_0u_0+n_0^20.12r_0\alpha_\mathrm{B}.\]
+
+Otra manera de estimar la densidad en el frente de ionización fue usando la EM, donde consideramos que $l\approx r_0$. 
 
 \chapter{Imágenes de ajustes}
 
