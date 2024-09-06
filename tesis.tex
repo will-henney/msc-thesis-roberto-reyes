@@ -1,4 +1,4 @@
-\documentclass{book}
+R\documentclass{book}
 \usepackage{graphicx} % Required for inserting images
 
 \usepackage[utf8]{inputenc}
@@ -460,7 +460,7 @@ Algunos de ellos tenían un mal ajuste debido a la gran estructura de la nebulos
 
 \section{Ajustes recuperados}
 
-Primero se aplicó el ajuste a los perfiles de brillo con los datos del HST y ya vimos que algunos casos quedaron descartados por distintas razones, pero en otros casos se podía ver una cáscara y no la detectábamos, aplicando el ajuste a los datos del JWST  nos dimos cuenta de esto por lo que se pudieron rescatar algunos glóbulos en los que en un inicio no se había detectado la cáscara. Por otro lado, como ya se mencionó antes, nos ayudó también a detectar los ajustes que aparentemente tenían una cáscara pero no era así.
+Primero se aplicó el ajuste a los perfiles de brillo con los datos del HST y ya vimos que algunos casos quedaron descartados por distintas razones, pero en otros casos se podía ver una cáscara y no la detectábamos. Aplicando el ajuste a los datos del JWST  nos dimos cuenta de esto por lo que se pudieron rescatar algunos glóbulos en los que en un inicio no se había detectado la cáscara. Por otro lado, como ya se mencionó antes, nos ayudó también a detectar los ajustes que aparentemente tenían una cáscara pero no era así.
 
 Para agregar estos glóbulos nos fijamos en las mediciones de los radios de las cáscaras y sus anchos. Como vimos que ambos seguían una buena tendencia de que sus mediciones eran más o menos similares, decidimos agregar estos glóbulos con las mediciones del JWST ya que tienen una mejor resolución.
 
@@ -555,16 +555,42 @@ Considerando este ángulo de inclinación encontramos que están a un ángulo de
 
 \section{Comparación con el modelo}
 
-Dadas las observaciones hemos estimado algunos parámetros como sus distintos radio y propiedades sobre todo de la cáscara chocada, pero en nuestro modelos incluye mucho acerca de la parte neutra y la cáscara chocada. 
+Dadas las observaciones hemos estimado algunos parámetros como sus distintos radios y propiedades, sobre todo de la cáscara chocada, pero en nuestro modelos incluye mucho acerca de la parte neutra y la cáscara chocada. 
 
-Ya hemos hecho una medición de los distintos radios, así que ahora vamos a tratar de comparar las presiones entre la parte neutra y la cáscara. 
+Ya hemos hecho una medición de los distintos radios, así que ahora vamos a tratar de comparar la  presión de la parte interna y de la cáscara.
 
-Primero de la sección \ref{Subsec : EM} tenemos que $\mathrm{B}\propto \mathrm{EM}=n^2l$ por lo que
+Primero, de la sección \ref{Subsec : EM} tenemos que $\mathrm{B}\propto \mathrm{EM}=n^2l$ por lo que
 \[\frac{\mathrm{B_s}}{\mathrm{B_0}}=\frac{n_s^2l_s}{n_0^2l_0}\]
-donde $\mathrm{B_s}, \; n_s$ y $l_s$ son el brillo, la densidad y la longitud donde tenemos el máximo de la EM en la cáscara (sección \ref{Sec : estimacion de densidad}) y  $\mathrm{B_0}, \; n_0$ y $l_0$ son el brillo, la densidad y la longitud donde tenemos el máximo de la EM en la parte neutra. Por otra parte tenemos del modelo que $f = \frac{P}{P_0}=\frac{\rho}{2\rho_0} \Rightarrow \frac{\rho}{\rho_0}=2f$ por lo que
-\[\frac{\mathrm{B_s}}{\mathrm{B_0}}=4f^2\frac{l_s}{l_0}\Rightarrow f= \frac{1}{2}\Big(\frac{\mathrm{B_s}/\mathrm{B_0}}{l_s/l_0}\Big)^{1/2}\]  como podemos conocer los brillos y longitudes $l$ de las observaciones, entonces lo podemos comparar con el modelo directamente.
+donde $\mathrm{B_s}, \; n_s$ y $l_s$ son el brillo, la densidad y la longitud donde tenemos el máximo de la EM en la cáscara (sección \ref{Sec : estimacion de densidad}) y  $\mathrm{B_0}, \; n_0$ y $l_0$ son el brillo, la densidad y la longitud donde tenemos el máximo de la EM en la parte interna. Por otra parte tenemos del modelo que $f = \frac{P}{P_0}=\frac{\rho}{2\rho_0} \Rightarrow \frac{\rho}{\rho_0}=2f$ por lo que
+\[\frac{\mathrm{B_s}}{\mathrm{B_0}}=4f^2\frac{l_s}{l_0}\Rightarrow f= \frac{1}{2}\Big(\frac{\mathrm{B_s}/\mathrm{B_0}}{l_s/l_0}\Big)^{1/2}.\]  Como podemos conocer los brillos y longitudes $l$ de las observaciones, entonces lo podemos comparar con el modelo directamente.
 
 Debido a que los radios en la parte neutra son muy pequeños, vamos a considerar que $r_0\approx l_0$. Así la comparación con el modelo saldrá directamente de las observaciones. 
+
+\subsection{Medición de errores en las observaciones}
+
+Como el radio de la parte neutra $r_0$ y el ancho de la cáscara $\mathrm{H}_s$ se midieron usando la sigma de las gaussianas ajustadas a los perfiles, tuvieron que ser corregidos por lo que primero lo relacionamos con la anchura a altura media y después se corrigió tomando en cuenta la anchura del telescopio.
+
+Para el caso de la parte interna tenemos una medición para el radio en la parte neutra con un combinación de filtros del JWST y una aproximación el HST, ya que en este último vemos solo el gas ionizado. Aunque no hay una buena correlación entre estas dos mediciones, su valor promedio y desviación estándar se parecen mucho, por lo que vamos a considerar un radio constante que será igual para todos los glóbulos el cuál será el promedio de los valores típicos de estas dos  mediciones con un error de $\pm\SI{3}{\arcsecond}$.
+
+Para el caso del ancho y radio de la cáscara vamos a considerar un error relativo para cada glóbulos usando las mediciones de ambos telescopios. Los errores estarán dados de la siguiente manera 
+\[\epsilon_{r_s} = \frac{\frac{\sigma\Big(\mathrm{r}_{s,HST}-\mathrm{r}_{s,JWST}\Big)}{\sqrt{2}}}{\bar{r}_{s,HST}}\]
+y \[\epsilon_{H_s} = \frac{\frac{\sigma\Big(\mathrm{H}_{s,HST}-\mathrm{H}_{s,JWST}\Big)}{\sqrt{2}}}{\bar{H}_{s,HST}}\]
+donde $\mathrm{r_{s,JWST}}$ son las mediciones de la cáscara con el JWST, $\mathrm{r_{s,HST}}$ son las mediciones de la cáscara con el HST y $\bar{r}_{s,HST}$ el valor promedio de las mediciones del radio de la cáscara medido con el HST.
+
+Para los errores relativos en los brillos tanto de la parte interna como de la cáscara se tomaron como
+\[\epsilon_{r,B}= \frac{\sqrt{\sigma\Big((y-f(x))^2,w_1*w_2\Big)}}{B}\] 
+donde $y-f(x)$ son los valores observados menos el ajuste, $w_1$ es el peso considerado en el modelo (Sección \ref{Sec : Ajuste de modelo}) y $w_2$ es la gaussiana ajustada a la parte correspondiente, es decir, para la parte interna $w_2$ es la primer gaussianan ajustada, la cual tiene su pico en \SI{0}{\arcsecond} (Sección \ref{Sec : Ajuste de modelo}) y para la cáscara $w_2$ es la segunda gaussiana ajustada. Finalmente $B$ es el pico del brillo a la parte correspondiente.
+
+Para el brillo en la cáscara tenemos una variación de su valor con respecto al ángulo, como se puede ver en los ajustes. Por otro lado, tenemos suficientes puntos como para considerar que este valor en promedio está bien y no se ve afectado por el telescopio. 
+
+Por otro lado para la parte interna tenemos muy pocos píxeles y el flujo podría verse afectado por el ancho instrumental y subestimar el valor real.  Así que considerando que el flujo dado por el valor real está dado por $F=B_0\pi r_{eff}^2$, donde $B_0$ es el valor del pico de la emisión real y  $r_{eff}$ está relacionado con el ancho de la emisión, y que el flujo por el brillo  observado está dado por $F=B_{obs}\Big[\pi\Big(r_{eff}^2+\sigma_{opt}^2\Big)+\Delta\theta_{pix}^2\Big]$, donde ... Por lo que tendríamos que 
+\begin{equation*} \label{eq1}
+\begin{split}
+\frac{B_0}{B_{obs}} & = 1 + \frac{\sigma_{opt}^2+\Delta\theta_{pix}^2/\pi}{r_{eff}^2} \\
+ & = 1 + \frac{\sigma_{ins}^2}{r_{eff}^2} = 1 + \Big(\frac{W_{ins}}{W_{nudo}}\Big)^2
+\end{split}
+\end{equation*}
+de esta manera podemos tener una mejor estimación del pico del brillo en la parte interna considerando el ancho instrumental $W_{ins}$ y el ancho del glóbulo $W_{nudo}$.
 
 \chapter{Discusión}
 
