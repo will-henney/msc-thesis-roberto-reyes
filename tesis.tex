@@ -200,7 +200,13 @@ Debido a que no se han encontrado muchas estrellas WR se les suele asociar un n�
 
 En esta tesis proponemos un modelo simple para explicar como interactúa el flujo fotoevaporativo transónico de un glóbulo con una presión externa. Este modelo lo vamos a aplicar  a los nudos que se encuentran en la nebulosa M1-67, por lo que se explicará la interacción del flujo fotoevaporativo con la presión RAM del viento estelar de la estrella WR-124.
 
-En el capítulo 2 vamos a hablar de cómo la interacción entre estos dos flujos supoersónicos producen cáscaras chocada, y cómo es que comparamos la presión de una cáscara chocada con un presión externa. 
+En el capítulo 2 veremos como es que la interacción entre dos flujos supersónicos crean una cáscara chocada delgada. Con base en esto, describiremos el modelo hidrodinámico estacionario, en el cual el flujo fotoevaporativo de un glóbulo interactúa con una presión externa. En esta interacción también podemos ver una cáscara chocada.
+
+En el capítulo 3 hablaremos de como encontramos los nudos en la nebulosa M1-67, así como también se puede ver evidencia observacional de la interacción que hay entre el flujo fotoevaporativo de los nudos y el viento estelar de la estrella WR-124.
+
+En el capítulo 4 vamos aplicar este modelo a los nudos encontrados. Para esto haremos un ajuste a los perfiles de brillo radial, del cual podemos encontrar las mediciones de los nudos y sus cáscaras chocada. De igual manera podemos encontrar la densidad ionizada usando la medida de emisión
+
+En el capítulo 5 vamos a comparar estos resultados obtenidos con los valores teóricos del modelo que proponemos. Con base en estos resultados, se pudo obtener una mejor idea de como es la distribución de los nudos en la nebulosa.  
 
 \chapter{Modelos analíticos de flujos fotoevaporativos interactuando con una presión externa}
 \chaptermark{Modelo analítico}\label{Chapter : Modelo}
@@ -241,7 +247,7 @@ En esta interacción entre el flujo fotoevaporativo y el viento estelar, los cua
 
 \section{Modelo hidrodinámico estacionario}
 
-Para este modelo es importante mencionar que no estamos considerando ninguna fuerza de gravedad por parte de la estrella o del mismo glóbulo, así como tampoco ninguna otra fuerza externa. De igual manera, no vamos a considerar campos magnéticos por simplicidad.
+Para este modelo es importante mencionar que no estamos considerando ninguna fuerza de gravedad por parte de la estrella o del mismo glóbulo, así como tampoco ninguna otra fuerza externa (Ver Apéndice \ref{App:fuerzas}). De igual manera, no vamos a considerar campos magnéticos por simplicidad.
 
 Para este trabajo en particular solo vamos a considerar como presión externa la presión RAM del viento estelar por parte de la estrella WR-124.
 
@@ -302,17 +308,20 @@ Considerando la ecuación para la conservación de masa tenemos que
 \begin{equation}\label{eq : 2}
 \rho r^2M	=\rho_0 r_0^2
 \end{equation}
-y finalmente, si consideramos la ecuación de Bernoulli isotérmica en la ecuación \ref{eq: Presion total}
-\[\frac{v^2}{2}+c_s^2\ln\rho=\text{constante}\]
-tenemos que 
+y finalmente, si consideramos la ecuación de Bernoulli isotérmica 
+\begin{equation}
+\frac{v^2}{2}+c_s^2\ln\rho=\text{constante}
+\end{equation}
+en la ecuación \ref{eq: Presion total} tenemos que 
 \begin{equation}\label{eq ; 3} \frac{r}{r_0}=M^{-1/2}e^{\frac{M^2-1}{4}}
 \end{equation}
 \citep{Dyson:1968}.
-Ahora que tenemos tres ecuaciones y tres incógnitas podemos resolver, en nuestro caso lo hicimos de manera numérica. Al resolver estas ecuaciones para diferentes $f$ tenemos que tanto la presión como la densidad decaen con el radio, mientras que el número de Mach aumenta como vemos en la figura \ref{fig:grafica_C2}.
+Ahora que tenemos tres ecuaciones y tres incógnitas podemos resolver, en nuestro caso lo hicimos de manera numérica. Al resolver estas ecuaciones para diferentes $f$ tenemos que tanto la presión como la densidad decaen con el radio, mientras que el número de Mach aumenta como vemos en la figura \ref{fig:grafica_C2}. Cabe mencionar que la figura \ref{fig:grafica_C2} se obtiene resolviendo las ecuaciones \ref{eq : 1}, \ref{eq : 2} y \ref{eq ; 3} en el eje de simetría. Pero esto cambiaría si consideramos cierto ángulo $\theta\neq 0 $ ya que tanto la presión como la densidad escalan con el ángulo como $\cos^{1/2}\theta$, pero M no.
 
 \begin{figure}[htb]
     \centering    \includegraphics[width=\textwidth]{Nuevas imagenes finales/C2_estructura.pdf}
-    \caption{Gráfica de M, $\rho$ y $P$ normalizados como función de radio normalizado}
+    \caption{Gráfica del número de Mach M, densidad $\rho$ y la presión total $P$ normalizados como función de $r/r_0$. También podemos ver una caída que va como $\sim r^{-2}$ (línea negra). Podemos notar que la densidad cae más rápido que $r^{-2}$, mientras que la presión total cae más lento, en ambos casos se debe a la aceleración del flujo.
+    }
     \label{fig:grafica_C2}
 \end{figure}
 
@@ -360,7 +369,7 @@ Si bien en la figura \ref{fig:M1-67HST} no se pueden apreciar muy bien los glób
 
 \section{Observaciones con HST}
 
-Para las observaciones con el Telescopio Espacial Hubble (HST) utilizamos los datos del proyecto HLA, los cuales son tipo imagen en formato FITS con un nivel de calibración 3.  Se observó en el filtro F656N utilizando la cámara WFPC2 para ver la emisión en \unit{H\alpha}. Este archivo tiene un tiempo de exposición de \SI{4200}{s}.  
+Para las observaciones con el Telescopio Espacial Hubble (HST) utilizamos los datos del proyecto Hubble Legacy Archive, los cuales son tipo imagen en formato FITS con un nivel de calibración 3.  Se observó en el filtro F656N utilizando la cámara WFPC2 para ver la emisión en \unit{H\alpha}. Este archivo tiene un tiempo de exposición de \SI{4200}{s}.  
 
 En esta imagen podemos ver el gas ionizado, por lo que podremos ver la cáscara chocada de los glóbulos.
 
@@ -377,43 +386,45 @@ Para las observaciones con el Telescopio Espacial James Webb (JWST) usamos las o
 
 Con la gran variedad de filtros del JWST podemos usar combinaciones para ver diferentes tipos de emisión y gracias a su gran resolución ver mejor las diferentes estructuras.
 
+A diferencia de la imagen en H$\alpha$, los filtros que se utilizaron para las observaciones con el JWST tienen bandas anchas. En estas bandas podemos encontrar la contribución de diferentes mecanismos de emisión como lo es el continuo de la estrella, algunas líneas de emisión de la nebulosa, el continuo dispersado por polvo, así como su emisión térmica y también podemos ver la emisión de algunas bandas de PAHs.
+
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{M1-67-JWST.jpg}
-    \caption{Imagen de M1-67 con JWST}
+    \caption{Imagen de M1-67 con JWST. Vemos la composición de los filtros f444w (gris), f335m (rojo), f210m (verde), f150w (verde turquesa) y f090w (azul). https://www.flickr.com/photos/geckzilla/52757287572/}
     \label{fig:M1-67JWST}
 \end{figure}
 
 \section{Glóbulos en la nebulosa M1-67}
 
-Como ya mencionamos, estos glóbulos fueron posibles de encontrar en gran parte a la variedad de filtros y la gran resolución del JWST como se puede ver la figura \ref{fig:nudos WR124}. Se encontraron más de 100 glóbulos en casi toda la nebulosa de los cuales algunos estaban en grupos y otros solos. En las observaciones del JWST se puede llegar a observar lo que pareciera ser la cáscara chocada (Capítulo \ref{Chapter : Modelo}).
+Como ya mencionamos, estos glóbulos fueron posibles de encontrar debido a la gran variedad de filtros y la gran resolución del JWST como se puede ver la figura \ref{fig:nudos WR124}. Se encontraron más de 100 glóbulos en casi toda la nebulosa de los cuales algunos estaban en grupos y otros solos. En las observaciones del JWST se puede llegar a observar lo que pareciera ser la cáscara chocada (Capítulo \ref{Chapter : Modelo}).
 
 De las observaciones vemos que estos glóbulos tienen tamaños típicos de 200--300 mili arco segundos de diámetro que son relativamente pequeños si los comparamos con la nebulosa circunestelar que es de unas decenas de arco segundos.
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{Nuevas imagenes finales/Globulos_JWS_1.pdf}
-    \caption{En esta imagen capturada con el JWST vemos la nebulosa M1-67 y en ella la presencia de glóbulos en casi toda la nebulosa. Haciendo zoom en estos glóbulos (la emisión en color rosa), vemos como puede ser su morfología en la parte neutra debido a la emisión de PAHs. Mientras que en color gris vemos lo que parece ser su interacción con a estrella y su viento estelar.}
+    \caption{En esta imagen capturada con el JWST vemos la nebulosa M1-67 y en ella la presencia de glóbulos en casi toda la nebulosa. Haciendo zoom en estos glóbulos (la emisión en color rosa), vemos como puede ser su morfología en la parte neutra debido a la emisión de PAHs. Mientras que en color gris vemos lo que parece ser su interacción con la estrella y su viento estelar.}
     \label{fig:nudos WR124}
 \end{figure}
 
-La distribución de estos glóbulos nos hace pensar en una cierta simetría como podemos ver en la figura \ref{fig:dis_nudos}, donde la separación es la distancia del glóbulo a la estrella y la posición angular es tomada en sentido contrario a las manecillas del reloj desde el polo norte de la imagen de M1-67.
+En la figura \ref{fig:dis_nudos} vemos del lado derecho la localización de los glóbulos en la nebulosa. En el lado izquierdo vemos como estos se distribuyen considerando su separación  su posición angular. En estas distribuciones podemos encontrar ciertas simetrías, por ejemplo, en el histograma superior de la imagen derecha vemos que muchos de estos glóbulos se concentran en dos posiciones angulares en particular, a $\sim90^\circ$ y $\sim200^\circ$, mientras que a $120^\circ$ y $300^\circ$ no tenemos casi glóbulos. En la imagen de la derecha los podemos ver como si se encontraran en dos conos. Por otro lado, en el histograma del lado derecho vemos cómo en separación pareciera haber una distribución bimodal con picos a \SI{11}{\arcsecond} y \SI{17}{\arcsecond}
 
 \begin{figure}[htb]
     \centering    \includegraphics[width=0.75\textwidth]{images Chapter 2/C2_nudos_distribucion.png}
-    \caption{Distribución de los glóbulos en la nebulosa M1-67}
+    \caption{En la imagen derecha vemos en puntos verde la localización de los glóbulos en la nebulosa M1-67 y la línea roja señalando el polo norte de la imagen. En la imagen derecha vemos como es la distribución de estos glóbulos (puntos azules) en separación y posición angular. La separación es la distancia que hay entre la estrella y cada glóbulo, mientras que la posición angular es tomada en cuenta de manera contraria a las manecillas del reloj considerando que $0^\circ$ es el polo norte de la imagen. En la parte superior de la imagen derecha vemos el histograma de la posición angular y del lado derecho el histograma de la separación de los glóbulos.} 
     \label{fig:dis_nudos}
 \end{figure}
 
-Estos glóbulos parecen tener una gran variedad de estructuras como vemos en la figura \ref{fig:filters WR124}, donde los glóbulos están marcados con círculos verdes. En esta imagen vemos una gran variedad de glóbulos en una zona pequeña.
+En la figura \ref{fig:filters WR124} vemos una gran variedad de glóbulos en una zona pequeña y sus diferentes morfologías que presentan en los diferentes filtros. 
 
-Las morfologías en f656n y f090w se parecen mucho, pero el último filtro tiene una mayor resolución. En estos dos filtros y en la imagen de gas ionizado podemos ver la interacción del flujo fotoevaporativo por parte del glóbulo con la estrella y su viento estelar, por lo que aquí podemos darnos una mejor idea de como son sus cáscaras chocadas.
+Como ya hemos mencionado anteriormente, la interacción entre el flujo fotoevaporativo de los glóbulos y el viento estelar nos produce una cáscara chocada, la cual podemos ver debido a las recombinaciones que hay ahí, por lo que la podemos ver como emisión en algunos filtros. Por ejemplo, en los filtros f656n, f090w y f444w podemos ver esta cáscara chocada que rodea los glóbulos. También se realizó una combinación de filtros para poder ver solo la emisión de gas ionizado, en esta combinación se quitó la emisión de otros mecanismos como la emisión de las estrellas o de la nebulosa. Por lo que en la imagen de gas ionizado tenemos una imagen más clara del gas ionizado que se encuentra en la cáscara chocada.
 
 En el filtro f1130w vemos mejor lo que parecen ser las estelas de los glóbulos. Algunos parecen ser más pequeños que otros. Un caso muy llamativo es cuando los glóbulos están muy cerca los unos de los otros y pareciera que sus estelas se juntan, incluso en algunos casos pareciera que estas estelas están interaccionando con otros glóbulos. En este filtro también se puede ver de manera muy tenue lo que pareciera ser la interacción del flujo fotoevaporativo por parte del gas y el viento estelar.
 
 En el caso del gas neutro vemos mejor como es la morfología del glóbulo, por lo que aquí podemos conocer mejor las propiedades del glóbulo.
 
-En la imagen con el filtro f656n vemos que esta no se ve afectada por difracción del telescopio, pero la resolución no es tan buena, por lo que usar las imágenes con el JWST es una buena alternativa para comparar. Por otro lado, las imágenes del JWST se ven muy afectadas por la difracción del telescopio. 
+Con la gran variedad de imágenes que tenemos podemos hacer muchas comparaciones y ver los glóbulos en diferentes filtro y resoluciones, lo cual nos da muchas ventajas. Por ejemplo, las observaciones del JWST tienen mayor resolución, mientras que en el caso del filtro f656n, debido a que es un filtro muy delgado, no se ve muy afectado por las estrellas, a diferencia de las observaciones con el JWST.
 
 \begin{figure}[htb]
     \centering
@@ -424,7 +435,7 @@ En la imagen con el filtro f656n vemos que esta no se ve afectada por difracció
 
 \section{Estimando la presión RAM del viento estelar}
 
-Para este trabajo solo vamos a considerar como presión externa la presión RAM del viento estelar por parte de la estrella WR-124, la cual la vamos a tomar como \[P_{RAM}= \frac{\dot{M}v_\infty}{4\pi R^2}\] donde $\dot{M}$ es la tasa de pérdida de masa por parte de la estrella, $v_\infty$ la velocidad final del viento y $R$ la distancia del nudo a la estrella. Los dos primeros datos están dados en la tabla \ref{tab:parametros WR-124} y para $R$ vamos a tomar la distancia de cada glóbulo. En la figura \ref{P_RAM} vemos como es esta presión RAM del viento como función de la distancia.
+Para este trabajo solo vamos a considerar la presión RAM del viento estelar por parte de la estrella WR-124 como la única presión externa de confinamiento para las cáscaras chocadas de interacción de los glóbulos, la cual la vamos a tomar como \[P_{RAM}= \frac{\dot{M}v_\infty}{4\pi R^2}\] donde $\dot{M}$ es la tasa de pérdida de masa por parte de la estrella, $v_\infty$ la velocidad final del viento y $R$ la distancia del nudo a la estrella. Los dos primeros datos están dados en la tabla \ref{tab:parametros WR-124} y para $R$ vamos a tomar la distancia de cada glóbulo. En la figura \ref{P_RAM} vemos como es esta presión RAM del viento como función de la distancia.
 
 \begin{figure}[htb]
     \centering    \includegraphics[width=\textwidth]{Nuevas imagenes finales/PRAMcgs.pdf}
