@@ -431,7 +431,7 @@ En la figura \ref{fig:dis_nudos} vemos del lado derecho la localización de los 
     \begin{subfigure}[b]{0.45\linewidth}
         \includegraphics[width=\textwidth]{images Chapter 2/C2_nudos_distribucion.png}
     \end{subfigure}
-    \caption{En la imagen derecha vemos en puntos verde la localización de los glóbulos en la nebulosa M1-67 y la línea roja señalando el polo norte de la imagen. En la imagen derecha vemos como es la distribución de estos glóbulos (puntos azules) en separación y posición angular. La separación es la distancia que hay entre la estrella y cada glóbulo, mientras que la posición angular es tomada en cuenta de manera contraria a las manecillas del reloj considerando que $0^\circ$ es el polo norte de la imagen. En la parte superior de la imagen derecha vemos el histograma de la posición angular y del lado derecho el histograma de la separación de los glóbulos.} 
+    \caption{En la imagen derecha vemos en puntos verde la localización de los glóbulos en la nebulosa M1-67 y la línea roja señalando el polo norte de la imagen. En la imagen derecha vemos como es la distribución de estos glóbulos (puntos azules) en separación y posición angular. La separación es la distancia que hay entre la estrella y cada glóbulo, mientras que la posición angular es tomada en cuenta de manera contraria a las manecillas del reloj considerando que $0^\circ$ es el polo norte de la imagen. En la parte superior de la imagen derecha vemos el histograma de la posición angular y del lado derecho el histograma de la separación de los glóbulos. Las  líneas rojas son los isocontornos de la densidad suavizada de la distribución de los puntos.} 
     \label{fig:dis_nudos}
 \end{figure}
 
@@ -617,7 +617,7 @@ Si consideramos que el eje de simetría del glóbulo tienen un ángulo $i$ con r
 
 \section{Buenos ajustes}\label{Good results}
 
-El ajuste descrito al inicio de este capítulo resulto ser muy bueno para los glóbulos en los que podíamos ver una cáscara. Con este ajuste ahora conocemos muchos parámetros de los glóbulos, entre ellos los distintos radios y el ancho de la cáscara chocada. Además conocemos el brillo tanto en la parte interna como en la cáscara chocada por lo que podemos obtener más información. En la Sección \ref{Sec : estimacion de densidad} vimos como obtener la densidad en la cáscara a partir de su brillo y con esto conocer la presión de la cáscara, la cual la tomaremos como $P_g=\rho c_s^2$. Esta presión la podremos comparar con la presión RAM del viento estelar. De igual manera podremos tener un estimado de la presión interna del glóbulo y comparar directamente con el modelo.
+El ajuste descrito al inicio de este capítulo resulto ser muy bueno para los glóbulos en los que podíamos ver una cáscara. Con este ajuste ahora conocemos muchos parámetros de los glóbulos, entre ellos los distintos radios y el ancho de la cáscara chocada. Además conocemos el brillo tanto en la parte interna como en la cáscara chocada por lo que podemos obtener más información. En la Sección \ref{Sec : estimacion de densidad} vimos como obtener la densidad en la cáscara a partir de su brillo y con esto conocer la presión de la cáscara, la cual la tomaremos como $P_{shell}=\rho c_s^2$. Esta presión la podremos comparar con la presión RAM del viento estelar. De igual manera podremos tener un estimado de la presión interna del glóbulo y comparar directamente con el modelo.
 
 Estos glóbulos a los cuales les encontramos un buen ajuste están en un rango de separación a la estrella muy amplio, por lo que podemos conocer mejor la nebulosa y los glóbulos en general también.
 
@@ -663,13 +663,13 @@ Algunos de ellos tenían un mal ajuste debido a la gran estructura de la nebulos
         \multicolumn{2}{c}{Resultados de los buenos ajustes} \\ \midrule
          Separación & 14.96$\pm$\SI{7.1}{\arcsecond}\\
          Radio del glóbulo & 0.135$\pm$\SI{0.03}{\arcsecond} \\
-         Radio de la cáscara & 0.59$\pm$\SI{0.01}{\arcsecond}\\
+         Radio de la cáscara & 0.62$\pm$\SI{0.13}{\arcsecond}\\
+         $H_{shell}$ & 0.24$\pm$\SI{0.1}{\arcsecond}\\
          $n_{cascara}$ & 1.37$\pm$\SI{.05e3}{cm^{-3}}\\
-         $P_{cascara}$ & 1.89$\pm$\SI{.06e-9}{dyn.cm^{-2}}  \\
-         X & 4.4$\pm$1 \\
-         $X_P$ & 0.41$\pm$0.01 \\\bottomrule
+         $P_{shell}$ & 1.89$\pm$\SI{.06e-9}{dyn.cm^{-2}}  \\
+         $r_1/r_0$ & 4.4$\pm$1 \\\bottomrule
     \end{tabular}
-    \caption{Valores típicos de los resultados obtenidos a partir de los ajustes. X es la fracción de radios $r_s/r_0$  y $X_P$ es la fracción de presiones $P_{shell}/P_{RAM}$. Para estos valores se consideró el mejor ajuste a cada glóbulo tomando en cuenta las observaciones de ambos telescopios. En este caso tomamos las incertidumbres como la dispersión entre los diferentes glóbulos.}
+    \caption{Valores típicos de los resultados obtenidos a partir de los ajustes. En este caso tomamos las incertidumbres como la dispersión entre los diferentes glóbulos.}
     \label{tab:mean}
 \end{table}
 
@@ -714,8 +714,8 @@ Debido a que el tamaño del glóbulo es muy pequeño, vamos a considerar que $r_
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=\textwidth]{Nuevas imagenes finales/R_2.pdf}
-    \caption{$P/P_0$ es la línea teórica que obtuvimos a partir del modelo propuesto, mientras que $f_{obs}$ es la razón entre la presión de la cáscara chocada  y la presión en la superficie del glóbulo a partir de las observaciones.}
+    \includegraphics[width=\textwidth]{ultimos/R_2(1).pdf}
+    \caption{$f_{model}$ es la línea teórica que obtuvimos a partir del modelo propuesto, mientras que $f_{obs}$ es la razón entre la presión de la cáscara chocada  y la presión en la superficie del glóbulo a partir de las observaciones.}
     \label{Resultados_modelo}
 \end{figure}
 
@@ -756,16 +756,16 @@ En la figura \ref{graf_presion_ang} vemos como la presión de los glóbulos se a
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=\textwidth]{Nuevas imagenes finales/R_1.pdf}
+    \includegraphics[width=\textwidth]{ultimos/R_1_.pdf}
     \caption{Ahora podemos ver como la presión de la cáscara de los glóbulos (círculos morados) es igual a la presión RAM (líneas continuas) si consideramos cierto ángulo de inclinación.}
     \label{graf_presion_ang}
 \end{figure}
 
-En la figura \ref{fig:ncos_2} vemos en líneas continuas como sería el ángulo de inclinación si consideramos que la densidad de la cáscara no decae con el ángulo, es decir, $P_shell(i)=\frac{\dot{M}v_\infty}{4\pi R_p^2}\cos^2i$. Y vemos que a ángulos pequeños las líneas continuas se pegan mucho a las líneas punteadas, por lo que la diferencia de ángulos no es muy grande, sin embargo, a grandes ángulos esto comienza a tomar relevancia. De igual manera, en el siguiente capítulo vamos a discutirlo más a detalle.
+En la figura \ref{fig:ncos_2} vemos en líneas continuas como sería el ángulo de inclinación si consideramos que la densidad de la cáscara no decae con el ángulo, es decir, $P_{shell}(i)=\frac{\dot{M}v_\infty}{4\pi R_p^2}\cos^2i$. Y vemos que a ángulos pequeños las líneas continuas se pegan mucho a las líneas punteadas, por lo que la diferencia de ángulos no es muy grande, sin embargo, a grandes ángulos esto comienza a tomar relevancia. De igual manera, en el siguiente capítulo vamos a discutirlo más a detalle.
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=\textwidth]{Nuevas imagenes finales/R_1_cos2.pdf}
+    \includegraphics[width=\textwidth]{ultimos/R_1_cos2(1).pdf}
     \caption{La línea continua roja es la presión RAM del viento estelar como función de la distancia real, las demás líneas continuas son las presiones de las cáscaras considerando cierto ángulo de inclinación $i$ y que la densidad no decae con el ángulo. Las líneas discontinuas son las presiones de las cáscaras considerando cierto ángulo $i$ y que la densidad también decae con el ángulo como $\cos^{-1/2}(i)$.}
     \label{fig:ncos_2}
 \end{figure}
@@ -777,13 +777,20 @@ En la figura \ref{fig:ncos_2} vemos en líneas continuas como sería el ángulo 
         \multicolumn{2}{c}{Resultados con ángulo de inclinación} \\ \midrule
          cos(i) & 0.65$\pm$0.01 \\
          $R$ & 22.08$\pm$\SI{0.34}{\arcsecond}\\
-         $n_{cascara}(i)$ & 1.81$\pm$\SI{0.05}{cm^{-3}}\\
+         $n_{shell}(i)$ & 1.81$\pm$\SI{0.05}{cm^{-3}}\\
          $P_{g}(i)$ & 1.89$\pm$\SI{0.06e-9}{dyn.cm^{-2}} \\
          \bottomrule
     \end{tabular}
     \caption{Valores típicos de los resultados obtenidos considerando el ángulo de inclinación $i$.}
     \label{tab:mean_i}
 \end{table}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{ultimos/Hist_seprarcion(1).pdf}
+    \caption{Histogramas de la separación real (color azul) y la separación proyectada (color naranja) medida en arcsec.}
+    \label{fig:hist_sep_ryp}
+\end{figure}
 
 
 \chapter{Discusión}\label{Chp:conclusiones}
@@ -811,7 +818,7 @@ En la imagen inferior de la figura \ref{globule_group} de igual manera vemos un 
 
 Ahora vamos a discutir como calculamos la masa de los glóbulos a partir de la densidad ionizada.
 
-Para la densidad ionizado tenemos que \cite{Grosdidier:1998} en su análisis a la nebulosa M1-67, encuentra unos puntos brillantes de 0.2--\SI{0.3}{\arcsecond}, a los cuales les estima una densidad ionizada de 4800--\SI{12,000}{cm^{-3}}. Estos puntos brillantes parecen ser en su mayoría nuestro glóbulos encontrados. Su estimación de la densidad ionizada es congruente con nuestras densidades encontradas, las cuales son del orden de \SI{e3}{cm^{-3}}, solo que en nuestro caso consideramos tamaños más pequeños ya que en nuestro caso usamos las observaciones del JWST para saber que estos son glóbulos. 
+Para la densidad ionizado tenemos que \cite{Grosdidier:1998} en su análisis a la nebulosa M1-67, encuentra unos puntos brillantes de 0.2--\SI{0.3}{\arcsecond}, a los cuales les estima una densidad ionizada de 4800--\SI{12,000}{cm^{-3}}. Estos puntos brillantes parecen ser en su mayoría nuestro glóbulos encontrados. Su estimación de la densidad ionizada de los nudos es congruente con nuestras estimaciones, donde nosotros encontramos una densidad típica de \SI{5e3}{cm^{-3}}.  
 
 Para estimar la densidad en la parte neutra vamos a suponer un equilibrio de presiones entre la parte neutra y la ionizada, por lo que tendríamos que
 \begin{equation}
@@ -828,8 +835,8 @@ Para estimar la masa de los glóbulos vamos a considerar que $n_n=100n_{i,0}$, a
     M_g = \frac{4}{3}\pi r_0^3 100n_{i,0} m_\mathrm{H}
 \end{equation}
 
-Con estas densidades obtenidas para la parte neutra, tenemos masas en el rango de 2.34--\SI{21.15e-4}{\msun}. Estas estimaciones de masas son parecidas a lo que \cite{Grosdidier:1998} calcula para estos nodos, que son del orden de \SI{1e-4}{\msun}.
-Aunque no podemos estimar la masa de todos los glóbulos debido a que algunos fueron descartados, como vimos en la sección \ref{Bad Globules}, la masa total de los glóbulos está entre \SI{1e-2}{}--\SI{1e-1}{\msun}, la cual es mucho menor que la masa fotoionizada de toda la nebulosa que estima \cite{Jimenez_H:2020}, que es de  $9.2_{-1.5}^{+1.6}\unit{\msun}$.
+Con estas densidades obtenidas para la parte neutra, tenemos masas en el rango de 1.17--\SI{10.05e-3}{\msun}. Estas estimaciones de masas son parecidas a lo que \cite{Grosdidier:1998} calcula para estos nodos, que son del orden de \SI{1e-4}{\msun}.
+Aunque no podemos estimar la masa de todos los glóbulos debido a que algunos fueron descartados, como vimos en la sección \ref{Bad globules}, la masa total de los glóbulos está entre \SI{1e-1}{}--\SI{1}{\msun}, la cual es mucho menor que la masa fotoionizada de toda la nebulosa que estima \cite{Jimenez_H:2020}, que es de  $9.2_{-1.5}^{+1.6}\unit{\msun}$.
 
 %Masas y tasa de pérdida de masas 
 \section{Complicaciones }
@@ -851,7 +858,7 @@ En la figura \ref{graf_presion} vemos como un glóbulo tiene una presión mayor 
 
 En esta corrección por ángulo no esperamos ver glóbulos con un ángulo de inclinación de $\pm 90^\circ$ ya que estos estarían totalmente de espaldas o de frente, en cualquier caso estos no los podríamos ver porque se verían afectados por la emisión de la estrella WR ya que en proyección estarían muy cerca de la estrella.
 
-\section{Distribución tridimensional de los glóbulos}
+\section{Distribución tridimensional de los glóbulos} \label{sec: distrtibucion}
 
 Ahora hablaremos de la distribución tridimensional de los glóbulos comparando con una evidencia cinemática.
 
@@ -859,9 +866,9 @@ Ahora hablaremos de la distribución tridimensional de los glóbulos comparando 
 
 En la figura \ref{fig:zavala_nudos} vemos como los grupos de glóbulos siguen están en una elipse, lo que indica que están en una cáscara esférica. En la rendija H es donde podemos ver le radio de estas cáscaras en el eje vertical, que es la posición. En la misma rendija, usando el eje horizontal que mide la velocidad, podemos ver que todas estas cáscaras son consideradas con una velocidad de \SI{40}{km.s^{-1}}. De esta manera podemos obtener la separación real que hay entre los glóbulos y la estrella. Por lo que conociendo su separación proyectada, que es la que medimos directamente de las imágenes, y su separación real a partir de estos espectro de rendija, podemos saber cuál debería ser su ángulo de inclinación.
 
-En la figura \ref{fig:ang_Will} vemos como la medición que realizamos para el ángulo de inclinación, coincide con otras mediciones. En esta misma figura podemos ver que tenemos una anticorrelación entre el ángulo de inclinación y la separación de los glóbulos con la estrella. 
+En la figura \ref{fig:ang_Will} vemos como nuestras mediciones (puntos rojos), obtenidos a partir de comparar la presión de la cáscara de los glóbulos con la presión exterior del viento concuerdan con la mediciones realizada a partir de espectros bidimensionales (puntos azules). Estas dos mediciones son totalmente independientes y podemos ver una clara anti correlación entre el ángulo de inclinación y la separación que observamos.
 
-El grupo de glóbulos más cercanos a la estrellas parece estar a unos \SI{15}{\arcsecond} según la figura \ref{fig:zavala_nudos}, los cuales coinciden con nuestras mediciones que vemos en la figura (histograma de los glóbulos comparando el radio proyectado con el radio real).
+El grupo de glóbulos más cercanos a la estrellas parece estar a unos \SI{15}{\arcsecond} según la figura \ref{fig:zavala_nudos}, los cuales coinciden con nuestras mediciones que vemos en la figura \ref{fig:hist_sep_ryp}.
 
 \begin{figure}[htb]
     \centering
@@ -890,11 +897,22 @@ En la figura \ref{fig:zavala_nudos} podemos apreciar que solo un grupo de glóbu
 
 En esta tesis se ha propuesto un modelo hidrodinámico estacionario para explicar la interacción que hay entre el flujo fotoevaporativo de los glóbulos encontrados en la nebulosa M1-67 y el viento estelar por parte de la estrella WR-124. 
 
-En las diferentes observaciones se pudo detectar la cáscara chocada que se predice por la interacción de los dos flujos supersónicos, antes mencionados. Además se pudieron obtener diferentes parámetros físicos. Usando estos parámetros físicos, se pudo notar que van muy acorde con lo que se predice en el modelo como vemos en la figura \ref{Resultados_modelo}.
+Estos glóbulos fueron posibles de detectar, así como su cáscara chocada, gracias a las diferentes observaciones. De estas observaciones fue posible encontrar diferentes parámetros físicos haciendo un ajuste de dos gaussianas y una constante como vimos en el capítulo \ref{Chapter : Ajuste}. Estos parámetros físicos fueron:
 
-Tomando en cuenta que la cáscara chocada está dominada por presión térmica, y que además esta en equilibrio de presión con el flujo fotoevaporativo de los glóbulos y la presión RAM del viento estelar, se pudo conocer mejor acerca de la distribución en 3D de los glóbulos. 
+\begin{itemize}
+    \item Separación entre el glóbulo y la estrella
+    \item Radio de los glóbulos
+    \item Radio de la cáscara
+    \item Ancho de la cáscara chocada
+    \item Brillo del glóbulo
+    \item Brillo de la cáscara
+\end{itemize}
 
-Por lo que podemos decir que este es un buen modelos para explicar la interacción del flujo fotoevaporativo de los glóbulos y el viento estelar por parte de la estrella WR-124.
+Usando la EM se nos fue posible calcular la densidad en la cáscara chocada (Sección \ref{Sec : estimacion de densidad}), y suponiendo que la cáscara chocada está dominada por presión térmica, pudimos conocer la presión de las cáscaras de los glóbulos.
+
+En la figura \ref{graf_presion} vemos que la presión de los glóbulos es menor que la presión RAM del viento estelar, sin embargo, podemos encontrar un ángulo de inclinación con el cuál podemos tener un equilibrio de presiones entre la presión de la cáscara y la presión RAM del viento estelar (Figura \ref{graf_presion_ang}). Estas estimaciones de los ángulos de inclinación en los que suponemos un equilibrio de presiones, son consistentes con la mediciones hechas a partir de espectros bidimensionales (Sección \ref{sec: distrtibucion}).
+
+Por lo que podemos decir que este modelo sencillo es un buen modelo para explicar la interacción del flujo fotoevaporativo de los glóbulos y el viento estelar por parte de la estrella WR-124. Además, no tenemos parámetros libres, por lo que la consistencia con otros trabajos apoya nuestro modelo propuesto.
 
 Este modelo propuesto en un principio está puesto para un escenario sencillo, un glóbulo que es radiado por una fuente, pero esto podría ampliarse un poco más si tenemos varias fuentes que radian al glóbulo y una de ellas es la que domina en cuanto al flujo de fotones ionizantes. 
 
@@ -978,7 +996,7 @@ Vamos a considerar la presión de radiación ya que podemos suponer que todo el 
 \end{equation}
 para la frecuencia de $\SI{1}{Ry}$, el cual es un límite inferior para los fotones que son capaces de ionizar el gas neutro, esto a una distancia típica de los glóbulos. Por lo que tendríamos una presión de radiación de $P_r\approx \SI{2.26e-10}{dyn.cm^{-2}}$ la cual es una presión menor a la presión RAM del viento estelar o a la presión de los glóbulos. Esto se puede ver en la figura \ref{graf_presion} donde las presiones son del orden de \SI{1e-9}{dyn.cm^{-2}}.
 
-\chapter{Tiempos de escala}
+\chapter{Escalas de tiempo}
 
 \section{Tiempo dinámico}
 
@@ -1022,13 +1040,13 @@ Debido a que no podemos asegurar un valor para el tiempo de vida de los glóbulo
 \end{equation}
 Por lo que el equilibrio de presiones durará el tiempo suficiente como para poder considerarlo como estacionario.
 
-\chapter{Predicciones del modelo fotoevaporativo para la densidad ionizada en el frente de ionización }\label{App : tasa de fotoionizacion}
+\chapter{Predicciones del modelo fotoevaporativo para la densidad ionizada en el frente de ionización }\chaptermark{Densidad ionizada en el frente de ionización}\label{App : tasa de fotoionizacion}
 
 En el modelo suponemos un estado estacionario y además, también suponemos que no hay absorción por polvo, por lo que el flujo incidente de fotones, $F_0$, debe ser igual a la suma de dos términos, las recombinaciones por unidad de área y las nuevas ionizaciones
 \begin{equation}
-F_0 = n_{i,0} u_{i,0} +\int n^2\alpha_\mathrm{B}dr = n_{i,0}u_{i,0}+n_{n,0}^2h_1\alpha_\mathrm{B}
+F_0 = n_{i,0} u_{i,0} +\int n^2\alpha_\mathrm{B}dr = n_{i,0}u_{i,0}+n_{i,0}^2h_1\alpha_\mathrm{B}
 \end{equation}\label{eq:flujo_io}
-donde $F_0$ es la tasa de fotones ionizantes, $n_{i,0}$ la densidad ionizada, $n_{n,0}$ la densidad neutra detrás del frente de ionización, $u_0$ la velocidad del gas ionizado y $h_1$ es la anchura efectiva que se define como
+donde $F_0$ es la tasa de fotones ionizantes, $n_{i,0}$ la densidad ionizada, $u_0$ la velocidad del gas ionizado y $h_1$ es la anchura efectiva que se define como
 \begin{equation}
 n_0^2h_1=\int n^2dr,
 \end{equation}
@@ -1036,7 +1054,7 @@ el cual se puede estimar usando las ecuaciones  \ref{eq : 1}, \ref{eq : 2} y \re
 \begin{equation}
 h_1=\int_0^\infty \Big(\frac{n(r)}{n_0}\Big)^2dr=r_0\int_1^\infty\frac{exp(\frac{3}{4}(1-M^2))}{2}(M^{1/2}-M^{3/})dM\approx0.12r_0.\end{equation}
 
-Si suponemos equilibrio de presión entre la parte neutra y la ionizada, como en la sección \ref{app:masa_glo}, tenemos que la densidad neutra será unas 100 veces más grande que la ionizada. Tomando esto en cuenta, del lado derecho de la ecuación \ref{eq:flujo_io}, solo las recombinaciones son importantes y despreciar el otro término.
+Tomando los valores de $F_0$ y $r_0$ de nuestros glóbulos, tenemos que, el primer término del lado derecho de la ecuación \ref{eq:flujo_io} es muy pequeño en comparación con el segundo término. Por lo que podemos despreciar este término.
 
 \chapter{Corrección en la estimación de los brillos}\label{App:brillos}
 
