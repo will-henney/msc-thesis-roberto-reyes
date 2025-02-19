@@ -1,4 +1,4 @@
-R\documentclass{book}
+\documentclass{book}
 \usepackage{graphicx} % Required for inserting images
 \usepackage{subcaption}
 
@@ -567,10 +567,10 @@ donde $\Delta$ es el ancho del telescopio, para el caso del HST $\Delta=\SI{0.06
 Para el caso de los errores vamos a considerar que estos están dados por fluctuaciones no relacionadas en el brillo de la nebulosa o por efectos  sistemáticos debido a la inadecuación del modelo y no por el ruido de fotones. Así que vamos a estimar estos errores comparando las distintas mediciones hechas, suponiendo que son independientes.
 
 \subsection{\boldmath Incertidumbres en $r_\mathrm{shell}$ y $H_\mathrm{s}$}
-
+\label{sec:error-shell}
 En el caso del radio y ancho de la cáscara, $r_\mathrm{shell}$ y $H_\mathrm{s}$, respectivamente, podemos notar que estos siguen una buena tendencia (ver Figura \ref{fgi: Radios de la cascara}) si comparamos las mediciones realizadas con el HST y el JWST. Para estas mediciones vamos a considerar la incertidumbre RMS
 \begin{equation}
-    \epsilon=\frac{\sqrt{\mathrm{Var}(x_\mathrm{J}-x_\mathrm{H})}}{\sqrt{2}}
+    \sigma=\frac{\sqrt{\mathrm{Var}(x_\mathrm{J}-x_\mathrm{H})}}{\sqrt{2}}
 \end{equation}
 donde $x_\mathrm{J}$ son las mediciones hechas con el JWST y $x_\mathrm{H}$ son las mediciones hechas con el HST (ver Apéndice \ref{AP: errores r_s H_s}).
 
@@ -1157,34 +1157,44 @@ Con la primer combinación de la Tabla \ref{tab:emision en filtros_primera combi
 
 Si consideramos que cada medición realizada en el gas ionizado en el JWST (en H$\alpha$ en el HST), $x_\mathrm{J}^i$ ($x_\mathrm{H}^i)$, lo podemos ver como la medición real más un error, es decir,
 \begin{equation}
-    x_\mathrm{J}^i=x+\epsilon_\mathrm{J}^i \qquad(x_\mathrm{H}^1=x+\epsilon_\mathrm{H}^i)
+    x_\mathrm{J}^i=x+\epsilon_\mathrm{J}^i  \qquad
+    \qquad
+    x_\mathrm{H}^1=x+\epsilon_\mathrm{H}^i
 \end{equation}
-donde $x$ es la medición real y $\epsilon_\mathrm{J}^i$ ($\epsilon_\mathrm{H}^i$) el error. Entonces tenemos que
+donde $x$ es la medición real y que $\epsilon_\mathrm{J}^i$, $\epsilon_\mathrm{H}^i$ son respectivamente los errores en las mediciones de los dos telescopios. Entonces tenemos que
 \begin{equation}
     x_\mathrm{J}^i-x_\mathrm{H}^i=\epsilon_\mathrm{J}^i-\epsilon_\mathrm{H}^i,
 \end{equation}
-donde estamos considerando que las mediciones en los dos telescopios son independientes. Considerando que la varianza sobre toda la muestra está dada como
+donde estamos considerando que los errores en los dos telescopios son independientes. Considerando que la varianza sobre toda la muestra está dada como
 \begin{equation}
     \mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)=\frac{\sum_{i=1}^N ((x_\mathrm{J}^i-x_\mathrm{H}^i)-\mu)^2}{N}
 \end{equation}
-donde $N$ es el tamaño de la muestra y $\mu$ la media, entonces para estas dos muestras independientes tenemos que
+donde $N$ es el tamaño de la muestra y $\mu = N^{-1} \sum_{i=1}^N (x_\mathrm{J}^i-x_\mathrm{H}^i)$ es la media. 
+Si las distribuciones son simétricas, esperamos que $\mu \approx 0$ para $N$ grande, y verificamos esto para nuestras muestras.
+Entonces, suponiendo que no haya correlación entre los errores $\epsilon_\mathrm{J}^i$ y $\epsilon_\mathrm{H}^i$, tenemos que
 \begin{equation}
-    \mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)=\mathrm{Var}(\epsilon_\mathrm{J}^i)+\mathrm{Var}(\epsilon_\mathrm{J}^i)=\sigma_\mathrm{J}^2+\sigma_\mathrm{H}^2.
+    \mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)=\mathrm{Var}(\epsilon_\mathrm{J}^i)+\mathrm{Var}(\epsilon_\mathrm{J}^i)=\sigma_\mathrm{J}^2+\sigma_\mathrm{H}^2,
 \end{equation}
-Si además suponemos que $\sigma_\mathrm{J}^2=\sigma_\mathrm{H}^2=\sigma^2$, tenemos que $\mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)=2\sigma^2\Rightarrow\sigma=\sqrt{\mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)}/\sqrt{2}$, la cual será nuestra incertidumbre RMS.
+donde $\sigma_\mathrm{J}$ y $\sigma_\mathrm{H}$
+son los promedios RMS de los errores en las mediciones. 
+Si además suponemos que $\sigma_\mathrm{J} = \sigma_\mathrm{H} \equiv   \sigma$, tenemos que $\mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)=2\sigma^2\Rightarrow\sigma=\sqrt{\mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)}/\sqrt{2}$, la cual usamos 
+como el estimado del incertidumbre en estas mediciones en la sección~\ref{sec:error-shell}.
 
 
 \chapter{Constante de conversión en las observaciones del HST}\chaptermark{constante de conversión} \label{AP : conversion EM}
 
-En este Apéndice vamos a justificar la constante de conversión para pasar de unidades del telescopio, $\unit{cuentas.s^{-1}}$, a unidades físicas, $\unit{erg.cm^{-2}.s^{-1}.sr^{-1}}$, en las observaciones de H$\alpha$ en el HST. Para esto vamos a utilizar la calibración de \cite{Grosdidier:1998} en la cual calculó un flujo total de la nebulosa de \SI{2.08e-10}{erg.s^{-1}.cm^{-2}} en las observaciones de H$\alpha$ en el HST.
-Por otro lado, para saber el brillo superficial de la nebulosa aplicamos una máscara y sumamos todos los píxeles, teniendo un valor de \SI{64822.82}{cuentas.s^{-1}}. Esta máscara toma en cuenta a los píxeles que se encuentra a una distancia mínima de \SI{1}{\arcsecond} y a una distancia máxima de \SI{60}{\arcsecond} de la estrella WR 124, así no estamos considerando la emisión por parte de la estrella, de igual manera, no sumamos los píxeles que tuvieran un valor mayor a 3 para no incluir la emisión de las estrellas de campo. Como estamos sumando sobre todos los píxeles, debemos tomar en cuenta el tamaño del píxel, que en este caso es de \SI{0.1}{\arcsecond}. Entonces, nuestro factor de conversión está dado como
-\begin{equation}
-    \frac{\SI{2.08e-10}{erg.cm^{-2}.s^{-1}}}{\SI{64822.82}{cuentas.s^{-1}}(\SI{0.1}{\arcsecond})^2},
-\end{equation}
-y pasando los segundos de arco a esterorradianes tenemos que la constante de conversión es
-\begin{equation}
-    \frac{\SI{2.08e-10}{erg.cm^{-2}.s^{-1}}}{\SI{1.52e-8}{cuentas.s^{-1}.sr^{-1}}}\approx0.0137
-\end{equation}
+En este Apéndice vamos a justificar la constante de conversión para pasar de unidades del telescopio, $\unit{cuenta.s^{-1}.pix^{-1}}$, a unidades físicas de brillo superficial, $\unit{erg.cm^{-2}.s^{-1}.sr^{-1}}$, en las observaciones de H$\alpha$ en el HST. Para esto vamos a utilizar la calibración de \cite{Grosdidier:1998} en la cual calculó un flujo total de la nebulosa de \SI{2.08e-10}{erg.s^{-1}.cm^{-2}} en las observaciones de H$\alpha$ en el HST.
+Por otro lado, calculamos un flujo en unidades del telescopio por sumar las cuentas de todos los píxeles de la nebulosa, después de aplicar una máscara para eliminar la contribución de las estrellas, teniendo un valor de \SI{64822.82}{cuenta.s^{-1}}. Esta máscara toma en cuenta a los píxeles que se encuentra a una distancia mínima de \SI{1}{\arcsecond} y a una distancia máxima de \SI{60}{\arcsecond} de la estrella WR 124, así no estamos considerando la emisión por parte de la estrella, de igual manera, no sumamos los píxeles que tuvieran un valor mayor a 3 para no incluir la emisión de las estrellas de campo. Además, tomamos en cuenta el tamaño del píxel de $\SI{0.1}{\arcsecond} \times \SI{0.1}{\arcsecond} 
+= \SI{2.34e-13}{sr}$. Entonces, nuestro factor de conversión está dado como
+\begin{align}
+    \nonumber
+    \SI{1}{cuenta.s^{-1}.pix^{-1}}
+    & =
+    \frac{\num{2.08e-10}}{64822.82 \times \num{2.34e-13}} \;
+    \unit{erg.cm^{-2}.s^{-1}.sr^{-1}} \\[\medskip]
+    & \approx \SI{0.0137}{erg.cm^{-2}.s^{-1}.sr^{-1}}.
+\end{align}
+
 
 
 
@@ -1273,9 +1283,9 @@ Por lo que los tiempos de vida de los glóbulos y el tiempo dinámico de la nebu
 
 En la Figura \ref{fig:zavala_nudos} hablamos de como los glóbulos que se encontraban en las elipses en esa figura, se encontraban en realidad en una cáscara esférica alrededor de la estrella WR 124.  En la Figura ?? el plano ($x,z$) es el plano del cielo que vemos, por lo que nuestra línea vista es el eje $y$ que va hacia adentro de la imagen y  la estrella se encuentra en el origen. La línea azul paralela al eje $z$ es un ejemplo de las rendijas de las que utilizó \cite{Zavala:2022}. Si consideramos la esfera de radio $r$, la cual está dada como
 \begin{equation}
-    x^2+y^y+z^2=r^2,
+    x^2+y^2+z^2=r^2,
 \end{equation}
-podemos usar las variables $X=\frac{x}{r}$, $Y=\frac{y}{r}$ y $Z=\frac{z}{r}$ por simplicidad y así trabajar con la esfera unitaria. En este análisis vamos a considerar que los vectores de posición y velocidad son paralelos, por lo que podemos usar las variables $X$, $Y$ y $Z$ tanto para la posición como para la velocidad. 
+podemos usar las variables $X=x /r$, $Y=y/r$ y $Z=z/r$ por simplicidad y así trabajar con la esfera unitaria. En este análisis vamos a considerar que los vectores de posición y velocidad son paralelos, por lo que podemos usar las variables $X$, $Y$ y $Z$ tanto para la posición como para la velocidad. 
 
 %\begin{figure}
  %   \centering
