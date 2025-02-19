@@ -1,4 +1,4 @@
-\documentclass{book}
+R\documentclass{book}
 \usepackage{graphicx} % Required for inserting images
 \usepackage{subcaption}
 
@@ -568,23 +568,11 @@ Para el caso de los errores vamos a considerar que estos están dados por fluctu
 
 \subsection{\boldmath Incertidumbres en $r_\mathrm{shell}$ y $H_\mathrm{s}$}
 
-En el caso del radio y ancho de la cáscara, $r_\mathrm{shell}$ y $H_\mathrm{s}$, respectivamente, podemos notar que estos siguen una buena tendencia (ver Figura \ref{fgi: Radios de la cascara}) si comparamos las mediciones realizadas con el HST y el JWST. Si consideramos que las mediciones realizadas al gas ionizado en el JWST, $x_\mathrm{JWST}$, lo podemos ver como la medición real más un error, es decir,
+En el caso del radio y ancho de la cáscara, $r_\mathrm{shell}$ y $H_\mathrm{s}$, respectivamente, podemos notar que estos siguen una buena tendencia (ver Figura \ref{fgi: Radios de la cascara}) si comparamos las mediciones realizadas con el HST y el JWST. Para estas mediciones vamos a considerar la incertidumbre RMS
 \begin{equation}
-    x_\mathrm{JWST}=x+\epsilon_\mathrm{JWST}
+    \epsilon=\frac{\sqrt{\mathrm{Var}(x_\mathrm{J}-x_\mathrm{H})}}{\sqrt{2}}
 \end{equation}
-donde $x$ es la medición real y $\epsilon_\mathrm{JWST}$ el error, y de igual manera para las observaciones del HST. Entonces tenemos que 
-\begin{equation}
-    x_\mathrm{JWST}-x_\mathrm{HST}=\epsilon_\mathrm{JWST}-\epsilon_\mathrm{HST},
-\end{equation}
-por lo que
-\begin{equation}
-    \mathrm{Var}(x_\mathrm{JWST}-x_\mathrm{HST})=\mathrm{Var}(\epsilon_\mathrm{JWST})+\mathrm{Var}(\epsilon_\mathrm{HST})=\sigma_\mathrm{JWST}^2+\sigma_\mathrm{HST}^2.
-\end{equation}
-Suponiendo que $\sigma_\mathrm{JWST}^2=\sigma_\mathrm{HST}^2=\sigma^2$, tenemos que 
-\begin{equation}
-    \mathrm{Var}(x_\mathrm{JWST}-x_\mathrm{HST})=2\sigma^2 \Rightarrow \sigma=\frac{\sqrt{\mathrm{Var}(x_\mathrm{JWST}-x_\mathrm{HST})}}{\sqrt{2}},
-\end{equation}
-esta $\sigma$ es el error que vamos a considerar para las mediciones de $r_\mathrm{shell}$ y $H_\mathrm{s}$. 
+donde $x_\mathrm{J}$ son las mediciones hechas con el JWST y $x_\mathrm{H}$ son las mediciones hechas con el HST (ver Apéndice \ref{AP: errores r_s H_s}).
 
 \begin{figure}[htb]
     \centering
@@ -1165,20 +1153,37 @@ Con la primer combinación de la Tabla \ref{tab:emision en filtros_primera combi
     \label{tab:emision en filtros_segunda combinacion}
 \end{table}
 
+\chapter{Errores en $r_\mathrm{shell}$ y $H_\mathrm{s}$}\label{AP: errores r_s H_s}
+
+Si consideramos que cada medición realizada en el gas ionizado en el JWST (en H$\alpha$ en el HST), $x_\mathrm{J}^i$ ($x_\mathrm{H}^i)$, lo podemos ver como la medición real más un error, es decir,
+\begin{equation}
+    x_\mathrm{J}^i=x+\epsilon_\mathrm{J}^i \qquad(x_\mathrm{H}^1=x+\epsilon_\mathrm{H}^i)
+\end{equation}
+donde $x$ es la medición real y $\epsilon_\mathrm{J}^i$ ($\epsilon_\mathrm{H}^i$) el error. Entonces tenemos que
+\begin{equation}
+    x_\mathrm{J}^i-x_\mathrm{H}^i=\epsilon_\mathrm{J}^i-\epsilon_\mathrm{H}^i,
+\end{equation}
+donde estamos considerando que las mediciones en los dos telescopios son independientes. Considerando que la varianza sobre toda la muestra está dada como
+\begin{equation}
+    \mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)=\frac{\sum_{i=1}^N ((x_\mathrm{J}^i-x_\mathrm{H}^i)-\mu)^2}{N}
+\end{equation}
+donde $N$ es el tamaño de la muestra y $\mu$ la media, entonces para estas dos muestras independientes tenemos que
+\begin{equation}
+    \mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)=\mathrm{Var}(\epsilon_\mathrm{J}^i)+\mathrm{Var}(\epsilon_\mathrm{J}^i)=\sigma_\mathrm{J}^2+\sigma_\mathrm{H}^2.
+\end{equation}
+Si además suponemos que $\sigma_\mathrm{J}^2=\sigma_\mathrm{H}^2=\sigma^2$, tenemos que $\mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)=2\sigma^2\Rightarrow\sigma=\sqrt{\mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)}/\sqrt{2}$, la cual será nuestra incertidumbre RMS.
+
+
 \chapter{Constante de conversión en las observaciones del HST}\chaptermark{constante de conversión} \label{AP : conversion EM}
 
-En este Apéndice vamos a justificar porqué
+En este Apéndice vamos a justificar la constante de conversión para pasar de unidades del telescopio, $\unit{cuentas.s^{-1}}$, a unidades físicas, $\unit{erg.cm^{-2}.s^{-1}.sr^{-1}}$, en las observaciones de H$\alpha$ en el HST. Para esto vamos a utilizar la calibración de \cite{Grosdidier:1998} en la cual calculó un flujo total de la nebulosa de \SI{2.08e-10}{erg.s^{-1}.cm^{-2}} en las observaciones de H$\alpha$ en el HST.
+Por otro lado, para saber el brillo superficial de la nebulosa aplicamos una máscara y sumamos todos los píxeles, teniendo un valor de \SI{64822.82}{cuentas.s^{-1}}. Esta máscara toma en cuenta a los píxeles que se encuentra a una distancia mínima de \SI{1}{\arcsecond} y a una distancia máxima de \SI{60}{\arcsecond} de la estrella WR 124, así no estamos considerando la emisión por parte de la estrella, de igual manera, no sumamos los píxeles que tuvieran un valor mayor a 3 para no incluir la emisión de las estrellas de campo. Como estamos sumando sobre todos los píxeles, debemos tomar en cuenta el tamaño del píxel, que en este caso es de \SI{0.1}{\arcsecond}. Entonces, nuestro factor de conversión está dado como
 \begin{equation}
-    \frac{B}{\mathrm{erg\,cm^{-2}\,s^{-1}\,sr^{-1}}}=0.0137\frac{B}{\mathrm{cuentas\,s^{-1}}},
+    \frac{\SI{2.08e-10}{erg.cm^{-2}.s^{-1}}}{\SI{64822.82}{cuentas.s^{-1}}(\SI{0.1}{\arcsecond})^2},
 \end{equation}
-donde $B$ es el brillo superficial, para esto vamos a utilizar la calibración de \cite{Grosdidier:1998} en la cual calculó un flujo total de la nebulosa de \SI{2.08e-10}{erg.s^{-1}.cm^{-2}} en las observaciones de H$\alpha$ en el HST.
-Por lo que el brillo superficial en unidades de \unit{erg.cm^{-2}.s^{-1}.sr^{-1}} está dado como
+y pasando los segundos de arco a esterorradianes tenemos que la constante de conversión es
 \begin{equation}
-    \frac{\SI{2.08e-10}{erg.cm^{-2}.s^{-1}}}{(\SI{0.1}{\arcsecond})^2}=\frac{\SI{2.08e-10}{erg.cm^{-2}.s^{-1}}}{\SI{2.35e-13}{sr}}=\SI{885.106}{erg.cm^{-2}.s^{-1}.sr^{-1}}.
-\end{equation}
-Para el brillo superficial en unidades de \unit{cuentas.s^{-1}} sumamos todos los píxeles de la nebulosa que se encuentran a una distancia mínima de \SI{1}{\arcsecond} y a una distancia máxima de \SI{60}{\arcsecond} de la estrella WR 124, así no estamos considerando la emisión por parte de la estrella. Entonces tenemos que
-\begin{equation}
-    \frac{\frac{B}{\unit{erg.cm^{-2}.s^{-1}.sr^{-1}}}}{\frac{B}{\unit{cuentas.s^{-1}}}}=\frac{885.106}{64822.82}\approx0.0137
+    \frac{\SI{2.08e-10}{erg.cm^{-2}.s^{-1}}}{\SI{1.52e-8}{cuentas.s^{-1}.sr^{-1}}}\approx0.0137
 \end{equation}
 
 
@@ -1266,11 +1271,25 @@ Por lo que los tiempos de vida de los glóbulos y el tiempo dinámico de la nebu
 
 \chapter{Modelo Posición-Velocidad}
 
-En la Figura \ref{fig:zavala_nudos} hablamos de como los glóbulos que se encontraban en una elipse, se encontraban en realidad en una cáscara esférica alrededor de la estrella WR 124.  En la Figura ?? el plano ($x,z$) es el plano del cielo que vemos, por lo que nuestra línea vista es el eje $y$ que va hacia adentro de la imagen y  la estrella se encuentra en el origen. La línea negra paralela al eje $z$ es un ejemplo de las rendijas de las que utilizó \cite{Zavala:2022}. La esfera roja es una esfera de radio $r$, por lo que
+En la Figura \ref{fig:zavala_nudos} hablamos de como los glóbulos que se encontraban en las elipses en esa figura, se encontraban en realidad en una cáscara esférica alrededor de la estrella WR 124.  En la Figura ?? el plano ($x,z$) es el plano del cielo que vemos, por lo que nuestra línea vista es el eje $y$ que va hacia adentro de la imagen y  la estrella se encuentra en el origen. La línea azul paralela al eje $z$ es un ejemplo de las rendijas de las que utilizó \cite{Zavala:2022}. Si consideramos la esfera de radio $r$, la cual está dada como
 \begin{equation}
-    x^2+y^y+z^2=r
+    x^2+y^y+z^2=r^2,
 \end{equation}
-describe esta esfera. Por simplicidad vamos a usar las variables unitarias $X=\frac{x}{r}$, $Y=\frac{y}{r}$ y $Z=\frac{z}{r}$
+podemos usar las variables $X=\frac{x}{r}$, $Y=\frac{y}{r}$ y $Z=\frac{z}{r}$ por simplicidad y así trabajar con la esfera unitaria. En este análisis vamos a considerar que los vectores de posición y velocidad son paralelos, por lo que podemos usar las variables $X$, $Y$ y $Z$ tanto para la posición como para la velocidad. 
+
+%\begin{figure}
+ %   \centering
+  %  \includegraphics[width=\textwidth]{Appendices/HST_WFC3_UVIS1.F656N.png}
+   % \caption{Transmisión del filtro f656n del HST}
+    %\label{fig:filtro f656n}
+%\end{figure}
+
+Notemos que si $X=X_0$ es constante, entonces tenemos el círculo
+\begin{equation}
+    Y^2+Z^2=(1-X_0^2)
+\end{equation}
+que esta centrado en $(0,0,X_0)$. En la Figura ?? podemos este círculo en la esfera unitaria así como el plano en el que está este círculo. También podemos ver el vector de  posición (o velocidad), así como la proyección de este en los ejes $x$, $y$ y $z$, en un punto donde el círculo interseca con la esfera. Por lo que si medimos la distancia en $Z$ y la velocidad en $Y$, entonces tendríamos el esquema de la Figura \ref{fig:zavala_nudos} y la elipses representarían una cáscara esférica.
+
 
 \chapter{Imágenes de ajustes}\label{App : ajustes}
 
