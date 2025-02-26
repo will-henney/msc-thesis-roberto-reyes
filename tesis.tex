@@ -1260,13 +1260,13 @@ Por lo que tenemos que
 \end{equation}
 Por lo que los tiempos de vida de los glóbulos y el tiempo dinámico de la nebulosa son similares. 
 
-\chapter{Modelo Posición-Velocidad}
+\chapter{D-proyección de posición y velocidad}
 
-En la Figura \ref{fig:zavala_nudos} vimos como podemos ajustar una elipse a cada grupo de glóbulos, lo que nos indicaría que este grupo de glóbulos está en una cáscara esférica de radio $r$, por lo que en este análisis vamos a considerar por la Ecuación
+En la Figura \ref{fig:zavala_nudos} vimos que cada grupo de glóbulos se encontraba en una elipse, lo que nos indicaría que este grupo de glóbulos está en una cáscara esférica de radio $r$, por lo que en este análisis vamos a considerar por la Ecuación
 \begin{equation}
 	x^2+y^2+z^2=r^2,
 \end{equation}
-y para mayor simplicidad vamos a usar las variables $X=x/r$, $Y=y/r$ y $Z=z/r$ para trabajar con la esfera unitaria, además de que son variables adimensionales. Si consideramos que además los vectores de posición y velocidad son paralelos, podremos pasar de un vector a otro sin problemas.
+y para mayor simplicidad vamos a usar las variables $X=x/r$, $Y=y/r$ y $Z=z/r$ para trabajar con la esfera unitaria, además de que son variables adimensionales. Si consideramos que además los vectores de posición y velocidad son paralelos, radiales y constantes con radio, podremos pasar de un vector a otro sin problemas.
 
 
 \begin{figure}
@@ -1280,11 +1280,12 @@ En la Figura \ref{fig: ap PV rendija} vemos la esfera unitaria
 \begin{equation}
 X^2+Y^2+Z^2=1
 \end{equation}
- en el plano $(X,Z)$, el cual representa el plano del cielo en el que vemos, y nuestra línea de visión sería el eje $Y$, el cual apunta hacia adentro de la imagen. La línea azul paralela al eje $Z$ representa una d las rendijas usadas por \cite{Zavala:2022} en  la nebulosa. Notemos que si está rendija se encuentra en $X_0$, podemos dibujar el círculo 
+ en el plano $(X,Z)$, el cual representa el plano del cielo en el que vemos, y nuestra línea de visión sería el eje $Y$, el cual apunta hacia adentro de la imagen. La línea azul paralela al eje $Z$ representa una de las rendijas usadas por \cite{Zavala:2022} en  la nebulosa. Notemos que si está rendija se encuentra en $X_0$, podemos dibujar el círculo 
  \begin{equation}
  Y^2+Z^2=1-X_0^2
  \end{equation}
-en el plano paralelo a $(Y,Z)$ que pasa por $X_0$, como se ve en la Figura \ref{fig:ap PV esfera3d}. Si medimos la distancia en el eje $Z$ y la velocidad en el eje $Y$ , entonces tenemos el diagrama de la Figura \ref{fig:zavala_nudos} pero normalizado. Notemos que todos los puntos que caen sobre este círculo tienen la misma distancia al origen, que en nuestro caso es equivalente a decir que todos los grupos de glóbulos que caen en este círculo tienen la misma distancia a la estrella WR 124. De igual manera para la velocidad, esto ya que estamos considerando que el vector de velocidad y distancia son paralelos.
+en el plano paralelo a $(Y,Z)$ que pasa por $X_0$, como se ve en la Figura \ref{fig:ap PV esfera3d}. Este círculo representa la posición de la elipse tanto en posición como en velocidad. Por lo que si medimos la distancia en el eje $Z$ y la velocidad en el eje $Y$ , entonces este círculo representa el diagrama de la Figura \ref{fig:zavala_nudos} pero normalizado. Notemos que todos los puntos que caen sobre este círculo tienen la misma distancia al origen, que en nuestro caso es equivalente a decir que todos los grupos de glóbulos que caen en este círculo tienen la misma distancia a la estrella WR 124. De igual manera
+para la velocidad, esto ya que estamos considerando que el vector de velocidad y distancia son paralelos.
 
 
 \begin{figure}
@@ -1295,6 +1296,8 @@ en el plano paralelo a $(Y,Z)$ que pasa por $X_0$, como se ve en la Figura \ref{
 \end{figure}
 
 Podemos observar también que el círculo $Y^2+Z^2=1-X_0^2$ tiene un radio menor que la esfera unitaria  para $X_0\neq0$ (ver Figura \ref{fig: ap PV modelo}), por lo que entre más lejos este $X_0$ del origen, el círculo se hace más pequeño. Es por eso que las elipses de la Figura \ref{fig:zavala_nudos} se van haciendo más pequeñas conforme la rendija usada en la que se encuentran está más alejada de la estrella WR 124. 
+
+Notemos que además que si $Z=0$, entonces tenemos el máximo en $Y$, que es el radio del círculo $\sqrt{1-X_0^2}$. De igual manera para el caso $Y=0$.
 
 
 \begin{figure}
