@@ -19,6 +19,7 @@
 \usepackage{setspace}
 \usepackage{hyperref}
 \usepackage{float}              % Para usar [H] en las figures
+\usepackage{pdfpages}
 
 \usepackage{tikz}
 \usepackage{lipsum}
@@ -41,46 +42,7 @@
 \begin{document}
 
 \begin{titlepage}
-\begin{center}
-	\includegraphics[scale=.4]{unam.jpg}
-\end{center}	
-
-%\vspace{4pt}
-
-\begin{quote}	
-\begin{center}
-\large \textbf{UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO}\\
-PROGRAMA DE POSGRADO EN ASTROFÍSICA
-\end{center}
-\vspace{12pt}
-\begin{center}
-\Large Instituto de Radioastronomía y Astrofísica
-\end{center}
-\vspace{16pt}
-\begin{center}
-\Large EL IMPACTO DEL VIENTO ESTELAR Y LA RADIACIÓN EN GLÓBULOS NEUTROS ALREDEDOR DE UNA ESTRELLA WOLFT-RAYET
-\end{center}
-\vspace{16pt}
-\begin{center}
-\large TESIS PARA OPTAR POR EL GRADO DE\\
-MAESTRO EN CIENCIAS (ASTROFÍSICA)
-\end{center}
-\vspace{12pt}
-\begin{center}
-\small PRESENTA:\\
-\large ROBERTO REYES CABAÑAS
-\end{center}
-\vspace{12pt}
-\begin{center}
-\small TUTOR:\\
-\large DR. WILLIAM JOHN HENNEY 
-\end{center}
-\vspace{12pt}
-\begin{center}
-Morelia, Michoacán 2025
-\end{center}
-
-\end{quote}
+\includepdf[scale=1,pagecommand={}]{Portada_final.pdf}
 \end{titlepage}
 
 %\maketitle
@@ -88,6 +50,18 @@ Morelia, Michoacán 2025
 \chapter*{Resumen}
 
 La nebulosa circunestelar M1-67 alrededor de la estrella Wolf-Rayet WR 124 contiene cientos de pequeños glóbulos neutros, como revelan imágenes recientes del  James Webb Space Telescope (JWST). La emisión ionizada de la nebulosa muestra un patrón intrincado de cáscaras y filamentos, muchos de los cuales parecen asociados con los glóbulos pero desplazados hacia la estrella central. Proponemos un modelo simple para la nebulosa en el que los flujos de fotoevaporación desde la superficie irradiada de los glóbulos interactúan con el viento estelar de la estrella Wolf-Rayet para formar cáscaras de emisión hemisféricas. Probamos este modelo contra imágenes del JWST y H$\alpha$ del Hubble Space Telescope (HST) de la nebulosa, encontrando una buena concordancia para los glóbulos mejor observados y más aislados. El modelo proporciona una explicación física para la morfología observada de la nebulosa y los glóbulos, y sugiere que los glóbulos están protegidos hidrodinámicamente del viento estelar por los flujos de fotoevaporación. Derivamos una estimación independiente de la fuerza del viento estelar, que es consistente con valores previamente derivados de la modelación de la atmósfera estelar. También somos capaces de restringir la distribución tridimensional de los glóbulos.
+
+\chapter*{Agradecimientos}
+
+A la persona que más me gustaría darle las gracias es a mi asesor, el Dr. Will. Él me supo guiar durante toda la maestría y estuvo ahí para mí siempre, sobre todo en los momentos más difíciles. Gracias a él, mi aventura en el mundo de la astronomía ha sido la más maravillosa que he tenido. Gracias doctor por toda su paciencia, apoyo y conocimiento que me compartió.
+
+También quisiera agradecer a la UNAM en general. Por aceptarme en el posgrado, lo cual para mí fue todo un reto. Por darme todas las comodidades para llevar a cabo mis estudios y compartirlo con la gente. Al campus Morelia porque ahí conocí a mi maestra de baile Lupita y a todos mis amiguitos, a quienes aprecio con toda mi alma. Con ustedes aprendí que no es necesario voltear al cielo para ver las estrellas, y menos si es para verlas bailar. Al IRyA por darme todo su apoyo incondicional, y sobre todo a los de divulgación, que aunque no lo crean, en sus eventos yo siempre me emocionaba tanto como los niños. A mamá Karin por toda su paciencia y cariño. También a mis compañeros de clase quienes siempre estuvieron ahí, literalmente.
+
+Quiero agradecer a mis sinodales por su tiempo, sugerencias y comentarios. Con su ayuda mejoré mucho mi trabajo. Gracias Toala! ya que por tu culpa me divertí mucho con este proyecto que tanto me fascinó.
+
+Agradezco a CONAHCYT por el apoyo financiero brindado para mis estudios e investigaciones. También al proyecto PAPIIT IN109823 de DGAPA por el apoyo financiero para hacer posible este trabajo.
+
+Finalmente, Gracias Dra. Gloria por coincidir en esta vida y mostrarme lo maravilloso que es este universo.
 
 \newpage
 
@@ -101,14 +75,14 @@ Los \textit{glóbulos} son concentraciones densas de gas y polvo en el medio int
 
 En general los glóbulos tienen una gran variedad de tamaños. Por ejemplo, cuando nos referimos a los glóbulos en regiones de formación estelar masiva comúnmente suelen ser de gran tamaño, $\sim$\SI{0.1}{pc} \citep{Schenider:2016}, mientras que en nebulosas alrededor de estrellas evolucionadas son de un tamaño más pequeño, $\sim$\SI{e-2}{pc} \citep{GFGahm:2013}.
 
-Los primeros glóbulos fueron observados por Bart Bok en 1940. Como podemos ver en la Figura \ref{fig:Banard}, debido a que las estrellas de fondo sufren enrojecimiento por polvo, estos glóbulos se pueden apreciar como nubes oscuras ya que tienen gran cantidad de gas neutro y polvo. Estos glóbulos contienen principalmente hidrógeno molecular en su interior, así como también pueden tener otras moléculas, metales e incluso algunos silicatos. Si bien puede haber formación estelar en su interior, no se puede observar la radiación ionizante de estas estrellas ya que es absorbida por el hidrógeno neutro (tanto molecular como atómico) y el polvo que hay entre las estrellas y el observador, es por eso que se ven oscuras.
+Los primeros glóbulos fueron observados por Bart Bok en 1940. Como podemos ver en la Figura \ref{fig:Banard}, debido a que las estrellas de fondo sufren enrojecimiento por polvo, estos glóbulos se pueden apreciar como nubes oscuras ya que tienen gran cantidad de gas neutro y polvo. Estos glóbulos contienen principalmente hidrógeno molecular en su interior, así como también pueden tener otras moléculas \citep{Amin:2005, DFrancesco:2002}. Si bien puede haber formación estelar en su interior, no se puede observar la radiación ionizante de estas estrellas ya que es absorbida por el hidrógeno neutro (tanto molecular como atómico) y el polvo que hay entre las estrellas y el observador, es por eso que se ven oscuras.
 
 Cuando los glóbulos se encuentran en regiones de formación estelar masiva, estos pueden interactuar con la radiación ultravioleta (UV) de las estrellas jóvenes masivas que se encuentren cerca, o con la de la estrella central en el caso de que los glóbulos estén en una nebulosa circunestelar. En estos casos se puede observar el frente de ionización como un borde brillante de emisión (ver Figuras \ref{fig:Pillars} y \ref{fig:nudos}).
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.85\textwidth]{images Chapter 1/C1_Bok_globule.jpg}
-    \caption{Ejemplo de un glóbulo de Bok. Imagen de Banard 68 visto con Very Large Telescope FORS1 en 440 nm, 557 nm y 768 nm. Se puede apreciar una zona oscura el cual es el glóbulo y lo que pareciera ser enrojecimiento de las estrellas por polvo en la superficie del glóbulo. En esta imagen podemos ver que no hay evidencia de alguna fotoevaporación externa por parte de estrellas. \citep{Alves:2001}.}
+    \caption{Ejemplo de un glóbulo de Bok. Imagen de Banard 68 visto con Very Large Telescope FORS1 en 440 nm, 557 nm y 768 nm con un tamaño de \ang{;6.83;}$\times$\ang{;6.83;}. Se puede apreciar una zona oscura el cual es el glóbulo y lo que pareciera ser enrojecimiento de las estrellas por polvo en la superficie del glóbulo. En esta imagen podemos ver que no hay evidencia de alguna fotoevaporación externa por parte de estrellas. \citep{Alves:2001}.}
     \label{fig:Banard}
 \end{figure}
 
@@ -162,25 +136,23 @@ Cuando la radiación UV comienza a calentar el gas de la nube, el gas ionizado c
 
 En un inicio esta radiación ioniza el gas neutro de la nube a una tasa muy rápida. Esto causa que una gran cantidad partículas ionizadas, provenientes de la nube, viajen en dirección a la estrella. Conforme esto va evolucionando se va formando una capa aislante alrededor de la nube \citep{OortySpitzer_1955}. Esta capa aislante esta conformada por el gas ionizado, y puede proteger a la nube de flujos o vientos externos, así como de la radiación.
 
-Durante esta interacción tenemos tanto un frente de ionización como un choque interno que viajan a través de la nube a la parte trasera. Al inicio estos dos tienen una velocidad similar de $\sim\SI{10}{km.s^{-1}}$, pero una vez que las recombinaciones se vuelven importantes en la capa aislante, el frente de ionización comienza a desacelerar. Mientras que el choque interno hace que la nube se comprima \citep{Bertoldi_1989}.
+Durante esta interacción tenemos tanto un frente de ionización como un choque interno que viajan a través de la nube a la parte trasera (ver Figura \ref{fig:evolucion de la nube}). Al inicio estos dos tienen una velocidad similar de $\sim\SI{10}{km.s^{-1}}$, pero una vez que las recombinaciones se vuelven importantes en la capa aislante, el frente de ionización comienza a desacelerar. Mientras que el choque interno hace que la nube se comprima \citep{Bertoldi_1989}.
 
 No siempre podemos ver un flujo fotoevaporativo por parte de las nubes en este tipo de interacción, para esto \cite{Bertoldi_1989} nos dice que si el parámetro de ionización, definido como 
 \begin{equation}
-    \Gamma  = \frac{F_\mathrm{i}}{n_0 c}
+    \Gamma  \equiv \frac{F_\mathrm{i}}{n_0 c}
 \end{equation}
-donde $F_\mathrm{i}$ es el flujo incidente del continuo de Lyman, $n_0$ la densidad del gas neutro,y $c$ la velocidad de la luz, es menor que \SI{e-7}{}, entonces la radiación ionizante incidente no tendrá un efecto dinámico sobre la nube por lo que no tendremos un flujo fotoevaporativo por parte de la nube. Por otro lado, si 
+donde $F_\mathrm{i}$ es el flujo incidente del continuo de Lyman, $n_0$ la densidad del gas neutro, y $c$ la velocidad de la luz, es menor que \SI{e-7}{}, entonces la radiación ionizante incidente no tendrá un efecto dinámico sobre la nube por lo que no tendremos un flujo fotoevaporativo por parte de la nube. Por otro lado, si 
 \begin{equation}
-    \frac{F_\mathrm{i}}{2\alpha_\mathrm{i} r_0 n_0}>1
+    \delta'\equiv\frac{F_\mathrm{i}}{2\alpha_\mathrm{i} r_0 n_0^2}>1
 \end{equation}
-donde $\alpha_\mathrm{i}$ es el coeficiente de recombinación a todos los estados, excepto al nivel base y $r_0$ el radio de la nube, entonces la nube se ionizará por completo.
+donde $\alpha_\mathrm{i}$ es el coeficiente de recombinación a todos los estados, excepto al nivel base y $r_0$ el radio de la nube, entonces la nube se ionizará por completo, esto ya que el flujo ionizante es mayor que las recombinaciones.
 
 %En un inicio esta radiación ioniza el gas a una tasa muy rápida causando una ``tormenta de partículas ionizantes'' que viene por parte de la nube, conforme esto va evolucionando se crea una capa aislante alrededor de la nube. Esta radiación produce un choque ionizante lo cual provoca que la nube se comprima. También se produce un frente de ionización que avanza hacia la nube haciendo que esta se vaya alejando de la estrella. Mientras esto ocurre hay un choque interno que va viajando a través de la nube a la parte trasera \citep{Bertoldi_1989}. Para que esto ocurra \cite{Kahn:1954} da cierto criterios, en los cuales dice que la radiación no debe ser muy débil o demasiado fuerte.
 
 \section{Estrellas Wolf-Rayet y sus vientos}
 
-Las estrellas Wolf-Rayet (WR) son estrellas evolucionadas de estrellas masivas, como estrellas tipo O, que tienen una alta pérdida de masa,  $\sim$2--\SI{10e-5}{\msun/yr}, debido a sus fuertes vientos, que pueden ser del orden de $\sim$\SI{1000}{km/s}, los cuales provocan sus líneas de emisión anchas \citep{Hamman:2006}. Estas estrellas fueron nombradas así después de que Charles Wolf y Georges Rayet identificaran 3 estrellas en Cygnus con sus  anchas líneas de emisión de C, N, O y He que las caracterizan muy bien \citep{WR:ref}. 
-
-Típicamente son estrellas de 10--\SI{25}{\msun} que son descendientes de estrellas tipo O. Se caracterizan por tener intensas líneas de emisión y emisión libre-libre en longitudes de onda IR-mm-cm \citep{crowther:2007}.
+Las estrellas Wolf-Rayet (WR) son estrellas evolucionadas de estrellas masivas, como estrellas tipo O. Estas estrellas WR típicamente tienen masas de 10--\SI{25}{\msun} que se caracterizan por tener intensas líneas de emisión y emisión libre-libre en longitudes de onda IR-mm-cm \citep{crowther:2007}. Además tienen una alta pérdida de masa,  $\sim$2--\SI{10e-5}{\msun/a}, debido a sus fuertes vientos, que pueden ser del orden de $\sim$\SI{1000}{km/s}, los cuales provocan sus líneas de emisión anchas \citep{Hamman:2006}. Estas estrellas fueron nombradas así después de que Charles Wolf y Georges Rayet identificaran 3 estrellas en Cygnus con sus  anchas líneas de emisión de C, N, O y He que las caracterizan muy bien \citep{WR:ref}. 
 
 A estas estrellas se les clasifica por el cociente que hay entre sus líneas de emisión intensa que las caracterizan. \cite{VanDerHutch:2001} las clasifica principalmente como tipo WN a aquellas que son abundantes en He y N, tipo WC a las que son abundantes en He y C, y tipo WO a aquellas que son abundantes en He y O. Si bien muchas de estas estrellas no tienen hidrógeno en su atmósfera estelar, en algunas podemos detectar una cantidad considerable de H en su atmósfera, por lo que se les pone también una ``h'' \citep{SSM:1996}.
 
@@ -204,15 +176,15 @@ A estas estrellas se les clasifica por el cociente que hay entre sus líneas de 
 \section{Nebulosa M1-67}
 
 M1-67 es la nebulosa circunestelar alrededor de la estrella WR 124, que es del tipo WN8h. 
-Se han realizado varios estudios en la nebulosa M1-67 en la que se han propuesto modelos de su estructura tridimensional usando espectroscopia de rendija larga \citep{Zavala:2022}. \cite{Marcel:2021} usa las líneas de $[\mathrm{S \scriptstyle{II}}]\lambda6717$ y $\lambda6731$ para encontrar que la densidad electrónica decae con el radio, encontrando que en las partes más cercanas a la estrella la densidad electrónica es de $\sim$\SI{2000}{cm^{-3}}, mientras que en las partes más lejanas, a unos \SI{40}{\arcsecond}, la densidad electrónica es de $\sim\SI{500}{cm^{-3}}$. \cite{Grosdidier:1998} encuentra que el brillo superficial de H$\alpha$ también decae con el radio como $r^{-0.8}$. \cite{Mancherko:2010} midió una velocidad de expansión de la nebulosa de \SI{46}{km.s^{-1}} usando usando las observaciones de 1997 \citep{Grosdidier:1998} y 2008, la cual coincide con la medición de \cite{Zavala:2022}. 
+Se han realizado varios estudios de la nebulosa M1-67 en la que se han propuesto modelos de su estructura tridimensional usando espectroscopia de rendija larga \citep{Zavala:2022}. \cite{Marcel:2021} usa las líneas de $[\mathrm{S \scriptstyle{II}}]\lambda6717$ y $\lambda6731$ para encontrar que la densidad electrónica decae con el radio, encontrando que en las partes más cercanas a la estrella la densidad electrónica es de $\sim$\SI{2000}{cm^{-3}}, mientras que en las partes más lejanas, a unos \SI{40}{\arcsecond} (\SI{1.05}{pc}), la densidad electrónica es de $\sim\SI{500}{cm^{-3}}$. \cite{Grosdidier:1998} encuentra que el brillo superficial de H$\alpha$ también decae con el radio como $r^{-0.8}$. \cite{Mancherko:2010} midió una velocidad de expansión de la nebulosa de \SI{46}{km.s^{-1}} usando usando las observaciones de 1997 \citep{Grosdidier:1998} y 2008, la cual coincide con la medición de \cite{Zavala:2022}. 
 
-En las Figuras \ref{fig:M1-67HST} y \ref{fig:M1-67JWST} se puede apreciar que esta nebulosa tiene una estructura muy compleja. \cite{Grosdidier:1998} detectó unos puntos muy brillantes y densos, pero no quedaba muy claro cuál era su naturaleza. En el capítulo \ref{Chapter : 3} hablaremos más a detalle de cómo estos puntos brillantes y densos en realidad son glóbulos que se localizan en gran parte de la nebulosa, estos glóbulos se pudieron detectar gracias a las imágenes del  Telescopio Espacial James Webb (JWST por sus siglas en inglés), ya que tienen una mayor resolución que las imágenes del Telescopio Espacial Hubble (HST por sus siglas en inglés), además de que también se tiene una gran variedad de filtros con el JWST.
+En las Figuras \ref{fig:M1-67HST} y \ref{fig:M1-67JWST} se puede apreciar que esta nebulosa tiene una estructura muy compleja. \cite{Grosdidier:1998} detectó unos puntos muy brillantes y densos, pero no quedaba muy claro cuál era su naturaleza. En el Capítulo \ref{Chapter : 3} hablaremos más a detalle de cómo estos puntos brillantes y densos en realidad son glóbulos que se localizan en gran parte de la nebulosa, estos glóbulos se pudieron detectar gracias a las imágenes del  Telescopio Espacial James Webb (JWST por sus siglas en inglés), ya que tienen una mayor resolución que las imágenes del Telescopio Espacial Hubble (HST por sus siglas en inglés), además de que también se tiene una gran variedad de filtros con el JWST.
 
-A lo largo de la tesis vamos a usar los datos de la tabla \ref{tab:parametros WR-124}. Con la distancia a la estrella, $D$, podremos dar distancias físicas de la siguiente manera
+A lo largo de la tesis vamos a usar los datos de la Tabla \ref{tab:parametros WR-124}. Con la distancia a la estrella, $D$, podremos dar distancias físicas de la siguiente manera
 \begin{equation}
     \left[\frac{R}{\mathrm{AU}}\right]=\left[\frac{D}{\mathrm{pc}}\right]\left[\frac{\theta}{\mathrm{arcsec}}\right]
 \end{equation}
-donde $D$ es la distancia a la estrella y $\theta$ la separación que medimos directamente de las observaciones en arcsec, la tasa de pérdida de masa, $\dot{M}$, y la velocidad terminal del viento estelar, $v_\infty$, para calcular la presión hidrodinámica (presión RAM en inglés) del viento estelar, así como la tasa de fotones ionizantes de la estrella para calcular la presión de radiación.
+donde $R$ es la distancia física que queremos conocer y $\theta$ la separación que medimos directamente de las observaciones en arcsec, la tasa de pérdida de masa, $\dot{M}$, y la velocidad terminal del viento estelar, $v_\infty$, para calcular la presión hidrodinámica (presión RAM en inglés) del viento estelar, así como la tasa de fotones ionizantes de la estrella para calcular la presión de radiación.
 
 \begin{table}[htb]
     \centering
@@ -221,23 +193,23 @@ donde $D$ es la distancia a la estrella y $\theta$ la separación que medimos di
         \multicolumn{3}{c}{Parámetros de la estrella WR 124} \\ \midrule
          $D$ & 5.429$\pm$\SI{.54}{kpc} & J. Arthur, priv.~comm.\\
          $v_\infty$ & \SI{710}{km/s}  & \cite{Hamman:2006}\\
-         $\dot{M}$ & $10^{-4.7^{+.6}_{-.25}}$\unit{M_\odot/años}  & \cite{Crowther:1999}\\
+         $\dot{M}$ & $10^{-4.7}$\unit{M_\odot/a}  & \cite{Crowther:1999}\\
          $S_*$ & \SI{1.25e49}{s^{-1}} & \cite{crowther:2007}  \\
          %$F_{H_\alpha}$ & \SI{3e-14}{erg.cm^{-2}.s^{-1}} & \cite{Grosdidier:1998}\\
          \bottomrule
     \end{tabular}
-    \caption{Parámetros de WR 124. La incertidumbre en la tasa de pérdida de masa es considerando los diferentes resultados en la literatura.}
+    \caption{Parámetros de WR 124.}
     \label{tab:parametros WR-124}
 \end{table}
 
 \subsection{Observaciones con HST}
 
-Para las observaciones con el Telescopio Espacial Hubble (HST por sus siglas en inglés) utilizamos los datos del Hubble Legacy Archive, los cuales son tipo imagen en formato FITS con un nivel de calibración 3, este nivel de calibración es un mosaico de la combinación de varias imágenes para cubrir un área del cielo\footnote{Para más detalles ver \url{https://hla.stsci.edu/hla_faq.html\#productlevels}}.  Se observó en el filtro F656N\footnote{En el Apéndice \ref{App: Filtros} vemos el rango en que observa este filtro.} utilizando la cámara Wide Field and Planetary Camera 2 (WFPC2) para ver la emisión en \unit{H\alpha}. Utilizamos las observaciones de 1997 con ID de la propuesta 6787, las cuales tienen un tiempo de exposición de \SI{10 216}{s} y es una combinación de 10 exposiciones. Para las observaciones de 2008 con ID de la propuesta 11137, estas tienen un tiempo de exposición de \SI{4200}{s} y es una combinación de 8 exposiciones. Usando el filtro f555w nos dimos cuenta que la contaminación por el continuo es muy pequeño. Además \cite{Grosdidier:1998} en su calibración,  en la cual consideró también la contaminación de la línea $[\mathrm{N\scriptstyle{II}}]\,\lambda6548$, calculó que aproximadamente el $76.6\%$ del flujo en el filtro f656n es por parte de la emisión de H$\alpha$.
+Para las observaciones con el Telescopio Espacial Hubble (HST por sus siglas en inglés) utilizamos los datos del Hubble Legacy Archive, los cuales son tipo imagen en formato FITS con un nivel de calibración 3, este nivel de calibración es un mosaico de la combinación de varias imágenes para cubrir un área del cielo\footnote{Para más detalles ver \url{https://hla.stsci.edu/hla_faq.html\#productlevels}}.  Se observó en el filtro F656N\footnote{En el Apéndice \ref{App: Filtros} vemos el rango en que observa este filtro.} utilizando la cámara Wide Field and Planetary Camera 2 (WFPC2) para ver la emisión en \unit{H\alpha}. Utilizamos las observaciones de 1997 con ID de la propuesta 6787, las cuales tienen un tiempo de exposición de \SI{10 216}{s} y es una combinación de 10 exposiciones. Para las observaciones de 2008 con ID de la propuesta 11137, estas tienen un tiempo de exposición de \SI{4200}{s} y es una combinación de 8 exposiciones. %Usando el filtro f555w nos dimos cuenta que la contaminación por el continuo es muy pequeño. 
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=0.9\textwidth]{m1-67-comp-full-hst.jpg}
-    \caption{Imagen de M1-67 con el filtro \unit{H\alpha} \citep{Grosdidier:1998}. https://esawebb.org/images/weic2307f/}
+    \includegraphics[width=0.9\textwidth]{ultimas correcciones/WR124_HST.pdf}
+    \caption{Imagen de M1-67 con el filtro \unit{H\alpha} \citep{Grosdidier:1998}. Los \SI{30}{\arcsecond} corresponden a \SI{0.78}{pc}. https://esawebb.org/images/weic2307f/. Esta imagen fue rotada de tal manera que el Norte queda arriba y el Este a la izquierda.}
     \label{fig:M1-67HST}
 \end{figure}
 
@@ -251,14 +223,14 @@ A diferencia de la imagen en H$\alpha$, los filtros que se utilizaron para las o
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=0.9\textwidth]{M1-67-JWST.jpg}
-    \caption{Imagen de M1-67 con JWST. Vemos la composición de los filtros f444w (gris), f335m (rojo), f210m (verde), f150w (verde turquesa) y f090w (azul). https://www.flickr.com/photos/geckzilla/52757287572/}
+    \includegraphics[width=0.9\textwidth]{ultimas correcciones/WR124_JWST.pdf}
+    \caption{Imagen de M1-67 con JWST. Vemos la composición de los filtros f444w (gris), f335m (rojo), f210m (verde), f150w (verde turquesa) y f090w (azul). Los \SI{30}{\arcsecond} corresponden a \SI{0.78}{pc}. https://www.flickr.com/photos/geckzilla/52757287572/. Esta imagen fue rotada de tal manera que el Norte queda arriba y el Este a la izquierda.}
     \label{fig:M1-67JWST}
 \end{figure}
 
 \section{Estructura de la tesis}
 
-En esta tesis proponemos un modelo simple para explicar como interactúa el flujo fotoevaporativo transónico de un glóbulo con una presión externa. Este modelo lo vamos a aplicar  a los nudos que se encuentran en la nebulosa M1-67, por lo que se explicará la interacción del flujo fotoevaporativo con la presión hidrodinámica (presión RAM) del viento estelar de la estrella WR-124.
+En esta tesis proponemos un modelo simple para explicar como interactúa el flujo fotoevaporativo transónico de un glóbulo con una presión externa. Este modelo lo vamos a aplicar  a los nudos que se encuentran en la nebulosa M1-67, por lo que se explicará la interacción del flujo fotoevaporativo con la presión hidrodinámica (presión RAM) del viento estelar de la estrella WR 124.
 
 En el Capítulo 2 veremos como es que la interacción entre dos flujos supersónicos crean una cáscara chocada delgada. Con base en esto, describiremos el modelo hidrodinámico estacionario, en el cual el flujo fotoevaporativo de un glóbulo interactúa con una presión externa. En esta interacción también podemos ver una cáscara chocada.
 
@@ -271,23 +243,23 @@ En el Capítulo 5 vamos a comparar estos resultados obtenidos con los valores te
 \chapter{Modelos analíticos de flujos fotoevaporativos interactuando con una presión externa}
 \chaptermark{Modelo analítico}\label{Chapter : Modelo}
 
-En este capítulo vamos a describir el modelo que se propone para explicar la interacción que hay entre el flujo fotoevaporativo de un glóbulo y una presión externa. Este modelo en principio se puede aplicar a cualquier tipo de glóbulo como los que se mencionaron en el Capítulo \ref{Capitulo 1:introduccion}. 
+En este capítulo vamos a describir el modelo que se propone para explicar la interacción que hay entre el flujo fotoevaporativo de un glóbulo y una presión externa. Esta presión externa puede ser ejercida por la misma estrella que esta foto evaporando al glóbulo. Este modelo en principio se puede aplicar a cualquier tipo de glóbulo como los que se mencionaron en el Capítulo \ref{Capitulo 1:introduccion}. 
 
 En este trabajo en especial vamos a tratar la interacción del flujo fotoevaporativo de los glóbulos\footnote{Llamaremos glóbulos a los nudos que hay en la nebulosa por simplicidad.} en la nebulosa M1-67 y la presión RAM por parte del viento estelar de la estrella WR 124. En el Capítulo \ref{Chapter : 3} hablaremos más acerca de cómo encontramos estos glóbulos en la nebulosa M1-67, por ahora nos enfocaremos solo en el modelo.
 
 Para esto hemos considerado que ya han pasado todas las fases mencionadas en la Sección \ref{Sec:fluijos fotoevaporativos} y ahora estamos en un equilibrio de ionización. La forma del glóbulo en este modelo será esférico por simplicidad.
 
-En esta interacción entre el flujo fotoevaporativo y el viento estelar, los cuales son supersónicos, se producen dos zonas chocadas y entre estas dos zonas una discontinuidad de contacto como se describe en la Figura \ref{fig:zones}. De estas zonas esperamos ver solo el flujo fotoevaporativo chocado y no el viento estelar chocado ya que este último es menos denso además de que es no radiativo y su longitud de enfriamiento es más grande que la región de interacción.
+En esta interacción entre el flujo fotoevaporativo y el viento estelar, los cuales son supersónicos, se producen dos zonas chocadas y entre estas dos zonas una discontinuidad de contacto como se describe en la Figura \ref{fig:zones}. De estas zonas esperamos ver solo el flujo fotoevaporativo chocado y no el viento estelar chocado ya que este último es menos denso además de que es no radiativo y su longitud de enfriamiento (zona 3) es más grande que la región de interacción (zona 2).
 
 \begin{figure}[htb]
     \centering    \includegraphics[width=\textwidth]{imagenes_corregidas/Arreglo 01.pdf}
-    \caption{La interacción entre el flujo fotoevaporativo y el viento estelar de una estrella forma 4 zonas. El círculo naranja es el glóbulo. La línea punteada azul que une el centro del  glóbulo con el centro de la estrella es el eje de simetría que vamos a considerar en el modelo, la estrella se localiza en el otro extremo de la línea punteada. Vemos como en este eje de simetría tanto el viento estelar (líneas amarillas) como la radiación inciden de forma perpendicular a la base del glóbulo y en dirección contraria viaja el flujo fotoevaporativo (líneas rojas). La zona 1 es donde el flujo fotoevaporativo sale de la superficie del glóbulo con un número de Mach igual a 1 y va aumentando. La zona 2 es el flujo fotoevaporativo chocado con el viento estelar, la cual esperamos ver en las observaciones como una cáscara y nos vamos a referir a ella como la cáscara chocada. La zona 3 es el viento estelar chocado con el flujo fotoevaporativo y la zona 4 es donde viaja el viento estelar supersónico, el cual es menos denso que el flujo fotoevaporativo. La discontinuidad de contacto se da entre las zonas 2 y 3, la línea gris.}
+    \caption{La interacción entre el flujo fotoevaporativo y el viento estelar de una estrella forma 4 zonas. El círculo naranja es el glóbulo. La línea punteada azul que une el centro del  glóbulo con el centro de la estrella es el eje de simetría que vamos a considerar en el modelo, la estrella se localiza en el otro extremo de la línea punteada. Vemos como en este eje de simetría tanto el viento estelar (líneas naranjas) como la radiación inciden de forma perpendicular a la base del glóbulo y en dirección contraria viaja el flujo fotoevaporativo (líneas rojas). La zona 1 es donde el flujo fotoevaporativo sale de la superficie del glóbulo con un número de Mach igual a 1 y va aumentando. La zona 2 es el flujo fotoevaporativo chocado con el viento estelar, la cual esperamos ver en las observaciones como una cáscara y nos vamos a referir a ella como la cáscara chocada. La zona 3 es el viento estelar chocado con el flujo fotoevaporativo y la zona 4 es donde viaja el viento estelar supersónico, el cual es menos denso que el flujo fotoevaporativo. La discontinuidad de contacto se da entre las zonas 2 y 3, la línea gris.}
     \label{fig:zones}
 \end{figure}
 
 \begin{figure}[htb]
     \centering    \includegraphics[width=0.8\textwidth]{images Chapter 2/C2_Canto.jpg}
-    \caption{Interacción de dos flujos supersónicos las cuales son producidas por dos fuentes (puntos negro en el eje z) a una distancia D. En esta interacción se produce una cáscara delgada $R(\theta)$ cuando los flujos llegan a un equilibrio. Para este problema se considera simetría cilíndrica \citep{Canto:1996}.}
+    \caption{Interacción de dos flujos supersónicos las cuales son producidas por dos fuentes (puntos negro en el eje z) a una distancia $D$. En esta interacción se produce una cáscara delgada $R(\theta)$ cuando los flujos llegan a un equilibrio. Para este problema se considera simetría cilíndrica \citep{Canto:1996}.}
     \label{fig:Canto1}
 \end{figure}
 
@@ -297,7 +269,7 @@ En esta interacción entre el flujo fotoevaporativo y el viento estelar, los cua
     \label{fig:cilindross}
 \end{figure}
 
-\cite{Canto:1996} trata de una manera formal la interacción entre dos flujos supersónicos en la cual considera dos fuentes separadas a una distancia D. Cuando estos flujos que están interaccionando llegan a un equilibrio de presiones se forma una cáscara delgada como se puede ver en la Figura \ref{fig:Canto1}, por lo que esperamos que la zona 2 de la Figura \ref{fig:zones} sea delgada \citep{Wil:2019}.
+\cite{Canto:1996} trata de una manera más detallada la interacción entre dos flujos hipersónicos en la cual considera dos fuentes separadas a una distancia $D$. En este análisis suponen que se forma una cáscara delgada cuando estos dos flujos llegan a un equilibrio de presiones como se puede ver en la Figura \ref{fig:Canto1}. En nuestro caso también esperamos que  la zona 2 de la Figura \ref{fig:zones} sea delgada \citep{Wil:2019}.
 
 %\begin{figure}[h]
 %    \centering    \includegraphics[width=0.75\textwidth]{images Chapter 2/Chp2_cilinders.jpg}
@@ -349,8 +321,8 @@ Con este modelo se pretende ver hasta donde llegamos a un equilibrio de presión
 donde $u$ es la velocidad del gas en la parte ionizada y $M$ es el número de Mach. 
 
 \begin{figure}[htb]
-    \centering \includegraphics[width=\textwidth]{imagenes_corregidas/Arreglo 02.pdf}
-    \caption{En este diagrama esquemático $r_0$ es el radio del glóbulo neutro, mientras que $\rho_0,M_0$ y $P_0$ son los valores que tenemos en la superficie del glóbulo y varían con dirección a la estrella sus valores van cambiando hasta tener diferentes valores en $r_\mathrm{shell}$, que es el radio del centro del glóbulo hasta la base del flujo fotoevaporativo chocado, $\rho,M$ y $P$ son los valores que tendrán en la base del flujo fotoevaporativo chocado.}
+    \centering \includegraphics[width=\textwidth]{imagenes_corregidas/Arreglo 02_n.pdf}
+    \caption{En este diagrama esquemático $r_0$ es el radio del glóbulo neutro, mientras que $\rho_0,M_0$ y $P_0$ son los valores que tenemos en la superficie del glóbulo y varían con dirección a la estrella hasta tener diferentes valores en $r_\mathrm{shell}$, que es el radio del centro del glóbulo hasta la base del flujo fotoevaporativo chocado, $\rho,M$ y $P$ son los valores que tendrán en la base del flujo fotoevaporativo chocado.}
     \label{fig:parameters}
 \end{figure}
 
@@ -361,16 +333,16 @@ f=\frac{P}{P_0}=\frac{\rho c_\mathrm{s}^2(1+M^2)}{\rho_0 c_\mathrm{s}^2(1+1)}=\f
 donde $P_0$ es la presión en la base del glóbulo, recordemos que aquí estamos considerando el punto sónico, por lo que  $M_0=1$. $P$ es la presión del flujo fotoevaporativo justo antes de $r_\mathrm{shell}$.
 Considerando la ecuación para la conservación de masa tenemos que
 \begin{equation}\label{eq : 2}
-\rho r^2M	=\rho_0 r_0^2
+\rho r^2M	=\rho_0 r_0^2.
 \end{equation}
-y finalmente, si consideramos la ecuación de Bernoulli isotérmica 
+Finalmente, si consideramos la ecuación de Bernoulli isotérmica 
 \begin{equation}
 \frac{v^2}{2}+c_\mathrm{s}^2\ln\rho=\text{constante}
 \end{equation}
-en la ecuación (\ref{eq: Presion total}) tenemos que \citep{Dyson:1968}
+en la Ecuación (\ref{eq: Presion total}) tenemos que \citep{Dyson:1968}
 \begin{equation}\label{eq ; 3} \frac{r}{r_0}=M^{-1/2}e^{\frac{M^2-1}{4}}.
 \end{equation}
-Combinando las ecuaciones (\ref{eq : 1}), (\ref{eq : 2}) y (\ref{eq ; 3})  y tenemos la ecuación
+Combinando las ecuaciones (\ref{eq : 1}), (\ref{eq : 2}) y (\ref{eq ; 3})   tenemos la ecuación
 \begin{equation}
     f=\frac{1+M^2}{2}exp\left(\frac{1-M^2}{2}\right),
 \end{equation}
@@ -386,7 +358,7 @@ la cual solo depende de $M$ y podemos resolver de manera numérica\footnote{En n
 % Assumption of isothermal equation of state
 \section{Condiciones para la cáscara chocada}
 
-\cite{Canto:1996} en su descripción para interacción de dos flujos supersónicos da la solución a distintos parámetros $\beta=(\dot{M}^0_\mathrm{w} v_\mathrm{w})/(\dot{M}^0_\mathrm{w1}v_\mathrm{w1})$, el cual es la razón de los momentos de los flujos $\mathrm{w}$ y $\mathrm{w1}$. Esto se puede ver en la Figura \ref{fig:Canto2} en la cual notamos que cuando el momento de un flujo es muy  grande comparado con el otro, la cáscara chocada se vuelve muy curva y está más cerca de la fuente cuyo flujo tiene menor momento.
+\cite{Canto:1996} en su descripción para interacción de dos flujos hipersónicos da la solución a distintos parámetros $\beta=(\dot{M}^0_\mathrm{w} v_\mathrm{w})/(\dot{M}^0_\mathrm{w1}v_\mathrm{w1})$, el cual es la razón de los momentos de los flujos $\mathrm{w}$ y $\mathrm{w1}$. Esto se puede ver en la Figura \ref{fig:Canto2} en la cual notamos que cuando el momento de un flujo es muy  grande comparado con el otro, la cáscara chocada se vuelve muy curva y está más cerca de la fuente cuyo flujo tiene menor momento.
 
 \begin{figure}[htb]
     \centering    \includegraphics[width=0.8\textwidth]{images Chapter 2/C2_Canto2.jpg}
@@ -397,7 +369,7 @@ la cual solo depende de $M$ y podemos resolver de manera numérica\footnote{En n
 %De la figura \ref{fig:zones} vemos que en la línea naranja tendremos la presión RAM del viento estelar y este viento tiene una desaceleración por la diferencia de presiones hasta llegar a la discontinuidad de contacto donde tendremos una presión $P_{DC}$ que si la comparamos con la presión RAM del viento tendríamos que
 %\[P_{RAM}=P_{DC}\Big(1+\frac{\alpha}{M^2}\Big)\] donde $\alpha$ es del orden de 1 y como recordamos el viento estelar es supersónico, en estrellas WR puede ser de hasta de \SI{1e8}{cm.s^{-1}} por lo que podríamos tener un número de Mach del orden de 100. Por lo que podríamos considerar que la presión en la discontinuidad de contacto está dada por la presión RAM del viento estelar.
 
-En la Figura \ref{fig:zones_presiones} vemos los diferentes tipos de presiones que hay en cada zona en esta interacción entre flujos supersónicos. En la zona de discontinuidad, la línea gris en la Figura \ref{fig:zones_presiones}, será la suma de la presión RAM del viento estelar, $P_\mathrm{RAM}$, y de la presión térmica del viento estelar. Dado que los vientos estelares en estrellas Wolft-Rayet llegan a ser del orden de \SI{1e3}{km.s^{-1}} podríamos llegar a tener un número de Mach del orden de 100 para el viento estelar, por lo que vamos a considerar que $P_\mathrm{DC}=P_\mathrm{RAM}$. Por otro lado, para la cáscara chocada, la zona 2 de la Figura \ref{fig:zones}, tenemos que esta debe estar en doble equilibrio de presión. Por un lado, la presión de la cáscara chocada, $P_\mathrm{shell}$ debe ser igual a la presión del flujo fotoevaporativo justo antes del choque, es decir, $P_\mathrm{shell}=P$. Por el otro lado, la presión de la cáscara chocada debe ser igual a la presión RAM del viento estelar chocado.
+En la Figura \ref{fig:zones_presiones} vemos los diferentes tipos de presiones que hay en cada zona en esta interacción entre flujos supersónicos. En la zona de discontinuidad, la línea gris en la Figura \ref{fig:zones_presiones}, será la suma de la presión RAM del viento estelar, $P_\mathrm{RAM}$, y de la presión térmica del viento estelar. Dado que los vientos estelares en estrellas Wolf-Rayet llegan a ser del orden de \SI{1e3}{km.s^{-1}} podríamos llegar a tener un número de Mach del orden de 100 para el viento estelar, por lo que vamos a considerar que $P_\mathrm{DC}=P_\mathrm{RAM}$. Por otro lado, para la cáscara chocada, la zona 2 de la Figura \ref{fig:zones}, tenemos que esta debe estar en doble equilibrio de presión. Por un lado, la presión de la cáscara chocada, $P_\mathrm{shell}$ debe ser igual a la presión del flujo fotoevaporativo justo antes del choque, es decir, $P_\mathrm{shell}=P$. Por el otro lado, la presión de la cáscara chocada debe ser igual a la presión RAM del viento estelar chocado.
 
 \begin{figure}[htb]
     \centering    \includegraphics[width=\textwidth]{imagenes_corregidas/Arreglo 03.pdf}
@@ -416,35 +388,35 @@ En la Figura \ref{fig:nudos WR124} vemos del lado derecho cómo estos glóbulos 
 
 %Como ya mencionamos, estos glóbulos fueron posibles de encontrar debido a la gran variedad de filtros y la gran resolución del JWST como se puede ver la Figura \ref{fig:nudos WR124}. Se encontraron más de 100 glóbulos en casi toda la nebulosa de los cuales algunos estaban en grupos y otros solos. En las observaciones del JWST se puede llegar a observar lo que pareciera ser la cáscara chocada (Capítulo \ref{Chapter : Modelo}).
 
-De las observaciones vemos que estos glóbulos tienen tamaños típicos de 200--300 mili segundos de arco de diámetro que son relativamente pequeños si los comparamos con la nebulosa circunestelar que es de unos $\sim\SI{60}{\arcsecond}$.
+De las observaciones vemos que estos glóbulos tienen tamaños típicos de 200--300 mili segundos de arco (5--\SI{7e-3}{pc}) de diámetro que son relativamente pequeños si los comparamos con la nebulosa circunestelar que es de unos $\sim\SI{60}{\arcsecond}$ (\SI{1.57}{pc}).
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=\textwidth]{Nuevas imagenes finales/Globulos_JWS_1.pdf}
-    \caption{En esta imagen capturada con el JWST vemos la nebulosa M1-67 y en ella la presencia de glóbulos en casi toda la nebulosa. Haciendo zoom en estos glóbulos (la emisión en color blanco y rosa), vemos como puede ser su morfología en la parte neutra debido a la emisión de PAHs. Mientras que en color gris vemos lo que parece ser su interacción con la estrella y su viento estelar.}
+    \includegraphics[width=\textwidth]{ultimas correcciones/WR124_glo_ej.pdf}
+    \caption{En esta imagen capturada con el JWST vemos la nebulosa M1-67 y en ella la presencia de glóbulos en casi toda la nebulosa. Haciendo zoom en estos glóbulos (la emisión en color blanco y rosa), vemos como puede ser su morfología en la parte neutra debido a la emisión de PAHs. Mientras que en color gris vemos lo que parece ser su interacción con la estrella y su viento estelar. Las figuras A1, A2, B1 y B2 tienen medidas de $\SI{11.86}{\arcsecond}\times\SI{15.65}{\arcsecond}$ ($\SI{0.31}{pc}\times\SI{.41}{pc}$), $\SI{2.94}{\arcsecond}\times\SI{5.76}{\arcsecond}$ ($\SI{0.07}{pc}\times\SI{0.15}{pc}$), $\SI{15.82}{\arcsecond}\times\SI{19.21}{\arcsecond}$ ($\SI{0.41}{pc}\times\SI{0.5}{pc}$) y $\SI{2.42}{\arcsecond}\times\SI{4.53}{\arcsecond}$ ($\SI{0.06}{pc}\times\SI{0.11}{pc}$), respectivamente.}
     \label{fig:nudos WR124}
 \end{figure}
 
-A estos glóbulos los podemos localizar por su posición angular y separación con respecto a la estrella. La posición angular es el ángulo $\phi$ que tiene con respecto a la línea roja de la Figura \ref{fig:ejemplo_PA_Sep}, y el ángulo $\phi$ es tomado en sentido contrario a las manecillas del reloj. La separación entre el glóbulo y la estrella es medido directamente de las observaciones. En la Figura \ref{fig:ejemplo_PA_Sep} vemos un ejemplo de como podemos conocer la posición angular y separación para cada glóbulo.
+A estos glóbulos los podemos localizar por su posición angular y separación con respecto a la estrella. La posición angular es el ángulo $\phi$ que tiene con respecto a la línea roja de la Figura \ref{fig:ejemplo_PA_Sep}, esta línea roja representa la posición angular a $0^\circ$, y el ángulo $\phi$ es tomado en sentido contrario a las manecillas del reloj. La separación entre el glóbulo y la estrella es medido directamente de las observaciones. En la Figura \ref{fig:ejemplo_PA_Sep} vemos un ejemplo de como podemos conocer la posición angular y separación para cada glóbulo.
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=\textwidth]{ultimos/ejemplo_phi.pdf}
+    \includegraphics[width=\textwidth]{ultimas correcciones/M167_PA.pdf}
     \caption{En esta imagen vemos un ejemplo de como obtuvimos la posición angular y la separación con respecto a la estrella. El círculo azul es el glóbulo que tomaremos como ejemplo, el ángulo $\phi$ con respecto a la línea roja es la posición angular y es tomada en sentido anti horario, la separación es la longitud de la línea amarilla, la cual une al glóbulo (círculo azul) con la estrella, la cual se encuentra en el centro de la imagen. Los puntos verdes marcan donde se localizan los otros glóbulos.}
     \label{fig:ejemplo_PA_Sep}
 \end{figure}
 
-En la Figura \ref{fig:dis_nudos} vemos del lado derecho la localización de los glóbulos en la nebulosa, donde los puntos verdes son los glóbulos que encontramos y la línea roja es nuestra referencia para encontrar su posición angular. En el lado izquierdo vemos como estos se distribuyen considerando su separación y posición angular. En estas distribuciones podemos encontrar ciertas simetrías, por ejemplo, en el histograma superior de la imagen izquierda vemos que muchos de estos glóbulos se concentran en dos posiciones angulares en particular, a $\sim90^\circ$ y $\sim200^\circ$, mientras que a $120^\circ$ y $300^\circ$ no tenemos casi glóbulos. Por otro lado, en el histograma del lado derecho vemos cómo en separación pareciera haber una distribución bimodal con picos a \SI{11}{\arcsecond} y \SI{17}{\arcsecond}.
+En la Figura \ref{fig:dis_nudos} vemos del lado izquierdo la localización de los glóbulos en la nebulosa, donde los puntos verdes son los glóbulos que encontramos y la línea roja es nuestra referencia para encontrar su posición angular. En el lado derecho vemos como estos se distribuyen considerando su separación y posición angular. En estas distribuciones podemos encontrar ciertas simetrías, por ejemplo, en el histograma superior de la imagen izquierda vemos que muchos de estos glóbulos se concentran en dos posiciones angulares en particular, a $\sim90^\circ$ y $\sim200^\circ$, mientras que a $120^\circ$ y $300^\circ$ no tenemos casi glóbulos. Por otro lado, en el histograma del lado derecho vemos cómo en separación pareciera haber una distribución bimodal con picos a \SI{11}{\arcsecond} (\SI{.28}{pc)} y \SI{17}{\arcsecond} (\SI{.44}{pc}). Esta distribución nos dice que la cantidad de glóbulos decae con la distancia de manera no constante, mientras que los grupos de glóbulos encontrados parecen ser los causantes de los picos de la distribución.
 
 \begin{figure}[htb]
     \centering  
     \begin{subfigure}[b]{0.45\linewidth}
-        \includegraphics[width=\textwidth]{Nuevas imagenes finales/m1_67_glo_.png}
+        \includegraphics[width=\textwidth]{ultimas correcciones/M167_glo.pdf}
     \end{subfigure}
     \begin{subfigure}[b]{0.45\linewidth}
         \includegraphics[width=\textwidth]{images Chapter 2/C2_nudos_distribucion.png}
     \end{subfigure}
-    \caption{En la imagen derecha vemos en puntos verde la localización de los glóbulos en la nebulosa M1-67 y la línea roja es la que usamos para conocer la posición angular de cada glóbulo. En la imagen derecha vemos como es la distribución de estos glóbulos (puntos azules) en separación y posición angular. En la parte superior de la imagen derecha vemos el histograma de la posición angular y del lado derecho el histograma de la separación de los glóbulos. Las  líneas rojas son los isocontornos de la densidad suavizada de la distribución de los puntos.} 
+    \caption{En la imagen izquierda vemos en puntos verde la localización de los glóbulos en la nebulosa M1-67 y la línea roja es la que usamos para conocer la posición angular de cada glóbulo. En la imagen derecha vemos como es la distribución de estos glóbulos (puntos azules) en separación y posición angular. En la parte superior de la imagen derecha vemos el histograma de la posición angular y del lado derecho el histograma de la separación de los glóbulos. Las  líneas rojas son los isocontornos de la densidad suavizada de la distribución de los puntos.} 
     \label{fig:dis_nudos}
 \end{figure}
 
@@ -477,8 +449,8 @@ donde $\dot{M}$ es la tasa de pérdida de masa de la estrella, $v_\infty$ la vel
 donde $\theta$ es la separación que medimos directamente de las observaciones en arcsec y $D$ es la distancia de nosotros a la estrella. En la Figura \ref{P_RAM} vemos como es esta presión RAM del viento como función de la distancia.
 
 \begin{figure}[htb]
-    \centering    \includegraphics[width=\textwidth]{imagenes_corregidas/PRAMcgs.pdf}
-    \caption{Presión RAM del viento estelar de la estrella WR-124 como función de la distancia en parsec}
+    \centering    \includegraphics[width=\textwidth]{Nuevas imagenes finales/PRAMcgs_n.pdf}
+    \caption{Presión RAM del viento estelar de la estrella WR 124 como función de la distancia en parsec}
     \label{P_RAM}
 \end{figure}
 
@@ -486,7 +458,7 @@ donde $\theta$ es la separación que medimos directamente de las observaciones e
 
 En este capítulo vamos a utilizar las distintas observaciones para obtener el tamaño de los glóbulos, sus cáscaras chocadas y los anchos de sus cáscaras chocadas. También podemos obtener el brillos en el centro del glóbulo y en la cáscara chocada, con lo que podremos conocer más adelante la densidad del gas ionizado en la cáscara chocada.
 
-La medición de los diferentes parámetros a los 168 glóbulos encontrados lo haremos de la siguiente manera. Una vez que sabemos donde se encuentran los glóbulos vamos a buscar la posición de su máximo de emisión en H$\alpha$, el cual definiremos como el centro de nuestros glóbulos\footnote{En las observaciones de gas ionizado tenemos solo una estimación para el tamaño de los glóbulos, en la Sección \ref{Sec : radio neutro} se realiza una medición mas real para el tamaño de los glóbulos usando gas neutro.}, después tomaremos como el eje de simetría considerado en el modelo (Figura \ref{ejemplo mascara}) a la línea que une el centro del glóbulo con la estrella. Como en nuestro caso nos interesa más describir el glóbulo y su cáscara chocada solo vamos a trabajar con una máscara para poder identificar bien estas dos partes. Al utilizar esta máscara nuestras mediciones no se verán afectadas por la compleja estructura de la nebulosa u otros glóbulos que se encuentren cerca. Esta máscara la vamos a considerar de la siguiente manera : Vamos a tomar solo los píxeles que estén a una distancia menor o igual a \SI{0.2}{\arcsecond} y también los que estén a una distancia máxima de \SI{1.5}{\arcsecond} y a un ángulo máximo de $60^\circ$ con respecto al eje de simetría. Con estos valores los glóbulos y sus cáscaras chocadas están dentro de la máscara en todos los casos, además de que se obtuvieron buenos resultados para las distintas mediciones con estos valores.
+La medición de los diferentes parámetros a los 168 glóbulos encontrados lo haremos de la siguiente manera. Una vez que sabemos donde se encuentran los glóbulos vamos a buscar la posición de su máximo de emisión en H$\alpha$, el cual definiremos como el centro de nuestros glóbulos\footnote{En las observaciones de gas ionizado tenemos solo una estimación para el tamaño de los glóbulos, en la Sección \ref{Sec : radio neutro} se realiza una medición mas real para el tamaño de los glóbulos usando gas neutro.}, después tomaremos como el eje de simetría considerado en el modelo (Figura \ref{fig:zones}) a la línea que une el centro del glóbulo con la estrella. Como en nuestro caso nos interesa más describir el glóbulo y su cáscara chocada solo vamos a trabajar con una máscara para poder identificar bien estas dos partes. Al utilizar esta máscara nuestras mediciones no se verán afectadas por la compleja estructura de la nebulosa u otros glóbulos que se encuentren cerca. Esta máscara la vamos a considerar de la siguiente manera : Vamos a tomar solo los píxeles que estén a una distancia menor o igual a \SI{0.2}{\arcsecond} y también los que estén a una distancia máxima de \SI{1.5}{\arcsecond} y a un ángulo máximo de $60^\circ$ con respecto al eje de simetría. Con estos valores los glóbulos y sus cáscaras chocadas están dentro de la máscara en todos los casos, además de que se obtuvieron buenos resultados para las distintas mediciones con estos valores.
 
 Después graficamos el brillo de cada píxel dentro de esta máscara como función de la distancia al centro del glóbulo, como vemos en la Figura \ref{ejemplo mascara}. A estos puntos le vamos a ajustar dos gaussianas y una constante.
 
@@ -500,14 +472,14 @@ Después graficamos el brillo de cada píxel dentro de esta máscara como funci�
   \hfill
   \begin{subfigure}[b]{0.5\textwidth}
     \includegraphics[width=\textwidth, height=0.9\textwidth]{Nuevas imagenes finales/F_4_1_B.pdf}
-    \caption{Brillo de la máscara como función de la distancia al centro del glóbulo.}
+    \caption{Brillo de la máscara como función de la distancia al centro del glóbulo, considerando el ángulo con respecto al eje de simetría.}
     \label{fig:f2}
   \end{subfigure}
-  \caption{En la imagen de la izquierda vemos un ejemplo de la máscara que vamos a utilizar para hacer el ajuste a los perfiles de brillo (los pixeles en escala de grises), en este caso utilizando las observaciones del HST. El centro del glóbulo se localiza en el centro de la imagen, la línea roja conecta el cetro del glóbulo con la estrella (localizada a la izquierda de esta imagen) y es el eje de simetría que vamos a considerar. Vamos a considerar solo los píxeles que están en un círculo de \SI{0.2}{\arcsecond} alrededor del centro del glóbulo y los que se encuentren a una distancia menor a \SI{1.5}{\arcsecond} y que tengan un ángulo menor de $60^\circ$ con respecto al simetría que estamos considerando. En la imagen de la derecha vemos como es el brillo de estos píxeles considerados en la máscara como función de la distancia al centro del glóbulo y considerando su ángulo con respecto al eje de simetría. En este caso, los puntos verdes son los píxeles que están en la parte inferior de la imagen izquierda, por otro lado los puntos azules se encuentran en la parte superior de la imagen izquierda dentro de la máscara considerada.}
+  \caption{En la imagen de la izquierda vemos un ejemplo de la máscara que vamos a utilizar para hacer el ajuste a los perfiles de brillo (los pixeles en escala de grises), en este caso utilizando las observaciones del HST. El centro del glóbulo se localiza en el centro de la imagen, la línea roja conecta el centro del glóbulo con la estrella (localizada a la izquierda de esta imagen) y es el eje de simetría que vamos a considerar. Vamos a considerar solo los píxeles que están en un círculo de \SI{0.2}{\arcsecond} alrededor del centro del glóbulo y los que se encuentren a una distancia menor a \SI{1.5}{\arcsecond} y que tengan un ángulo menor de $60^\circ$ con respecto al simetría que estamos considerando. En la imagen de la derecha vemos como es el brillo de estos píxeles considerados en la máscara como función de la distancia al centro del glóbulo y considerando su ángulo con respecto al eje de simetría. En este caso, los puntos verdes son los píxeles que están en la parte inferior de la imagen izquierda, por otro lado los puntos azules se encuentran en la parte superior de la imagen izquierda dentro de la máscara considerada.}
   \label{ejemplo mascara}
 \end{figure}
 
-Este ajuste es por la siguiente razón: El ancho de la primer gaussiana centrada en cero nos dirá el tamaño del glóbulo, esto suponiendo que el pico de emisión que encontramos se da justo en el centro del glóbulo. La segunda gaussiana ajustada nos indica la ubicación de la cáscara chocada y su ancho. Esperamos ver un pico de emisión en esta cáscara chocada debido a las recombinaciones que hay en esta parte, es por eso que también le ajustamos una gaussiana a la cáscara chocada. La distancia entre los picos de estas dos gaussianas no dirá el radio de la cáscara chocada. Finalmente, la constante es más un promedio del brillo del fondo en esta región. . En este ajuste le dimos menos peso a los píxeles más alejados del centro del glóbulo y también a los que tenían un gran ángulo con respecto al eje de simetría de la siguiente manera
+Este ajuste es por la siguiente razón: El ancho de la primer gaussiana centrada en cero nos dirá el tamaño del glóbulo, esto suponiendo que el pico de emisión que encontramos se da justo en el centro del glóbulo. La segunda gaussiana ajustada nos indica la ubicación de la cáscara chocada y su ancho. Esperamos ver un pico de emisión en esta cáscara chocada debido a las recombinaciones que hay en esta parte, es por eso que también le ajustamos una gaussiana a la cáscara chocada. La distancia entre los picos de estas dos gaussianas no dirá el radio de la cáscara chocada. Finalmente, la constante es más un promedio del brillo del fondo en esta región. En este ajuste le dimos menos peso a los píxeles más alejados del centro del glóbulo y también a los que tenían un gran ángulo con respecto al eje de simetría de la siguiente manera
 \begin{equation}\label{eq: peso}
     w = \frac{\cos^2(\theta)}{(0.3+r)^2},
 \end{equation}
@@ -524,20 +496,20 @@ Este ajuste se hizo a las observaciones con el HST y para el caso del JWST se hi
 
 \section{Medición del radio en la parte neutra} \label{Sec : radio neutro}
 
-El ajuste anterior se hizo utilizando emisión de gas ionizado por lo que la medición para los radios de la parte neutra no estaría del todo bien. Así que para la medición de la parte neutra se utilizó la combinación de los filtros f150w, f210m y f335m del JWST para ver la emisión neutra (ver Apéndice \ref{AP: combos}). 
+El ajuste anterior se realizó utilizando las imágenes en las que vemos la emisión de gas ionizado por lo que la medición de los radios para la parte neutra no estaría del todo bien. Así que para la medición de la parte neutra se utilizó la combinación de los filtros f150w, f210m y f335m del JWST para ver la emisión neutra (ver Apéndice \ref{AP: combos}). Con esta combinación evitamos que nuestras mediciones se vean afectadas por la emisión de estrellas de campo o de las cáscaras chocadas.
 
-En este caso ajustamos solo una gaussiana y una constante al perfil de brillo ya que aquí no podríamos ver la cáscara chocada. El ajuste se realizó de la siguiente manera: Dado que el valor medio de los radios de los glóbulos en el anterior ajuste es de  \SI{0.14}{\arcsecond} con una variación de $\pm\SI{0.04}{\arcsecond}$ decidimos poner una máscara de \SI{0.2}{\arcsecond} alrededor del pico de emisión y unos conos con un pequeño ángulo de apertura, estos conos son perpendiculares al eje de simetría considerado en el modelo y tienen una longitud de \SI{1.5}{\arcsecond}. Con esta máscara considerada esperamos tener toda la emisión neutra en el círculo pequeño que consideramos, los conos nos servirán para calcular mejor la constante ajustada ya que no se verá afectada por las colas delos glóbulos. \\
+En este caso ajustamos solo una gaussiana y una constante al perfil de brillo ya que aquí no podríamos ver la cáscara chocada. El ajuste se realizó de la siguiente manera: Dado que el valor medio de los radios de los glóbulos en el anterior ajuste es de  \SI{0.14}{\arcsecond} con una variación de $\pm\SI{0.04}{\arcsecond}$ decidimos poner una máscara de \SI{0.2}{\arcsecond} alrededor del pico de emisión y unos conos con un pequeño ángulo de apertura, estos conos son perpendiculares al eje de simetría considerado en el modelo y tienen una longitud de \SI{1.5}{\arcsecond}. Con esta máscara considerada esperamos tener toda la emisión neutra en el círculo pequeño que consideramos, los conos nos servirán para calcular mejor la constante ajustada ya que no se verá afectada por las colas delos glóbulos. En la Figura \ref{Medicion de r_0} vemos como el glóbulo cae dentro de la máscara sin verse afectado por emisión de gas ionizado o estrellas de campo. \\
 
 Con estos ajustes ya conocemos el radio de los glóbulos, $r_0$, el radio de la cáscara chocada, $r_\mathrm{shell}$, y el ancho de la cáscara chocada, $H_\mathrm{s}$.  
 Debido a que tanto  $r_0$ como  $H_\mathrm{s}$ se midieron usando la sigma de la gaussiana ajustada, la cual es el ancho RMS del perfil, y para comparar con los anchos instrumentales tenemos que nuestro ancho observacional está dado por
 \begin{equation}
-    W_\mathrm{obs}= 2\sqrt{2\ln{2}}\sigma
+    W_\mathrm{obs}= 2\sqrt{2\ln{2}} \, \sigma_\mathrm{obs}
 \end{equation}
-donde $\sigma$ es nuestra medición de las observaciones, y considerando la Función de dispersión de punto (PSF por sus siglas en inglés) de cada telescopio, entonces tenemos que nuestro ancho reasl estará dado como
+donde $\sigma_\mathrm{obs}$ es nuestra medición de las observaciones, y considerando la Función de dispersión de punto (PSF por sus siglas en inglés) de cada telescopio, entonces tenemos que nuestro ancho real estará dado como
 \begin{equation}
     W_\mathrm{real} = \frac{\sqrt{W_\mathrm{obs}^2-\Delta^2}}{2}
 \end{equation}
-donde $\Delta$ es el PSF del telescopio, para el caso del HST $\Delta=\SI{0.067}{\arcsecond}$ y para el caso del JWST $\Delta=\SI{0.145}{\arcsecond}$. De esta manera tenemos una medición más realista de estas dos cantidades.
+donde $\Delta$ es el PSF del telescopio, para el caso del HST $\Delta=\SI{0.067}{\arcsecond}$ y para el caso del JWST $\Delta=\SI{0.145}{\arcsecond}$, esto para el combo de filtros para ver solo el gas ionizado. De esta manera tenemos una medición más realista de estas dos cantidades.
 
 \begin{figure}[htb]
     \centering
@@ -548,7 +520,7 @@ donde $\Delta$ es el PSF del telescopio, para el caso del HST $\Delta=\SI{0.067}
 
 \section[Errores observacionales]{Estimación de incertidumbres en los parámetros observacionales}
 
-Para el caso de los errores vamos a considerar que estos están dados por fluctuaciones no relacionadas en el brillo de la nebulosa o por efectos  sistemáticos debido a la inadecuación del modelo y no por el ruido de fotones. Así que vamos a estimar estos errores comparando las distintas mediciones hechas, suponiendo que son independientes.
+Para el caso de los errores vamos a considerar que estos están dados por in-homogeneidades en el brillo de la nebulosa, que no están relacionadas con el glóbulo ni con su cáscara chocada, o por efectos  sistemáticos debido a la inadecuación del modelo y no por el ruido de fotones. Así que vamos a estimar estos errores comparando las distintas mediciones hechas, suponiendo que son independientes.
 
 \subsection{\boldmath Incertidumbres en $r_\mathrm{shell}$ y $H_\mathrm{s}$}
 \label{sec:error-shell}
@@ -556,18 +528,18 @@ En el caso del radio y ancho de la cáscara, $r_\mathrm{shell}$ y $H_\mathrm{s}$
 \begin{equation}
     \sigma=\frac{\sqrt{\mathrm{Var}(x_\mathrm{J}-x_\mathrm{H})}}{\sqrt{2}}
 \end{equation}
-donde $x_\mathrm{J}$ son las mediciones hechas con el JWST y $x_\mathrm{H}$ son las mediciones hechas con el HST (ver Apéndice \ref{AP: errores r_s H_s}).
+donde $x_\mathrm{J}$ son las mediciones hechas con el JWST, utilizando el combo de gas ionizado, y $x_\mathrm{H}$ son las mediciones hechas con el HST, en H$\alpha$ (ver Apéndice \ref{AP: errores r_s H_s}).
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{imagenes_corregidas/rshell.pdf}
-    \caption{Comparación de los radios de la cáscara (puntos de colores) obtenidos a partir de los ajustes a ambos telescopios. Las mediciones con el HST es en el filtro f656n y en el JWST son mediciones hechas en el combo para observar solo el gas ionizado. La línea roja representa la relación de identidad 1:1, por lo que se puede ver que ambas mediciones son muy similares}
+    \caption{Comparación de los radios de las cáscaras (puntos de colores) obtenidos a partir de los ajustes a ambos telescopios. Cada punto de color representa un glóbulo al cual se le detectó una cáscara en ambos telescopios. Las mediciones con el HST es en el filtro f656n y en el JWST son mediciones hechas en el combo para observar solo el gas ionizado. La línea roja representa la relación de identidad 1:1, por lo que se puede ver que ambas mediciones son muy similares}
     \label{fgi: Radios de la cascara}
 \end{figure}
 
 \subsection{\boldmath Incertidumbre en $r_0$}
 
-Para el caso de la parte interna tenemos una medición para el radio en la parte neutra con un combinación de filtros del JWST y una aproximación con el HST, ya que en este último vemos solo el gas ionizado y el glóbulo contiene principalmente gas neutro.. Aunque no hay una buena correlación entre estas dos mediciones, como se puede ver en la Figura \ref{fig:Rcore dis}, su valor promedio y desviación estándar se parecen mucho. Por lo que vamos a considerar un radio constante que será igual para todos los glóbulos. Este valor será \SI{0.135}{\arcsecond} el cual es el promedio de los valores medios de las dos mediciones y como error vamos a considerar la desviación estándar de ambas mediciones ya que son iguales, $\pm\SI{.03}{\arcsecond}$ (ver Figura \ref{fig:Rcore dis}).
+Para el caso de la parte interna tenemos una medición para el radio en la parte neutra con un combinación de filtros del JWST y una aproximación con el HST, ya que en este último vemos solo el gas ionizado y el glóbulo contiene principalmente gas neutro. Aunque no hay una buena correlación entre estas dos mediciones, como se puede ver en la Figura \ref{fig:Rcore dis}, su valor promedio y desviación estándar se parecen mucho. Por lo que vamos a considerar un radio constante que será igual para todos los glóbulos. Este valor será \SI{0.135}{\arcsecond} el cual es el promedio de los valores medios de las dos mediciones y como error vamos a considerar la desviación estándar de ambas mediciones ya que son iguales, $\pm\SI{.03}{\arcsecond}$ (ver Figura \ref{fig:Rcore dis}).
 
 \begin{figure}[htb]
     \centering
@@ -583,7 +555,7 @@ Para los errores de los brillos superficiales en la cáscara chocada y en el gl�
 \end{equation} 
 donde $y$ es el perfil del brillo del filtro f656n del HST menos el ajuste realizado a los perfiles de brillo, $w$ es el peso considerado en el modelo (Ecuación (\ref{eq: peso})) y $w_2$ es la gaussiana ajustada a la parte correspondiente, es decir, para la parte interna $w_2$ es la primer gaussiana ajustada, la cual tiene su pico en \SI{0}{\arcsecond}, y para la cáscara $w_2$ es la segunda gaussiana ajustada (ver Figura \ref{ejemplo ajuste}).\\
 
-Con la estimación de todas estas incertidumbres, usamos la paquetería \verb|uncertainties|\footnote{La documentación de la paqueteria se encuentra en \url{https://pythonhosted.org/uncertainties/}} para tener nuestras barras de error. Esta paquetería calcula las incertidumbres usando la teoría de propagación de errores lineales tomando en cuenta si los datos son totalmente independientes o están correlacionados.
+Con la estimación de todas estas incertidumbres, usamos la paquetería \verb|uncertainties|\footnote{La documentación de la paquetería se encuentra en \url{https://pythonhosted.org/uncertainties/}} para tener nuestras barras de error. Esta paquetería calcula las incertidumbres usando la teoría de propagación de errores lineales tomando en cuenta si los datos son totalmente independientes o están correlacionados.
 
 \section{\boldmath Estimación de la densidad del gas ionizado a partir del brillo superficial de H$\alpha$}\label{Sec : estimacion de densidad}
 
@@ -591,7 +563,7 @@ Para estimar la densidad del gas ionizado, usamos primero la definición de Medi
 \begin{equation}
 \mathrm{EM}=\int_z n_\mathrm{i} n_\mathrm{e}dz    
 \end{equation}
-donde $n_\mathrm{i}$ es la densidad de iones, $n_\mathrm{e}$ la densidad electrónica y en este caso estaremos integrando sobre nuestra línea de visión (dz). Si consideramos un gas totalmente ionizado, donde los electrones provengan solo del H, entonces tenemos que $n_\mathrm{e}=n_\mathrm{i}=n$\footnote{En principio también tenemos contribución de He, pero como esta contribución es pequeña debido a que el espectro ionizante es suave, que no tiene fotones energéticos, lo vamos a considerar como neutro.}. Entonces, tenemos que $\mathrm{EM}=n^2l$, donde $n$ es la densidad promedio RMS y $l$ es la profundidad del gas denso en nuestra línea de visión.
+donde $n_\mathrm{i}$ es la densidad de iones, $n_\mathrm{e}$ la densidad electrónica y en este caso estaremos integrando sobre nuestra línea de visión $(dz)$. Si consideramos un gas totalmente ionizado, donde los electrones provengan solo del H, entonces tenemos que $n_\mathrm{e}=n_\mathrm{i}=n$\footnote{En principio también tenemos contribución de He, pero lo vamos a considerar como neutro debido  que la estrella tiene pocos fotones energéticos como  para ionizar el He, si lo comparamos con la tasa de fotones que ionizan el H \citep{Palmira:2020}.}. Entonces, tenemos que $\mathrm{EM}=n^2l$, donde $n$ es la densidad promedio RMS y $l$ es la profundidad del gas denso en nuestra línea de visión.
  
 \begin{figure}[htb]
     \centering    \includegraphics[width=\textwidth]{artesanales/ImgFi01-4.pdf}
@@ -610,18 +582,18 @@ En este trabajo vamos a aplicarlo a las cáscaras detectadas donde tomaremos a $
 
 \subsection{Uso de la EM a partir de las observaciones} \label{Subsec : EM}
 
-En nuestras observaciones del HST el brillo superficial está dado en unidades de \unit{counts.s^{-1}}, por lo que vamos a usar el factor de conversión 0.0137 para tenerlo en unidades de \unit{erg.s^{-1}.cm^{-2}.sr^{-1}} (ver Apéndice \ref{AP : conversion EM}). Si dividimos entre la energía de H$\alpha$ tenemos que
+En nuestras observaciones del HST el brillo superficial está dado en unidades de \unit{cuenta.s^{-1}}, por lo que vamos a usar el factor de conversión 0.0137 para tenerlo en unidades de \unit{erg.s^{-1}.cm^{-2}.sr^{-1}} (ver Apéndice \ref{AP : conversion EM}). Si dividimos entre la energía de H$\alpha$ tenemos que
 
 \begin{equation}
     B\frac{0.0137}{(h\nu)_{\mathrm{H}\alpha}}=\int \frac{f_{\mathrm{H}\alpha}\alpha_\mathrm{B} n_\mathrm{e} n_\mathrm{p}}{4\pi} dz
 \end{equation}
-donde $B$ es el brillo superficial que tenemos directamente de nuestras observaciones, $(h\nu)_{\mathrm{H}\alpha}$ la energía de H$\alpha$, $f_{\mathrm{H}\alpha}$ es la fracción de todas las recombinaciones a los niveles $n\geq 2$ que caen en la emisión de H$\alpha$, $\alpha_\mathrm{B}$ es el coeficiente de recombinación para el caso B, $n_\mathrm{e}$ la densidad electrónica y $n_\mathrm{p}$ la densidad de iones. La integral de la derecha es a lo largo de nuestra línea de visión.
+donde $B$ es el brillo superficial que tenemos directamente de nuestras observaciones, $(h\nu)_{\mathrm{H}\alpha}$ la energía de H$\alpha$, $f_{\mathrm{H}\alpha}$ es la fracción de todas las recombinaciones a los niveles $n\geq 2$ que resultan en la emisión de H$\alpha$, $\alpha_\mathrm{B}$ es el coeficiente de recombinación para el caso B, $n_\mathrm{e}$ la densidad electrónica y $n_\mathrm{p}$ la densidad de iones. La integral de la derecha es a lo largo de nuestra línea de visión.
 
-Si consideramos que tanto la fracción de todas las recombinaciones como el coeficiente de recombinación son constantes, entonces
+Si consideramos que tanto $f_\mathrm{H\alpha}$ como el coeficiente de recombinación son constantes, entonces
 \begin{equation}
     B\frac{0.0137}{(h\nu)_{\mathrm{H}\alpha}}=\frac{f_{\mathrm{H}\alpha}\alpha_\mathrm{B}}{4\pi}\int n_\mathrm{e} n_\mathrm{p} dz,
 \end{equation}
-donde la integral es la EM. Por lo que, si consideramos que la fracción de recombinaciones al nivel $n\geq 2$ es 0.5 y que $\alpha_\mathrm{B}=\SI{2.3e-13}{cm^{3}.s^{-1}}$ entonces  $f_{\mathrm{H}\alpha}\alpha_\mathrm{B}=\SI{1.17e-13}{cm^3.s^{-1}}$, por lo que podemos conocer la EM directamente de las observaciones como
+donde la integral es la EM. Por lo que, si suponemos que $f_\mathrm{H\alpha}$ es 0.5 y que $\alpha_\mathrm{B}=\SI{2.3e-13}{cm^{3}.s^{-1}}$ entonces  $f_{\mathrm{H}\alpha}\alpha_\mathrm{B}=\SI{1.17e-13}{cm^3.s^{-1}}$, por lo que podemos conocer la EM directamente de las observaciones como
 \begin{equation}
     \mathrm{EM} = B\frac{0.0137}{(h\nu)_{\mathrm{H}\alpha}}\frac{4\pi}{\SI{1.17e-13}{cm^3.s^{-1}}},
 \end{equation}
@@ -667,7 +639,8 @@ De esta manera se pudo tener una mayor muestra de la que ya se había obtenido i
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{imagenes_corregidas/recuperados_aj.pdf}
-    \caption{Ejemplos de ajustes recuperados. En el glóbulo de arriba vemos que la cáscara que se alcanza a ver tenuemente en ambas imágenes, pero solo se recupera en el ajuste a los datos del JWST. En el glóbulo de abajo vemos a simple vista una cáscara pero debido a la dispersión de los puntos en una dirección esta no se recupera bien en el caso del ajuste a los datos del JWST}
+    \caption{Ejemplos de ajustes recuperados. En las imágenes, visualmente podemos observar una cáscara, pero al hacer el ajuste a los perfiles de brillo vemos que este no detecta la cáscara chocada en uno de los telescopios (panel superior izquierdo y panel inferior derecho) debido a la dispersión de los puntos.}
+   % En el glóbulo de arriba vemos que la cáscara que se alcanza a ver tenuemente en ambas imágenes, pero solo se recupera en el ajuste a los datos del JWST. En el glóbulo de abajo vemos a simple vista una cáscara pero debido a la dispersión de los puntos en una dirección esta no se recupera bien en el caso del ajuste a los datos del JWST}
     \label{Recuperados Globulos}
 \end{figure}
 
@@ -707,7 +680,7 @@ En la Tabla \ref{tab:mean} tenemos los valores medios de las diferentes medicion
 
 En este capítulo vamos a utilizar las mediciones obtenidas a partir de las diferentes observaciones a los glóbulos encontrados en la nebulosa M1-67. Así, podemos investigar acerca del equilibrio de presiones que existe entre el flujo fotoevaporativo por parte de los glóbulos y la presión del viento estelar para finalmente compararlo directamente con el modelo hidrodinámico estacionario que proponemos. Si las observaciones concuerdan con nuestro modelo propuesto, entonces podremos conocer mejor la distribución espacial de los glóbulos en la nebulosa M1-67.
 
-Se encontraron 168 nudos glóbulos en la nebulosa, los cuales están distribuidos a una distancia de la estrella central de entre 3--\SI{35}{\arcsecond}.  Estos glóbulos se pueden observar ya sea en grupos o solos, como se puede ver en la Figura \ref{fig:dis_nudos}. 
+Se encontraron 168 nudos glóbulos en la nebulosa, los cuales están distribuidos a una distancia de la estrella central de entre 3--\SI{35}{\arcsecond} (7--\SI{92e-2}{pc}).  Estos glóbulos se pueden observar ya sea en grupos o solos, como se puede ver en la Figura \ref{fig:dis_nudos}. 
 
 A pesar de no tener un buen ajuste a todos los glóbulos, tenemos una muestra muy buena ya que estos están distribuidos en un amplio rango de distancia a la estrella y también una gran variedad en la medición de algunos parámetros. 
 
@@ -720,7 +693,7 @@ A pesar de no tener un buen ajuste a todos los glóbulos, tenemos una muestra mu
 
 \section{Balance interno de presión}\label{Sec : comparacion-modelo}
 
-Ahora vamos a comparar directamente con el modelo. Para esto vamos a comparar como se ve la razón de las presiones que hay en la cáscara chocada del glóbulo y en la superficie del glóbulo contra la razón de los radios encontrados. 
+Ahora vamos a comparar directamente con el modelo (ver Figura \ref{fig:grafica_C2}). Para esto vamos a comparar como se ve la razón de las presiones que hay en la cáscara chocada del glóbulo y en la superficie del glóbulo contra la razón del radio de la cáscara y el radio del glóbulo. Recordemos que en la Figura \ref{fig:grafica_C2} vemos a $P/P_0$ como función de $r/r_0$.
 
 Como estamos considerando un modelo estacionario, tenemos que la presión de la cáscara chocada, en la cual estamos considerando solo presión térmica, debe ser igual a la presión total que hay justo antes de $r_\mathrm{shell}$. En el Capítulo \ref{Chapter : Modelo} hablamos de como el modelo propuesto predice $f$ como función de $r/r_0$, que nos dice como debe ser la presión del flujo fotoevaporativo justo antes del choque interior normalizado con la presión que hay en la base del glóbulo, esto en función del radio.  
 
@@ -731,7 +704,7 @@ Por lo que para la razón entre las presiones que hay en la base del glóbulo y 
 \begin{equation}
 \frac{\mathrm{B_\mathrm{s}}}{\mathrm{B_0}}=\frac{n_\mathrm{s}^2l_\mathrm{s}}{n_0^2l_0},
 \end{equation}
-donde $\mathrm{B_\mathrm{s}}, \; n_\mathrm{s}$ y $l_\mathrm{s}$ son el brillo, la densidad y la longitud donde se tiene el máximo en la EM (Sección \ref{Sec : estimacion de densidad}) y  $\mathrm{B_0}, \; n_0$ y $l_0$ son el brillo, la densidad y la longitud donde tenemos el máximo de la EM en la parte interna. Por otra parte, para las observaciones tenemos que $f_\mathrm{obs} = \frac{P_\mathrm{shell}}{P_0}=\frac{\rho_\mathrm{shell}}{2\rho_0} \Rightarrow \frac{\rho_\mathrm{shell}}{\rho_0}=2f_\mathrm{obs}$, por lo que
+donde $\mathrm{B_\mathrm{s}}, \; n_\mathrm{s}$ y $l_\mathrm{s}$ son el brillo, la densidad y la línea, perpendicular al eje de simetría, donde estamos integrando para calcular la EM en la cáscara (ver Figura \ref{fig:EM}) y  $\mathrm{B_0}, \; n_0$ y $l_0$ son el brillo, la densidad y la línea donde estamos integrando para conocer la EM en la parte interna. Por otra parte, para las observaciones tenemos que $f_\mathrm{obs} = \frac{P_\mathrm{shell}}{P_0}=\frac{\rho_\mathrm{shell}}{2\rho_0} \Rightarrow \frac{\rho_\mathrm{shell}}{\rho_0}=2f_\mathrm{obs}$, por lo que
 \begin{equation}
 \frac{\mathrm{B_\mathrm{s}}}{\mathrm{B_0}}=4f_\mathrm{obs}^2\frac{l_\mathrm{s}}{l_0}\Rightarrow f_\mathrm{obs}= \frac{1}{2}\Big(\frac{\mathrm{B_\mathrm{s}}/\mathrm{B_0}}{l_\mathrm{s}/l_0}\Big)^{1/2}.
 \end{equation}
@@ -746,9 +719,9 @@ Debido a que el tamaño del glóbulo es muy pequeño, vamos a considerar que $r_
     \label{Resultados_modelo}
 \end{figure}
 
-En la Figura \ref{Resultados_modelo} podemos observar como los resultados a partir de las observaciones se parecen bastante a las predicciones que se obtienen del modelo propuesto. En el caso de las observaciones vemos que la mayoría de los datos caen en un  rango de $r_\mathrm{shell}/r_0=$3--6, el cual es la razón del radio de la cáscara entre el radio del glóbulo, mientras que para la razón entre las presiones caen en un rango de $f_\mathrm{obs}=$0.05--0.15. También podemos notar, para los datos observados, una anti correlación con bastante dispersión.
+En la Figura \ref{Resultados_modelo} podemos observar como los resultados a partir de las observaciones se parecen bastante a las predicciones que se obtienen del modelo propuesto. En el caso de las observaciones vemos que la mayoría de los datos caen en un  rango de $r_\mathrm{shell}/r_0=$3--6, el cual es la razón del radio de la cáscara entre el radio del glóbulo, mientras que para la razón entre las presiones caen en un rango de $f_\mathrm{obs}=$0.05--0.15. También podemos notar, para los datos observados, una anti-correlación con bastante dispersión.
 
-Dado que el modelo no tiene parámetros libres y que los resultados obtenidos a partir de las observaciones tienen una gran concordancia con las predicciones del modelo, podemos decir que este modelo funciona para intentar explicar la interacción que hay entre los flujos supersónicos. En la Figura \ref{Resultados_modelo} vemos como las mediciones de nuestras observaciones, $f_\mathrm{obs}$ se ajustan a las que predice nuestro modelo $f_\mathrm{model}=\frac{P}{P_0}$ (Ecuación (\ref{eq : 1})) si consideramos las barras de error.
+Dado que el modelo no tiene parámetros libres y que los resultados obtenidos a partir de las observaciones tienen una gran concordancia con las predicciones del modelo, podemos decir que este modelo funciona para intentar explicar la interacción que hay entre los flujos supersónicos. En la Figura \ref{Resultados_modelo} vemos como las mediciones de nuestras observaciones, $f_\mathrm{obs}$ se ajustan a las que predice nuestro modelo $f_\mathrm{model}=\frac{P}{P_0}$ (Ecuación \ref{eq : 1}) si consideramos las barras de error.
 
 \section{Balance externo de presión}\label{Sec:proyeccion}
 
@@ -764,8 +737,9 @@ En la Figura \ref{graf_presion}vemos como la presión de las cáscaras chocada d
 Si suponemos que el glóbulo está proyectado por un ángulo $i$ como vemos en la Figura \ref{Ang proyeccion}, entonces tenemos que 
 \begin{equation}
 R\cos i=R_\mathrm{p}
-\end{equation}\label{eq:sep_real}
-\noindent donde $R$ es la separación real del glóbulo a la estrella, $i$ el ángulo de inclinación y $R_\mathrm{p}$ la distancia proyecta, que es la que observamos. Debemos tomar en cuenta que la presión de la cáscara es igual a la presión RAM del viento estelar solamente en el eje de simetría, y como vimos en la sección \ref{Subsec : EM}, fuera del eje de simetría, la presión de la cáscara disminuye por un factor de $\cos^{1/2}i$ \citep{Tarango:2018}. Por lo que considerando este ángulo de inclinación para la presión de la cáscara tenemos que
+\end{equation}\label{eq:sep_real} 
+
+\noindent donde $R$ es la separación real del glóbulo a la estrella, $i$ el ángulo de inclinación y $R_\mathrm{p}$ la distancia proyecta, que es la que observamos. Debemos tomar en cuenta que la presión de la cáscara es igual a la presión RAM del viento estelar solamente en el eje de simetría, y como vimos en la Sección \ref{Subsec : EM}, fuera del eje de simetría, la presión de la cáscara disminuye por un factor de $\cos^{1/2}i$ \citep{Tarango:2018}. Por lo que considerando este ángulo de inclinación para la presión de la cáscara tenemos que
 \begin{equation}
     P_\mathrm{shell}(i)=\rho\cos^{1/2}(i) c_\mathrm{s}^2 \Rightarrow P_\mathrm{shell}(i)\cos^{-1/2}(i)=\rho c_\mathrm{s}^2 
 \end{equation}
@@ -782,7 +756,7 @@ P_\mathrm{shell}(i)=\frac{\dot{M}v_\infty}{4\pi R_\mathrm{p}^2}\cos^{5/2}i.
     \label{Ang proyeccion}
 \end{figure}
 
-Con esta ecuación, podemos conocer el coseno del ángulo, ya que conocemos tanto la presión de la cáscara como su separación proyectada. Usando este coseno del ángulo en la ecuación \ref{eq:sep_real} podemos conocer cuál es la separación real entre la estrella y el glóbulo, por lo que podemos conocer cuál es la distribución real de los glóbulos en cuanto a separación.  
+Con esta ecuación, podemos conocer el coseno del ángulo, ya que conocemos tanto la presión de la cáscara como su separación proyectada. Usando este coseno del ángulo en la Ecuación \ref{eq:sep_real} podemos conocer cuál es la separación real entre la estrella y el glóbulo, por lo que podemos conocer cuál es la distribución real de los glóbulos en cuanto a separación.  
 
 En la Figura \ref{graf_presion_ang} vemos como la presión de los glóbulos se puede ajustar a la presión RAM si consideramos cierto ángulo de inclinación $i$. De aquí podemos obtener el ángulo de inclinación de cada glóbulo.% Este ángulo de inclinación lo podemos ver en la Figura \ref{fig:ang_Will}, en el podemos ver claramente una anti correlación entre el ángulo de inclinación y la separación proyectada. Los glóbulos más cercanos a la estrella tienen un mayor ángulo de inclinación. La medición de este ángulo de inclinación es considerando un equilibrio de presiones entre la presión de la cáscara y la presión RAM del viento estelar, los puntos rojos en la Figura \ref{fig:ang_Will}. Estos ángulos se obtuvieron para cada glóbulo individualmente, pero concuerdan con la medición realizada a grupos de glóbulo, datos azules. En el siguiente capítulo hablaremos más acerca de esta Figura.
 
@@ -802,7 +776,7 @@ En la Figura \ref{fig:ncos_2} vemos en líneas continuas como sería el ángulo 
     \label{fig:ncos_2}
 \end{figure}
 
-En la Tabla \ref{tab:mean_i} vemos los valores medios considerando este ángulo de inclinación que hemos encontrado, considerando que la densidad decae con el ángulo. Como el valor medio del $\cos(i)$ es 0.65, podemos notar que en realidad sí estamos viendo la separación proyectada de los glóbulos, de hecho de casi todos. Por lo que en realidad están más lejanos de lo que apreciamos en las imágenes. En la Figura \ref{fig:hist_sep_ryp} las barras naranjas son el histograma de la separación proyectada entre los glóbulos y la estrella, y podemos ver que muchos de estos glóbulos parecían estar cerca de la estrella. Las barras de colo azul es la separación real, y vemos como todos están a más de \SI{10}{\arcsecond} de distancia, así como también tenemos una concentración de glóbulos a $\sim$\SI{17}{\arcsecond}.
+En la Tabla \ref{tab:mean_i} vemos los valores medios considerando este ángulo de inclinación que hemos encontrado, considerando que la densidad decae con el ángulo. Como el valor medio del $\cos(i)$ es 0.65, podemos notar que en realidad sí estamos viendo la separación proyectada de los glóbulos, de hecho de casi todos. Por lo que en realidad están más lejanos de lo que apreciamos en las imágenes. En la Figura \ref{fig:hist_sep_ryp} las barras naranjas son el histograma de la separación proyectada entre los glóbulos y la estrella, la cual medimos directamente de las observaciones, y podemos ver que muchos de estos glóbulos parecían estar cerca de la estrella. Las barras de colo azul es la separación real, encontrada a partir del equilibrio de presiones, y vemos como todos están a más de \SI{10}{\arcsecond} (\SI{0.26}{pc}) de distancia, así como también tenemos una concentración de glóbulos a $\sim$\SI{17}{\arcsecond} (\SI{0.44}{pc}). 
 
 \begin{table}[htb]
     \centering
@@ -831,11 +805,11 @@ En la Tabla \ref{tab:mean_i} vemos los valores medios considerando este ángulo 
 
 Ahora vamos a discutir algunos problemas que que se presentaron al momento de hacer los ajustes a los perfiles de brillos, así como también algunas propiedades de los glóbulos, entre otras cosas. Debido a que son varias cosas a discutir, vamos a dividir la discusión en secciones.
 
-Considerando que \cite{Zavala:2022} estima que la nebulosa circunestelar se formó hace unos \SI{11.8}{kas}, podríamos suponer que las fases mencionadas en la sección \ref{Sec:fluijos fotoevaporativos} ya han pasado y esto es importante porque si estuviéramos en otra fase como en la de implosión, los radios cambiarían además que las presiones que consideramos podrían aún no estar en equilibrio. En el caso de no estar aún en el equilibrio de presiones indicaría que esta interacción entre el flujo fotoevaporativo y el viento estelar se formó recientemente.\\
+Considerando que \cite{Zavala:2022} estima que la nebulosa circunestelar se formó hace unos \SI{11.8e3}{a}, podríamos suponer que las fases mencionadas en la Sección \ref{Sec:fluijos fotoevaporativos} ya han pasado y esto es importante porque si estuviéramos en otra fase como en la de implosión, los radios cambiarían además que las presiones que consideramos podrían aún no estar en equilibrio. En el caso de no estar aún en el equilibrio de presiones indicaría que esta interacción entre el flujo fotoevaporativo y el viento estelar se formó recientemente.\\
 
 \section{Identificación de los glóbulos y sus cáscaras}\label{dis:casaras}
 
-Primero vamos a discutir los problemas que se presentaron al momento de identificar tanto los glóbulos como sus cáscaras chocadas.
+%Primero vamos a discutir los problemas que se presentaron al momento de identificar tanto los glóbulos como sus cáscaras chocadas.
 
 Si bien la presencia de estos glóbulos y su interacción con el viento estelar se puede apreciar en las imágenes del JWST, no en todos los casos es claro ya que hay algunos glóbulos que se encuentran en grupo tal como se ve en la Figura \ref{globule_group}. En estos casos la detección de la cáscara chocada es un poco difícil por las siguientes razones. En la imagen de arriba de la Figura \ref{globule_group} vemos un claro ejemplo de que cuando dos glóbulos estén muy cercanos se pueden confundir con que sea un solo glóbulo, como es el caso de los que están marcados con círculos azules. De esta manera nos podríamos confundir en el tamaño de la parte neutra del glóbulo y sobrestimarla. Detrás de estos glóbulos se encuentran otros dos glóbulos cercanos (marcados con círculos negros), debido a la proyección en el cielo, estos parecen estar en la estela de los glóbulos marcados con círculos azules, por lo que en principio no podríamos detectar bien una cáscara chocada. Por otro lado tenemos el glóbulo marcado con un círculo rojo. Este glóbulo es más pequeño que los otros que están en el grupo y aparentemente su cáscara chocada está muy cerca del glóbulo pero en realidad esta cáscara parece ser del par de glóbulos marcados con círculos azules. Algo similar pasa con el glóbulo marcado con el círculo verde, el cual aparentemente no tiene una cáscara pero pareciera estar en la cáscara chocada de algún otro glóbulo.
 
@@ -860,7 +834,7 @@ donde $n_\mathrm{i,0}, c_\mathrm{s,i}$ es la densidad y la velocidad, respectiva
 \begin{equation}
     \frac{n_\mathrm{n}}{n_\mathrm{i,0}}=\frac{2c_\mathrm{s,i}^2}{c_\mathrm{s,n}^2+\frac{1}{2}v_\mathrm{A}^2},
 \end{equation}
-está en el rango de 42--266. Por lo que para estimar la masa de los glóbulos vamos a considerar que $n_\mathrm{n}=100n_\mathrm{i,0}$, aunque claro, tendríamos una gran incertidumbre por un factor de 2 aproximadamente. Tomando esto en cuenta y que en el modelo estamos considerando que los glóbulos son esféricos, entonces, la masa de cada glóbulo estaría dada por
+está en el rango de 42--266. Por lo que para estimar la masa de los glóbulos vamos a considerar que $n_\mathrm{n}=100n_\mathrm{i,0}$ ya que se encuentra dentro de este rango, aunque claro, tendríamos una gran incertidumbre por un factor de 2 aproximadamente. Tomando esto en cuenta y que en el modelo estamos considerando que los glóbulos son esféricos, entonces, la masa de cada glóbulo estaría dada por
 \begin{equation}
     M_\mathrm{g} = \frac{4}{3}\pi r_0^3 100n_\mathrm{i,0} m_\mathrm{H}.
 \end{equation}
@@ -874,11 +848,11 @@ Si consideramos que todos los glóbulos tienen esta masa promedio, entonces tend
 
 \cite{Zavala:2022} utilizando espectroscopia de rendijas en ciertas partes de la nebulosa midió las velocidades en estas regiones (ver Figura \ref{fig:zavala_rendijas_nebula}). Una de las observaciones se realizó en H$\alpha$ y además se realizó por donde están algunos glóbulos que se encontraron en este trabajo. 
 
-En la Figura \ref{fig:zavala_nudos} vemos como los grupos de glóbulos están en una elipse, lo que indica que están en una cáscara esférica. En la rendija H es donde podemos ver el radio de estas cáscaras en el eje vertical, que es la posición. En la misma rendija, usando el eje horizontal que mide la velocidad, podemos ver que todas estas cáscaras tienen una velocidad de \SI{40}{km.s^{-1}}. De esta manera podemos obtener la separación real que hay entre los glóbulos y la estrella. Por lo que conociendo su separación proyectada, que es la que medimos directamente de las imágenes, y su separación real a partir de estos espectro de rendija, podemos saber cuál debería ser su ángulo de inclinación.
+En la Figura \ref{fig:zavala_nudos} vemos como los grupos de glóbulos están en una elipse, lo que indica que están en una cáscara esférica\footnote{En el Apéndice \ref{AP : PV} se da un poco de más detalle.}. En la rendija H es donde podemos ver el radio de estas cáscaras en el eje vertical, que es la posición. En la misma rendija, usando el eje horizontal que mide la velocidad, podemos ver que todas estas cáscaras tienen una velocidad de \SI{40}{km.s^{-1}}. De esta manera podemos obtener la separación real que hay entre los glóbulos y la estrella. Por lo que conociendo su separación proyectada, que es la que medimos directamente de las imágenes, y su separación real a partir de estos espectro de rendija, podemos saber cuál debería ser su ángulo de inclinación.
 
-En la Figura \ref{fig:ang_Will} vemos como nuestras mediciones (puntos rojos), obtenidos a partir de comparar la presión de la cáscara de los glóbulos con la presión exterior del viento (Sección \ref{Sec:proyeccion}) concuerdan con la mediciones realizada a partir de espectros bidimensionales (puntos azules) (Henney, W., in prep.). Estas dos mediciones son totalmente independientes y podemos ver una clara anti correlación entre el ángulo de inclinación y la separación que observamos. En esta imagen no esperamos ver glóbulos con un ángulo de inclinación de $\pm 90^\circ$ ya que estos estarían totalmente de espaldas o de frente, en cualquier caso estos no los podríamos ver porque se verían afectados por la emisión de la estrella WR ya que en proyección estarían muy cerca de la estrella.
+En la Figura \ref{fig:ang_Will} vemos como nuestras mediciones (puntos rojos), obtenidos a partir de comparar la presión de la cáscara de los glóbulos con la presión exterior del viento (Sección \ref{Sec:proyeccion}) concuerdan con la mediciones realizada a partir de espectros bidimensionales (puntos azules) (Henney, W., in prep.). Estas dos mediciones son totalmente independientes y podemos ver una clara anti-correlación entre el ángulo de inclinación y la separación que observamos. En esta imagen no esperamos ver glóbulos con un ángulo de inclinación de $\pm 90^\circ$ ya que estos estarían totalmente de espaldas o de frente, en cualquier caso estos no los podríamos ver porque se verían afectados por la emisión de la estrella WR ya que en proyección estarían muy cerca de la estrella.
 
-El grupo de glóbulos más cercanos a la estrellas parece estar a unos \SI{15}{\arcsecond} según la Figura \ref{fig:zavala_nudos}, los cuales coinciden con nuestras mediciones que vemos en la Figura \ref{fig:hist_sep_ryp}. También en la Figura \ref{fig:hist_sep_ryp} podemos ver que la separación real de muchos glóbulos está cerca de \SI{18}{\arcsecond}.
+El grupo de glóbulos más cercanos a la estrellas parece estar a unos \SI{15}{\arcsecond} (\SI{0.39}{pc}) según la Figura \ref{fig:zavala_nudos}, los cuales coinciden con nuestras mediciones que vemos en la Figura \ref{fig:hist_sep_ryp}. También en la Figura \ref{fig:hist_sep_ryp} podemos ver que la separación real de muchos glóbulos está cerca de \SI{18}{\arcsecond} (\SI{0.47}{pc}).
 
 \begin{figure}[htb]
     \centering
@@ -998,7 +972,7 @@ como estamos considerando un gas isotérmico, vemos que del lado derecho tenemos
 \begin{equation}
 h^{-1}=\Big|\frac{1}{\rho_0}\frac{\partial\rho}{\partial r}\Big|=\Big|\frac{d \ln \rho}{dr}\Big|
 \end{equation}
-usando las ecuaciones \ref{eq : 2} y \ref{eq ; 3} tenemos que 
+usando las ecuaciones (\ref{eq : 2}) y (\ref{eq ; 3}) tenemos que 
 \begin{equation}
 \frac{\rho}{\rho_0}=e^{\frac{1-M^2}{2}}\Rightarrow\ln\frac{\rho}{\rho_0}=\frac{1-M^2}{2}
 \end{equation}
@@ -1074,17 +1048,18 @@ donde $F_0$ es la tasa de fotones ionizantes por unida de área, $n_\mathrm{i,0}
 \begin{equation}
 n_0^2h_1=\int n^2dr,
 \end{equation}
-el cual se puede estimar usando las ecuaciones  \ref{eq : 1}, \ref{eq : 2} y \ref{eq ; 3}. Por lo que tendríamos que 
+el cual se puede estimar usando las ecuaciones  (\ref{eq : 1}), (\ref{eq : 2}) y (\ref{eq ; 3}). Por lo que tendríamos que 
 \begin{equation}
 h_1=\int_0^\infty \Big(\frac{n(r)}{n_0}\Big)^2dr=r_0\int_1^\infty\frac{exp(\frac{3}{4}(1-M^2))}{2}(M^{1/2}-M^{3/})dM\approx0.12r_0.\end{equation}
 
-Tomando los valores de $F_0$ y $r_0$ de nuestros glóbulos, tenemos que, el primer término del lado derecho de la ecuación \ref{eq:flujo_io} es muy pequeño en comparación con el segundo término. Por lo que podemos despreciar este término.
+Tomando los valores de $F_0$ y $r_0$ de nuestros glóbulos, tenemos que, el primer término del lado derecho de la Ecuación (\ref{eq:flujo_io}) es muy pequeño en comparación con el segundo término. Por lo que podemos despreciar este término.
 
 \chapter{Combos de filtros}\label{AP: combos}
 
 En este apéndice vamos a explicar como se obtuvieron los combos de gas ionizado y gas neutro utilizando las diferentes observaciones del JWST. Usamos estas combinaciones para hacer ajustes a los perfiles de brillo y así obtener mediciones del radio del glóbulo, de la cáscara chocada y su ancho.
 
-Para esto, normalizamos la emisión de las estrellas, el gas ionizado y  PAHs a la emisión en el filtro f210m de sus respectivos mecanismos de emisiónn como se puede ver en la Tabla \ref{tab:emision en filtros}. Como estos cocientes de imágenes se realizaron visualmente, tomamos el error como el rango completo en donde se encontraban estos cocientes.
+Como usamos diferentes filtros, los cuales tienen diferente resolución, hicimos una convolución para que todos tuvieran la misma resolución y así poder combinar imágenes. En este caso convolucionamos las imágenes para tener la misma resolución que el filtro f444w, el cual tiene la menor resolución de los filtros usados.
+Una vez que todas las imágenes tienen la misma resolución, normalizamos la emisión de las estrellas, el gas ionizado y  PAHs a la emisión en el filtro f210m de sus respectivos mecanismos de emisión como se puede ver en la Tabla \ref{tab:emision en filtros}. Como estos cocientes de imágenes se realizaron visualmente, tomamos el error como el rango completo en donde se encontraban estos cocientes.
 \begin{table}[htb]
     \centering
     \begin{tabular}{l L L L}
@@ -1149,22 +1124,22 @@ donde $x$ es la medición real y que $\epsilon_\mathrm{J}^i$, $\epsilon_\mathrm{
 \end{equation}
 donde estamos considerando que los errores en los dos telescopios son independientes. Considerando que la varianza sobre toda la muestra está dada como
 \begin{equation}
-    \mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)=\frac{\sum_{i=1}^N ((x_\mathrm{J}^i-x_\mathrm{H}^i)-\mu)^2}{N}
+    \mathrm{Var}(x_\mathrm{J}-x_\mathrm{H})=\frac{\sum_{i=1}^N ((x_\mathrm{J}^i-x_\mathrm{H}^i)-\mu)^2}{N}
 \end{equation}
 donde $N$ es el tamaño de la muestra y $\mu = N^{-1} \sum_{i=1}^N (x_\mathrm{J}^i-x_\mathrm{H}^i)$ es la media. 
 Si las distribuciones son simétricas, esperamos que $\mu \approx 0$ para $N$ grande, esto fue verificado para nuestras muestras.
 Entonces, suponiendo que no hay correlación entre los errores $\epsilon_\mathrm{J}^i$ y $\epsilon_\mathrm{H}^i$, tenemos que
 \begin{equation}
-    \mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)=\mathrm{Var}(\epsilon_\mathrm{J}^i)+\mathrm{Var}(\epsilon_\mathrm{J}^i)=\sigma_\mathrm{J}^2+\sigma_\mathrm{H}^2,
+    \mathrm{Var}(x_\mathrm{J}-x_\mathrm{H})=\mathrm{Var}(\epsilon_\mathrm{J})+\mathrm{Var}(\epsilon_\mathrm{J})=\sigma_\mathrm{J}^2+\sigma_\mathrm{H}^2,
 \end{equation}
 donde $\sigma_\mathrm{J}$ y $\sigma_\mathrm{H}$
 son los promedios RMS de los errores en las mediciones. 
-Si además suponemos que $\sigma_\mathrm{J} = \sigma_\mathrm{H} \equiv   \sigma$, tenemos que $\mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)=2\sigma^2\Rightarrow\sigma=\sqrt{\mathrm{Var}(x_\mathrm{J}^i-x_\mathrm{H}^i)}/\sqrt{2}$, el cual usamos como el estimado del incertidumbre en estas mediciones en la Sección~\ref{sec:error-shell}.
+Si además suponemos que $\sigma_\mathrm{J} = \sigma_\mathrm{H} \equiv   \sigma$, tenemos que $\mathrm{Var}(x_\mathrm{J}-x_\mathrm{H})=2\sigma^2\Rightarrow\sigma=\sqrt{\mathrm{Var}(x_\mathrm{J}-x_\mathrm{H})}/\sqrt{2}$, el cual usamos como el estimado del incertidumbre en estas mediciones en la Sección~\ref{sec:error-shell}.
 
 
 \chapter{Constante de conversión en las observaciones del HST}\chaptermark{constante de conversión} \label{AP : conversion EM}
 
-En este Apéndice vamos a justificar la constante de conversión para pasar de unidades del telescopio, $\unit{cuenta.s^{-1}.pix^{-1}}$, a unidades físicas de brillo superficial, $\unit{erg.cm^{-2}.s^{-1}.sr^{-1}}$, en las observaciones de H$\alpha$ en el HST. Para esto vamos a utilizar la calibración de \cite{Grosdidier:1998} en la cual calculó un flujo total de la nebulosa de \SI{2.08e-10}{erg.s^{-1}.cm^{-2}} en las observaciones de H$\alpha$ en el HST. En esta calibración quita la contaminación de la línea $[\mathrm{N\scriptstyle{II}}]\,\lambda6548$.
+En este Apéndice vamos a justificar la constante de conversión para pasar de unidades del telescopio, $\unit{cuenta.s^{-1}.pix^{-1}}$, a unidades físicas de brillo superficial, $\unit{erg.cm^{-2}.s^{-1}.sr^{-1}}$, en las observaciones de H$\alpha$ en el HST. Para esto vamos a utilizar la calibración de \cite{Grosdidier:1998} en la cual calculó un flujo total de la nebulosa de \SI{2.08e-10}{erg.s^{-1}.cm^{-2}} en las observaciones de H$\alpha$ en el HST. En esta calibración quita la contaminación de la línea $[\mathrm{N\scriptstyle{II}}]\,\lambda6548$ y del continuo.
 Por otro lado, calculamos un flujo en unidades del telescopio al sumar las cuentas de todos los píxeles de la nebulosa, después de aplicar una máscara para eliminar la contribución de las estrellas, teniendo un valor de \SI{64822.82}{cuenta.s^{-1}}. Esta máscara toma en cuenta a los píxeles que se encuentra a una distancia mínima de \SI{1}{\arcsecond} y a una distancia máxima de \SI{60}{\arcsecond} de la estrella WR 124, así no estamos considerando la emisión por parte de la estrella, de igual manera, no sumamos los píxeles que tuvieran un valor mayor a 3 para no incluir la emisión de las estrellas de campo. Además, tomamos en cuenta el tamaño del píxel de $\SI{0.1}{\arcsecond} \times \SI{0.1}{\arcsecond} 
 = \SI{2.34e-13}{sr}$. Por lo que nuestro factor de conversión está dado como
 \begin{align}
@@ -1223,19 +1198,19 @@ Debido a que usamos un solo radio para todos los glóbulos, esta corrección es 
 
 Usando los valores de la tabla \ref{tab:mean}, para el flujo fotoevaporativo tenemos un tiempo dinámico 
 \begin{equation}
-t_\mathrm{DF} = \frac{r_\mathrm{shell}}{v} \approx \SI{5.27e10}{s}  = \SI{1.67e3}{yr}.
+t_\mathrm{DF} = \frac{r_\mathrm{shell}}{v} = \frac{\SI{0.01}{pc}}{\SI{10}{km.s^{-1}}}\approx \SI{5.27e10}{s}  = \SI{1.67e3}{a}.
 \end{equation}
 
 \cite{Mancherko:2010} estima una velocidad de expansión para la nebulosa de 42--\SI{46}{km.s^{-1}} por lo que para la nebulosa tenemos un tiempo dinámico de 
 \begin{equation}
-t_\mathrm{DN}= \frac{R_\mathrm{nebula}}{v_\mathrm{exp}}\approx\frac{\SI{1.5}{pc}}{\SI{46}{km.s^{-1}}}= \SI{1e12}{s}=\SI{3.18e4}{yr}
+t_\mathrm{DN}= \frac{R_\mathrm{nebula}}{v_\mathrm{exp}}\approx\frac{\SI{1.5}{pc}}{\SI{46}{km.s^{-1}}}= \SI{1e12}{s}=\SI{3.18e4}{a}
 \end{equation}
 
 \section{Tiempo de recombinación}
 
 Usando la densidad promedio de la tabla \ref{tab:mean} tenemos un tiempo de recombinación 
 \begin{equation}
-t_\mathrm{r} = \frac{1}{\alpha_\mathrm{B} n} \approx \SI{3.64e9}{s}= \SI{115.64}{yr}
+t_\mathrm{r} = \frac{1}{\alpha_\mathrm{B} n} \approx \SI{3.64e9}{s}= \SI{115.64}{a}
 \end{equation}
 
 Para el caso del tiempo de calentamiento-enfriamiento, vamos a considerar que es de 3--5 veces menor que el tiempo de recombinación. Esto considerando que $t_\mathrm{c}=\frac{3P}{2\mathcal{L}}=\frac{3k_\mathrm{B}T}{\Lambda n}$ donde $P=2nk_\mathrm{B}T$ es la presión y $\mathcal{L}=\Lambda n^2$, así tenemos que $\frac{t_\mathrm{c}}{t_\mathrm{r}}=\frac{3k_\mathrm{B}T\alpha_\mathrm{B}}{\Lambda}$ y considerando que $3k_\mathrm{B}T\approx\SI{4e-12}{erg},\; \alpha_\mathrm{B}=\SI{2.6e-13}{cm^3.s^{-1}}$ y $\Lambda\approx\SI{3e-24}{erg.cm^3.s^{-1}}$ entonces
@@ -1249,50 +1224,79 @@ Para calcular el tiempo de vida de los glóbulos, primero vamos a considerar que
 \begin{equation}
     \dot{M} =\pi r_0^2n_\mathrm{i,0}c_\mathrm{s,i}m_\mathrm{H}
 \end{equation}
-usando los valores típicos de la tabla \ref{tab:mean}, tenemos que $\dot{M} = \SI{4.91e-8}{\msun.yr^{-1}}$. Por lo que el tiempo de vida de los glóbulos es
+usando los valores típicos de la tabla \ref{tab:mean}, tenemos que $\dot{M} = \SI{4.91e-8}{\msun.a^{-1}}$. Por lo que el tiempo de vida de los glóbulos es
 \begin{equation}
-    t_\mathrm{glo}=\frac{M_\mathrm{g}}{\dot{M}}=\SI{9.16e4}{yr}
+    t_\mathrm{glo}=\frac{M_\mathrm{g}}{\dot{M}}=\SI{9.16e4}{a}
 \end{equation}
 
-Por lo que tenemos que
+\subsection{Comparación de las diferentes escalas de tiempo}
+
+De lo anterior, tenemos que
 \begin{equation}
-    t_ \mathrm{cool} < t_\mathrm{r} < t_\mathrm{DF} < t_\mathrm{DN} \sim t_\mathrm{glo},
+    t_ \mathrm{cool} < t_\mathrm{r} \ll t_\mathrm{DF}  \ll t_\mathrm{DN} \sim t_\mathrm{glo}.
 \end{equation}
-de esta manera podemos considerar que los glóbulos podrían ionizarse por completo casi al mismo tiempo en que desaparezca la nebulosa. También podemos notar que $t_\mathrm{DF}<t_\mathrm{DN}$ por lo que podemos considerar este flujo fotoevaporativo como estacionario. 
+Con lo que podemos asumir un equilibrio de ionización/recombinación,, así como un equilibrio de calentamiento/enfriamiento dado que estos dos procesos micro físicos ocurren en un tiempo de escala mucho menor que los demás. También podemos justificar que el modelo propuesto es estacionario ya que este tienen una escala de tiempo mucho menor que la expansión de la nebulosa.
 
-\chapter{Proyección de posición y velocidad}
+%From this we can draw two conclusions for the photoevaporation flow:
+%\begin{enumerate}
+%    \item The microphysical processes of ionization/recombination and heating/cooling occur on much smaller timescales and so can be assumed to be in equilibrium.
+%    \item The secular evolution of the nebula expansion and the globule photoevaporation occur on much longer timescales, which allows the photoevaporation flow enough time to reach a steady-state configuration.
+%\end{enumerate}
+%This justifies the assumptions which we make in the model (section~\ref{Chapter : Modelo}). 
+%de esta manera podemos considerar que los glóbulos podrían ionizarse por completo casi al mismo tiempo en que desaparezca la nebulosa. También podemos notar que $t_\mathrm{DF}<t_\mathrm{DN}$ por lo que podemos considerar este flujo fotoevaporativo como estacionario. 
 
-En la Figura \ref{fig:zavala_nudos} vimos que cada grupo de glóbulos se encontraba en una elipse, lo que nos indicaría que este grupo de glóbulos está en una cáscara esférica de radio $r$, por lo que en este análisis vamos a considerar por la Ecuación
-\begin{equation}
-	x^2+y^2+z^2=r^2,
-\end{equation}
-y para mayor simplicidad vamos a usar las variables $X=x/r$, $Y=y/r$ y $Z=z/r$ para trabajar con la esfera unitaria, además de que son variables adimensionales. Si consideramos que además los vectores de posición y velocidad son paralelos, radiales y constantes con radio, podremos pasar de un vector a otro sin problemas.
+\chapter{Proyección de posición y velocidad}\label{AP : PV}
 
-En la Figura \ref{fig: ap PV rendija} vemos la esfera unitaria
+En la Sección \ref{sec: distrtibucion} analizamos las observaciones de rendija larga de los glóbulos para poder determinar su distribución tridimensional. A pesar de que no podemos medir directamente la posición a lo largo de la vista de visión, si suponemos que los glóbulos se alejan de la estrella WR 124 estrictamente de manera radial a una velocidad $v(r)$, podemos usar la velocidad observada a lo largo de la línea de visión para obtener esta componente espacial que nos falta.
+
+%In section~\ref{sec: distrtibucion} we analyze longslit spectroscopic observations of the globules in order to determine their three dimensional distribution. The position along the line of sight cannot be measured directly. However, by assuming that the globules expand strictly radially away from the central star with a given velocity law $v(r)$, we can use the observed line of sight velocity to reconstruct this missing spatial component. 
+
+Consideremos un glóbulo (o un grupo de glóbulos) con coordenadas cartesianas $(x,y,x)$, donde la estrella WR 124 se encuentra en el origen. En este análisis vamos a considerar que el eje $y$ es paralelo a nuestra línea de visión, por lo que las posiciones en $x$ y$z$ son las posiciones en el plano del cielo, y las rendijas serán paralelas al eje $z$. Por simplicidad vamos a usar las coordenadas adimensionales $X=x/r$, $Y=y/r$ y $Z=z/r$, donde $r = \left( x^2+y^2+z^2\right)^{1/2}$ es el radio. De esta manera, si suponemos que el vector de velocidad, $(v_x,v_y,v_z)$, es paralelo al vector de posición, entonces tenemos que $X=v_x/v$, $Y=v_y/v$ y $Z=v_z/v$,
+donde $v = \left( v_x^2+v_y^2+v_z^2\right)^{1/2}$ es la magnitud de la velocidad. La cual estamos considerando unicamente como función del radio.
+
+%We consider a globule (or group of globules) with cartesian coordinates $(x, y, z)$ with origin in the central star. The line of sight is parallel to the $y$ axis, so that $x, z$ are positions on the plane of the sky, with the spectrograph slit parallel to the $z$ axis. For convenience, we use non-dimensional coordinates: $X=x/r$, $Y=y/r$ y $Z=z/r$,
+%where $r = \left( x^2+y^2+z^2\right)^{1/2}$ is the radius. 
+%Assuming that the knot velocity vector $(v_x, v_y, v_z)$ is aligned with the radial direction,
+%then we also have $X=v_x/v$, $Y=v_y/v$ y $Z=v_z/v$,
+%where $v = \left( v_x^2+v_y^2+v_z^2\right)^{1/2}$ is the magnitude of the velocity, which we suppose to be a function of the radius alone: $v(r)$. 
+
+% En la Figura \ref{fig:zavala_nudos} vimos que cada grupo de glóbulos se encontraba en una elipse, lo que nos indicaría que este grupo de glóbulos está en una cáscara esférica de radio $r$, por lo que en este análisis vamos a considerar por la Ecuación
+% \begin{equation}
+% 	x^2+y^2+z^2=r^2,
+% \end{equation}
+% y para mayor simplicidad vamos a usar las variables $X=x/r$, $Y=y/r$ y $Z=z/r$ para trabajar con la esfera unitaria, además de que son variables adimensionales. Si consideramos que además los vectores de posición y velocidad son paralelos, radiales y constantes con radio, podremos pasar de un vector a otro sin problemas.
+Considerando estas coordenadas adimensionales, en la Figura \ref{fig: ap PV rendija} podemos ver la esfera unitaria
 \begin{equation}
 X^2+Y^2+Z^2=1
 \end{equation}
  en el plano $(X,Z)$, el cual representa el plano del cielo en el que vemos, y nuestra línea de visión sería el eje $Y$, el cual apunta hacia adentro de la imagen. La línea azul paralela al eje $Z$ representa una de las rendijas usadas por \cite{Zavala:2022} en  la nebulosa. Notemos que si está rendija se encuentra en $X_0$, podemos dibujar el círculo 
- \begin{equation}
- Y^2+Z^2=1-X_0^2
+ \begin{equation}\label{eq : ap circulo}
+ Y^2+Z^2=1-X_0^2 \equiv \xi^2
  \end{equation}
-en el plano paralelo a $(Y,Z)$ que pasa por $X_0$, como se ve en la Figura \ref{fig:ap PV esfera3d}. Este círculo representa la posición de la elipse tanto en posición como en velocidad. Por lo que si medimos la distancia en el eje $Z$ y la velocidad en el eje $Y$ , entonces este círculo representa el diagrama de la Figura \ref{fig:zavala_nudos} pero normalizado. Notemos que todos los puntos que caen sobre este círculo tienen la misma distancia al origen, que en nuestro caso es equivalente a decir que todos los grupos de glóbulos que caen en este círculo tienen la misma distancia a la estrella WR 124. De igual manera
-para la velocidad, esto ya que estamos considerando que el vector de velocidad y distancia son paralelos.
+en el plano paralelo a $(Y,Z)$ que pasa por $X_0$, como se ve en la Figura \ref{fig:ap PV esfera3d}. Este círculo representa la posición de la elipse tanto en posición como en velocidad. Mientras que las elipses de la Figura \ref{fig:zavala_nudos} se caracterizan por los semi-ejes en coordenadas físicas $\xi r$ en la dirección espacial a lo largo de la rendija y $\xi v(r)$ en la velocidad a lo largo de la línea de visión.  En la Sección \ref{sec: distrtibucion} consideramos dos casos limitantes para la velocidad. Un caso con una velocidad constante $v(r)=\SI{46}{km.s^{-1}}$ y el caso donde la velocidad es proporcional al radio $v(r)=\SI{46}{km-s^{-1}}(r/\SI{20}{\arcsecond})$.
+Por lo que, si tomamos $Z=z/r$ y $Y=v_y/v$ entonces el círculo dado por la Ecuación (\ref{eq : ap circulo}) representa las elipses de la Figura \ref{fig:zavala_nudos} pero normalizados.
+%Por lo que si medimos la distancia en el eje $Z$ y la velocidad en el eje $Y$ , entonces este círculo representa el diagrama de la Figura \ref{fig:zavala_nudos} pero normalizado. Notemos que todos los puntos que caen sobre este círculo tienen la misma distancia al origen, que en nuestro caso es equivalente a decir que todos los grupos de glóbulos que caen en este círculo tienen la misma distancia a la estrella WR 124. De igual manera
+%para la velocidad, esto ya que estamos considerando que el vector de velocidad y distancia son paralelos.
+
+%The ellipses are characterised by semi-axes in physical coordinates of $\xi r$ in the spatial direction along the slit and $\xi v(r)$ in line of sight velocity.
 
 Podemos observar también que el círculo $Y^2+Z^2=1-X_0^2$ tiene un radio menor que la esfera unitaria  para $X_0\neq0$ (ver Figura \ref{fig: ap PV modelo}), por lo que entre más lejos este $X_0$ del origen, el círculo se hace más pequeño. Es por eso que las elipses de la Figura \ref{fig:zavala_nudos} se van haciendo más pequeñas conforme la rendija usada en la que se encuentran está más alejada de la estrella WR 124. 
 
-Notemos que además que si $Z=0$, entonces tenemos el máximo en $Y$, que es el radio del círculo $\sqrt{1-X_0^2}$. De igual manera para el caso $Y=0$. Estas proyecciones son usadas para la discusión en la Sección \ref{sec: distrtibucion}
+Notemos que además que si $Z=0$, entonces tenemos el máximo en $Y$, que es el radio del círculo $\sqrt{1-X_0^2}$.
+De igual manera para el caso $Y=0$. Estas proyecciones son usadas para la discusión en la Sección \ref{sec: distrtibucion}
 
+%In section~\ref{sec: distrtibucion} we consider two simple limiting cases for the velocity law: constant velocity, $v(r) = \SI{46}{km.s^{-1}}$, and velocity proportional to radius, 
+%$v(r) = \SI{46}{km.s^{-1}} (r / \SI{20}{arcsec})$,
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{imagenes_corregidas/n_esfe_01.pdf}
+    \includegraphics[width=\textwidth]{imagenes_corregidas/PV 01.pdf}
     \caption{Visualización de como se vería una rendija que pasa en $X_0$ sobre la esfera unitaria. El plano $(X,Z)$ representa el plano en el cielo y nuestra línea de visión va en dirección del eje $Y$, hacia adentro de la imagen.}
     \label{fig: ap PV rendija}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{imagenes_corregidas/n_esfe_02.pdf}
+    \includegraphics[width=\textwidth]{imagenes_corregidas/PV 02.pdf}
     \caption{El círculo $Y^2+Z^2=1-X_0^2$ con centro en $(0,0,X_0)$ esta sobre un plano paralelo al plano $(Y,Z)$.La flecha negra indica el vector de posición,o de velocidad ya que los estamos tomando como paralelos, y las flechas de colores son sus proyecciones en sus respectivos ejes.}
     \label{fig:ap PV esfera3d}
 \end{figure}
@@ -1300,8 +1304,8 @@ Notemos que además que si $Z=0$, entonces tenemos el máximo en $Y$, que es el 
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{imagenes_corregidas/n_esfe_03.pdf}
-    \caption{En la imagen de la izquierda vemos como se vería el esquema de Posición-Velocidad con los ejes normalizados a un radio $R$ y una velocidad $v_0$, se puede apreciar que conforme $X_0$ se aleja del origen, nuestro círculo se hace cada vez más pequeños. Es por eso que en la imagen de la derecha las elipses se hacen más pequeñas conforme las rendijas están más alejadas de la rendija H, que es la que pasa por la estrella. }
+    \includegraphics[width=\textwidth]{imagenes_corregidas/PV 03.pdf}
+    \caption{En la imagen de la izquierda vemos como se vería el esquema de Posición-Velocidad con los ejes normalizados a un radio $r$ y una velocidad $v(r)$, se puede apreciar que conforme $X_0$ se aleja del origen, nuestro círculo se hace cada vez más pequeños. Es por eso que en la imagen de la derecha las elipses se hacen más pequeñas conforme las rendijas están más alejadas de la rendija H, que es la que pasa por la estrella. }
     \label{fig: ap PV modelo}
 \end{figure}
 
