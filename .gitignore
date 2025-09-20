@@ -1,10 +1,10 @@
-tesis.aux
-tesis.bbl
-tesis.blg
-tesis.fdb_latexmk
-tesis.fls
-tesis.out
-tesis.pdf
-tesis.synctex.gz
-tesis.toc
+/auto/
+*.aux
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
+*.fls
+thesis.out
 

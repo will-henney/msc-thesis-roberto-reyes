@@ -1,0 +1,168 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\href{#1}{#1}}
+\providecommand{\dodoi}[1]{doi:~\href{http://doi.org/#1}{\nolinkurl{#1}}}
+\providecommand{\doeprint}[1]{\href{http://ascl.net/#1}{\nolinkurl{http://ascl.net/#1}}}
+\providecommand{\doarXiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{https://arxiv.org/abs/#1}}}
+
+\bibitem[{{Alves} {et~al.}(2001){Alves}, {Lada}, \& {Lada}}]{Alves:2001}
+{Alves}, J.~F., {Lada}, C.~J., \& {Lada}, E.~A. 2001, \nat, 409, 159
+
+\bibitem[{{Amin} \& {El-Nawawy}(2005)}]{Amin:2005}
+{Amin}, M.~Y., \& {El-Nawawy}, M.~S. 2005, \na, 11, 138,
+  \dodoi{10.1016/j.newast.2005.06.006}
+
+\bibitem[{{Ballesteros-Paredes} {et~al.}(2011){Ballesteros-Paredes},
+  {V{\'a}zquez-Semadeni}, {Gazol}, {Hartmann}, {Heitsch}, \&
+  {Col{\'\i}n}}]{Ballesteros:2011}
+{Ballesteros-Paredes}, J., {V{\'a}zquez-Semadeni}, E., {Gazol}, A., {et~al.}
+  2011, \mnras, 416, 1436, \dodoi{10.1111/j.1365-2966.2011.19141.x}
+
+\bibitem[{{Bertoldi}(1989)}]{Bertoldi_1989}
+{Bertoldi}, F. 1989, \apj, 346, 735, \dodoi{10.1086/168055}
+
+\bibitem[{{Cant{\'o}} {et~al.}(1996){Cant{\'o}}, {Raga}, \&
+  {Wilkin}}]{Canto:1996}
+{Cant{\'o}}, J., {Raga}, A.~C., \& {Wilkin}, F.~P. 1996, \apj, 469, 729,
+  \dodoi{10.1086/177820}
+
+\bibitem[{{Crowther}(2007)}]{crowther:2007}
+{Crowther}, P.~A. 2007, \araa, 45, 177,
+  \dodoi{10.1146/annurev.astro.45.051806.110615}
+
+\bibitem[{{Crowther} {et~al.}(1999){Crowther}, {Pasquali}, {De Marco},
+  {Schmutz}, {Hillier}, \& {de Koter}}]{Crowther:1999}
+{Crowther}, P.~A., {Pasquali}, A., {De Marco}, O., {et~al.} 1999, \aap, 350,
+  1007, \dodoi{10.48550/arXiv.astro-ph/9908200}
+
+\bibitem[{{Di Francesco} {et~al.}(2002){Di Francesco}, {Hogerheijde}, {Welch},
+  \& {Bergin}}]{DFrancesco:2002}
+{Di Francesco}, J., {Hogerheijde}, M.~R., {Welch}, W.~J., \& {Bergin}, E.~A.
+  2002, \aj, 124, 2749, \dodoi{10.1086/344078}
+
+\bibitem[{{Dyson}(1968)}]{Dyson:1968}
+{Dyson}, J.~E. 1968, \apss, 1, 388, \dodoi{10.1007/BF00656009}
+
+\bibitem[{{Dyson} \& {Williams}(1980)}]{Dyson:book:1980}
+{Dyson}, J.~E., \& {Williams}, D.~A. 1980, {Physics of the interstellar medium}
+
+\bibitem[{{Gahm} {et~al.}(2013){Gahm}, {Persson}, {M{\"a}kel{\"a}}, \&
+  {Haikala}}]{GFGahm:2013}
+{Gahm}, G.~F., {Persson}, C.~M., {M{\"a}kel{\"a}}, M.~M., \& {Haikala}, L.~K.
+  2013, \aap, 555, A57, \dodoi{10.1051/0004-6361/201321547}
+
+\bibitem[{{Garc{\'\i}a-Arredondo} {et~al.}(2001){Garc{\'\i}a-Arredondo},
+  {Henney}, \& {Arthur}}]{Garcia-Arredondo:2001}
+{Garc{\'\i}a-Arredondo}, F., {Henney}, W.~J., \& {Arthur}, S.~J. 2001, \apj,
+  561, 830, \dodoi{10.1086/323367}
+
+\bibitem[{{Grosdidier} {et~al.}(1998){Grosdidier}, {Moffat}, {Joncas}, \&
+  {Acker}}]{Grosdidier:1998}
+{Grosdidier}, Y., {Moffat}, A. F.~J., {Joncas}, G., \& {Acker}, A. 1998, \apjl,
+  506, L127, \dodoi{10.1086/311647}
+
+\bibitem[{{Hamann} {et~al.}(2006){Hamann}, {Gr{\"a}fener}, \&
+  {Liermann}}]{Hamman:2006}
+{Hamann}, W.~R., {Gr{\"a}fener}, G., \& {Liermann}, A. 2006, \aap, 457, 1015,
+  \dodoi{10.1051/0004-6361:20065052}
+
+\bibitem[{{Hamann, W.-R.} {et~al.}(2019){Hamann, W.-R.}, {Gräfener, G.},
+  {Liermann, A.}, {Hainich, R.}, {Sander, A. A. C.}, {Shenar, T.},
+  {Ramachandran, V.}, {Todt, H.}, \& {Oskinova, L. M.}}]{Hamann:2019}
+{Hamann, W.-R.}, {Gräfener, G.}, {Liermann, A.}, {et~al.} 2019, \aap, 625,
+  A57, \dodoi{10.1051/0004-6361/201834850}
+
+\bibitem[{{Hartigan} {et~al.}(2015){Hartigan}, {Reiter}, {Smith}, \&
+  {Bally}}]{Hartigan:2015}
+{Hartigan}, P., {Reiter}, M., {Smith}, N., \& {Bally}, J. 2015, \aj, 149, 101,
+  \dodoi{10.1088/0004-6256/149/3/101}
+
+\bibitem[{{Henney} \& {Arthur}(2019)}]{Wil:2019}
+{Henney}, W.~J., \& {Arthur}, S.~J. 2019, \mnras, 486, 3423,
+  \dodoi{10.1093/mnras/stz1043}
+
+\bibitem[{{Henney} {et~al.}(2009){Henney}, {Arthur}, {de Colle}, \&
+  {Mellema}}]{Will:2009}
+{Henney}, W.~J., {Arthur}, S.~J., {de Colle}, F., \& {Mellema}, G. 2009,
+  \mnras, 398, 157, \dodoi{10.1111/j.1365-2966.2009.15153.x}
+
+\bibitem[{{Hester} {et~al.}(1996){Hester}, {Scowen}, {Sankrit}, {Lauer},
+  {Ajhar}, {Baum}, {Code}, {Currie}, {Danielson}, {Ewald}, {Faber},
+  {Grillmair}, {Groth}, {Holtzman}, {Hunter}, {Kristian}, {Light}, {Lynds},
+  {Monet}, {O'Neil}, {Shaya}, {Seidelmann}, \& {Westphal}}]{JJHester:1996}
+{Hester}, J.~J., {Scowen}, P.~A., {Sankrit}, R., {et~al.} 1996, \aj, 111, 2349,
+  \dodoi{10.1086/117968}
+
+\bibitem[{{Jim{\'e}nez-Hern{\'a}ndez}
+  {et~al.}(2020){Jim{\'e}nez-Hern{\'a}ndez}, {Arthur}, \&
+  {Toal{\'a}}}]{Palmira:2020}
+{Jim{\'e}nez-Hern{\'a}ndez}, P., {Arthur}, S.~J., \& {Toal{\'a}}, J.~A. 2020,
+  \mnras, 497, 4128, \dodoi{10.1093/mnras/staa2272}
+
+\bibitem[{{Marchenko} {et~al.}(2010){Marchenko}, {Moffat}, \&
+  {Crowther}}]{Mancherko:2010}
+{Marchenko}, S.~V., {Moffat}, A.~F.~J., \& {Crowther}, P.~A. 2010, \apjl, 724,
+  L90, \dodoi{10.1088/2041-8205/724/1/L90}
+
+\bibitem[{{Mesa-Delgado} {et~al.}(2016){Mesa-Delgado}, {Zapata}, {Henney},
+  {Puzia}, \& {Tsamis}}]{Mesa-Delgado:2016}
+{Mesa-Delgado}, A., {Zapata}, L., {Henney}, W.~J., {Puzia}, T.~H., \& {Tsamis},
+  Y.~G. 2016, \apjl, 825, L16, \dodoi{10.3847/2041-8205/825/1/L16}
+
+\bibitem[{{Murdin}(2000)}]{WR:ref}
+{Murdin}, P. 2000, in Encyclopedia of Astronomy and Astrophysics, ed.
+  P.~{Murdin}, 4101, \dodoi{10.1888/0333750888/4101}
+
+\bibitem[{{O'Dell} {et~al.}(2007){O'Dell}, {Henney}, \&
+  {Ferland}}]{O'Dell:2007}
+{O'Dell}, C.~R., {Henney}, W.~J., \& {Ferland}, G.~J. 2007, \aj, 133, 2343,
+  \dodoi{10.1086/513011}
+
+\bibitem[{{Oort} \& {Spitzer}(1955)}]{OortySpitzer_1955}
+{Oort}, J.~H., \& {Spitzer}, Lyman, J. 1955, \apj, 121, 6,
+  \dodoi{10.1086/145958}
+
+\bibitem[{{Padoan} \& {Nordlund}(2002)}]{Padoan:2002}
+{Padoan}, P., \& {Nordlund}, {\r{A}}. 2002, \apj, 576, 870,
+  \dodoi{10.1086/341790}
+
+\bibitem[{{Reiter} {et~al.}(2019){Reiter}, {McLeod}, {Klaassen}, {Guzm{\'a}n},
+  {Dale}, {Mottram}, \& {Garay}}]{MeganReiter:2019}
+{Reiter}, M., {McLeod}, A.~F., {Klaassen}, P.~D., {et~al.} 2019, \mnras, 490,
+  2056, \dodoi{10.1093/mnras/stz2752}
+
+\bibitem[{{Schneider} {et~al.}(2016){Schneider}, {Bontemps}, {Motte},
+  {Blazere}, {Andr{\'e}}, {Anderson}, {Arzoumanian}, {Comer{\'o}n}, {Didelon},
+  {Di Francesco}, {Duarte-Cabral}, {Guarcello}, {Hennemann}, {Hill},
+  {K{\"o}nyves}, {Marston}, {Minier}, {Rygl}, {R{\"o}llig}, {Roy}, {Spinoglio},
+  {Tremblin}, {White}, \& {Wright}}]{Schenider:2016}
+{Schneider}, N., {Bontemps}, S., {Motte}, F., {et~al.} 2016, \aap, 591, A40,
+  \dodoi{10.1051/0004-6361/201628328}
+
+\bibitem[{{S{\'e}vigny} {et~al.}(2021){S{\'e}vigny}, {St-Louis}, {Drissen}, \&
+  {Martin}}]{Marcel:2021}
+{S{\'e}vigny}, M., {St-Louis}, N., {Drissen}, L., \& {Martin}, T. 2021, \mnras,
+  501, 5350, \dodoi{10.1093/mnras/staa3971}
+
+\bibitem[{{Shu}(1992)}]{Shuu:1992}
+{Shu}, F.~H. 1992, {The physics of astrophysics. Volume II: Gas dynamics.}
+
+\bibitem[{{Smith} {et~al.}(1996){Smith}, {Shara}, \& {Moffat}}]{SSM:1996}
+{Smith}, L.~F., {Shara}, M.~M., \& {Moffat}, A. F.~J. 1996, \mnras, 281, 163,
+  \dodoi{10.1093/mnras/281.1.163}
+
+\bibitem[{{Tarango-Yong} \& {Henney}(2018)}]{Tarango:2018}
+{Tarango-Yong}, J.~A., \& {Henney}, W.~J. 2018, \mnras, 477, 2431,
+  \dodoi{10.1093/mnras/sty669}
+
+\bibitem[{{van der Hucht}(2001)}]{VanDerHutch:2001}
+{van der Hucht}, K.~A. 2001, \nar, 45, 135,
+  \dodoi{10.1016/S1387-6473(00)00112-3}
+
+\bibitem[{{Zavala} {et~al.}(2022){Zavala}, {Toal{\'a}}, {Santamar{\'\i}a},
+  {Ramos-Larios}, {Sabin}, {Quino-Mendoza}, {Rubio}, \&
+  {Guerrero}}]{Zavala:2022}
+{Zavala}, S., {Toal{\'a}}, J.~A., {Santamar{\'\i}a}, E., {et~al.} 2022, \mnras,
+  513, 3317, \dodoi{10.1093/mnras/stac1097}
+
+\end{thebibliography}
