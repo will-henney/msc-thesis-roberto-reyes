@@ -12,7 +12,8 @@
 \usepackage{natbib}
 \usepackage{booktabs}
 \usepackage{bachelorstitlepageUNAM}
-\usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
+%\usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
+\usepackage[english]{babel}
 \usepackage{tikz} 
 \usepackage{tocloft}
 \graphicspath{{./figs/}}
@@ -921,159 +922,304 @@ recombinations to all levels except the ground state, since the photon
 emitted in such a recombination can reionize a nearby atom
 \citep{Dyson:book:1980}.
 
-\section{Estructura del flujo fotoevaporativo}\label{Estructura}
+% \section{Estructura del flujo fotoevaporativo}\label{Estructura}
 
-En este modelo estamos considerando un frente de ionización D-crítico
-\citep{Shuu:1992}, esto es, dentro del glóbulo vamos a tener una
-expansión subsónica del gas desde el punto de vista del frente de
-ionización y una expansión supersónica en el gas ionizado desde el
-punto de vista del frente de ionización, por lo que tendremos un punto
-sónico el cual está justo detrás del frente de ionización. En este
-caso por simplicidad vamos a considerar el frente de ionización como
-una discontinuidad en el que pasamos de tener gas no ionizado a tener
-un gas totalmente ionizado, por lo que tomaremos que el punto sónico
-se da justo en $r_0$, que es el radio del glóbulo (ver Figura
-\ref{fig:parameters}). Así que vamos a considerar que el gas tiene un
-número de Mach igual a 1 en $r_0$ y este va a ir aumentando conforme
-atraviesa toda la zona 1 de la Figura \ref{fig:zones} ya que se va
-expandiendo libremente. En principio podríamos considerar que tanto el
-radio del glóbulo como la densidad en su superficie son parámetros
-libres, pero con las observaciones podemos medir el radio y la
-densidad la podemos calcular ya que esta debe ser consistente por
-haber considerado equilibrio de ionización.
+% En este modelo estamos considerando un frente de ionización D-crítico
+% \citep{Shuu:1992}, esto es, dentro del glóbulo vamos a tener una
+% expansión subsónica del gas desde el punto de vista del frente de
+% ionización y una expansión supersónica en el gas ionizado desde el
+% punto de vista del frente de ionización, por lo que tendremos un punto
+% sónico el cual está justo detrás del frente de ionización. En este
+% caso por simplicidad vamos a considerar el frente de ionización como
+% una discontinuidad en el que pasamos de tener gas no ionizado a tener
+% un gas totalmente ionizado, por lo que tomaremos que el punto sónico
+% se da justo en $r_0$, que es el radio del glóbulo (ver Figura
+% \ref{fig:parameters}). Así que vamos a considerar que el gas tiene un
+% número de Mach igual a 1 en $r_0$ y este va a ir aumentando conforme
+% atraviesa toda la zona 1 de la Figura \ref{fig:zones} ya que se va
+% expandiendo libremente. En principio podríamos considerar que tanto el
+% radio del glóbulo como la densidad en su superficie son parámetros
+% libres, pero con las observaciones podemos medir el radio y la
+% densidad la podemos calcular ya que esta debe ser consistente por
+% haber considerado equilibrio de ionización.
 
-Con este modelo se pretende ver hasta donde llegamos a un equilibrio
-de presión entre la presión por parte del flujo fotoevaporativo y la
-presión RAM del viento estelar. Para el caso de la presión del flujo
-fotoevaporativo vamos a considerar tanto la presión térmica como la
-hidrodinámica, por lo que la presión total en la base del glóbulo está
-dada por
+% Con este modelo se pretende ver hasta donde llegamos a un equilibrio
+% de presión entre la presión por parte del flujo fotoevaporativo y la
+% presión RAM del viento estelar. Para el caso de la presión del flujo
+% fotoevaporativo vamos a considerar tanto la presión térmica como la
+% hidrodinámica, por lo que la presión total en la base del glóbulo está
+% dada por
+% \begin{equation}\label{eq: Presion total}
+%     P_\mathrm{tot}=P_\mathrm{ter}+P_\mathrm{hid}=n\bar{m}c_\mathrm{s}^2+n\bar{m}u^2=\rho c_\mathrm{s}^2(1+M^2),
+% \end{equation}
+% donde $u$ es la velocidad del gas en la parte ionizada y $M$ es el
+% número de Mach.
+
+% \begin{figure}[htb]
+%     \centering \includegraphics[width=\textwidth]{imagenes_corregidas/Arreglo 02_n.pdf}
+%     \caption{En este diagrama esquemático $r_0$ es el radio del
+%       glóbulo neutro, mientras que $\rho_0,M_0$ y $P_0$ son los valores
+%       que tenemos en la superficie del glóbulo y varían con dirección
+%       a la estrella hasta tener diferentes valores en
+%       $r_\mathrm{shell}$, que es el radio del centro del glóbulo hasta
+%       la base del flujo fotoevaporativo chocado, $\rho,M$ y $P$ son los
+%       valores que tendrán en la base del flujo fotoevaporativo
+%       chocado.}
+%     \label{fig:parameters}
+% \end{figure}
+
+% Este equilibrio de presión se logrará a un radio $r_\mathrm{shell}$
+% que es donde la presión del flujo fotoevaporativo ha disminuido una
+% fracción $f$ de lo que era la presión inicial. Por lo que la presión
+% cambia como
+% \begin{equation}\label{eq : 1}
+% f=\frac{P}{P_0}=\frac{\rho c_\mathrm{s}^2(1+M^2)}{\rho_0 c_\mathrm{s}^2(1+1)}=\frac{\rho}{\rho_0}\frac{1+M^2}{2},
+% \end{equation}
+% donde $P_0$ es la presión en la base del glóbulo, recordemos que aquí
+% estamos considerando el punto sónico, por lo que $M_0=1$. $P$ es la
+% presión del flujo fotoevaporativo justo antes de $r_\mathrm{shell}$.
+% Considerando la ecuación para la conservación de masa tenemos que
+% \begin{equation}\label{eq : 2}
+% \rho r^2M	=\rho_0 r_0^2.
+% \end{equation}
+% Finalmente, si consideramos la ecuación de Bernoulli isotérmica 
+% \begin{equation}
+% \frac{v^2}{2}+c_\mathrm{s}^2\ln\rho=\text{constante}
+% \end{equation}
+% en la Ecuación (\ref{eq: Presion total}) tenemos que \citep{Dyson:1968}
+% \begin{equation}\label{eq ; 3} \frac{r}{r_0}=M^{-1/2}e^{\frac{M^2-1}{4}}.
+% \end{equation}
+% Combinando las ecuaciones (\ref{eq : 1}), (\ref{eq : 2}) y (\ref{eq ;
+%   3}) tenemos la ecuación
+% \begin{equation}
+%     f=\frac{1+M^2}{2}exp\left(\frac{1-M^2}{2}\right),
+% \end{equation}
+% la cual solo depende de $M$ y podemos resolver de manera
+% numérica\footnote{En nuestro caso usamos la función fsolve de la
+%   paquetería scipy.optimize, la documentación se encuentra en
+%   \url{https://docs.scipy.org/doc/scipy-1.12.0/reference/generated/scipy.optimize.fsolve.html}}
+% dándole diferentes valores a $f$. Una vez que resolvemos esta ecuación
+% podemos saber los valores de las incógnitas $\rho/\rho_0$ y $r/r_0$ usando
+% las ecuaciones (\ref{eq : 2}) y (\ref{eq ; 3}). Obteniendo así, que
+% tanto la presión como la densidad decaen con el radio, mientras que el
+% número de Mach aumenta como vemos en la Figura \ref{fig:grafica_C2}.
+% Cabe mencionar que la Figura \ref{fig:grafica_C2} se obtiene
+% resolviendo las ecuaciones (\ref{eq : 1}), (\ref{eq : 2}) y (\ref{eq ;
+%   3}) en el eje de simetría. Pero esto cambiaría si consideramos
+% cierto ángulo $\theta\neq 0 $ ya que tanto la presión como la densidad escalan
+% con el ángulo como $\cos^{1/2}\theta$, pero $M$ no \citep{Tarango:2018}.
+
+% \begin{figure}[htb]
+%     \centering    \includegraphics[width=\textwidth]{Nuevas imagenes finales/C2_estructura.pdf}
+%     \caption{Gráfica del número de Mach $M$, densidad $\rho$ y la presión
+%       total $P$ normalizados como función de $r/r_0$. También podemos
+%       ver una caída que va como $\sim r^{-2}$ (línea negra). Podemos
+%       notar que la densidad cae más rápido que $r^{-2}$, mientras que
+%       la presión total cae más lento, en ambos casos se debe a la
+%       aceleración del flujo. }
+%     \label{fig:grafica_C2}
+% \end{figure}
+
+\section{Structure of the photoevaporative flow}\label{Estructura}
+
+In this model we consider a D-critical ionization front
+\citep{Shuu:1992}; that is, inside the globule there is a subsonic
+expansion of the gas as seen from the ionization front, while in the
+ionized gas there is a supersonic expansion as seen from the
+ionization front. Consequently there is a sonic point located just
+behind the ionization front. For simplicity we treat the ionization
+front as a discontinuity across which the gas jumps from neutral to
+fully ionized, and we therefore take the sonic point to occur exactly
+at $r_0$, the radius of the globule (see Figure \ref{fig:parameters}).
+Thus we assume the gas has Mach number equal to 1 at $r_0$, increasing
+as it traverses zone 1 of Figure \ref{fig:zones} owing to free
+expansion. In principle the globule radius and the density at its
+surface could be taken as free parameters, but with the observations
+we can measure the radius, and the density can be computed because it
+must be consistent with our assumption of ionization equilibrium.
+
+With this model we aim to determine where pressure balance is attained
+between the pressure of the photoevaporative flow and the stellar-wind
+RAM pressure. For the photoevaporative-flow pressure we include both
+thermal and hydrodynamic terms, so that the total pressure at the base
+of the globule is
 \begin{equation}\label{eq: Presion total}
     P_\mathrm{tot}=P_\mathrm{ter}+P_\mathrm{hid}=n\bar{m}c_\mathrm{s}^2+n\bar{m}u^2=\rho c_\mathrm{s}^2(1+M^2),
 \end{equation}
-donde $u$ es la velocidad del gas en la parte ionizada y $M$ es el
-número de Mach.
+where $u$ is the velocity of the ionized gas and $M$ is the Mach
+number.
 
 \begin{figure}[htb]
     \centering \includegraphics[width=\textwidth]{imagenes_corregidas/Arreglo 02_n.pdf}
-    \caption{En este diagrama esquemático $r_0$ es el radio del
-      glóbulo neutro, mientras que $\rho_0,M_0$ y $P_0$ son los valores
-      que tenemos en la superficie del glóbulo y varían con dirección
-      a la estrella hasta tener diferentes valores en
-      $r_\mathrm{shell}$, que es el radio del centro del glóbulo hasta
-      la base del flujo fotoevaporativo chocado, $\rho,M$ y $P$ son los
-      valores que tendrán en la base del flujo fotoevaporativo
-      chocado.}
+    \caption{In this schematic, $r_0$ is the radius of the neutral
+      globule, while $\rho_0$, $M_0$, and $P_0$ are the values at the
+      globule surface, varying toward the star until they take on
+      different values at $r_\mathrm{shell}$, the distance from the
+      globule center to the base of the shocked photoevaporative flow.
+      The quantities $\rho$, $M$, and $P$ are the corresponding values
+      at the base of the shocked photoevaporative flow.}
     \label{fig:parameters}
 \end{figure}
 
-Este equilibrio de presión se logrará a un radio $r_\mathrm{shell}$
-que es donde la presión del flujo fotoevaporativo ha disminuido una
-fracción $f$ de lo que era la presión inicial. Por lo que la presión
-cambia como
+This pressure equilibrium is reached at a radius $r_\mathrm{shell}$,
+where the pressure of the photoevaporative flow has dropped to a
+fraction $f$ of its initial value. Hence the pressure varies as
 \begin{equation}\label{eq : 1}
 f=\frac{P}{P_0}=\frac{\rho c_\mathrm{s}^2(1+M^2)}{\rho_0 c_\mathrm{s}^2(1+1)}=\frac{\rho}{\rho_0}\frac{1+M^2}{2},
 \end{equation}
-donde $P_0$ es la presión en la base del glóbulo, recordemos que aquí
-estamos considerando el punto sónico, por lo que $M_0=1$. $P$ es la
-presión del flujo fotoevaporativo justo antes de $r_\mathrm{shell}$.
-Considerando la ecuación para la conservación de masa tenemos que
+where $P_0$ is the pressure at the base of the globule. Recall that we
+are taking the sonic point there, so $M_0=1$. $P$ is the pressure of
+the photoevaporative flow just upstream of $r_\mathrm{shell}$. From
+mass conservation we have
 \begin{equation}\label{eq : 2}
 \rho r^2M	=\rho_0 r_0^2.
 \end{equation}
-Finalmente, si consideramos la ecuación de Bernoulli isotérmica 
+Finally, adopting the isothermal Bernoulli equation,
 \begin{equation}
-\frac{v^2}{2}+c_\mathrm{s}^2\ln\rho=\text{constante}
+\frac{v^2}{2}+c_\mathrm{s}^2\ln\rho=\text{constant},
 \end{equation}
-en la Ecuación (\ref{eq: Presion total}) tenemos que \citep{Dyson:1968}
+equation (\ref{eq: Presion total}) yields \citep{Dyson:1968}
 \begin{equation}\label{eq ; 3} \frac{r}{r_0}=M^{-1/2}e^{\frac{M^2-1}{4}}.
 \end{equation}
-Combinando las ecuaciones (\ref{eq : 1}), (\ref{eq : 2}) y (\ref{eq ;
-  3}) tenemos la ecuación
+Combining equations (\ref{eq : 1}), (\ref{eq : 2}), and (\ref{eq ; 3})
+we obtain
 \begin{equation}
-    f=\frac{1+M^2}{2}exp\left(\frac{1-M^2}{2}\right),
+    f=\frac{1+M^2}{2}\,exp\left(\frac{1-M^2}{2}\right),
 \end{equation}
-la cual solo depende de $M$ y podemos resolver de manera
-numérica\footnote{En nuestro caso usamos la función fsolve de la
-  paquetería scipy.optimize, la documentación se encuentra en
-  \url{https://docs.scipy.org/doc/scipy-1.12.0/reference/generated/scipy.optimize.fsolve.html}}
-dándole diferentes valores a $f$. Una vez que resolvemos esta ecuación
-podemos saber los valores de las incógnitas $\rho/\rho_0$ y $r/r_0$ usando
-las ecuaciones (\ref{eq : 2}) y (\ref{eq ; 3}). Obteniendo así, que
-tanto la presión como la densidad decaen con el radio, mientras que el
-número de Mach aumenta como vemos en la Figura \ref{fig:grafica_C2}.
-Cabe mencionar que la Figura \ref{fig:grafica_C2} se obtiene
-resolviendo las ecuaciones (\ref{eq : 1}), (\ref{eq : 2}) y (\ref{eq ;
-  3}) en el eje de simetría. Pero esto cambiaría si consideramos
-cierto ángulo $\theta\neq 0 $ ya que tanto la presión como la densidad escalan
-con el ángulo como $\cos^{1/2}\theta$, pero $M$ no \citep{Tarango:2018}.
+which depends only on $M$ and can be solved numerically\footnote{In
+  our case we use the function \texttt{fsolve} from
+  \texttt{scipy.optimize}; see the documentation at
+  \url{https://docs.scipy.org/doc/scipy-1.12.0/reference/generated/scipy.optimize.fsolve.html}.}
+for different values of $f$. Once this equation is solved, the
+unknowns $\rho/\rho_0$ and $r/r_0$ can be obtained from equations
+(\ref{eq : 2}) and (\ref{eq ; 3}). In this way we find that both the
+pressure and the density decrease with radius, while the Mach number
+increases, as shown in Figure \ref{fig:grafica_C2}. Note that Figure
+\ref{fig:grafica_C2} is obtained by solving equations (\ref{eq : 1}),
+(\ref{eq : 2}), and (\ref{eq ; 3}) on the symmetry axis. This would
+change if we consider a finite angle $\theta\neq 0$, since both the
+pressure and the density scale with angle as $\cos^{1/2}\theta$,
+whereas $M$ does not \citep{Tarango:2018}.
 
 \begin{figure}[htb]
     \centering    \includegraphics[width=\textwidth]{Nuevas imagenes finales/C2_estructura.pdf}
-    \caption{Gráfica del número de Mach $M$, densidad $\rho$ y la presión
-      total $P$ normalizados como función de $r/r_0$. También podemos
-      ver una caída que va como $\sim r^{-2}$ (línea negra). Podemos
-      notar que la densidad cae más rápido que $r^{-2}$, mientras que
-      la presión total cae más lento, en ambos casos se debe a la
-      aceleración del flujo. }
+    \caption{Normalized Mach number $M$, density $\rho$, and total
+      pressure $P$ as functions of $r/r_0$. A reference decline
+      $\sim r^{-2}$ is also shown (black line). Note that the density
+      falls more steeply than $r^{-2}$, while the total pressure
+      declines more slowly; in both cases this is due to the
+      acceleration of the flow.}
     \label{fig:grafica_C2}
-\end{figure}
+  \end{figure}
+  
+% \section{Condiciones para la cáscara chocada}
 
-% Assumption of isothermal equation of state
-\section{Condiciones para la cáscara chocada}
+% \cite{Canto:1996} en su descripción para interacción de dos flujos
+% hipersónicos da la solución a distintos parámetros
+% $\beta=(\dot{M}^0_\mathrm{w}
+% v_\mathrm{w})/(\dot{M}^0_\mathrm{w1}v_\mathrm{w1})$, el cual es la
+% razón de los momentos de los flujos $\mathrm{w}$ y $\mathrm{w1}$. Esto
+% se puede ver en la Figura \ref{fig:Canto2} en la cual notamos que
+% cuando el momento de un flujo es muy grande comparado con el otro, la
+% cáscara chocada se vuelve muy curva y está más cerca de la fuente cuyo
+% flujo tiene menor momento.
 
-\cite{Canto:1996} en su descripción para interacción de dos flujos
-hipersónicos da la solución a distintos parámetros
+% \begin{figure}[htb]
+%     \centering    \includegraphics[width=0.8\textwidth]{images Chapter 2/C2_Canto2.jpg}
+%     \caption{Formas de las distintas cáscaras chocadas a diferentes
+%       parámetros $\beta$. La línea vertical en z/D=0.5 corresponde a un
+%       parámetro $\beta=1$ y las demás curvas corresponden a valores de
+%       0.5, 0.25, 0.125, 0.0625 y 0.03125, entre más pequeño es $\beta$ más
+%       curva se vuelve la cáscara chocada. La otra fuente se encuentra
+%       en z/D=1 \citep{Canto:1996}.}
+%     \label{fig:Canto2}
+% \end{figure}
+
+% En la Figura \ref{fig:zones_presiones} vemos los diferentes tipos de
+% presiones que hay en cada zona en esta interacción entre flujos
+% supersónicos. En la zona de discontinuidad, la línea gris en la Figura
+% \ref{fig:zones_presiones}, será la suma de la presión RAM del viento
+% estelar, $P_\mathrm{RAM}$, y de la presión térmica del viento estelar.
+% Dado que los vientos estelares en estrellas Wolf-Rayet llegan a ser
+% del orden de \SI{1e3}{km.s^{-1}} podríamos llegar a tener un número de
+% Mach del orden de 100 para el viento estelar, por lo que vamos a
+% considerar que $P_\mathrm{DC}=P_\mathrm{RAM}$. Por otro lado, para la
+% cáscara chocada, la zona 2 de la Figura \ref{fig:zones}, tenemos que
+% esta debe estar en doble equilibrio de presión. Por un lado, la
+% presión de la cáscara chocada, $P_\mathrm{shell}$ debe ser igual a la
+% presión del flujo fotoevaporativo justo antes del choque, es decir,
+% $P_\mathrm{shell}=P$. Por el otro lado, la presión de la cáscara
+% chocada debe ser igual a la presión RAM del viento estelar chocado.
+
+% \begin{figure}[htb]
+%     \centering    \includegraphics[width=\textwidth]{imagenes_corregidas/Arreglo 03.pdf}
+%     \caption{La base del glóbulo está dominada por la presión total,
+%       ecuación (\ref{eq: Presion total}). En la línea roja, que es la
+%       parte más interna de la cáscara chocada, tenemos que domina la
+%       presión térmica del flujo fotoevaporativo $P$. En la línea
+%       naranja domina la presión RAM del viento estelar
+%       $P_\mathrm{RAM}$, la cual es la única presión externa que
+%       estamos considerando. En la zona de discontinuidad tenemos una
+%       presión $P_\mathrm{DC}$, la cual es la suma de la presión RAM
+%       del viento estelar y la presión térmica del viento estelar
+%       chocado. }
+%     \label{fig:zones_presiones}
+% \end{figure}
+
+\section{Conditions for the shocked shell}
+
+In their description of the interaction between two hypersonic flows,
+\cite{Canto:1996} derive solutions for different parameters
 $\beta=(\dot{M}^0_\mathrm{w}
-v_\mathrm{w})/(\dot{M}^0_\mathrm{w1}v_\mathrm{w1})$, el cual es la
-razón de los momentos de los flujos $\mathrm{w}$ y $\mathrm{w1}$. Esto
-se puede ver en la Figura \ref{fig:Canto2} en la cual notamos que
-cuando el momento de un flujo es muy grande comparado con el otro, la
-cáscara chocada se vuelve muy curva y está más cerca de la fuente cuyo
-flujo tiene menor momento.
+v_\mathrm{w})/(\dot{M}^0_\mathrm{w1}v_\mathrm{w1})$, which is the
+ratio of the momentum fluxes of flows $\mathrm{w}$ and $\mathrm{w1}$.
+This can be seen in Figure \ref{fig:Canto2}, where we note that when
+the momentum of one flow is much greater than that of the other, the
+shocked shell becomes highly curved and lies closer to the source with
+the weaker momentum flux.
 
 \begin{figure}[htb]
     \centering    \includegraphics[width=0.8\textwidth]{images Chapter 2/C2_Canto2.jpg}
-    \caption{Formas de las distintas cáscaras chocadas a diferentes
-      parámetros $\beta$. La línea vertical en z/D=0.5 corresponde a un
-      parámetro $\beta=1$ y las demás curvas corresponden a valores de
-      0.5, 0.25, 0.125, 0.0625 y 0.03125, entre más pequeño es $\beta$ más
-      curva se vuelve la cáscara chocada. La otra fuente se encuentra
-      en z/D=1 \citep{Canto:1996}.}
+    \caption{Shapes of shocked shells for different values of the
+      parameter $\beta$. The vertical line at $z/D=0.5$ corresponds to
+      $\beta=1$, while the other curves correspond to 0.5, 0.25,
+      0.125, 0.0625, and 0.03125. The smaller the $\beta$, the more
+      curved the shocked shell becomes. The other source is located at
+      $z/D=1$ \citep{Canto:1996}.}
     \label{fig:Canto2}
 \end{figure}
 
-En la Figura \ref{fig:zones_presiones} vemos los diferentes tipos de
-presiones que hay en cada zona en esta interacción entre flujos
-supersónicos. En la zona de discontinuidad, la línea gris en la Figura
-\ref{fig:zones_presiones}, será la suma de la presión RAM del viento
-estelar, $P_\mathrm{RAM}$, y de la presión térmica del viento estelar.
-Dado que los vientos estelares en estrellas Wolf-Rayet llegan a ser
-del orden de \SI{1e3}{km.s^{-1}} podríamos llegar a tener un número de
-Mach del orden de 100 para el viento estelar, por lo que vamos a
-considerar que $P_\mathrm{DC}=P_\mathrm{RAM}$. Por otro lado, para la
-cáscara chocada, la zona 2 de la Figura \ref{fig:zones}, tenemos que
-esta debe estar en doble equilibrio de presión. Por un lado, la
-presión de la cáscara chocada, $P_\mathrm{shell}$ debe ser igual a la
-presión del flujo fotoevaporativo justo antes del choque, es decir,
-$P_\mathrm{shell}=P$. Por el otro lado, la presión de la cáscara
-chocada debe ser igual a la presión RAM del viento estelar chocado.
+Figure \ref{fig:zones_presiones} shows the different types of
+pressures in each zone of this interaction between supersonic flows.
+At the discontinuity (the gray line in Figure
+\ref{fig:zones_presiones}), the pressure is the sum of the stellar
+wind RAM pressure, $P_\mathrm{RAM}$, and the thermal pressure of the
+stellar wind. Since the stellar winds of Wolf--Rayet stars can reach
+velocities of order \SI{1e3}{km.s^{-1}}, the Mach number of the
+stellar wind can be of order 100, so we will assume that
+$P_\mathrm{DC}=P_\mathrm{RAM}$. On the other hand, for the shocked
+shell (zone 2 of Figure \ref{fig:zones}), double pressure equilibrium
+must hold. First, the pressure in the shocked shell,
+$P_\mathrm{shell}$, must equal the pressure of the photoevaporative
+flow immediately upstream of the shock, i.e.,
+$P_\mathrm{shell}=P$. Second, the pressure in the shocked shell must
+equal the RAM pressure of the shocked stellar wind.
 
 \begin{figure}[htb]
     \centering    \includegraphics[width=\textwidth]{imagenes_corregidas/Arreglo 03.pdf}
-    \caption{La base del glóbulo está dominada por la presión total,
-      ecuación (\ref{eq: Presion total}). En la línea roja, que es la
-      parte más interna de la cáscara chocada, tenemos que domina la
-      presión térmica del flujo fotoevaporativo $P$. En la línea
-      naranja domina la presión RAM del viento estelar
-      $P_\mathrm{RAM}$, la cual es la única presión externa que
-      estamos considerando. En la zona de discontinuidad tenemos una
-      presión $P_\mathrm{DC}$, la cual es la suma de la presión RAM
-      del viento estelar y la presión térmica del viento estelar
-      chocado. }
+    \caption{The base of the globule is dominated by the total
+      pressure, equation (\ref{eq: Presion total}). Along the red
+      line, which is the innermost part of the shocked shell, the
+      pressure is dominated by the thermal pressure of the
+      photoevaporative flow, $P$. Along the orange line the pressure
+      is dominated by the RAM pressure of the stellar wind,
+      $P_\mathrm{RAM}$, which is the only external pressure we are
+      considering. At the discontinuity there is a pressure
+      $P_\mathrm{DC}$, which is the sum of the stellar wind RAM
+      pressure and the thermal pressure of the shocked stellar wind.}
     \label{fig:zones_presiones}
 \end{figure}
-% General solution for the internal structure of model
+
 
 
 
