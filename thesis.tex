@@ -2262,195 +2262,176 @@ $\sim$\SI{17}{\arcsecond} (\SI{0.44}{pc}).
       separations (orange) of the globules, measured in arcseconds.}
     \label{fig:hist_sep_ryp}
 \end{figure}
-\chapter{Discusión}\label{Chp:conclusiones}
+\chapter{Discussion}\label{Chp:conclusiones}
 
-Ahora vamos a discutir algunos problemas que que se presentaron al
-momento de hacer los ajustes a los perfiles de brillos, así como
-también algunas propiedades de los glóbulos, entre otras cosas. Debido
-a que son varias cosas a discutir, vamos a dividir la discusión en
-secciones.
+Here we discuss several issues that arose when fitting the brightness
+profiles, as well as some properties of the globules, among other
+points. Since there are multiple topics to cover, we divide the
+discussion into sections.
 
-Considerando que \cite{Zavala:2022} estima que la nebulosa
-circunestelar se formó hace unos \SI{11.8e3}{a}, podríamos suponer que
-las fases mencionadas en la Sección \ref{Sec:fluijos fotoevaporativos}
-ya han pasado y esto es importante porque si estuviéramos en otra fase
-como en la de implosión, los radios cambiarían además que las
-presiones que consideramos podrían aún no estar en equilibrio. En el
-caso de no estar aún en el equilibrio de presiones indicaría que esta
-interacción entre el flujo fotoevaporativo y el viento estelar se
-formó recientemente.
+Given that \cite{Zavala:2022} estimate that the circumstellar nebula
+was formed about \SI{11.8e3}{yr} ago, we may suppose that the phases
+described in Section \ref{Sec:fluijos fotoevaporativos} have already
+occurred. This is important because, if the system were in a different
+phase—such as the implosion phase—then the radii would be changing and
+the pressures we consider might not yet be in equilibrium. If the
+pressure balance had not yet been reached, that would indicate that
+the interaction between the photoevaporative flow and the stellar wind
+formed only recently.
 
-\section{Identificación de los glóbulos y sus cáscaras}\label{dis:casaras}
+\section{Identification of globules and their shells}\label{dis:casaras}
 
-Si bien la presencia de estos glóbulos y su interacción con el viento
-estelar se puede apreciar en las imágenes del JWST, no en todos los
-casos es claro ya que hay algunos glóbulos que se encuentran en grupo
-tal como se ve en la Figura \ref{globule_group}. En estos casos la
-detección de la cáscara chocada es un poco difícil por las siguientes
-razones. En la imagen de arriba de la Figura \ref{globule_group} vemos
-un claro ejemplo de que cuando dos glóbulos estén muy cercanos se
-pueden confundir con que sea un solo glóbulo, como es el caso de los
-que están marcados con círculos azules. De esta manera nos podríamos
-confundir en el tamaño de la parte neutra del glóbulo y sobrestimarla.
-Detrás de estos glóbulos se encuentran otros dos glóbulos cercanos
-(marcados con círculos negros), debido a la proyección en el cielo,
-estos parecen estar en la estela de los glóbulos marcados con círculos
-azules, por lo que en principio no podríamos detectar bien una cáscara
-chocada. Por otro lado tenemos el glóbulo marcado con un círculo rojo.
-Este glóbulo es más pequeño que los otros que están en el grupo y
-aparentemente su cáscara chocada está muy cerca del glóbulo pero en
-realidad esta cáscara parece ser del par de glóbulos marcados con
-círculos azules. Algo similar pasa con el glóbulo marcado con el
-círculo verde, el cual aparentemente no tiene una cáscara pero
-pareciera estar en la cáscara chocada de algún otro glóbulo.
+Although the presence of globules and their interaction with the
+stellar wind is apparent in the JWST images, the situation is not
+always clear, since some globules are found in groups, as in Figure
+\ref{globule_group}. In such cases, detecting the shocked shell is
+more challenging for several reasons. In the upper panel of Figure
+\ref{globule_group} we see a clear example of how two very nearby
+globules can be mistaken for a single object, as for those marked with
+blue circles. This can lead us to misidentify the size of the neutral
+part of the globule and overestimate it. Behind these globules lie two
+more nearby globules (black circles); due to projection on the sky
+they appear in the wakes of the blue-circled globules, so at first
+glance we might be unable to detect a distinct shocked shell. The
+globule marked with a red circle is smaller than the others in the
+group; its shocked shell appears very close to it, but in reality this
+shell seems to belong to the pair marked with blue circles. Something
+similar happens for the globule marked with a green circle, which
+apparently lacks a shell but seems to lie within the shocked shell of
+another globule.
 
-En la imagen inferior de la Figura \ref{globule_group} de igual manera
-vemos un grupo de glóbulos, pero en esta ocasión están lo
-suficientemente lejos como para no confundir sus respectivas cáscaras.
-El problema aquí es que ahora las cáscaras están cerca la una de la
-otra, por lo que la emisión de una afecta a otras. En este ejemplo en
-particular, vemos que las cáscaras más grandes contaminan a las más
-pequeñas en cuanto a su emisión.
+In the lower panel of Figure \ref{globule_group} we again see a group
+of globules, but this time they are sufficiently separated that their
+respective shells are not confused. The problem here is that the
+shells are close enough to one another that the emission from one
+affects the others. In this particular example, the larger shells
+contaminate the smaller ones in terms of their emission.
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{imagenes_corregidas/n_gruops_globules.pdf}
-    \caption{Estos son algunos ejemplos de los grupos de glóbulos que
-      se encontraron en la nebulosa. En la imagen de arriba tenemos
-      varios problemas, entre ellos identificar si es uno o más
-      glóbulos para el caso de los que están muy cerca y saber de qué
-      glóbulo viene cada cáscara chocada, en caso de detectarla. En la
-      imagen de abajo vemos como la cercanía entre glóbulos hace que
-      la emisión de una cáscara chocada se vea afectada por otra
-      cercana.}
+    \caption{Examples of globule groups found in the nebula. Top:
+      several issues arise, including determining whether very close
+      features are one or multiple globules, and identifying which
+      shocked shell belongs to which globule when a shell is detected.
+      Bottom: the proximity of globules causes the emission from one
+      shocked shell to affect that of a nearby shell.}
     \label{globule_group}
 \end{figure}
 
-\section{Masa de los glóbulos}\label{app:masa_glo}
+\section{Mass of the globules}\label{app:masa_glo}
 
-Para la densidad del gas ionizado tenemos que \cite{Grosdidier:1998}
-en su análisis a la nebulosa M1-67, encuentra unos puntos brillantes
-de 0.2--\SI{0.3}{\arcsecond}, a los cuales les estima una densidad de
-gas ionizado de 4800--\SI{12 000}{cm^{-3}}. Estos puntos brillantes
-parecen ser en su mayoría nuestros glóbulos encontrados. Su estimación
-de la densidad del gas ionizado de los glóbulos es congruente con
-nuestras estimaciones, donde nosotros encontramos una densidad típica
-de \SI{5e3}{cm^{-3}} (Tabla \ref{tab:mean}).
+For the ionized-gas density, \cite{Grosdidier:1998} analyzed the
+M1-67 nebula and found bright knots with sizes of
+0.2--\SI{0.3}{\arcsecond}, for which they estimated ionized-gas
+densities of 4800--\SI{12 000}{cm^{-3}}. These bright knots appear to
+correspond largely to our identified globules. Their estimates are
+consistent with ours, for which we find a typical density of
+\SI{5e3}{cm^{-3}} (Table \ref{tab:mean}).
 
-Para estimar la densidad en la parte neutra vamos a suponer un
-equilibrio de presiones entre la parte neutra y la ionizada, por lo
-que tendríamos que
+To estimate the density in the neutral part, we assume pressure
+equilibrium between the neutral and ionized components, so that
 \begin{equation}
-    2 n_\mathrm{i,0}c_\mathrm{s,i}^2 = n_\mathrm{n}(c_\mathrm{s,n}^2+\frac{1}{2}v_\mathrm{A}^2),
+    2 n_\mathrm{i,0}c_\mathrm{s,i}^2 =
+    n_\mathrm{n}\!\left(c_\mathrm{s,n}^2+\frac{1}{2}v_\mathrm{A}^2\right),
 \end{equation}
-donde $n_\mathrm{i,0}, c_\mathrm{s,i}$ es la densidad y la velocidad,
-respectivamente, en la parte ionizada, $n_\mathrm{n}, c_\mathrm{s,n}$
-la densidad y la velocidad del sonido, respectivamente, en la parte
-neutra y $v_\mathrm{A}$ la velocidad de Alfvén, la cual esta definida
-como $v_\mathrm{A}=\frac{B}{\sqrt{4\pi \rho}}$, donde $B$ es el campo
-magnético y $\rho$ la densidad. Como suponemos que la parte neutra está
-dominada por el campo magnético, tenemos valores en el rango de
-1--\SI{3}{km.s^{-1}} para la $v_\mathrm{A}$, esto considerando campos
-magnéticos del orden de micro Gauss \citep{Bertoldi_1989}. Mientras
-que la velocidad del sonido en la parte neutra es de
-\SI{0.5}{km.s^{-1}} si consideramos una masa promedio de
-1.3$m_\mathrm{p}$ y una temperatura de \SI{300}{K}. Así tenemos que la
-razón entre la densidad neutra e ionizada
+where $n_\mathrm{i,0}$ and $c_\mathrm{s,i}$ are the density and sound
+speed, respectively, in the ionized part; $n_\mathrm{n}$ and
+$c_\mathrm{s,n}$ are the density and sound speed in the neutral part;
+and $v_\mathrm{A}$ is the Alfvén speed, defined as
+$v_\mathrm{A}=B/\sqrt{4\pi \rho}$ with magnetic field $B$ and density
+$\rho$. Assuming the neutral part is magnetically dominated, we adopt
+$v_\mathrm{A}$ in the range 1--\SI{3}{km.s^{-1}}, corresponding to
+microgauss magnetic fields \citep{Bertoldi_1989}. The neutral sound
+speed is \SI{0.5}{km.s^{-1}} for a mean mass of $1.3m_\mathrm{p}$ and
+$T=\SI{300}{K}$. Thus the density ratio
 \begin{equation}
-    \frac{n_\mathrm{n}}{n_\mathrm{i,0}}=\frac{2c_\mathrm{s,i}^2}{c_\mathrm{s,n}^2+\frac{1}{2}v_\mathrm{A}^2},
+    \frac{n_\mathrm{n}}{n_\mathrm{i,0}}=
+    \frac{2c_\mathrm{s,i}^2}{c_\mathrm{s,n}^2+\frac{1}{2}v_\mathrm{A}^2}
 \end{equation}
-está en el rango de 42--266. Por lo que para estimar la masa de los
-glóbulos vamos a considerar que $n_\mathrm{n}=100n_\mathrm{i,0}$ ya
-que se encuentra dentro de este rango, aunque claro, tendríamos una
-gran incertidumbre por un factor de 2 aproximadamente. Tomando esto en
-cuenta y que en el modelo estamos considerando que los glóbulos son
-esféricos, entonces, la masa de cada glóbulo estaría dada por
+lies in the range 42--266. To estimate the globule mass we therefore
+adopt $n_\mathrm{n}=100n_\mathrm{i,0}$, which falls within this range,
+bearing in mind an uncertainty of roughly a factor of two. Assuming,
+as in the model, that the globules are spherical, the mass of each
+globule is
 \begin{equation}
-    M_\mathrm{g} = \frac{4}{3}\pi r_0^3 100n_\mathrm{i,0} m_\mathrm{H}.
+    M_\mathrm{g} = \frac{4}{3}\pi r_0^3 \; 100\,n_\mathrm{i,0}\, m_\mathrm{H}.
 \end{equation}
 
-Con estas densidades obtenidas para la parte neutra, tenemos un valor
-promedio en la masa de \SI{4.5e-3}{\msun}. Si consideramos que todos
-los glóbulos tienen esta masa promedio, entonces tendríamos que la
-masa total de todos los glóbulos encontrados es
-$168\times\SI{4.5e-3}{\msun}=$\SI{0.75}{\msun}\footnote{Como solo estamos
-  estimando la masa de los glóbulos y no de sus cáscaras, vamos a
-  tomar en cuenta los 168 glóbulos encontrados. }, la cual es menor
-que la masa de gas ionizado que calcula \cite{Grosdidier:1998}, que es
-de \SI{1.33}{\msun}.
+With these neutral densities we find an average mass of
+\SI{4.5e-3}{\msun}. If we take this mean mass for all globules, the
+total mass of the 168 globules is
+$168\times\SI{4.5e-3}{\msun}=\SI{0.75}{\msun}$\footnote{Since we are
+  estimating only the masses of the globules, not of their shells, we
+  include all 168 identified globules.}, which is lower than the
+ionized-gas mass of \SI{1.33}{\msun} calculated by
+\cite{Grosdidier:1998}.
 
-%Masas y tasa de pérdida de masas 
+%Masses and mass-loss rate
 
-\section{Distribución tridimensional de los glóbulos} \label{sec: distrtibucion}
+\section{Three-dimensional distribution of the globules}
+\label{sec: distrtibucion}
 
-\cite{Zavala:2022} utilizando espectroscopia de rendijas en ciertas
-partes de la nebulosa midió las velocidades en estas regiones (ver
-Figura \ref{fig:zavala_rendijas_nebula}). Una de las observaciones se
-realizó en H$\alpha$ y además se realizó por donde están algunos glóbulos
-que se encontraron en este trabajo.
+Using long-slit spectroscopy in selected regions of the nebula,
+\cite{Zavala:2022} measured velocities in those regions (see Figure
+\ref{fig:zavala_rendijas_nebula}). One of the observations was in
+H$\alpha$, and it passes through several of the globule groups
+identified in this work.
 
-En la Figura \ref{fig:zavala_nudos} vemos como los grupos de glóbulos
-están en una elipse, lo que indica que están en una cáscara
-esférica\footnote{En el Apéndice \ref{AP : PV} se da un poco de más
-  detalle.}. En la rendija H es donde podemos ver el radio de estas
-cáscaras en el eje vertical, que es la posición. En la misma rendija,
-usando el eje horizontal que mide la velocidad, podemos ver que todas
-estas cáscaras tienen una velocidad de \SI{40}{km.s^{-1}}. De esta
-manera podemos obtener la separación real que hay entre los glóbulos y
-la estrella. Por lo que conociendo su separación proyectada, que es la
-que medimos directamente de las imágenes, y su separación real a
-partir de estos espectro de rendija, podemos saber cuál debería ser su
-ángulo de inclinación.
+In Figure \ref{fig:zavala_nudos} the globule groups lie along an
+ellipse, indicating that they are on a spherical shell\footnote{See
+Appendix \ref{AP : PV} for additional details.}. In slit H, the shell
+radius can be read off the vertical axis (position). In the same slit,
+using the horizontal axis (velocity), we see that all these shells
+have a velocity of \SI{40}{km.s^{-1}}. In this way we obtain the true
+separation between the globules and the star. Thus, combining the
+projected separation measured directly from the images with the true
+separation derived from the slit spectra, we can infer the
+inclination angle.
 
-En la Figura \ref{fig:ang_Will} vemos como nuestras mediciones (puntos
-rojos), obtenidos a partir de comparar la presión de la cáscara de los
-glóbulos con la presión exterior del viento (Sección
-\ref{Sec:proyeccion}) concuerdan con la mediciones realizada a partir
-de espectros bidimensionales (puntos azules) (Henney, W., in prep.).
-Estas dos mediciones son totalmente independientes y podemos ver una
-clara anti-correlación entre el ángulo de inclinación y la separación
-que observamos. En esta imagen no esperamos ver glóbulos con un ángulo
-de inclinación de $\pm 90^\circ$ ya que estos estarían totalmente de
-espaldas o de frente, en cualquier caso estos no los podríamos ver
-porque se verían afectados por la emisión de la estrella WR ya que en
-proyección estarían muy cerca de la estrella.
+Figure \ref{fig:ang_Will} shows that our inclination estimates (red
+points), obtained by comparing the shell pressure with the external
+wind pressure (Section \ref{Sec:proyeccion}), agree with the
+independent estimates from two-dimensional spectra (blue points)
+(Henney, W., in prep.). The two determinations are fully independent,
+and we see a clear anti-correlation between inclination angle and
+observed separation. In this plot we do not expect globules with
+inclination angles of $\pm 90^\circ$, because such globules would lie
+directly in front of or behind the star and would not be visible: in
+projection they would be too close to the WR star and strongly
+affected by its emission.
 
-El grupo de glóbulos más cercanos a la estrellas parece estar a unos
-\SI{15}{\arcsecond} (\SI{0.39}{pc}) según la Figura
-\ref{fig:zavala_nudos}, los cuales coinciden con nuestras mediciones
-que vemos en la Figura \ref{fig:hist_sep_ryp}. También en la Figura
-\ref{fig:hist_sep_ryp} podemos ver que la separación real de muchos
-glóbulos está cerca de \SI{18}{\arcsecond} (\SI{0.47}{pc}).
+The nearest group of globules to the star appears to lie at about
+\SI{15}{\arcsecond} (\SI{0.39}{pc}) in Figure \ref{fig:zavala_nudos},
+consistent with our measurements in Figure \ref{fig:hist_sep_ryp}. The
+latter also shows that many globules have true separations near
+\SI{18}{\arcsecond} (\SI{0.47}{pc}).
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{Nuevas imagenes finales/rendijas_zavala.pdf}
-    \caption{Las lineas punteadas muestran donde \cite{Zavala:2022}
-      realizaron espectroscopia de rendija larga en la nebulosa M1-67.
-      Estas observaciones se realizaron en San Pedro Mártir. La línea
-      continua en la esquina superior derecha representa
-      \SI{20}{\arcsecond}.}
+    \caption{Dashed lines mark the positions where \cite{Zavala:2022}
+      obtained long-slit spectroscopy of the M1-67 nebula. These
+      observations were made at San Pedro Mártir. The solid line in
+      the upper-right corner corresponds to \SI{20}{\arcsecond}.}
     \label{fig:zavala_rendijas_nebula}
 \end{figure}
 
-En la Figura \ref{fig:zavala_nudos} podemos apreciar que la mayoría de
-los grupos de glóbulos están corridos al rojo y muy pocos están
-corridos al azul, es decir, que la mayoría de los grupos de glóbulos
-localizados en estas rendijas se están alejando de nosotros y solo
-unos pocos se están acercando.
+In Figure \ref{fig:zavala_nudos} we see that most globule groups are
+redshifted, with only a few blueshifted. That is, most of the groups
+sampled by these slits are receding from us, while only a few are
+approaching.
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{Nuevas imagenes finales/zavala-slit-spectra-select-annotated.pdf}
-    \caption{Aquí vemos la espectroscopia de rendijas de
-      \cite{Zavala:2022}, en la parte superior vemos la emisión de
-      H$\alpha$ y en la parte inferior la emisión de NII. Los círculos
-      amarillos representan donde se encuentran los grupos de glóbulos
-      en cada rendija. Las elipses representan modelos cáscaras
-      esféricas con radios de \SI{15}{\arcsecond} (elipses moradas),
-      \SI{20}{\arcsecond} (elipses rosas), \SI{25}{\arcsecond}
-      (elipses amarillas), \SI{30}{\arcsecond} (elipses verde claro) y
-      \SI{35}{\arcsecond} (elipses verdes), todos con una velocidad de
+    \caption{Long-slit spectroscopy from \cite{Zavala:2022}. Top:
+      H$\alpha$ emission; bottom: [N\,\textsc{ii}] emission. Yellow
+      circles mark the positions of globule groups intersected by each
+      slit. Ellipses show spherical-shell models with radii of
+      \SI{15}{\arcsecond} (purple), \SI{20}{\arcsecond} (pink),
+      \SI{25}{\arcsecond} (yellow), \SI{30}{\arcsecond} (light green),
+      and \SI{35}{\arcsecond} (green), all with expansion velocity
       \SI{40}{km.s^{-1}}.}
     \label{fig:zavala_nudos}
 \end{figure}
@@ -2458,16 +2439,13 @@ unos pocos se están acercando.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{imagenes_corregidas/W.pdf}
-    \caption{Los datos en color rojo son nuestras estimaciones de los
-      ángulos de inclinación realizados en la sección
-      \ref{Sec:proyeccion}, en la que suponemos que la presión de la
-      cáscara está en equilibrio de presión con la presión externa del
-      viento. Los datos en color azul son las estimaciones de los
-      ángulos de inclinación usando los espectros bidimensionales de
-      \cite{Zavala:2022}}
+    \caption{Red points: our inclination-angle estimates from Section
+      \ref{Sec:proyeccion}, where the shell pressure is assumed to be
+      in equilibrium with the external wind pressure. Blue points:
+      inclination-angle estimates derived from the two-dimensional
+      spectra of \cite{Zavala:2022}.}
     \label{fig:ang_Will}
 \end{figure}
-
 \chapter{Conclusiones}
 
 En esta tesis se ha propuesto un modelo hidrodinámico estacionario
