@@ -1571,517 +1571,470 @@ function of distance.
 
 
   
-\chapter{Ajuste del modelo a los perfiles de
-  brillo}\chaptermark{Ajuste del modelo}\label{Chapter : Ajuste}
+\chapter{Model fitting to brightness profiles}
+\chaptermark{Model fitting}\label{Chapter : Ajuste}
 
-En este capítulo vamos a utilizar las distintas observaciones para
-obtener el tamaño de los glóbulos, sus cáscaras chocadas y los anchos
-de sus cáscaras chocadas. También podemos obtener el brillos en el
-centro del glóbulo y en la cáscara chocada, con lo que podremos
-conocer más adelante la densidad del gas ionizado en la cáscara
-chocada.
+In this chapter we use the various observations to measure the sizes
+of the globules, their shocked shells, and the widths of those shells.
+We can also measure the brightness at the center of the globule and in
+the shocked shell, which will later allow us to estimate the density
+of the ionized gas in the shocked shell.
 
-La medición de los diferentes parámetros a los 168 glóbulos
-encontrados lo haremos de la siguiente manera. Una vez que sabemos
-donde se encuentran los glóbulos vamos a buscar la posición de su
-máximo de emisión en H$\alpha$, el cual definiremos como el centro de
-nuestros glóbulos\footnote{En las observaciones de gas ionizado
-  tenemos solo una estimación para el tamaño de los glóbulos, en la
-  Sección \ref{Sec : radio neutro} se realiza una medición mas real
-  para el tamaño de los glóbulos usando gas neutro.}, después
-tomaremos como el eje de simetría considerado en el modelo (Figura
-\ref{fig:zones}) a la línea que une el centro del glóbulo con la
-estrella. Como en nuestro caso nos interesa más describir el glóbulo y
-su cáscara chocada solo vamos a trabajar con una máscara para poder
-identificar bien estas dos partes. Al utilizar esta máscara nuestras
-mediciones no se verán afectadas por la compleja estructura de la
-nebulosa u otros glóbulos que se encuentren cerca. Esta máscara la
-vamos a considerar de la siguiente manera : Vamos a tomar solo los
-píxeles que estén a una distancia menor o igual a \SI{0.2}{\arcsecond}
-y también los que estén a una distancia máxima de \SI{1.5}{\arcsecond}
-y a un ángulo máximo de $60^\circ$ con respecto al eje de simetría. Con
-estos valores los glóbulos y sus cáscaras chocadas están dentro de la
-máscara en todos los casos, además de que se obtuvieron buenos
-resultados para las distintas mediciones con estos valores.
+The measurements of the different parameters for the 168 identified
+globules are carried out as follows. Once the globule positions are
+known, we locate the peak of H$\alpha$ emission, which we define as the
+center of the globule\footnote{In the ionized-gas observations we have
+only an estimate of the globule size; in Section \ref{Sec : radio
+  neutro} we obtain a more realistic measurement of the globule size
+using neutral gas.}. We then define the symmetry axis of the model
+(Figure \ref{fig:zones}) as the line connecting the center of the
+globule with the star. Since our main interest is to describe the
+globule and its shocked shell, we apply a mask to isolate these two
+components. This mask ensures that our measurements are not affected
+by the complex structure of the nebula or by nearby globules. The mask
+is defined as follows: we take only those pixels lying within
+\SI{0.2}{\arcsecond} of the globule center, and those within a maximum
+distance of \SI{1.5}{\arcsecond} and a maximum angle of $60^\circ$
+with respect to the symmetry axis. With these values the globules and
+their shocked shells are always included in the mask, and the chosen
+parameters yield reliable results for the different measurements.
 
-Después graficamos el brillo de cada píxel dentro de esta máscara como
-función de la distancia al centro del glóbulo, como vemos en la Figura
-\ref{ejemplo mascara}. A estos puntos le vamos a ajustar dos
-gaussianas y una constante.
-
+We then plot the brightness of each pixel within the mask as a
+function of distance from the globule center, as shown in Figure
+\ref{ejemplo mascara}. To these points we fit two Gaussians and a
+constant.
 
 \begin{figure}[htb]
   \begin{subfigure}[b]{0.5\textwidth}
     \includegraphics[width=\textwidth, height=0.9\textwidth]{Nuevas imagenes finales/F_4_1_A.pdf}
-    \caption{Ejemplo de máscara usada para los glóbulos. La máscara
-      son los píxeles en escala de grises.}
+    \caption{Example of a mask used for the globules. The mask is
+      defined by the gray-scale pixels.}
     \label{fig:f1}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.5\textwidth}
     \includegraphics[width=\textwidth, height=0.9\textwidth]{Nuevas imagenes finales/F_4_1_B.pdf}
-    \caption{Brillo de la máscara como función de la distancia al
-      centro del glóbulo, considerando el ángulo con respecto al eje
-      de simetría.}
+    \caption{Brightness within the mask as a function of distance from
+      the globule center, measured along the symmetry axis.}
     \label{fig:f2}
   \end{subfigure}
-  \caption{En la imagen de la izquierda vemos un ejemplo de la máscara
-    que vamos a utilizar para hacer el ajuste a los perfiles de brillo
-    (los pixeles en escala de grises), en este caso utilizando las
-    observaciones del HST. El centro del glóbulo se localiza en el
-    centro de la imagen, la línea roja conecta el centro del glóbulo
-    con la estrella (localizada a la izquierda de esta imagen) y es el
-    eje de simetría que vamos a considerar. Vamos a considerar solo
-    los píxeles que están en un círculo de \SI{0.2}{\arcsecond}
-    alrededor del centro del glóbulo y los que se encuentren a una
-    distancia menor a \SI{1.5}{\arcsecond} y que tengan un ángulo
-    menor de $60^\circ$ con respecto al simetría que estamos considerando.
-    En la imagen de la derecha vemos como es el brillo de estos
-    píxeles considerados en la máscara como función de la distancia al
-    centro del glóbulo y considerando su ángulo con respecto al eje de
-    simetría. En este caso, los puntos verdes son los píxeles que
-    están en la parte inferior de la imagen izquierda, por otro lado
-    los puntos azules se encuentran en la parte superior de la imagen
-    izquierda dentro de la máscara considerada.}
+  \caption{Left: example of the mask used for fitting brightness
+    profiles (gray-scale pixels), here using HST observations. The
+    globule center is at the image center. The red line connects the
+    globule center to the star (off to the left), defining the
+    symmetry axis. Pixels within a circle of \SI{0.2}{\arcsecond}
+    around the globule center are included, as well as those within
+    \SI{1.5}{\arcsecond} and within $60^\circ$ of the symmetry axis.
+    Right: brightness of the pixels included in the mask as a function
+    of distance from the globule center and angle with respect to the
+    symmetry axis. Green points correspond to pixels in the lower part
+    of the left panel, blue points to pixels in the upper part within
+    the mask.}
   \label{ejemplo mascara}
 \end{figure}
 
-Este ajuste es por la siguiente razón: El ancho de la primer gaussiana
-centrada en cero nos dirá el tamaño del glóbulo, esto suponiendo que
-el pico de emisión que encontramos se da justo en el centro del
-glóbulo. La segunda gaussiana ajustada nos indica la ubicación de la
-cáscara chocada y su ancho. Esperamos ver un pico de emisión en esta
-cáscara chocada debido a las recombinaciones que hay en esta parte, es
-por eso que también le ajustamos una gaussiana a la cáscara chocada.
-La distancia entre los picos de estas dos gaussianas no dirá el radio
-de la cáscara chocada. Finalmente, la constante es más un promedio del
-brillo del fondo en esta región. En este ajuste le dimos menos peso a
-los píxeles más alejados del centro del glóbulo y también a los que
-tenían un gran ángulo con respecto al eje de simetría de la siguiente
-manera
+The fit is motivated as follows. The width of the first Gaussian,
+centered at zero, gives the size of the globule, assuming that the
+emission peak coincides with the globule center. The second Gaussian
+indicates the location and width of the shocked shell. We expect an
+emission peak in the shocked shell due to recombinations, hence the
+second Gaussian. The distance between the peaks of the two Gaussians
+gives the radius of the shocked shell. Finally, the constant
+represents the mean background brightness in the region. In the fit we
+assign lower weight to pixels farther from the globule center and to
+those with larger angle from the symmetry axis, according to
 \begin{equation}\label{eq: peso}
     w = \frac{\cos^2(\theta)}{(0.3+r)^2},
 \end{equation}
-donde $\theta$ es el ángulo con respecto al eje de simetría y $r$ la
-distancia al centro del glóbulo. Para hacer este ajuste utilizamos la
-paquetería \verb|fitting.LevMarLSQFitter|\footnote{La paquetería se
-  encuentra en
+where $\theta$ is the angle relative to the symmetry axis and $r$ is
+the distance from the globule center. The fit is performed with the
+\verb|fitting.LevMarLSQFitter|\footnote{Documentation:
   \url{https://docs.astropy.org/en/latest/api/astropy.modeling.fitting.LevMarLSQFitter.html}}
-de \verb|astropy.modeling|. Un ejemplo más claro de estos ajustes lo
-podemos ver en la Figura \ref{ejemplo ajuste}
+package of \verb|astropy.modeling|. A clearer example of these fits is
+shown in Figure \ref{ejemplo ajuste}.
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{imagenes_corregidas/Ejemplo_ajuste_final.pdf}
-    \caption{Ejemplo del ajuste de las dos guassianas y una constante
-      a los perfiles de brillo. Este ejemplo es el mismo de la Figura
-      \ref{ejemplo mascara}, pero para la visualización del ajuste, la
-      imagen del glóbulo fue rotada $180^\circ$. En este ejemplo vemos
-      como obtuvimos los diferentes parámetros a través del ajuste.
-      Los brillos de la parte interna como de la cáscara son el máximo
-      de la primer y segunda gaussiana, respectivamente. La $\sigma$ de la
-      primer gaussiana centrada en cero nos dice el tamaño de la parte
-      interna. Para el ancho de la cáscara, lo consideramos a partir
-      de la $\sigma$ de la segunda guassiana. Para el radio de la cáscara,
-      lo tomamos como la distancia entre los picos de ambas
-      gaussianas. Este es un ajuste a las observaciones del HST y
-      podemos ver como se ve el ajuste directamente en la imagen.}
+    \caption{Example of the fit of two Gaussians plus a constant to
+      the brightness profiles. This example is the same as in Figure
+      \ref{ejemplo mascara}, but for visualization the globule image
+      has been rotated $180^\circ$. The internal and shell brightness
+      values correspond to the peaks of the first and second
+      Gaussians, respectively. The $\sigma$ of the first Gaussian
+      centered at zero gives the size of the inner region. The shell
+      width is obtained from the $\sigma$ of the second Gaussian. The
+      shell radius is taken as the distance between the peaks of the
+      two Gaussians. This fit is applied to the HST observations, and
+      the figure shows how the fit appears directly on the image.}
     \label{ejemplo ajuste}
 \end{figure}
 
-Este ajuste se hizo a las observaciones con el HST y para el caso del
-JWST se hizo para el filtro f090w y a la combinación de filtros en la
-que solo observamos el gas ionizado. De esta manera obtuvimos varias
-mediciones independientes a los ajustes con distintas resoluciones.
-Así tenemos una mejor certeza de que realmente estamos detectando una
-cáscara y del tamaño de los diferentes parámetros ajustados.
+The fitting procedure was applied to the HST observations and, for the
+JWST, to the F090W filter and to the composite image isolating ionized
+gas. In this way we obtained several independent measurements at
+different resolutions, providing greater confidence that we are indeed
+detecting a shell and measuring the sizes of the different fitted
+parameters.
 
-\section{Medición del radio en la parte neutra} \label{Sec : radio neutro}
+\section{Measuring the radius in the neutral component} 
+\label{Sec : radio neutro}
 
-El ajuste anterior se realizó utilizando las imágenes en las que vemos
-la emisión de gas ionizado por lo que la medición de los radios para
-la parte neutra no estaría del todo bien. Así que para la medición de
-la parte neutra se utilizó la combinación de los filtros f150w, f210m
-y f335m del JWST para ver la emisión neutra (ver Apéndice \ref{AP:
-  combos}). Con esta combinación evitamos que nuestras mediciones se
-vean afectadas por la emisión de estrellas de campo o de las cáscaras
-chocadas.
+The previous fitting procedure was performed using images of ionized
+gas emission, so the measured radii did not accurately represent the
+neutral component. To measure the neutral gas we used a combination of
+the JWST filters F150W, F210M, and F335M to isolate neutral emission
+(see Appendix \ref{AP: combos}). With this combination we avoid
+contamination of our measurements by field stars or by shocked shells.
 
-En este caso ajustamos solo una gaussiana y una constante al perfil de
-brillo ya que aquí no podríamos ver la cáscara chocada. El ajuste se
-realizó de la siguiente manera: Dado que el valor medio de los radios
-de los glóbulos en el anterior ajuste es de \SI{0.14}{\arcsecond} con
-una variación de $\pm\SI{0.04}{\arcsecond}$ decidimos poner una máscara
-de \SI{0.2}{\arcsecond} alrededor del pico de emisión y unos conos con
-un pequeño ángulo de apertura, estos conos son perpendiculares al eje
-de simetría considerado en el modelo y tienen una longitud de
-\SI{1.5}{\arcsecond}. Con esta máscara considerada esperamos tener
-toda la emisión neutra en el círculo pequeño que consideramos, los
-conos nos servirán para calcular mejor la constante ajustada ya que no
-se verá afectada por las colas delos glóbulos. En la Figura
-\ref{Medicion de r_0} vemos como el glóbulo cae dentro de la máscara
-sin verse afectado por emisión de gas ionizado o estrellas de campo.
+In this case we fit only a Gaussian and a constant to the brightness
+profile, since the shocked shell is not visible here. The fitting was
+carried out as follows. Given that the mean radius of the globules
+from the previous fit was \SI{0.14}{\arcsecond} with a variation of
+$\pm\SI{0.04}{\arcsecond}$, we placed a mask of
+\SI{0.2}{\arcsecond} around the emission peak together with cones of
+small opening angle. These cones are perpendicular to the symmetry
+axis of the model and extend \SI{1.5}{\arcsecond}. With this mask we
+expect the entire neutral emission to lie within the small circle,
+while the cones serve to better constrain the constant background
+level, since they are not affected by the wings of the globules.
+Figure \ref{Medicion de r_0} shows how the globule falls inside the
+mask without contamination from ionized gas emission or field stars.
 
-Con estos ajustes ya conocemos el radio de los glóbulos, $r_0$, el
-radio de la cáscara chocada, $r_\mathrm{shell}$, y el ancho de la
-cáscara chocada, $H_\mathrm{s}$. Debido a que tanto $r_0$ como
-$H_\mathrm{s}$ se midieron usando la sigma de la gaussiana ajustada,
-la cual es el ancho RMS del perfil, y para comparar con los anchos
-instrumentales tenemos que nuestro ancho observacional está dado por
+With these fits we obtain the radius of the globules, $r_0$, the
+radius of the shocked shell, $r_\mathrm{shell}$, and the width of the
+shocked shell, $H_\mathrm{s}$. Since both $r_0$ and $H_\mathrm{s}$ are
+measured using the $\sigma$ of the fitted Gaussian (i.e. the RMS width
+of the profile), for comparison with instrumental widths our observed
+width is given by
 \begin{equation}
-    W_\mathrm{obs}= 2\sqrt{2\ln{2}} \, \sigma_\mathrm{obs}
+    W_\mathrm{obs}= 2\sqrt{2\ln{2}} \, \sigma_\mathrm{obs},
 \end{equation}
-donde $\sigma_\mathrm{obs}$ es nuestra medición de las observaciones, y
-considerando la Función de dispersión de punto (PSF por sus siglas en
-inglés) de cada telescopio, entonces tenemos que nuestro ancho real
-estará dado como
+where $\sigma_\mathrm{obs}$ is the measured value from the
+observations. Considering the point spread function (PSF) of each
+telescope, the intrinsic width is then
 \begin{equation}
-    W_\mathrm{real} = \frac{\sqrt{W_\mathrm{obs}^2-\Delta^2}}{2}
+    W_\mathrm{real} = \frac{\sqrt{W_\mathrm{obs}^2-\Delta^2}}{2},
 \end{equation}
-donde $\Delta$ es el PSF del telescopio, para el caso del HST
-$\Delta=\SI{0.067}{\arcsecond}$ y para el caso del JWST
-$\Delta=\SI{0.145}{\arcsecond}$, esto para el combo de filtros para
-ver solo el gas ionizado. De esta manera tenemos una medición más
-realista de estas dos cantidades.
+where $\Delta$ is the PSF of the telescope. For HST
+$\Delta=\SI{0.067}{\arcsecond}$, and for JWST
+$\Delta=\SI{0.145}{\arcsecond}$ (for the filter combination used to
+observe only the ionized gas). In this way we obtain more realistic
+measurements of these two quantities.
 
 \begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Nuevas imagenes finales/r_0_.pdf}
-    \caption{Ejemplo de la máscara usada para la medición del radio en
-      la parte neutra del glóbulo. La máscara son los píxeles en
-      escala de grises. Para ver solo la emisión del gas neutro (PAHs)
-      se usó la combinación de los filtros f150w, f210m y f335m. Estas
-      son observaciones del JWST.}
-    \label{Medicion de r_0}
+  \centering
+  \includegraphics[width=0.8\textwidth]{Nuevas imagenes finales/r_0_.pdf}
+  \caption{Example of the mask used to measure the radius of the
+    neutral component of a globule. The mask is defined by the
+    gray-scale pixels. To observe only neutral gas emission (PAHs),
+    we used the combination of filters F150W, F210M, and F335M. The
+    data are JWST observations.}
+  \label{Medicion de r_0}
 \end{figure}
+  
+\section[Observational errors]{Estimating uncertainties in the observational parameters}
 
-\section[Errores observacionales]{Estimación de incertidumbres en los parámetros observacionales}
+For the uncertainties we consider that they arise from inhomogeneities
+in the nebular brightness, unrelated to the globule or its shocked
+shell, or from systematic effects due to the limitations of the model,
+and not from photon noise. We therefore estimate these errors by
+comparing different measurements, assuming they are independent.
 
-Para el caso de los errores vamos a considerar que estos están dados
-por in-homogeneidades en el brillo de la nebulosa, que no están
-relacionadas con el glóbulo ni con su cáscara chocada, o por efectos
-sistemáticos debido a la inadecuación del modelo y no por el ruido de
-fotones. Así que vamos a estimar estos errores comparando las
-distintas mediciones hechas, suponiendo que son independientes.
-
-\subsection{\boldmath Incertidumbres en $r_\mathrm{shell}$ y $H_\mathrm{s}$}
+\subsection{\boldmath Uncertainties in $r_\mathrm{shell}$ and $H_\mathrm{s}$}
 \label{sec:error-shell}
-En el caso del radio y ancho de la cáscara, $r_\mathrm{shell}$ y
-$H_\mathrm{s}$, respectivamente, podemos notar que estos siguen una
-buena tendencia (ver Figura \ref{fgi: Radios de la cascara}) si
-comparamos las mediciones realizadas con el HST y el JWST. Para estas
-mediciones vamos a considerar la incertidumbre RMS
+
+For the radius and width of the shell, $r_\mathrm{shell}$ and
+$H_\mathrm{s}$, respectively, we note that they follow a consistent
+trend (see Figure \ref{fgi: Radios de la cascara}) when comparing the
+measurements obtained with HST and JWST. For these measurements we
+adopt the RMS uncertainty
 \begin{equation}
-    \sigma=\frac{\sqrt{\mathrm{Var}(x_\mathrm{J}-x_\mathrm{H})}}{\sqrt{2}}
+    \sigma=\frac{\sqrt{\mathrm{Var}(x_\mathrm{J}-x_\mathrm{H})}}{\sqrt{2}},
 \end{equation}
-donde $x_\mathrm{J}$ son las mediciones hechas con el JWST, utilizando
-el combo de gas ionizado, y $x_\mathrm{H}$ son las mediciones hechas
-con el HST, en H$\alpha$ (ver Apéndice \ref{AP: errores r_s H_s}).
+where $x_\mathrm{J}$ are the measurements from JWST using the ionized
+gas composite, and $x_\mathrm{H}$ are the measurements from HST in
+H$\alpha$ (see Appendix \ref{AP: errores r_s H_s}).
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{imagenes_corregidas/rshell.pdf}
-    \caption{Comparación de los radios de las cáscaras (puntos de
-      colores) obtenidos a partir de los ajustes a ambos telescopios.
-      Cada punto de color representa un glóbulo al cual se le detectó
-      una cáscara en ambos telescopios. Las mediciones con el HST es
-      en el filtro f656n y en el JWST son mediciones hechas en el
-      combo para observar solo el gas ionizado. La línea roja
-      representa la relación de identidad 1:1, por lo que se puede ver
-      que ambas mediciones son muy similares}
+    \caption{Comparison of shell radii (colored points) obtained from
+      fits to both telescopes. Each point represents a globule for
+      which a shell was detected in both instruments. The HST
+      measurements are in the F656N filter, and the JWST measurements
+      use the ionized-gas composite. The red line shows the 1:1
+      relation, indicating that the two sets of measurements are very
+      similar.}
     \label{fgi: Radios de la cascara}
 \end{figure}
 
-\subsection{\boldmath Incertidumbre en $r_0$}
+\subsection{\boldmath Uncertainty in $r_0$}
 
-Para el caso de la parte interna tenemos una medición para el radio en
-la parte neutra con un combinación de filtros del JWST y una
-aproximación con el HST, ya que en este último vemos solo el gas
-ionizado y el glóbulo contiene principalmente gas neutro. Aunque no
-hay una buena correlación entre estas dos mediciones, como se puede
-ver en la Figura \ref{fig:Rcore dis}, su valor promedio y desviación
-estándar se parecen mucho. Por lo que vamos a considerar un radio
-constante que será igual para todos los glóbulos. Este valor será
-\SI{0.135}{\arcsecond} el cual es el promedio de los valores medios de
-las dos mediciones y como error vamos a considerar la desviación
-estándar de ambas mediciones ya que son iguales,
-$\pm\SI{.03}{\arcsecond}$ (ver Figura \ref{fig:Rcore dis}).
+For the inner region we have one measurement of the neutral radius
+using a JWST filter combination, and an approximate measurement with
+HST, since the latter traces only ionized gas while the globule is
+mainly neutral. Although there is not a strong correlation between the
+two measurements (see Figure \ref{fig:Rcore dis}), their mean values
+and standard deviations are very similar. We therefore adopt a single
+radius for all globules: \SI{0.135}{\arcsecond}, the average of the
+two mean values. As the uncertainty we adopt the standard deviation of
+both measurements, which is the same, $\pm\SI{.03}{\arcsecond}$ (see
+Figure \ref{fig:Rcore dis}).
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.8\textwidth]{imagenes_corregidas/r_0.pdf}
-    \caption{En esta imagen vemos la comparación de los radios medidos
-      para la parte neutra con ambos instrumentos. El histograma
-      superior es para las mediciones del radio del glóbulo utilizando
-      el JWST, estas mediciones tienen un valor promedio de
-      \SI{0.15}{\arcsecond} con una desviación estándar de
-      \SI{0.03}{\arcsecond}. El histograma del lado derecho es para
-      las mediciones del radio del glóbulo utilizando el HST, teniendo
-      un valor promedio de \SI{0.12}{\arcsecond} con una desviación
-      estándar de \SI{0.03}{\arcsecond}. }
+    \caption{Comparison of the radii of the neutral component measured
+      with both instruments. The upper histogram shows the JWST
+      measurements, with a mean value of \SI{0.15}{\arcsecond} and a
+      standard deviation of \SI{0.03}{\arcsecond}. The right-hand
+      histogram shows the HST measurements, with a mean of
+      \SI{0.12}{\arcsecond} and a standard deviation of
+      \SI{0.03}{\arcsecond}.}
     \label{fig:Rcore dis}
 \end{figure}
 
-\subsection{\boldmath Incertidumbres en $B_\mathrm{s}$ y $B_0$}
+\subsection{\boldmath Uncertainties in $B_\mathrm{s}$ and $B_0$}
 
-Para los errores de los brillos superficiales en la cáscara chocada y
-en el glóbulo, $B_\mathrm{s}$ y $B_0$, respectivamente, vamos a
-considerar como error la siguiente desviación estándar
+For the surface brightnesses of the shocked shell and the globule,
+$B_\mathrm{s}$ and $B_0$, respectively, we estimate the error as the
+following standard deviation:
 \begin{equation}
-  \epsilon_{B}=\sqrt{\mathrm{Var}\Big(\overline{(y-\overline{y})^2},w*w_2\Big)} 
-\end{equation} 
-donde $y$ es el perfil del brillo del filtro f656n del HST menos el
-ajuste realizado a los perfiles de brillo, $w$ es el peso considerado
-en el modelo (Ecuación (\ref{eq: peso})) y $w_2$ es la gaussiana
-ajustada a la parte correspondiente, es decir, para la parte interna
-$w_2$ es la primer gaussiana ajustada, la cual tiene su pico en
-\SI{0}{\arcsecond}, y para la cáscara $w_2$ es la segunda gaussiana
-ajustada (ver Figura \ref{ejemplo ajuste}).
-
-Con la estimación de todas estas incertidumbres, usamos la paquetería
-\verb|uncertainties|\footnote{La documentación de la paquetería se
-  encuentra en \url{https://pythonhosted.org/uncertainties/}} para
-tener nuestras barras de error. Esta paquetería calcula las
-incertidumbres usando la teoría de propagación de errores lineales
-tomando en cuenta si los datos son totalmente independientes o están
-correlacionados.
-
-\section{\boldmath Estimación de la densidad del gas ionizado a partir
-  del brillo superficial de H$\alpha$}\label{Sec : estimacion de densidad}
-
-Para estimar la densidad del gas ionizado, usamos primero la
-definición de Medida de Emisión (EM por sus siglas en inglés)
-\begin{equation}
-\mathrm{EM}=\int_z n_\mathrm{i} n_\mathrm{e}dz    
+  \epsilon_{B}=\sqrt{\mathrm{Var}\Big(\overline{(y-\overline{y})^2},w*w_2\Big)}, 
 \end{equation}
-donde $n_\mathrm{i}$ es la densidad de iones, $n_\mathrm{e}$ la
-densidad electrónica y en este caso estaremos integrando sobre nuestra
-línea de visión $(dz)$. Si consideramos un gas totalmente ionizado,
-donde los electrones provengan solo del H, entonces tenemos que
-$n_\mathrm{e}=n_\mathrm{i}=n$\footnote{En principio también tenemos
-  contribución de He, pero lo vamos a considerar como neutro debido
-  que la estrella tiene pocos fotones energéticos como para ionizar el
-  He, si lo comparamos con la tasa de fotones que ionizan el H
-  \citep{Palmira:2020}.}. Entonces, tenemos que $\mathrm{EM}=n^2l$,
-donde $n$ es la densidad promedio RMS y $l$ es la profundidad del gas
-denso en nuestra línea de visión.
- 
+where $y$ is the brightness profile from the HST F656N filter minus
+the fitted brightness profile, $w$ is the weight from the model
+(equation \ref{eq: peso}), and $w_2$ is the fitted Gaussian
+corresponding to the component in question. For the inner part $w_2$
+is the first Gaussian centered at \SI{0}{\arcsecond}; for the shell
+$w_2$ is the second Gaussian (see Figure \ref{ejemplo ajuste}).
+
+With these uncertainty estimates we use the
+\verb|uncertainties|\footnote{Documentation:
+  \url{https://pythonhosted.org/uncertainties/}} package to compute
+the error bars. This package calculates uncertainties using the theory
+of linear error propagation, taking into account whether the data are
+fully independent or correlated.
+
+\section[\boldmath Estimating the ionized gas density from H$\alpha$
+  surface brightness]{Estimating the ionized gas density from
+  H$\alpha$ surface brightness}\label{Sec : estimacion de densidad}
+
+To estimate the density of the ionized gas, we first use the
+definition of the emission measure (EM):
+\begin{equation}
+\mathrm{EM}=\int_z n_\mathrm{i} n_\mathrm{e}\,dz,
+\end{equation}
+where $n_\mathrm{i}$ is the ion density, $n_\mathrm{e}$ the electron
+density, and the integral is along the line of sight $(dz)$. If we
+consider a fully ionized gas in which the electrons come only from
+hydrogen, then $n_\mathrm{e}=n_\mathrm{i}=n$\footnote{There is in
+  principle also a contribution from He, but we treat it as neutral
+  because the star emits too few energetic photons to ionize He,
+  compared to the ionizing photon rate for H
+  \citep{Palmira:2020}.}. Thus $\mathrm{EM}=n^2 l$, where $n$ is the
+RMS mean density and $l$ is the depth of the dense gas along the line
+of sight.
+
 \begin{figure}[htb]
-    \centering    \includegraphics[width=\textwidth]{artesanales/ImgFi01-4.pdf}
-    \caption{Diagrama esquemático que muestra una línea de visión, con
-      un máximo en la línea punteada $l$, y si consideramos una
-      simetría esférica vamos a tener esta configuración donde $h$
-      será el ancho de la cáscara chocada, $r$ el radio del centro del
-      glóbulo hasta donde inicia el flujo fotoevaporativo chocado y
-      $h<r$.}
+    \centering
+    \includegraphics[width=\textwidth]{artesanales/ImgFi01-4.pdf}
+    \caption{Schematic diagram showing a line of sight, with maximum
+      path length $l$ (dashed line). Assuming spherical symmetry we
+      obtain this configuration, where $h$ is the width of the shocked
+      shell, $r$ is the radius from the globule center to the onset of
+      the shocked photoevaporative flow, and $h<r$.}
     \label{fig:EM}
 \end{figure}
 
-Si suponemos una cáscara esférica de radio $r$, una anchura $h$ con
-$h\ll r$ y una densidad constante, entonces tenemos que
+Assuming a spherical shell of radius $r$, thickness $h$ with $h\ll r$,
+and constant density, we obtain
 \begin{equation}
-  \mathrm{EM}=2\sqrt{2rh}n^2.
+  \mathrm{EM}=2\sqrt{2rh}\,n^2.
 \end{equation}
 
-Esto ya que de la Figura \ref{fig:EM} tenemos que por geometría
-$r^2+\Big(\frac{l}{2}\Big)^2=(r+h)^2=r^2+2rh+h^2\approx r^2+2rh$, y por
-tanto, $ l=2\sqrt{2rh}$. De esta manera, usando la EM tenemos
-que
+From Figure \ref{fig:EM} we see that by geometry
+$r^2+\Big(\frac{l}{2}\Big)^2=(r+h)^2=r^2+2rh+h^2\approx r^2+2rh$, hence
+$l=2\sqrt{2rh}$. Therefore, using the EM we have
 \begin{equation}
   n=\sqrt{\frac{\mathrm{EM}}{l}}=\sqrt{\frac{\mathrm{EM}}{2\sqrt{2rh}}}.
-\end{equation} 
-
-En este trabajo vamos a aplicarlo a las cáscaras detectadas donde
-tomaremos a $r=r_\mathrm{s}$ y $h=H_\mathrm{s}$.
-
-\subsection{Uso de la EM a partir de las observaciones} \label{Subsec : EM}
-
-En nuestras observaciones del HST el brillo superficial está dado en
-unidades de \unit{cuenta.s^{-1}}, por lo que vamos a usar el factor de
-conversión 0.0137 para tenerlo en unidades de
-\unit{erg.s^{-1}.cm^{-2}.sr^{-1}} (ver Apéndice \ref{AP : conversion
-  EM}). Si dividimos entre la energía de H$\alpha$ tenemos que
-
-\begin{equation}
-    B\frac{0.0137}{(h\nu)_{\mathrm{H}\alpha}}=\int \frac{f_{\mathrm{H}\alpha}\alpha_\mathrm{B} n_\mathrm{e} n_\mathrm{p}}{4\pi} dz
 \end{equation}
-donde $B$ es el brillo superficial que tenemos directamente de
-nuestras observaciones, $(h\nu)_{\mathrm{H}\alpha}$ la energía de
-H$\alpha$, $f_{\mathrm{H}\alpha}$ es la fracción de todas las recombinaciones a
-los niveles $n\geq 2$ que resultan en la emisión de H$\alpha$,
-$\alpha_\mathrm{B}$ es el coeficiente de recombinación para el caso B,
-$n_\mathrm{e}$ la densidad electrónica y $n_\mathrm{p}$ la densidad de
-iones. La integral de la derecha es a lo largo de nuestra línea de
-visión.
 
-Si consideramos que tanto $f_\mathrm{H\alpha}$ como el coeficiente de
-recombinación son constantes, entonces
+In this work we apply this method to the detected shells, taking
+$r=r_\mathrm{s}$ and $h=H_\mathrm{s}$.
+
+\subsection{Using EM from the observations} \label{Subsec : EM}
+
+In our HST observations the surface brightness is given in units of
+\unit{counts.s^{-1}}. We use a conversion factor of 0.0137 to obtain
+units of \unit{erg.s^{-1}.cm^{-2}.sr^{-1}} (see Appendix \ref{AP :
+  conversion EM}). Dividing by the energy of an H$\alpha$ photon we
+have
 \begin{equation}
-    B\frac{0.0137}{(h\nu)_{\mathrm{H}\alpha}}=\frac{f_{\mathrm{H}\alpha}\alpha_\mathrm{B}}{4\pi}\int n_\mathrm{e} n_\mathrm{p} dz,
+    B\frac{0.0137}{(h\nu)_{\mathrm{H}\alpha}}=\int \frac{f_{\mathrm{H}\alpha}\alpha_\mathrm{B} n_\mathrm{e} n_\mathrm{p}}{4\pi}\,dz,
 \end{equation}
-donde la integral es la EM. Por lo que, si suponemos que
-$f_\mathrm{H\alpha}$ es 0.5 y que
-$\alpha_\mathrm{B}=\SI{2.3e-13}{cm^{3}.s^{-1}}$ entonces
-$f_{\mathrm{H}\alpha}\alpha_\mathrm{B}=\SI{1.17e-13}{cm^3.s^{-1}}$, por lo que
-podemos conocer la EM directamente de las observaciones como
+where $B$ is the observed surface brightness,
+$(h\nu)_{\mathrm{H}\alpha}$ is the photon energy of H$\alpha$,
+$f_{\mathrm{H}\alpha}$ is the fraction of all recombinations to levels
+$n\geq 2$ that result in H$\alpha$ emission, $\alpha_\mathrm{B}$ is the
+case B recombination coefficient, $n_\mathrm{e}$ is the electron
+density, and $n_\mathrm{p}$ the ion density. The integral on the right
+is along the line of sight.
+
+If we take both $f_\mathrm{H\alpha}$ and the recombination coefficient
+as constants, then
+\begin{equation}
+    B\frac{0.0137}{(h\nu)_{\mathrm{H}\alpha}}=\frac{f_{\mathrm{H}\alpha}\alpha_\mathrm{B}}{4\pi}\int n_\mathrm{e} n_\mathrm{p}\,dz,
+\end{equation}
+where the integral is the EM. Assuming
+$f_\mathrm{H\alpha}=0.5$ and
+$\alpha_\mathrm{B}=\SI{2.3e-13}{cm^{3}.s^{-1}}$, we obtain
+$f_{\mathrm{H}\alpha}\alpha_\mathrm{B}=\SI{1.17e-13}{cm^3.s^{-1}}$. The
+EM can then be derived directly from the observations as
 \begin{equation}
     \mathrm{EM} = B\frac{0.0137}{(h\nu)_{\mathrm{H}\alpha}}\frac{4\pi}{\SI{1.17e-13}{cm^3.s^{-1}}},
 \end{equation}
-y como ahora todo está en unidades de cgs, la EM tendrá unidades de \unit{cm^{-5}}.
+which yields EM in units of \unit{cm^{-5}} (cgs).
 
+It is important to note that in deriving the density from EM and $l$,
+we are assuming that $l$ is perpendicular to the symmetry axis of the
+model.
 
-Es importante mencionar que para conocer la densidad usando la EM y
-$l$, estamos considerando que $l$ es perpendicular a el eje de
-simetría considerado en el modelo.
-
-En la Figura \ref{fig:dens_angl} estamos considerando que la densidad
-máxima $n_1$ está en el eje de simetría y decae con el ángulo como
+In Figure \ref{fig:dens_angl} we show that the maximum density $n_1$
+lies along the symmetry axis and decreases with angle as
 $\cos^{1/2} i$ \citep{Tarango:2018}.
 
 \begin{figure}[htb]
-    \centering    \includegraphics[width=\textwidth]{Nuevas imagenes finales/densi_angle.pdf}
-    \caption{En el eje de simetría tenemos una densidad máxima en la
-      cáscara chocada $n_1$ (color más oscuro) y esta densidad va
-      cayendo con el ángulo que tiene con respecto al eje de simetría
-      (color más claro).}
-    \label{fig:dens_angl}
+  \centering
+  \includegraphics[width=\textwidth]{Nuevas imagenes finales/densi_angle.pdf}
+  \caption{Along the symmetry axis the shocked shell has a maximum
+    density $n_1$ (darker color), which decreases with increasing
+    angle from the axis (lighter color).}
+  \label{fig:dens_angl}
 \end{figure}
+  
+\section{Good fits}\label{Good results}
 
-
-\section{Buenos ajustes}\label{Good results}
-
-En 16 de los glóbulos se pudo tener un buen ajuste ya que las
-mediciones obtenidas coincidían tanto con los glóbulos como con las
-cáscaras chocadas que se podían identificar visualmente en las
-imágenes. Por lo que con estos ajustes ahora conocemos $r_0$,
-$r_\mathrm{shell}$ y $H_\mathrm{s}$. Además conocemos el brillo tanto
-en la parte interna como en la cáscara chocada por lo que podemos
-obtener más información. En la Sección \ref{Sec : estimacion de
-  densidad} vimos como obtener la densidad en la cáscara chocada a
-partir de su brillo, y con esto ahora podemos conocer la presión de la
-cáscara, la cual está dada como
+For 16 globules we obtained good fits, since the measurements matched
+both the globules and the shocked shells that could be visually
+identified in the images. From these fits we now know $r_0$,
+$r_\mathrm{shell}$, and $H_\mathrm{s}$. In addition, we have measured
+the brightness both in the inner region and in the shocked shell, so
+we can extract further information. In Section \ref{Sec : estimacion
+  de densidad} we showed how to estimate the density in the shocked
+shell from its brightness, which then allows us to determine the shell
+pressure,
 \begin{equation}
     P_\mathrm{shell}=\rho c_\mathrm{s}^2.
 \end{equation}
-Esta presión la podremos comparar con la presión RAM del viento
-estelar. De igual manera podremos tener un estimado de la presión
-interna del glóbulo y comparar directamente con el modelo.
+This pressure can be compared with the RAM pressure of the stellar
+wind. We can also estimate the internal pressure of the globule and
+compare it directly with the model.
 
-Estos glóbulos a los cuales les encontramos un buen ajuste están en un
-rango de separación a la estrella muy amplio, por lo que podemos
-conocer mejor la nebulosa y los glóbulos en general también. En la
-Figura \ref{Goog G} podemos apreciar algunos ejemplos de los buenos
-ajustes donde se puede identificar el glóbulo y su cáscara chocada.
+These well-fit globules span a wide range of separations from the
+star, so they provide a representative view of the nebula and the
+globules in general. Figure \ref{Goog G} shows examples of good fits,
+where the globule and its shocked shell are clearly identifiable.
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{imagenes_corregidas/buenos_aj.pdf}
-    \caption{Ejemplos de buenos ajustes. En los paneles izquierdos
-      vemos los ajustes a los perfiles de brillo en el lado izquierdo
-      y como se ven con los datos del HST en la derecha, mientras que
-      los paneles del lado derecho son utilizando los datos del JWST,
-      del lado derecho están los ajuste a los perfiles de brillo para
-      el gas ionizado (Figura \ref{fig:filters WR124}), pero la
-      visualización de estos ajustes los vemos en el filtro f090w ya
-      que morfológicamente se parece mucho a las imágenes del HST.}
+    \caption{Examples of good fits. Left panels: brightness-profile
+      fits (left subpanel) and the corresponding HST image (right
+      subpanel). Right panels: JWST data. The fits shown are for the
+      ionized-gas composite (Figure \ref{fig:filters WR124}), but the
+      visualizations are in the F090W filter, since its morphology is
+      very similar to the HST images.}
     \label{Goog G}
 \end{figure}
 
-\section{Ajustes recuperados}
+\section{Recovered fits}
 
-Gracias a que se hizo el ajuste a los perfiles de brillo en dos
-telescopios distintos y con distintas resoluciones se pudieron obtener
-mejores resultados. Esto debido a que en algunos glóbulos a pesar de
-poder observar sus cáscaras chocadas visualmente nuestro algoritmo no
-las lograba detectar en alguno de las dos imágenes.
+By fitting the brightness profiles from two telescopes with different
+resolutions, we obtained improved results. In some globules, even
+though their shocked shells were visible by eye, our algorithm failed
+to detect them in one of the two images.
 
-En la Figura \ref{Recuperados Globulos} vemos como en ambos casos se
-puede ver una posible cáscara pero al momento de hacer el ajuste no
-detecta debido a la dispersión que tenemos en ciertas direcciones o
-por la falta de puntos, como es el caso de los datos del HST. Otro
-problema del porqué no se detectaba bien la cáscara, era debido a que
-esta solía tener un brillo muy bajo.
+Figure \ref{Recuperados Globulos} shows examples where a possible
+shell can be seen visually, but the brightness-profile fit fails to
+detect it in one telescope (top left and bottom right panels), due to
+scatter in the data points or to too few points, as in the HST data.
+Another reason for poor detection was that the shell often had very
+low brightness.
 
-De esta manera se pudo tener una mayor muestra de la que ya se había
-obtenido inicialmente. Por lo que tenemos una muestra final de 30
-glóbulos en los que conocemos el tamaño de los glóbulos, sus cáscaras
-chocadas, así como sus anchos y el brillo superficial en el centro del
-glóbulo y en la cáscara chocada\footnote{Todos estos ajustes se pueden
-  ver en el Apéndice \ref{App : ajustes}}. Con estas mediciones
-podemos comparar la presión de las cáscaras chocadas con la presión
-RAM del viento estelar, por lo que en el Capítulo \ref{Ch : balance de
-  presiones} podremos comparar nuestro modelo con las observaciones.
+In this way we increased the sample size beyond the initial set,
+resulting in a final sample of 30 globules for which we know the
+globule size, the shocked shell radius and width, and the surface
+brightness at the globule center and in the shocked shell\footnote{All
+  of these fits are shown in Appendix \ref{App : ajustes}}. With these
+measurements we can compare the pressure of the shocked shells with
+the RAM pressure of the stellar wind. Thus in Chapter \ref{Ch :
+  balance de presiones} we will compare our model directly with the
+observations.
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{imagenes_corregidas/recuperados_aj.pdf}
-    \caption{Ejemplos de ajustes recuperados. En las imágenes,
-      visualmente podemos observar una cáscara, pero al hacer el
-      ajuste a los perfiles de brillo vemos que este no detecta la
-      cáscara chocada en uno de los telescopios (panel superior
-      izquierdo y panel inferior derecho) debido a la dispersión de
-      los puntos.}
+    \caption{Examples of recovered fits. In these images the shell is
+      visible by eye, but the brightness-profile fitting fails to
+      detect the shocked shell in one telescope (top left and bottom
+      right panels), due to scatter in the points.}
     \label{Recuperados Globulos}
 \end{figure}
 
-\section{Glóbulos descartados}\label{Bad globules}
+\section{Discarded globules}\label{Bad globules}
 
-A pesar de tener una buena cantidad de glóbulos para aplicar a este
-modelo no se usaron todos por diferentes razones. Algunos de ellos
-tenían un mal ajuste debido a la gran estructura de la nebulosa, había
-estrellas de fondo o se veían afectados por las espigas de difracción
-de estrellas brillantes. Debido a esto en algunos casos no se
-alcanzaba a detectar bien la parte neutra o la cáscara chocada y en
-algunos casos la detección de estas regiones estaban mal en cuanto a
-sus tamaños. En la Figura \ref{Bad Globules} vemos algunos ejemplos de
-los glóbulos a los que no se les pudo detectar bien su cáscara
-chocada.
+Despite having a substantial number of globules suitable for applying
+the model, not all could be used. Some had poor fits due to the large
+scale structure of the nebula, contamination by background stars, or
+the diffraction spikes of bright stars. In such cases the neutral
+region or the shocked shell could not be reliably detected, or their
+sizes were incorrectly determined. Figure \ref{Bad Globules} shows
+examples of globules whose shocked shells could not be reliably
+measured.
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{Nuevas imagenes finales/Malos_ajustes_final.pdf}
-    \caption{Ejemplos de glóbulos descartados. Del lado izquierdo es
-      la imagen con el HST y del lado derecho con el JWST en el filtro
-      f090w. El primer glóbulo es descartado por que se ve afectado
-      por la difracción del telescopio y por la gran estructura de la
-      nebulosa, esto se puede deber a lo cerca que está de la estrella
-      central. En los otros ejemplos vemos como la presencia de
-      fuentes cercanas afecta nuestras estimaciones de posibles
-      cáscaras chocadas en las observaciones.}
+    \caption{Examples of discarded globules. Left: HST images; right:
+      JWST F090W filter. The first globule is discarded because it is
+      affected by telescope diffraction and by the large-scale nebular
+      structure, likely due to its proximity to the central star. In
+      the other examples, nearby sources compromise the measurements
+      of possible shocked shells.}
     \label{Bad Globules}
 \end{figure}
 
-En la Tabla \ref{tab:mean} tenemos los valores medios de las
-diferentes mediciones realizadas, tomando como incertidumbre la
-dispersión de los datos entre los diferentes glóbulos. Vemos que la
-separación entre los glóbulos y la estrella tiene un valor medio de
-$14.96\pm\SI{7.1}{\arcsecond}$. Por otro lado, podemos ver que tanto el
-radio del glóbulo como el ancho de la cáscara es menor que el radio de
-la cáscara. La densidad es típicamente del orden de \SI{e3}{cm^{-3}},
-mientras que las presiones de las cáscaras son del orden de
-\SI{e-9}{dyn.cm^{-2}}. Finalmente $n_\mathrm{i,0}$ es la densidad del
-gas ionizado en el frente de ionización de los glóbulos, esto
-considerando un equilibrio de ionización.
+Table \ref{tab:mean} lists the mean values of the different measured
+quantities, taking the scatter among the globules as the uncertainty.
+The mean separation between the globules and the star is
+$14.96\pm\SI{7.1}{\arcsecond}$. The globule radius and shell width are
+both smaller than the shell radius. The density is typically of order
+\SI{e3}{cm^{-3}}, while the shell pressures are of order
+\SI{e-9}{dyn.cm^{-2}}. Finally, $n_\mathrm{i,0}$ is the ionized-gas
+density at the ionization front of the globules, assuming ionization
+equilibrium.
 
 \begin{table}[htb]
-    \centering
-    \begin{tabular}{c c}
-        \toprule
-        \multicolumn{2}{c}{Resultados de los buenos ajustes} \\ \midrule
-         Separación & 14.96$\pm$\SI{7.1}{\arcsecond}\\
-         Radio del glóbulo $r_0$ & 0.135$\pm$\SI{0.03}{\arcsecond} \\
-         Radio de la cáscara $r_\mathrm{shell}$& 0.62$\pm$\SI{0.13}{\arcsecond}\\
-         Ancho de la cáscara $H_\mathrm{s}$ & 0.24$\pm$\SI{0.1}{\arcsecond}\\
-         $n_\mathrm{shell}$ & 1.37$\pm$\SI{.05e3}{cm^{-3}}\\
-         $n_\mathrm{i,0}$ & 5.01$\pm$\SI{.55e3}{cm^{-3}}\\
-         $P_\mathrm{shell}$ & 1.89$\pm$\SI{.06e-9}{dyn.cm^{-2}}  \\
-         $r_\mathrm{shell}/r_0$ & 4.4$\pm$1 \\\bottomrule
-    \end{tabular}
-    \caption{Valores medios de los resultados obtenidos a partir de
-      los ajustes. En este caso tomamos las incertidumbres como la
-      dispersión entre los diferentes glóbulos.}
-    \label{tab:mean}
+  \centering
+  \begin{tabular}{c c}
+    \toprule
+    \multicolumn{2}{c}{Results of the good fits} \\ \midrule
+    Separation & 14.96$\pm$\SI{7.1}{\arcsecond}\\
+    Globule radius $r_0$ & 0.135$\pm$\SI{0.03}{\arcsecond} \\
+    Shell radius $r_\mathrm{shell}$& 0.62$\pm$\SI{0.13}{\arcsecond}\\
+    Shell width $H_\mathrm{s}$ & 0.24$\pm$\SI{0.1}{\arcsecond}\\
+    $n_\mathrm{shell}$ & 1.37$\pm$\SI{.05e3}{cm^{-3}}\\
+    $n_\mathrm{i,0}$ & 5.01$\pm$\SI{.55e3}{cm^{-3}}\\
+    $P_\mathrm{shell}$ & 1.89$\pm$\SI{.06e-9}{dyn.cm^{-2}}  \\
+    $r_\mathrm{shell}/r_0$ & 4.4$\pm$1 \\\bottomrule
+  \end{tabular}
+  \caption{Mean values of the results obtained from the fits. The
+    uncertainties are the scatter among different globules.}
+  \label{tab:mean}
 \end{table}
-
+  
 \chapter{Balance de presiones en las cáscaras}\label{Ch : balance de presiones}
 
 En este capítulo vamos a utilizar las mediciones obtenidas a partir de
